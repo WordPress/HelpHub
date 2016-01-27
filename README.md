@@ -16,7 +16,7 @@ Anyone is welcome to fork the repo and send pull requests, but the project contr
 
 Project Lead: [Hugh Lashbrooke](https://github.com/hlashbrooke/)
 
-The following people are active developers on the project and all are listed as contributors to this repo:
+The following people are active developers on the project and all are listed as collaborators on this repo:
 
 | Name               	| GitHub username   	| Slack username 	|
 |--------------------	|-------------------	|----------------	|
