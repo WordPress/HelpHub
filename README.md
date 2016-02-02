@@ -40,7 +40,7 @@ The following people are active developers on the project and are all listed as 
 | Sara Cope          	| saracope          	| sarassassin    	|
 | Justin Greer       	| justingreerbbi    	| justingreerbbi 	|
 | Nicole Arnold      	| NicoleA           	| nlarnold1      	|
-| Jon (Kenshino)     	| kenshino          	| kenshino       	|
+| Jon Ang           	| kenshino          	| kenshino       	|
 | Stephanie Green    	| greensteph        	| greensteph     	|
 | Jonathan Bossenger 	| jonathanbossenger 	| jon_bossenger  	|
 | Rachel Whitton     	| Rachelwhitton     	| rachelwhitton  	|
