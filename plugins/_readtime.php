@@ -11,9 +11,6 @@
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
-// Put this here for future
-//load_plugin_textdomain('your-unique-name', false, basename( dirname( __FILE__ ) ) . '/languages' );
-
 /**
  * [hh_calulate_post_readtime description]
  * @return [type] [description]
@@ -61,13 +58,25 @@ function hh_calulate_and_update_post_readtime( $post_id, $post, $update ) {
 add_action( 'save_post', 'hh_calulate_and_update_post_readtime', 10, 3 );
 
 /**
- * Returns an output of read time for a given post.
- * @param  [type] $post_id [description]
- * @return [type]          [description]
+ * Returns an output of read time for a given post. 
+ *
+ * get_the_read_time can be ran inside the loop or can be called using a post ID.
+ * The function tries to default to the global post if there is not Post ID provided.
+ *
+ * @example 
+ * <?php echo get_the_read_time(); ?>
+ * 
+ * @example
+ * <?php echo get_the_read_time( $post->ID );
+ * 
+ * @param  Int $post_id   Post ID to lookup the read time.
+ * @return String         A formatted string containing a converted read time into minutes.
  */
-function hh_get_post_read_time( $post_id=null ) {
-  if(is_null($post_id))
-    return;
+function get_the_read_time( $post_id=null ) {
+  if( is_null( $post_id ) ) {
+    global $post;
+    $post_id = $post->ID;
+  } 
 
   // Grab the meta field for read time
   $read_time = get_post_meta($post_id, '_read_time', true);
@@ -76,7 +85,7 @@ function hh_get_post_read_time( $post_id=null ) {
   // 
   // Why did we not do this on save? 
   // Seconds can be manipulated easy and are flexible.
-  $converted_readtime = round($readtime/60);
+  $converted_readtime = $read_time == 0 ? '~1' : round( $read_time / 60 );
 
-  return sprintf( esc_html__( 'Read Time: %s Min.', 'helphub' ), $converted_readtime );
+  return sprintf( esc_html__( 'Read Time: %s Min', 'helphub' ), $converted_readtime );
 }
