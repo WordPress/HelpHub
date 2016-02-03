@@ -83,5 +83,5 @@ function get_the_read_time( $post_id = null ) {
 	// Converts read time seconds into minutes
 	$converted_readtime = $reading_time == 0 ? '1' : round( $read_time / 60 );
 
-	return sprintf( _n( 'Reading Time: %s Minute','Reading Time: %s Minutes', $converted_readtime, 'helphub'), $converted_readtime );
+	return sprintf( _n( 'Reading Time: %s Minute','Reading Time: %s Minutes', $converted_readtime, 'helphub' ), $converted_readtime );
 }
