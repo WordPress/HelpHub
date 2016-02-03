@@ -59,3 +59,24 @@ function hh_calulate_and_update_post_readtime( $post_id, $post, $update ) {
   update_post_meta( $post_id, '_read_time', $readtime);
 }
 add_action( 'save_post', 'hh_calulate_and_update_post_readtime', 10, 3 );
+
+/**
+ * Returns an output of read time for a given post.
+ * @param  [type] $post_id [description]
+ * @return [type]          [description]
+ */
+function hh_get_post_read_time( $post_id=null ) {
+  if(is_null($post_id))
+    return;
+
+  // Grab the meta field for read time
+  $read_time = get_post_meta($post_id, '_read_time', true);
+
+  // Convert read time from seconds to minutes.
+  // 
+  // Why did we not do this on save? 
+  // Seconds can be manipulated easy and are flexible.
+  $converted_readtime = round($readtime/60);
+
+  return sprintf( esc_html__( 'Read Time: %s Min.', 'helphub' ), $converted_readtime );
+}
