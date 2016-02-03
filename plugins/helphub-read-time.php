@@ -11,6 +11,9 @@
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
+// Adds the read time hook when saving a post
+add_action( 'save_post', 'hh_calulate_and_update_post_read_time', 10, 3 );
+
 /**
  * Calculates the read time of a post when created or updated.
  * @param  int 			$post_id Post id to calculate read time for.
@@ -18,7 +21,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
  * @param  boolean 	$update  Is this an update or new.
  * @return void
  */
-function hh_calulate_and_update_post_readtime( $post_id, $post, $update ) {
+function hh_calulate_and_update_post_read_time( $post_id, $post, $update ) {
 
 	// No post revisions
 	if ( wp_is_post_revision( $post_id ) )
@@ -73,14 +76,10 @@ function get_the_read_time( $post_id = null ) {
 		$post_id = $post->ID;
 	} 
 
-	// Grab the meta field for read time
 	$read_time = get_post_meta( $post_id, '_read_time', true );
 
-	// Convert read time from seconds to minutes.
-	// 
-	// Why did we not do this on save? 
-	// Seconds can be manipulated easy and are flexible.
-	$converted_readtime = 0 == $read_time? '~1' : round( $read_time / 60 );
+	// Converts read time seconds into minutes
+	$converted_readtime = 0 == $read_time ? '~1' : round( $read_time / 60 );
 
 	return sprintf( esc_html__( 'Read Time: %s Min', 'helphub' ), $converted_readtime );
 }

@@ -28,6 +28,7 @@
 
 	<div class="entry-content">
 		<?php
+			echo get_the_read_time();
 			the_content( sprintf(
 				/* translators: %s: Name of current post. */
 				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'helphub' ), array( 'span' => array( 'class' => array() ) ) ),
