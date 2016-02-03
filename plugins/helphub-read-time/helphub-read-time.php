@@ -1,7 +1,7 @@
 <?php
 /*
- * Plugin Name: Reading Time
- * Description: Adds estimated reading time to a post custom fields using a simple formula.
+ * Plugin Name: HelpHub Read Time
+ * Description: Adds estimated reading time to a post.
  * Version:     1.0.0
  * Author:      justingreerbbi
  * Author URI:  https://wordpress.org
@@ -15,7 +15,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
  * [hh_calulate_post_readtime description]
  * @return [type] [description]
  */
-function hh_calulate_and_update_post_readtime( $post_id, $post, $update ) {
+function hh_calulate_and_update_post_readtime ( $post_id, $post, $update ) {
 
   // No post revisions
   if ( wp_is_post_revision( $post_id ) )
