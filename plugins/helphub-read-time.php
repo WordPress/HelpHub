@@ -24,15 +24,17 @@ add_action( 'save_post', 'hh_calulate_and_update_post_read_time', 10, 3 );
 function hh_calulate_and_update_post_read_time( $post_id, $post, $update ) {
 
 	// No post revisions
-	if ( wp_is_post_revision( $post_id ) )
+	if ( wp_is_post_revision( $post_id ) ) {
 		return;
+	}
 
 	// Get post types that need to have read time applied
 	$calculate_for_posts = apply_filters( 'read_time_types', array( 'post' ) );
 
 	// If the post type is not found then return
-	if ( ! in_array( $post->post_type, $calculate_for_posts ) )
+	if ( ! in_array( $post->post_type, $calculate_for_posts ) ) {
 		return;
+	}
 
 	// Average words per minute integer.
 	$average_word_per_minute = apply_filters( 'read_time_average', 275 );
@@ -81,5 +83,5 @@ function get_the_read_time( $post_id = null ) {
 	// Converts read time seconds into minutes
 	$converted_readtime = 0 == $read_time ? '~1' : round( $read_time / 60 );
 
-	return sprintf( esc_html__( 'Read Time: %s Min', 'helphub' ), $converted_readtime );
+	return sprintf( esc_html__( 'Reading Time: %s Min', 'helphub' ), $converted_readtime );
 }
