@@ -12,7 +12,7 @@
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 // Adds the read time hook when saving a post
-add_action( 'save_post', 'hh_calulate_and_update_post_read_time', 10, 3 );
+add_action( 'save_post', 'hh_calculate_and_update_post_read_time', 10, 3 );
 
 /**
  * Calculates the read time of a post when created or updated.
@@ -21,7 +21,7 @@ add_action( 'save_post', 'hh_calulate_and_update_post_read_time', 10, 3 );
  * @param  boolean 	$update  Is this an update or new.
  * @return void
  */
-function hh_calulate_and_update_post_read_time( $post_id, $post, $update ) {
+function hh_calculate_and_update_post_read_time( $post_id, $post, $update ) {
 
 	// No post revisions
 	if ( wp_is_post_revision( $post_id ) ) {
