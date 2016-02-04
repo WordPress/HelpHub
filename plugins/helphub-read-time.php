@@ -78,10 +78,10 @@ function hh_get_readtime( $post_id ) {
  * Echo's the reading time for a given post
  *
  * @example
- * <?php echo hh_the_read_time(); ?>
+ * <?php hh_the_read_time(); ?>
  *
  * @example
- * <?php echo hh_the_read_time( $post->ID ); ?>
+ * <?php hh_the_read_time( $post->ID ); ?>
  * 
  * @param  int $post_id 	[description]
  * @return string         [description]
