@@ -45,3 +45,4 @@ The following people are active developers on the project and are all listed as 
 | Jonathan Bossenger 	| jonathanbossenger 	| jon_bossenger  	|
 | Rachel Whitton     	| Rachelwhitton     	| rachelwhitton  	|
 | Jay Hoffmann       	| JasonHoffmann     	| jayhoffmann    	|
+| Carl Alberto        | carl-alberto        | carlalberto     |
