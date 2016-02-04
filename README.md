@@ -24,6 +24,8 @@ Any fixes that do not qualify as new features are to done in individual branches
 
 As this is a WordPress community project, all development must have a strong committment to accessibility and responsive design. We will also be following the [WordPress coding standards](https://codex.wordpress.org/WordPress_Coding_Standards) throughout the project.
 
+Given that we will ultimately need to localise the whole site for different languages, please use `helphub` as the text domain for all text strings.
+
 ### Design guidelines
 
 See the [HelpHub wireframes](https://wp-commhub.mybalsamiq.com/projects/helphub/grid) for a guide on the design and layout of the project and note that all design must be consistent with the rest of [WordPress.org](https://wordpress.org/).
