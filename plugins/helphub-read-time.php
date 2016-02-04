@@ -66,15 +66,10 @@ function hh_calculate_and_update_post_read_time( $post_id, $post, $update ) {
  * @return string         (string) g containing a converted read time into minutes.
  */
 function hh_get_readtime( $post_id ) {
-	if ( ! is_numeric( $post_id ) ) {
-  	return false;
-  }
-
-	$post_id = absint( $post_id );
-	if( ! $post_id ) {
-		global $post;
+	if ( is_null( $post_id ) || ! is_numeric( $post_id ) ) {
+  	global $post;
 		$post_id = $post->ID;
-	} 
+  }
 
 	return get_post_meta( $post_id, '_read_time', true );
 }
@@ -108,13 +103,13 @@ function hh_the_read_time( $post_id = null ) {
  * @return string         [description]
  */
 function hh_get_the_read_time( $post_id = null) {
-	$hh_reading_time = hh_get_the_read_time( $post_id );
+	$hh_reading_time = hh_get_readtime( $post_id );
+
+	// Filter the time before it is converted
+	$read_time = apply_filters( 'hh_post_read_time_' . $post_id , $hh_reading_time );
 
 	// Convert reading time to minutes
 	$reading_time == 0 ? '1' : (string) round( $read_time / 60 );
-	
-	// Filter the converted reading time
-	$read_time = apply_filters( 'hh_converted_read_time', $reading_time );
 
-	return sprintf( _n( 'Reading Time: %s Minute','Reading Time: %s Minutes', $read_time, 'helphub' ), $read_time );
+	return sprintf( _n( 'Reading Time: %s Minute','Reading Time: %s Minutes', $reading_time, 'helphub' ), $reading_time );
 }
