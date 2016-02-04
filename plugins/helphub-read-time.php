@@ -58,30 +58,63 @@ function hh_calculate_and_update_post_read_time( $post_id, $post, $update ) {
 }
 
 /**
- * Returns an output of read time for a given post. 
+ * Returns the value of read time for a given post. 
  *
- * get_the_read_time can be ran inside the loop or can be called using a post ID.
- * The function tries to default to the global post if there is not Post ID provided.
- *
- * @example 
- * <?php echo get_the_read_time(); ?>
- * 
- * @example
- * <?php echo get_the_read_time( $post->ID );
+ * @access private
  * 
  * @param  int $post_id   ID of post to lookup
- * @return string         A formatted string containing a converted read time into minutes.
+ * @return string         (string) g containing a converted read time into minutes.
  */
-function get_the_read_time( $post_id = null ) {
-	if( is_null( $post_id ) ) {
+function hh_get_readtime( $post_id ) {
+	if ( ! is_numeric( $post_id ) ) {
+  	return false;
+  }
+
+	$post_id = absint( $post_id );
+	if( ! $post_id ) {
 		global $post;
 		$post_id = $post->ID;
 	} 
 
-	$read_time = get_post_meta( $post_id, '_read_time', true );
+	return get_post_meta( $post_id, '_read_time', true );
+}
 
-	// Converts read time seconds into minutes
-	$converted_readtime = $reading_time == 0 ? '1' : round( $read_time / 60 );
+/**
+ * Echo's the reading time for a given post
+ *
+ * @example
+ * <?php echo hh_the_read_time(); ?>
+ *
+ * @example
+ * <?php echo hh_the_read_time( $post->ID ); ?>
+ * 
+ * @param  int $post_id 	[description]
+ * @return string         [description]
+ */
+function hh_the_read_time( $post_id = null ) {
+	echo hh_get_the_read_time( $post_id );
+}
 
-	return sprintf( _n( 'Reading Time: %s Minute','Reading Time: %s Minutes', $converted_readtime, 'helphub' ), $converted_readtime );
+/**
+ * Returns the reading time for a given post
+ *
+ * @example
+ * <?php echo hh_get_the_read_time(); ?>
+ *
+ * @example
+ * <?php echo hh_get_the_read_time( $post->ID ); ?>
+ * 
+ * @param  int $post_id 	[description]
+ * @return string         [description]
+ */
+function hh_get_the_read_time( $post_id = null) {
+	$hh_reading_time = hh_get_the_read_time( $post_id );
+
+	// Convert reading time to minutes
+	$reading_time == 0 ? '1' : (string) round( $read_time / 60 );
+	
+	// Filter the converted reading time
+	$read_time = apply_filters( 'hh_converted_read_time', $reading_time );
+
+	return sprintf( _n( 'Reading Time: %s Minute','Reading Time: %s Minutes', $read_time, 'helphub' ), $read_time );
 }
