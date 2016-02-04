@@ -69,7 +69,7 @@ function hh_get_readtime( $post_id ) {
 	if ( is_null( $post_id ) || ! is_numeric( $post_id ) ) {
   	global $post;
 		$post_id = $post->ID;
-  }
+	}
 
 	return get_post_meta( $post_id, '_read_time', true );
 }
