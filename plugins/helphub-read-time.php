@@ -109,7 +109,7 @@ function hh_get_the_read_time( $post_id = null) {
 	$read_time = apply_filters( 'hh_post_read_time_' . $post_id , $hh_reading_time );
 
 	// Convert reading time to minutes
-	$reading_time == 0 ? '1' : (string) round( $read_time / 60 );
+	$reading_time = $read_time == 0 ? '1' : (string) round( $read_time / 60 );
 
 	return sprintf( _n( 'Reading Time: %s Minute','Reading Time: %s Minutes', $reading_time, 'helphub' ), $reading_time );
 }
