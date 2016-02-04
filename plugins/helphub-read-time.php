@@ -68,7 +68,7 @@ function hh_calculate_and_update_post_read_time( $post_id, $post, $update ) {
 function hh_get_readtime( $post_id ) {
 	if ( is_null( $post_id ) || ! is_numeric( $post_id ) ) {
   	global $post;
-		$post_id = $post->ID;
+  	$post_id = $post->ID;
 	}
 
 	return get_post_meta( $post_id, '_read_time', true );
