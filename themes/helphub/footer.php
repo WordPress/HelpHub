@@ -12,13 +12,23 @@
 ?>
 
 	</div><!-- #content -->
-
+	<div class="helphub-footerarea">
+		<div class="wrapper">
+			<h2 class="helphub-footerarea-title">Join the Conversation and Learn More</h2>
+			<div class="helphub-footerarea1">
+				<h3 class="helphub-footerarea-title">WordPress Forums</h3>
+				<div class="helphub-footerarea-body">Join the broader WordPress community via the online Forums. You can ask questions or offer answers to other users' questions.</div>
+				<button>Ask a question</button>
+			</div>
+			<div class="helphub-footerarea2">
+				<h3 class="helphub-footerarea-title">WordPress Documentation</h3>
+				<div class="helphub-footerarea-body">Read the WordPress documentation to get started with WordPress and complete quick tutorials.</div>
+				<button>View documentation</button>
+			</div>
+		</div>	
+	</div>			
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'helphub' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'helphub' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'helphub' ), 'helphub', '<a href="https://make.wordpress.org/docs/" rel="designer">The HelpHub team</a>' ); ?>
-		</div><!-- .site-info -->
+		<?php require WPORGPATH . 'footer.php'; ?>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
