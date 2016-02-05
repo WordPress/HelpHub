@@ -106,7 +106,7 @@ function hh_get_the_read_time( $post_id = null) {
 	$hh_reading_time = hh_get_readtime( $post_id );
 
 	// Filter the time before it is converted
-	$read_time = apply_filters( 'hh_post_read_time_' . $post_id , $hh_reading_time );
+	$read_time = apply_filters( 'hh_post_read_time', $hh_reading_time,  $post_id  );
 
 	// Convert reading time to minutes
 	$reading_time = $read_time == 0 ? '1' : (string) round( $read_time / 60 );
