@@ -48,7 +48,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Normalize
 --------------------------------------------------------------*/
 html {
-	font-family: sans-serif;
+	font-family: "Open Sans", Helvetica, Arial, "Liberation Sans", sans-serif;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust:     100%;
 }
@@ -905,6 +905,84 @@ object {
 }
 
 /*--------------------------------------------------------------
+## Main Home Page Style
+--------------------------------------------------------------*/
+
+#main {
+	max-width: 932px;
+    margin: 0 auto;
+    clear: both;
+    overflow: hidden;
+}
+
+h1.site-main-title {
+    font-size: 5em;
+    line-height: 2em;
+    text-align: center;
+    color: #073763;
+    font-weight: 900;	
+}
+
+.helphub-search-box {
+	width: 40%;
+	margin: 2em auto;
+}
+
+.helphub-search-btn {
+    width: 28%;
+    margin: 0 auto;
+}		
+
+.helphub-search-box input#helphub-search {
+    width: 100%;
+    text-align: center;
+    border-radius: 6px;
+    text-align: left;
+    color: #fff;
+	font-size: 2em;
+    height: 32px;	
+}
+
+.helphub-search-btn button {
+	text-align: center;
+	margin: 0 auto;
+	width: 100%;
+	border-radius: 6px;
+	box-shadow: none;
+	border: none;
+	background: #073763;
+	color: #fff;
+	font-size: 2em;
+	line-height: 2em;	
+}
+
+.main-search-area {
+	margin-bottom: 6%;
+}
+
+h3.main-widget-box-title {
+	font-size: 2em;
+	color: #073763;
+}
+
+.main-widget-box {
+	width: 27%;
+	background: whitesmoke;
+	float: left;
+	border-radius: 10px;
+	padding: 2%;
+	margin: 1%;
+	border: 1px solid #CCCCCC;
+}
+
+.main-widget-box ul {
+	list-style: none;	
+	font-size: 1.2em;
+	line-height: 1.4em;
+}
+
+
+/*--------------------------------------------------------------
 ## Footer Style
 --------------------------------------------------------------*/
 
@@ -1016,10 +1094,25 @@ h2.helphub-footerarea-title {
     color: #cccccc;
 }
 
+aside#secondary {
+	background: #073763;
+	padding: 2%;
+}
+
+aside#secondary h2.widget-title {
+	color: #fff;
+}
+
 @media (max-width:768px) {
 	.helphub-footerarea .helphub-footerarea1, .helphub-footerarea .helphub-footerarea2 {
 		width:100%;
 		text-align: center;
 		margin-top: 4%;
+		padding-left: 1%;
+		padding-right: 1%;
+	}
+	
+	.helphub-footerarea1 {
+		border: none;
 	}
 }
