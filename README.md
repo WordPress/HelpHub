@@ -6,7 +6,13 @@ HelpHub is going to be the new portal for all WordPress user documentation that 
 
 You can get involved in development (or any other aspect of the project) by attending our weekly meetings in the #docs channel of [the Making WordPress Slack](https://make.wordpress.org/chat/) every Tuesday at 14:00 UTC.
 
-To use this repo, simply create a new WordPress site on your local machine (using whatever development environment suits you), then empty out the `wp-content` folder and clone this repo into it.
+## How to use this repo
+
+To use this repo, simply create a new WordPress site on your local machine (using whatever development environment suits you), then empty out the `wp-content` folder and clone this repo into it. You will also need to add the following line to your site's `wp-config.php` file:
+
+```
+define( 'WPORGPATH', 'https://wordpress.org/' );
+```
 
 ## Workflow
 
