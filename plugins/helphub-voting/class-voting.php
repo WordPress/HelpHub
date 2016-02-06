@@ -69,12 +69,13 @@ class Helphub_Posts_Voting {
                         && isset( $_REQUEST['_wpnonce'] ) && wp_verify_nonce( $_REQUEST['_wpnonce'], 'helphub-vote-' . $_REQUEST['post'] )
                         && self::user_can_vote( get_current_user_id(), $_REQUEST['post'] )
                 ) {
-                        self::vote_up( (int) $_REQUEST['post'], get_current_user_id() );
-                        // // Redirect user back to comment unless this was an AJAX request.
-                        // if ( ! isset( $_REQUEST['is_ajax'] ) ) {
-                        //         wp_redirect( get_comment_link( $_REQUEST['comment'] ) );
-                        //         exit();
-                        // }
+                        $success = self::vote_up( (int) $_REQUEST['post'], get_current_user_id() );
+
+
+                        if ( ! isset( $_REQUEST['is_ajax'] ) ) {
+                            wp_redirect( get_permalink( $_REQUEST['post'] ) );
+                            exit();
+                        }
                 }
                 return $success;
         }
@@ -87,14 +88,15 @@ class Helphub_Posts_Voting {
          * @return int|string Returns 0 on error or no change; else the markup to be used to replace .user-note-voting
          */
         public static function ajax_vote_submission() {
-                check_ajax_referer( 'user-note-vote-' . $_POST['comment'], $_POST['_wpnonce'] );
+                check_ajax_referer( 'helphub-vote-' . $_POST['post'], $_POST['_wpnonce'] );
                 $_REQUEST['is_ajax'] = true;
                 // If voting succeeded and resulted in a change, send back full replacement
                 // markup.
                 if ( self::vote_submission( false ) ) {
-                        self::show_voting( (int) $_POST['comment'] );
+                        self::show_voting( (int) $_POST['post'] );
                         die();
                 }
+                
                 die( 0 );
         }
 
@@ -206,20 +208,19 @@ class Helphub_Posts_Voting {
                         $tag = 'span';
                 }
                 echo "<{$tag} "
-                        . 'class="user-note-voting-up' . ( $user_upvoted ? ' user-voted' : '' )
+                        . 'class="helphub-vote ' . ( $user_upvoted ? ' user-voted' : '' )
                         . '" title="' . esc_attr( $title )
                         . '" data-id="' . esc_attr( $post_id )
                         . '" data-vote="up';
-                if ( ! $user_upvoted ) {
                         echo '" href="'
-                                . esc_url( add_query_arg( array( '_wpnonce' => $nonce , 'post' => $post_id, 'vote' => 'up' ), $comment_link ) );
-                }
+                                . esc_url( add_query_arg( array( '_wpnonce' => $nonce , 'post' => $post_id, 'vote' => 'true' ), get_permalink( $post_id ) ) );
                 echo '">';
-                echo '<span class="dashicons dashicons-thumbs-up"></span>';
+                echo '<span class="dashicons dashicons-thumbs-up"></span> ';
                 
                 // Total count
                 echo sprintf( __( '%s found this useful', 'wporg' ), self::count_votes( $post_id ) );
                 echo "</{$tag}>";
+                echo '</div>';
         }
 
         /**
