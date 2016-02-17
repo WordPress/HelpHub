@@ -33,9 +33,6 @@ function hh_calculate_and_update_post_read_time( $post_id, $post, $update ) {
 		return;
 	}
 
-	// Allows future check along with full over rides to the function
-	do_action( 'hh_before_update_post_read_time' );
-
 	// Get post types that need to have read time applied
 	$calculate_for_posts = apply_filters( 'read_time_types', array( 'post' ) );
 
