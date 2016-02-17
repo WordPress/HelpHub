@@ -63,12 +63,12 @@ function hh_calculate_and_update_post_read_time( $post_id, $post, $update ) {
 }
 
 /**
- * Returns the value of read time for a given post. 
+ * Returns the raw value of post meta "read time" for a given post. 
  *
  * @access private
  * 
- * @param  int $post_id   ID of post to lookup
- * @return string         (string) g containing a converted read time into minutes.
+ * @param  int $post_id   ID of post to retrieve read time for
+ * @return string|int     Raw value of read time
  */
 function hh_get_readtime( $post_id ) {
 	if ( is_null( $post_id ) || ! is_numeric( $post_id ) ) {
@@ -88,7 +88,7 @@ function hh_get_readtime( $post_id ) {
  * @example
  * <?php hh_the_read_time( $post->ID ); ?>
  * 
- * @param  int $post_id 	[description]
+ * @param  int $post_id 	ID of post to retrieve read time for
  * @return Void
  */
 function hh_the_read_time( $post_id = null ) {
@@ -104,8 +104,8 @@ function hh_the_read_time( $post_id = null ) {
  * @example
  * <?php echo hh_get_the_read_time( $post->ID ); ?>
  * 
- * @param  int $post_id 	[description]
- * @return string         [description]
+ * @param  int $post_id 	ID of post to retrieve read time for
+ * @return string 			Formated string provided read time text.
  */
 function hh_get_the_read_time( $post_id = null) {
 	$hh_reading_time = hh_get_readtime( $post_id );
