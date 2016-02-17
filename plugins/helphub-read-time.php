@@ -28,15 +28,14 @@ function hh_calculate_and_update_post_read_time( $post_id, $post, $update ) {
 		return;
 	}
 
-	// Check the post nonce .. NEEDS Jon's COMMIT BEFORE CONTIUING
-	if( ! isset( $_REQUEST['_wpnonce'] ) ) {
-		wp_die('Something went wrong. Nonce Failed to verify');
-	}
-
 	// No post revisions
 	if ( wp_is_post_revision( $post_id ) ) {
 		return;
 	}
+
+	// Allows extensions to hook into the plugin while keeping the plugin
+	// universal.
+	do_action( 'hh_before_update_post_read_time' );
 
 	// Get post types that need to have read time applied
 	$calculate_for_posts = apply_filters( 'read_time_types', array( 'post' ) );
