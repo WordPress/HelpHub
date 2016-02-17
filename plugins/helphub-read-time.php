@@ -23,6 +23,11 @@ add_action( 'save_post', 'hh_calculate_and_update_post_read_time', 10, 3 );
  */
 function hh_calculate_and_update_post_read_time( $post_id, $post, $update ) {
 
+	// Only those allowed
+	if ( ! current_user_can( 'edit_posts' ) ) {
+		return;
+	}
+
 	// No post revisions
 	if ( wp_is_post_revision( $post_id ) ) {
 		return;
