@@ -89,7 +89,7 @@ function hh_get_readtime( $post_id ) {
  * <?php hh_the_read_time( $post->ID ); ?>
  * 
  * @param  int $post_id 	[description]
- * @return string         [description]
+ * @return Void
  */
 function hh_the_read_time( $post_id = null ) {
 	echo hh_get_the_read_time( $post_id );
