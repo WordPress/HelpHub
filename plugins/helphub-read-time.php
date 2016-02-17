@@ -33,8 +33,7 @@ function hh_calculate_and_update_post_read_time( $post_id, $post, $update ) {
 		return;
 	}
 
-	// Allows extensions to hook into the plugin while keeping the plugin
-	// universal.
+	// Allows future check along with full over rides to the function
 	do_action( 'hh_before_update_post_read_time' );
 
 	// Get post types that need to have read time applied
