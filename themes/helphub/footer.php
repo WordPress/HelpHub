@@ -11,7 +11,8 @@
 
 ?>
 
-	</div><!-- #content -->
+		</div><!-- #content -->
+	</div><!-- #content wrapper -->	
 	<div class="helphub-footerarea">
 		<div class="wrapper">
 			<h2 class="helphub-footerarea-title">Join the Conversation and Learn More</h2>
