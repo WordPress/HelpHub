@@ -905,6 +905,88 @@ object {
 }
 
 /*--------------------------------------------------------------
+## Main Home Page Style
+--------------------------------------------------------------*/
+
+#main {
+	max-width: 932px;
+    margin: 0 auto;
+    clear: both;
+    overflow: hidden;
+}
+
+h1.site-main-title {
+    font-size: 5em;
+    line-height: 2em;
+    text-align: center;
+    color: #073763;
+    font-weight: 900;	
+}
+
+.helphub-search-box {
+	width: 40%;
+	margin: 2em auto;
+}
+
+.helphub-search-btn {
+    width: 28%;
+    margin: 0 auto;
+}		
+
+.helphub-search-box input#helphub-search {
+    width: 100%;
+    text-align: center;
+    border-radius: 6px;
+    text-align: left;
+    color: #fff;
+	font-size: 2em;
+    height: 32px;	
+}
+
+.helphub-search-btn button {
+	text-align: center;
+	margin: 0 auto;
+	width: 100%;
+	border-radius: 6px;
+	box-shadow: none;
+	border: none;
+	background: #073763;
+	color: #fff;
+	font-size: 2em;
+	line-height: 2em;	
+}
+
+.main-search-area {
+	margin-bottom: 6%;
+}
+
+h3.main-widget-box-title {
+	font-size: 2em;
+	color: #073763;
+}
+
+.main-widget-box {
+	width: 27%;
+	background: whitesmoke;
+	float: left;
+	border-radius: 10px;
+	padding: 2%;
+	margin: 1%;
+	border: 1px solid #CCCCCC;
+}
+
+.main-widget-box ul {
+	list-style: none;	
+	font-size: 1.2em;
+	line-height: 1.4em;
+}
+
+.main-widget-box.col-3 {
+	width: 26%;
+	margin-bottom: 2%;
+}
+
+/*--------------------------------------------------------------
 ## Footer Style
 --------------------------------------------------------------*/
 
@@ -1021,5 +1103,13 @@ h2.helphub-footerarea-title {
 		width:100%;
 		text-align: center;
 		margin-top: 4%;
+	}
+	
+	.main-widget-box.col-3 {
+		width: 94%;
+		margin-left: 1%;
+		margin-right: 1%;
+		margin-bottom: 2%;
+
 	}
 }

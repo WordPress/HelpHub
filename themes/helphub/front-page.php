@@ -30,7 +30,7 @@ get_header(); ?>
 			</div>
 			<div class="main-widget-area">
 				<?php for ($x=0; $x < 6; $x++) { ?> 
-					<div class="main-widget-box col-4">
+					<div class="main-widget-box col-3">
 						<h3 class="main-widget-box-title">Installing Wordpress</h3>
 						<ul>
 							<li>Topic 1</li>
