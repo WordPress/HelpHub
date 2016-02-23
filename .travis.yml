@@ -45,11 +45,11 @@ script:
     # Search theme for PHP syntax errors.
     - find . \( -name '*.php' \) -exec php -lf {} \;
     # PHPCS WordPress Coding Standards
-    - ../php-codesniffer/scripts/phpcs -p -s -v -n . --standard=./phpcs.ruleset.xml --extensions=php
+    - ../php-codesniffer/scripts/phpcs -p -s -v -n . --standard=../phpcs.ruleset.xml --extensions=php
     # Change to the plugins folder
     - cd .. && cd plugins
     # Search theme for PHP syntax errors.
     - find . \( -name '*.php' \) -exec php -lf {} \;
     # PHPCS WordPress Coding Standards
-    - ../php-codesniffer/scripts/phpcs -p -s -v -n . --standard=./phpcs.ruleset.xml --extensions=php
+    - ../php-codesniffer/scripts/phpcs -p -s -v -n . --standard=../phpcs.ruleset.xml --extensions=php
 
