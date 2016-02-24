@@ -1,5 +1,6 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly.
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Helphub Post Types Taxonomy Class
@@ -15,6 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly.
 class HelpHub_Post_Types_Taxonomy {
 	/**
 	 * The post type to register the taxonomy for.
+	 *
 	 * @access  private
 	 * @since   1.3.0
 	 * @var     string
@@ -23,6 +25,7 @@ class HelpHub_Post_Types_Taxonomy {
 
 	/**
 	 * The key of the taxonomy.
+	 *
 	 * @access  private
 	 * @since   1.3.0
 	 * @var     string
@@ -31,6 +34,7 @@ class HelpHub_Post_Types_Taxonomy {
 
 	/**
 	 * The singular name for the taxonomy.
+	 *
 	 * @access  private
 	 * @since   1.3.0
 	 * @var     string
@@ -39,6 +43,7 @@ class HelpHub_Post_Types_Taxonomy {
 
 	/**
 	 * The plural name for the taxonomy.
+	 *
 	 * @access  private
 	 * @since   1.3.0
 	 * @var     string
@@ -47,6 +52,7 @@ class HelpHub_Post_Types_Taxonomy {
 
 	/**
 	 * The arguments to use when registering the taxonomy.
+	 *
 	 * @access  private
 	 * @since   1.3.0
 	 * @var     string
@@ -55,6 +61,7 @@ class HelpHub_Post_Types_Taxonomy {
 
 	/**
 	 * Class constructor.
+	 *
 	 * @access  public
 	 * @since   1.3.0
 	 * @param   string $post_type The post type key.
@@ -63,7 +70,7 @@ class HelpHub_Post_Types_Taxonomy {
 	 * @param   string $plural    Plural  name.
 	 * @param   array  $args      Array of argument overrides.
 	 */
-	public function __construct ( $post_type = 'thing', $token = 'thing-category', $singular = '', $plural = '', $args = array() ) {
+	public function __construct( $post_type = 'thing', $token = 'thing-category', $singular = '', $plural = '', $args = array() ) {
 		$this->post_type = $post_type;
 		$this->token = esc_attr( $token );
 		$this->singular = esc_html( $singular );
@@ -73,17 +80,18 @@ class HelpHub_Post_Types_Taxonomy {
 		if ( '' == $this->plural ) $this->plural = __( 'Categories', 'helphub' );
 
 		$this->args = wp_parse_args( $args, $this->_get_default_args() );
-		
+
 		add_action( 'init', array( $this, 'register' ) );
 	} // End __construct()
 
 	/**
 	 * Return an array of default arguments.
+	 *
 	 * @access  private
 	 * @since   1.3.0
 	 * @return  array Default arguments.
 	 */
-	private function _get_default_args () {
+	private function _get_default_args() {
 		return array(
 			'labels'                => $this->_get_default_labels(),
 			'public'                => true,
@@ -93,17 +101,18 @@ class HelpHub_Post_Types_Taxonomy {
 			'query_var'             => true,
 			'show_in_nav_menus'     => false,
 			'show_tagcloud'         => false,
-			'rewrite'               => array( 'slug' => str_replace( 'helphub_', '', esc_attr( $this->token ) ) )
+			'rewrite'               => array( 'slug' => str_replace( 'helphub_', '', esc_attr( $this->token ) ) ),
 		);
 	} // End _get_default_args()
 
 	/**
 	 * Return an array of default labels.
+	 *
 	 * @access  private
 	 * @since   1.3.0
 	 * @return  array Default labels.
 	 */
-	private function _get_default_labels () {
+	private function _get_default_labels() {
 		return array(
 			    'name'                => sprintf( _x( '%s', 'taxonomy general name', 'helphub' ), $this->plural ),
 			    'singular_name'       => sprintf( _x( '%s', 'taxonomy singular name', 'helphub' ), $this->singular ),
@@ -115,17 +124,18 @@ class HelpHub_Post_Types_Taxonomy {
 			    'update_item'         => sprintf( __( 'Update %s', 'helphub' ), $this->singular ),
 			    'add_new_item'        => sprintf( __( 'Add New %s', 'helphub' ), $this->singular ),
 			    'new_item_name'       => sprintf( __( 'New %s Name', 'helphub' ), $this->singular ),
-			    'menu_name'           => sprintf( __( '%s', 'helphub' ), $this->plural )
+			    'menu_name'           => sprintf( __( '%s', 'helphub' ), $this->plural ),
 			  );
 	} // End _get_default_labels()
 
 	/**
 	 * Register the taxonomy.
+	 *
 	 * @access  public
 	 * @since   1.3.0
 	 * @return  void
 	 */
-	public function register () {
-		register_taxonomy( esc_attr( $this->token ), esc_attr( $this->post_type ), (array)$this->args );
+	public function register() {
+		register_taxonomy( esc_attr( $this->token ), esc_attr( $this->post_type ), (array) $this->args );
 	} // End register()
 } // End Class
