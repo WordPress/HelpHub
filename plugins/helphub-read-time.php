@@ -23,6 +23,11 @@ add_action( 'save_post', 'hh_calculate_and_update_post_read_time', 10, 3 );
  */
 function hh_calculate_and_update_post_read_time( $post_id, $post, $update ) {
 
+	// Only those allowed
+	if ( ! current_user_can( 'edit_posts', $post_id ) ) {
+		return;
+	}
+
 	// No post revisions
 	if ( wp_is_post_revision( $post_id ) ) {
 		return;
@@ -58,12 +63,12 @@ function hh_calculate_and_update_post_read_time( $post_id, $post, $update ) {
 }
 
 /**
- * Returns the value of read time for a given post. 
+ * Returns the raw value of post meta "read time" for a given post. 
  *
  * @access private
  * 
- * @param  int $post_id   ID of post to lookup
- * @return string         (string) g containing a converted read time into minutes.
+ * @param  int $post_id   ID of post to retrieve read time for
+ * @return string|int     Raw value of read time
  */
 function hh_get_readtime( $post_id ) {
 	if ( is_null( $post_id ) || ! is_numeric( $post_id ) ) {
@@ -83,8 +88,8 @@ function hh_get_readtime( $post_id ) {
  * @example
  * <?php hh_the_read_time( $post->ID ); ?>
  * 
- * @param  int $post_id 	[description]
- * @return string         [description]
+ * @param  int $post_id 	ID of post to retrieve read time for
+ * @return Void
  */
 function hh_the_read_time( $post_id = null ) {
 	echo hh_get_the_read_time( $post_id );
@@ -99,8 +104,8 @@ function hh_the_read_time( $post_id = null ) {
  * @example
  * <?php echo hh_get_the_read_time( $post->ID ); ?>
  * 
- * @param  int $post_id 	[description]
- * @return string         [description]
+ * @param  int $post_id 	ID of post to retrieve read time for
+ * @return string 			Formated string provided read time text.
  */
 function hh_get_the_read_time( $post_id = null) {
 	$hh_reading_time = hh_get_readtime( $post_id );
@@ -109,7 +114,7 @@ function hh_get_the_read_time( $post_id = null) {
 	$read_time = apply_filters( 'hh_post_read_time', $hh_reading_time,  $post_id  );
 
 	// Convert reading time to minutes
-	$reading_time = $read_time == 0 ? '1' : (string) round( $read_time / 60 );
+	$reading_time = (int) $read_time < 60 ? '1' : (string) round( $read_time / 60 );
 
 	return sprintf( _n( 'Reading Time: %s Minute','Reading Time: %s Minutes', $reading_time, 'helphub' ), $reading_time );
 }
