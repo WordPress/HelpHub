@@ -14,6 +14,7 @@ get_header(); ?>
 
 		<?php
 		while ( have_posts() ) : the_post();
+		show_voting();
 
 			get_template_part( 'template-parts/content', get_post_format() );
 

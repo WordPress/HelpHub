@@ -10,12 +10,20 @@
 
 class Helphub_Posts_Voting {
         /**
-         * Stores a list of User IDs for all users that have submitted a vote
+         * Stores a list of User IDs for all users that have submitted a upvote
          *
          * @var array
          * @access public
          */
         public static $meta_upvotes = 'helphub_up_votes';
+
+        /**
+         * Stores a list of User IDs for all users that have submitted a downvote
+         *
+         * @var array
+         * @access public
+         */
+        public static $meta_downvotes = 'helphub_down_votes';
 
         /**
          * Initializer
@@ -69,7 +77,9 @@ class Helphub_Posts_Voting {
                         && isset( $_REQUEST['_wpnonce'] ) && wp_verify_nonce( $_REQUEST['_wpnonce'], 'helphub-vote-' . $_REQUEST['post'] )
                         && self::user_can_vote( get_current_user_id(), $_REQUEST['post'] )
                 ) {
-                        $success = self::vote_up( (int) $_REQUEST['post'], get_current_user_id() );
+                        $success = ( $_REQUEST['vote'] === 'down' ) ? 
+                            self::vote_down( (int) $_REQUEST['post'], get_current_user_id() ) :
+                            self::vote_up( (int) $_REQUEST['post'], get_current_user_id() );
 
 
                         if ( ! isset( $_REQUEST['is_ajax'] ) ) {
@@ -109,7 +119,21 @@ class Helphub_Posts_Voting {
          * @return array
          */
         public static function get_post_upvotes( $post_id ) {
-                return self::get_post_votes( $post_id, self::$meta_upvotes );
+                $up = self::get_post_votes( $post_id, self::$meta_upvotes );
+                return $up;
+        }
+
+        /**
+         * Returns the list of downvotes for a post.
+         *
+         * @access public
+         *
+         * @param  int $post_id The post ID.
+         * @return array
+         */
+        public static function get_post_downvotes( $post_id ) {
+                $down = self::get_post_votes( $post_id, self::$meta_downvotes );
+                return $down;
         }
 
         /**
@@ -179,6 +203,28 @@ class Helphub_Posts_Voting {
         }
 
         /**
+         * Has user upvoted the article?
+         *
+         * @access public
+         *
+         * @param  int    $post_id The post ID
+         * @param  int    $user_id    Optional. The user ID. If not defined, assumes current user.
+         * @return bool   True if the user has upvoted the post.
+         */
+        public static function has_user_downvoted_post( $post_id, $user_id = '' ) {
+                // If no user specified, assume current user.
+                if ( ! $user_id ) {
+                        $user_id = get_current_user_id();
+                }
+                // Must be logged in to have voted.
+                if ( ! $user_id ) {
+                        return false;
+                }
+                $downvotes = self::get_post_downvotes( $post_id );
+                return in_array( $user_id, $downvotes );
+        }
+
+        /**
          * Outputs the voting markup for an article.
          * Displays up vote alongside a thumbs up.
          *
@@ -196,6 +242,7 @@ class Helphub_Posts_Voting {
                 echo '<div class="helphub-voting" data-nonce="' . esc_attr( $nonce ) . '">';
                 // Up vote link
                 $user_upvoted = self::has_user_upvoted_post( $post_id );
+                var_dump($user_upvoted);
                 if ( $can_vote ) {
                         $title = $user_upvoted ?
                                 __( 'You have voted to indicate this article was helpful', 'helphub' ) :
@@ -216,6 +263,28 @@ class Helphub_Posts_Voting {
                                 . esc_url( add_query_arg( array( '_wpnonce' => $nonce , 'post' => $post_id, 'vote' => 'true' ), get_permalink( $post_id ) ) );
                 echo '">';
                 echo '<span class="dashicons dashicons-thumbs-up"></span> ';
+
+                $user_downvoted = self::has_user_downvoted_post( $post_id );
+                if ( $can_vote ) {
+                        $title = $user_downvoted ?
+                                __( 'You have voted to indicate this article was helpful', 'helphub' ) :
+                                __( 'Was this article useful?', 'helphub' );
+                        $tag = 'a';
+                } else {
+                        $title = ! is_user_logged_in() ?
+                                __( 'You must log in to vote if this article was helpful', 'helphub' ) :
+                                '';
+                        $tag = 'span';
+                }
+                echo "<{$tag} "
+                        . 'class="helphub-vote ' . ( $user_downvoted ? ' user-voted' : '' )
+                        . '" title="' . esc_attr( $title )
+                        . '" data-id="' . esc_attr( $post_id )
+                        . '" data-vote="down';
+                        echo '" href="'
+                                . esc_url( add_query_arg( array( '_wpnonce' => $nonce , 'post' => $post_id, 'vote' => 'true' ), get_permalink( $post_id ) ) );
+                echo '">';
+                echo '<span class="dashicons dashicons-thumbs-down"></span> ';
                 
                 // Total count
                 echo sprintf( __( '%s found this useful', 'wporg' ), self::count_votes( $post_id ) );
@@ -231,10 +300,26 @@ class Helphub_Posts_Voting {
          * @param  int    $post_id The post ID
          * @return int    The requested count.
          */
-        public static function count_votes( $post_id ) {
-                $up = count( self::get_post_upvotes( $post_id ) );
+        public static function count_votes( $post_id, $type = 'difference' ) {
+            if( $type != 'down' ) {
+                 $up = count( self::get_post_upvotes( $post_id ) );
+            }
 
-                return $up;
+            if( $type != 'up' ) {
+                $down = count( self::get_post_downvotes( $post_id ) );
+            }
+                
+
+            switch( $type ) {
+                case 'up' :
+                    return $up;
+                case 'down' :
+                    return $down;
+                case 'total' :
+                    return $up + $down;
+                case 'difference' :
+                    return $up - $down;
+            }
         }
 
         /**
@@ -248,6 +333,19 @@ class Helphub_Posts_Voting {
          */
         public static function vote_up( $post_id, $user_id = '' ) {
                 return self::vote_handler( $post_id, $user_id, 'up' );
+        }
+
+        /**
+         * Records a down vote.
+         *
+         * @access public
+         *
+         * @param  int  $post_id    The post ID
+         * @param  int  $user_id    Optional. The user ID. Default is current user.
+         * @return bool Whether the up vote succeed (a new vote or a change in vote).
+         */
+        public static function vote_down( $post_id, $user_id = '' ) {
+                return self::vote_handler( $post_id, $user_id, 'down' );
         }
 
         /**
@@ -270,21 +368,44 @@ class Helphub_Posts_Voting {
                         return false;
                 }
 
-                // Add to total vote count
-                $add_to      = self::$meta_upvotes;
+                $upvote_list = get_post_meta( $post_id, self::$meta_upvotes ) ? 
+                                    get_post_meta( $post_id, self::$meta_upvotes, true ) :
+                                    array();
+                $downvote_list = get_post_meta( $post_id, self::$meta_downvotes ) ?
+                                    get_post_meta( $post_id, self::$meta_downvotes, true) :
+                                    array();
 
-                // Get list of people who cast the same vote.
-                $add_to_list = get_post_meta( $post_id, $add_to, true );
+                if( $type == 'up' ) {
+                    // First check to see if the user has upvoted before
+                    if( in_array( $user_id, $upvote_list ) ) {
+                        return false;
+                    }
 
-                // If a user has voted before, remove them from the list of votes for this post
-                if ( in_array( $user_id, (array) $add_to_list ) ) {
-                       unset( $add_to_list[ array_search( $user_id, $add_to_list ) ] );
+                    // If the user had previously downvoted, we want to remove that
+                    if( in_array( $user_id, $downvote_list ) ) {
+                        unset( $downvote_list[ array_search( $user_id, $downvote_list ) ] );
+                        update_post_meta( $post_id, self::$meta_downvotes, $downvote_list );
+                    }
+
+                    // Then, let's add this user to the upvotes
+                    $upvote_list[] = $user_id;
+                    update_post_meta( $post_id, self::$meta_upvotes, $upvote_list );
                 } else {
-                // Otherwise, add the vote to our list (or create a new array if necessary)   
-                        $add_to_list[] = $user_id;
-                }
+                    // First check to see if the user has downvoted before
+                    if( in_array( $user_id, $downvote_list ) ) {
+                        return false;
+                    }
 
-                update_post_meta( $post_id, $add_to, $add_to_list );
+                    // If the user had previously downvoted, we want to remove that
+                    if( in_array( $user_id, $upvote_list ) ) {
+                        unset( $upvote_list[ array_search( $user_id, $upvote_list ) ] );
+                        update_post_meta( $post_id, self::$meta_upvotes, $upvote_list );
+                    }
+
+                    // Then, let's add this user to the downvote list
+                    $downvote_list[] = $user_id;
+                    update_post_meta( $post_id, self::$meta_downvotes, $downvote_list );
+                }
                 
                 return true;
         }
