@@ -30,6 +30,11 @@ class Helphub_Feedback {
 	        add_action( 'comments_template',  array( __CLASS__, 'include_feedback_template' ) );
 	        // Add users vote to the metadata associated with a comment
 	        add_action( 'comment_post',  array( __CLASS__, 'add_vote_to_feedback' ) );
+
+	        // Remove some unecessary fields from comments on save
+	        add_action( 'pre_comment_user_ip', array( __CLASS__, 'clear_comment_data' ) );
+	        add_action( 'pre_comment_user_agent', array( __CLASS__, 'clear_comment_data' ) );
+	        add_action( 'pre_comment_author_url', array( __CLASS__, 'clear_comment_data' ) );
 	}
 
 	/**
@@ -62,6 +67,18 @@ class Helphub_Feedback {
 		if( isset( $_POST['feedback-vote'] ) && !empty( $_POST['feedback-vote'] ) ) {
 			add_comment_meta( $comment_id, 'vote', $_POST['feedback-vote']);
 		}
+	}
+
+	/**
+	 * Removes uncessary comment field ata
+	 * 
+	 * @access public
+	 * 
+	 * @param string $comment_data Individual piece of data
+	 * @return string Empty string
+	 */
+	public function clear_comment_data( $comment_data ) {
+		return '';
 	}
 
 
