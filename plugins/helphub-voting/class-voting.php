@@ -242,12 +242,11 @@ class Helphub_Posts_Voting {
                 echo '<div class="helphub-voting" data-nonce="' . esc_attr( $nonce ) . '">';
                 // Up vote link
                 $user_upvoted = self::has_user_upvoted_post( $post_id );
-                var_dump($user_upvoted);
                 if ( $can_vote ) {
                         $title = $user_upvoted ?
                                 __( 'You have voted to indicate this article was helpful', 'helphub' ) :
                                 __( 'Was this article useful?', 'helphub' );
-                        $tag = 'a';
+                        $tag = $user_upvoted ? 'span' : 'a';
                 } else {
                         $title = ! is_user_logged_in() ?
                                 __( 'You must log in to vote if this article was helpful', 'helphub' ) :
@@ -263,13 +262,15 @@ class Helphub_Posts_Voting {
                                 . esc_url( add_query_arg( array( '_wpnonce' => $nonce , 'post' => $post_id, 'vote' => 'true' ), get_permalink( $post_id ) ) );
                 echo '">';
                 echo '<span class="dashicons dashicons-thumbs-up"></span> ';
+                echo "</{$tag}>";
 
                 $user_downvoted = self::has_user_downvoted_post( $post_id );
+               
                 if ( $can_vote ) {
                         $title = $user_downvoted ?
                                 __( 'You have voted to indicate this article was helpful', 'helphub' ) :
                                 __( 'Was this article useful?', 'helphub' );
-                        $tag = 'a';
+                        $tag = $user_downvoted ? 'span' : 'a';
                 } else {
                         $title = ! is_user_logged_in() ?
                                 __( 'You must log in to vote if this article was helpful', 'helphub' ) :
@@ -285,10 +286,10 @@ class Helphub_Posts_Voting {
                                 . esc_url( add_query_arg( array( '_wpnonce' => $nonce , 'post' => $post_id, 'vote' => 'true' ), get_permalink( $post_id ) ) );
                 echo '">';
                 echo '<span class="dashicons dashicons-thumbs-down"></span> ';
+                echo "</{$tag}>";
                 
                 // Total count
                 echo sprintf( __( '%s found this useful', 'wporg' ), self::count_votes( $post_id ) );
-                echo "</{$tag}>";
                 echo '</div>';
         }
 

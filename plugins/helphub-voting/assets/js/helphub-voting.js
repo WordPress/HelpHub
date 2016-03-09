@@ -6,7 +6,12 @@
     function click() {
         $( '.helphub-voting a' ).on( 'click', function(e) {
             e.preventDefault();
-            var item = $(this);
+            var item = $(this),
+                input = $('#vote-input');
+                vote = item.attr('data-vote');
+
+            input.val(vote);
+
             $.post(ajaxurl, {
                 action:   'helphub_vote',
                 post:     $(this).attr('data-id'),
@@ -24,5 +29,25 @@
     }
 
     click();
+
+    $( '#commentform' ).on( 'submit', function(e) {
+        e.preventDefault();
+        var form = $(this),
+            data = form.serialize(),
+            url = form.attr('action');
+        
+        form.css('opacity', 0.5);
+
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: data,
+            success: function(data, status) {
+              form.hide();
+              $('#feedback-thanks').text('Thanks for your feedback!');
+            }
+        })
+
+    })
 
 } )( jQuery );

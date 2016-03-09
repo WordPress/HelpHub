@@ -10,6 +10,7 @@
  */
 
 include_once plugin_dir_path( __FILE__ ) . 'class-voting.php';
+include_once plugin_dir_path( __FILE__ ) . 'class-comments.php';
 
 function show_voting() {
 	Helphub_Posts_Voting::show_voting();
