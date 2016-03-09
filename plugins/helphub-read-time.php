@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * Plugin Name: HelpHub Read Time
  * Description: Adds estimated reading time to a post using a simple formula.
  * Version:     1.0.0
@@ -9,34 +9,36 @@
  * License URI: https://www.gnu.org/licenses/gpl-3.0.html
  */
 
-defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
 
-// Adds the read time hook when saving a post
+// Adds the read time hook when saving a post.
 add_action( 'save_post', 'hh_calculate_and_update_post_read_time', 10, 3 );
 
 /**
  * Calculates the read time of a post when created or updated.
- * @param  int 			$post_id Post id to calculate read time for.
- * @param  object 	$post    Post object
- * @param  boolean 	$update  Is this an update or new.
+ *
+ * @param  int     $post_id Post id to calculate read time for.
+ * @param  object  $post    Post object.
+ * @param  boolean $update  Is this an update or new.
  * @return void
  */
 function hh_calculate_and_update_post_read_time( $post_id, $post, $update ) {
 
-	// Only those allowed
+	// Only those allowed.
 	if ( ! current_user_can( 'edit_posts', $post_id ) ) {
 		return;
 	}
 
-	// No post revisions
+	// No post revisions.
 	if ( wp_is_post_revision( $post_id ) ) {
 		return;
 	}
 
-	// Get post types that need to have read time applied
+	// Get post types that need to have read time applied.
 	$calculate_for_posts = apply_filters( 'read_time_types', array( 'post' ) );
 
-	// If the post type is not found then return
+	// If the post type is not found then return.
 	if ( ! in_array( $post->post_type, $calculate_for_posts ) ) {
 		return;
 	}
@@ -44,30 +46,30 @@ function hh_calculate_and_update_post_read_time( $post_id, $post, $update ) {
 	// Average words per minute integer.
 	$average_word_per_minute = apply_filters( 'read_time_average', 275 );
 
-	// Word count
+	// Word count.
 	$word_count = str_word_count( wp_strip_all_tags( $post->post_content ) );
 
-	// Calculate basic read time
+	// Calculate basic read time.
 	$readtime = round( $word_count / ( $average_word_per_minute / 60 ) );
 
-	// Grad and count all images
+	// Grad and count all images.
 	preg_match_all( '/(img|src)\=(\"|\')[^\"\'\>]+/i', $post->post_content, $media );
 
-	// Adjust read time given the number of images
+	// Adjust read time given the number of images.
 	if ( $image_count = count( $media[0] ) ) {
 		$readtime = ( $image_count * 12 - $image_count + $readtime );
 	}
-	
-	// Update the post read time
+
+	// Update the post read time.
 	update_post_meta( $post_id, '_read_time', $readtime );
 }
 
 /**
- * Returns the raw value of post meta "read time" for a given post. 
+ * Returns the raw value of post meta "read time" for a given post.
  *
  * @access private
- * 
- * @param  int $post_id   ID of post to retrieve read time for
+ *
+ * @param  int $post_id   ID of post to retrieve read time for.
  * @return string|int     Raw value of read time
  */
 function hh_get_readtime( $post_id ) {
@@ -87,9 +89,8 @@ function hh_get_readtime( $post_id ) {
  *
  * @example
  * <?php hh_the_read_time( $post->ID ); ?>
- * 
- * @param  int $post_id 	ID of post to retrieve read time for
- * @return Void
+ *
+ * @param  int $post_id ID of post to retrieve read time for.
  */
 function hh_the_read_time( $post_id = null ) {
 	echo hh_get_the_read_time( $post_id );
@@ -103,17 +104,17 @@ function hh_the_read_time( $post_id = null ) {
  *
  * @example
  * <?php echo hh_get_the_read_time( $post->ID ); ?>
- * 
- * @param  int $post_id 	ID of post to retrieve read time for
- * @return string 			Formated string provided read time text.
+ *
+ * @param  int $post_id ID of post to retrieve read time for.
+ * @return string Formated string provided read time text.
  */
-function hh_get_the_read_time( $post_id = null) {
+function hh_get_the_read_time( $post_id = null ) {
 	$hh_reading_time = hh_get_readtime( $post_id );
 
-	// Filter the time before it is converted
-	$read_time = apply_filters( 'hh_post_read_time', $hh_reading_time,  $post_id  );
+	// Filter the time before it is converted.
+	$read_time = apply_filters( 'hh_post_read_time', $hh_reading_time,  $post_id );
 
-	// Convert reading time to minutes
+	// Convert reading time to minutes.
 	$reading_time = (int) $read_time < 60 ? '1' : (string) round( $read_time / 60 );
 
 	return sprintf( _n( 'Reading Time: %s Minute','Reading Time: %s Minutes', $reading_time, 'helphub' ), $reading_time );
