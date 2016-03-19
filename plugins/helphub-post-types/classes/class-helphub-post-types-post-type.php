@@ -446,7 +446,9 @@ class HelpHub_Post_Types_Post_Type {
 			}
 
 			// save it
-			update_post_meta( $post_id, '_' . $f, ${$f} );
+			if ( $f != 'read_time' ) :
+				update_post_meta( $post_id, '_' . $f, ${$f} );
+			endif;
 
 		endforeach;
 
@@ -502,8 +504,16 @@ class HelpHub_Post_Types_Post_Type {
 
 
 		$fields['read_time'] = array(
-			'name' => __( 'Article Read Time', 'wingz' ),
+			'name' => __( 'Article Read Time', 'helphub' ),
 			'description' => __( 'Leave this empty, calculation is automatic', 'helphub' ),
+			'type' => 'text',
+			'default' => '',
+			'section' => 'info'
+		);
+
+		$fields['custom_read_time'] = array(
+			'name' => __( 'Custom Read Time', 'helphub' ),
+			'description' => __( 'Only fill up this field if the automated calculation is incorrect', 'helphub' ),
 			'type' => 'text',
 			'default' => '',
 			'section' => 'info'
