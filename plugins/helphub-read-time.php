@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * Plugin Name: HelpHub Read Time
  * Description: Adds estimated reading time to a post using a simple formula.
  * Version:     1.0.0
@@ -7,6 +7,8 @@
  * Author URI:  https://wordpress.org
  * License:     GPL3
  * License URI: https://www.gnu.org/licenses/gpl-3.0.html
+ *
+ * @todo Add formula to handle code and pre tags. 
  */
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
