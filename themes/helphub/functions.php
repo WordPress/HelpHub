@@ -127,6 +127,17 @@ function helphub_scripts() {
 add_action( 'wp_enqueue_scripts', 'helphub_scripts' );
 
 /**
+ * Echoes read time if the plugin exists
+ * Makes templates cleaner by wrapping it again and
+ * other theme areas can use it without re-checking if function exists
+ */
+function helphub_wrap_the_read_time() {
+	if ( function_exists( 'hh_the_read_time' ) ) :
+		hh_the_read_time();
+	endif;
+}
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
