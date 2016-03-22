@@ -22,7 +22,7 @@ add_action( 'save_post', 'hh_calculate_and_update_post_read_time', 10, 3 );
  * @return void
  */
 function hh_calculate_and_update_post_read_time( $post_id, $post, $update ) {
-
+	
 	// Only those allowed
 	if ( ! current_user_can( 'edit_posts', $post_id ) ) {
 		return;
@@ -57,16 +57,16 @@ function hh_calculate_and_update_post_read_time( $post_id, $post, $update ) {
 	if ( $image_count = count( $media[0] ) ) {
 		$readtime = ( $image_count * 12 - $image_count + $readtime );
 	}
-	
+
 	// Update the post read time
 	update_post_meta( $post_id, '_read_time', $readtime );
 }
 
 /**
- * Returns the raw value of post meta "read time" for a given post. 
+ * Returns the raw value of post meta "read time" for a given post.
  *
  * @access private
- * 
+ *
  * @param  int $post_id   ID of post to retrieve read time for
  * @return string|int     Raw value of read time
  */
@@ -76,7 +76,14 @@ function hh_get_readtime( $post_id ) {
 		$post_id = $post->ID;
 	}
 
-	return get_post_meta( $post_id, '_read_time', true );
+	$custom_read_time = get_post_meta( $post_id, '_custom_read_time', true );
+	if (  $custom_read_time != '' ) :
+		$read_time = $custom_read_time;
+	else:
+		$read_time = get_post_meta( $post_id, '_read_time', true );
+	endif;
+
+	return $read_time;
 }
 
 /**
@@ -87,7 +94,7 @@ function hh_get_readtime( $post_id ) {
  *
  * @example
  * <?php hh_the_read_time( $post->ID ); ?>
- * 
+ *
  * @param  int $post_id 	ID of post to retrieve read time for
  * @return Void
  */
@@ -103,7 +110,7 @@ function hh_the_read_time( $post_id = null ) {
  *
  * @example
  * <?php echo hh_get_the_read_time( $post->ID ); ?>
- * 
+ *
  * @param  int $post_id 	ID of post to retrieve read time for
  * @return string 			Formated string provided read time text.
  */
