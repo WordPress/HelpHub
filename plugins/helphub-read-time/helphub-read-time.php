@@ -54,9 +54,13 @@ function hh_calculate_and_update_post_read_time( $post_id, $post, $update ) {
 
 	$pre_tags = array();
 	$word_count_offset = 0;
+
+	// Offset weight. Offset word count will be timed by this number.
+	$offset_weight = apply_filters( 'read_time_offset_weight', 1 );
+
 	foreach( $xpath->query( '//pre' ) as $node ){
 	    $pre_tags[] = $node->nodeValue;
-	    $word_count_offset = str_word_count( $node->nodeValue ) + $word_count_offset;
+	    $word_count_offset = str_word_count( $node->nodeValue ) + ( $word_count_offset * $offset_weight );
 	}
 
 	// Word count
