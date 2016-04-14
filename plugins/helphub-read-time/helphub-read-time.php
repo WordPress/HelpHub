@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * Plugin Name: HelpHub Read Time
  * Description: Adds estimated reading time to a post using a simple formula.
  * Version:     1.0.0
@@ -42,10 +42,29 @@ function hh_calculate_and_update_post_read_time( $post_id, $post, $update ) {
 	}
 
 	// Average words per minute integer.
-	$average_word_per_minute = apply_filters( 'read_time_average', 275 );
+	$average_word_per_minute = apply_filters( 'read_time_average', 175 );
+
+	// Store post content for raw usage
+	$post_content = $post->post_content;
+
+	// Simple adjustment for pre tags
+    $data = new DOMDocument();
+    $data->loadHTML( $post_content );
+    $xpath = new DomXpath($data);
+
+	$pre_tags = array();
+	$word_count_offset = 0;
+
+	// Offset weight. Offset word count will be timed by this number.
+	$offset_weight = apply_filters( 'read_time_offset_weight', 1 );
+
+	foreach( $xpath->query( '//pre' ) as $node ){
+	    $pre_tags[] = $node->nodeValue;
+	    $word_count_offset = str_word_count( $node->nodeValue ) + ( $word_count_offset * $offset_weight );
+	}
 
 	// Word count
-	$word_count = str_word_count( wp_strip_all_tags( $post->post_content ) );
+	$word_count = str_word_count( wp_strip_all_tags( $post_content ) ) + $word_count_offset;
 
 	// Calculate basic read time
 	$readtime = round( $word_count / ( $average_word_per_minute / 60 ) );
