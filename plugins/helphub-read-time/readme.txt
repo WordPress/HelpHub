@@ -20,6 +20,18 @@ Display read time for a single post in the loop.
 Display the read time for a post outside the loop.
 `<?php hh_the_read_time( $post->ID ); ?>`
 
+Adding Read Time Functionality to other post types can be done using the filter
+`read_time_types`
+
+Adjusting Words Per Minute Average can be filtered using
+`read_time_average`
+
+Pre tag content holds a bit more weight than normal words. The weight of the word count in pre tags is twice than normal (2 x Word Count).
+The weight can be modified by using the filter `read_time_offset_weight` which is set to 1 by default since the offset word count is added to the final word count total.
+Increasing `read_time_offset_weight` will increase the weight of the pre tag word count. 
+
+Final Word Count + ( Offset Word Count * Offset Weight )
+
 
 == Installation ==
 
