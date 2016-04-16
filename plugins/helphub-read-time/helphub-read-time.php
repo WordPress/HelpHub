@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * Plugin Name: HelpHub Read Time
  * Description: Adds estimated reading time to a post using a simple formula.
  * Version:     1.0.0
@@ -22,7 +22,7 @@ add_action( 'save_post', 'hh_calculate_and_update_post_read_time', 10, 3 );
  * @return void
  */
 function hh_calculate_and_update_post_read_time( $post_id, $post, $update ) {
-
+	
 	// Only those allowed
 	if ( ! current_user_can( 'edit_posts', $post_id ) ) {
 		return;
@@ -42,10 +42,29 @@ function hh_calculate_and_update_post_read_time( $post_id, $post, $update ) {
 	}
 
 	// Average words per minute integer.
-	$average_word_per_minute = apply_filters( 'read_time_average', 275 );
+	$average_word_per_minute = apply_filters( 'read_time_average', 175 );
+
+	// Store post content for raw usage
+	$post_content = $post->post_content;
+
+	// Simple adjustment for pre tags
+    $data = new DOMDocument();
+    $data->loadHTML( $post_content );
+    $xpath = new DomXpath($data);
+
+	$pre_tags = array();
+	$word_count_offset = 0;
+
+	// Offset weight. Offset word count will be timed by this number.
+	$offset_weight = apply_filters( 'read_time_offset_weight', 1 );
+
+	foreach( $xpath->query( '//pre' ) as $node ){
+	    $pre_tags[] = $node->nodeValue;
+	    $word_count_offset = str_word_count( $node->nodeValue ) + ( $word_count_offset * $offset_weight );
+	}
 
 	// Word count
-	$word_count = str_word_count( wp_strip_all_tags( $post->post_content ) );
+	$word_count = str_word_count( wp_strip_all_tags( $post_content ) ) + $word_count_offset;
 
 	// Calculate basic read time
 	$readtime = round( $word_count / ( $average_word_per_minute / 60 ) );
@@ -57,16 +76,16 @@ function hh_calculate_and_update_post_read_time( $post_id, $post, $update ) {
 	if ( $image_count = count( $media[0] ) ) {
 		$readtime = ( $image_count * 12 - $image_count + $readtime );
 	}
-	
+
 	// Update the post read time
 	update_post_meta( $post_id, '_read_time', $readtime );
 }
 
 /**
- * Returns the raw value of post meta "read time" for a given post. 
+ * Returns the raw value of post meta "read time" for a given post.
  *
  * @access private
- * 
+ *
  * @param  int $post_id   ID of post to retrieve read time for
  * @return string|int     Raw value of read time
  */
@@ -76,7 +95,14 @@ function hh_get_readtime( $post_id ) {
 		$post_id = $post->ID;
 	}
 
-	return get_post_meta( $post_id, '_read_time', true );
+	$custom_read_time = get_post_meta( $post_id, '_custom_read_time', true );
+	if (  $custom_read_time != '' ) :
+		$read_time = $custom_read_time;
+	else:
+		$read_time = get_post_meta( $post_id, '_read_time', true );
+	endif;
+
+	return $read_time;
 }
 
 /**
@@ -87,7 +113,7 @@ function hh_get_readtime( $post_id ) {
  *
  * @example
  * <?php hh_the_read_time( $post->ID ); ?>
- * 
+ *
  * @param  int $post_id 	ID of post to retrieve read time for
  * @return Void
  */
@@ -103,7 +129,7 @@ function hh_the_read_time( $post_id = null ) {
  *
  * @example
  * <?php echo hh_get_the_read_time( $post->ID ); ?>
- * 
+ *
  * @param  int $post_id 	ID of post to retrieve read time for
  * @return string 			Formated string provided read time text.
  */

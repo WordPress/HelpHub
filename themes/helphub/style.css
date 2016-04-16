@@ -57,6 +57,10 @@ body {
 	margin: 0;
 }
 
+body.single-post{
+	font-size: 12px;
+}
+
 article,
 aside,
 details,
@@ -266,13 +270,13 @@ th {
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
-body,
+body, body.single-post,
 button,
 input,
 select,
 textarea {
 	color: #404040;
-	font-family: sans-serif;
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 16px;
 	font-size: 1rem;
 }
@@ -284,6 +288,17 @@ h4,
 h5,
 h6 {
 	clear: both;
+	line-height: 100%;
+}
+
+body.single-post h1,
+body.single-post h2,
+body.single-post h3,
+body.single-post h4,
+body.single-post h5,
+body.single-post h6,
+body p{
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 p {
@@ -340,6 +355,24 @@ ins {
 
 big {
 	font-size: 125%;
+}
+
+article h1, article h2, article h3{
+	font-weight: bold;
+	margin: 1em 0;
+}
+
+article h1{
+	font-size: 3em;
+	margin-bottom: 0;
+}
+
+article h2{
+	font-size: 2.5em;
+}
+
+article h3{
+	font-size: 2em;
 }
 
 /*--------------------------------------------------------------
@@ -748,6 +781,11 @@ a:active {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+
+.main-content{
+	display: flex;
+}
+
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
@@ -780,6 +818,28 @@ a:active {
 	margin: 0 0 1.5em;
 }
 
+.single-post article.post{
+	float: left;
+	width: 70%;
+	padding: 2em;
+	box-sizing: border-box;
+	position: relative
+}
+
+.article-container{
+	position: relative;
+}
+
+.entry-header{
+	border-bottom: 2px solid #000;
+	margin-bottom: 2em;
+	padding-bottom: 0.5em;
+	text-align: center;
+}
+
+.entry-content ul{
+	margin-left: 2em;
+}
 /*--------------------------------------------------------------
 ## Asides
 --------------------------------------------------------------*/
@@ -788,6 +848,18 @@ a:active {
 	display: none;
 }
 
+.single-post .single-post-sidebar{
+	background-color: #d8d8d8;
+	float: left;
+	width: 30%;
+	padding: 1em;
+	box-sizing: border-box;
+	position: relative;
+}
+
+.single-post-sidebar .sidebar-content{
+	position: fixed;
+}
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
@@ -1104,6 +1176,7 @@ h2.helphub-footerarea-title {
 		text-align: center;
 		margin-top: 4%;
 	}
+<<<<<<< HEAD
 	
 	.main-widget-box.col-3 {
 		width: 94%;
@@ -1113,3 +1186,6 @@ h2.helphub-footerarea-title {
 
 	}
 }
+=======
+}
+>>>>>>> master
