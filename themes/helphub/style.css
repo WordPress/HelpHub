@@ -992,7 +992,7 @@ h1.site-main-title {
     line-height: 2em;
     text-align: center;
     color: #073763;
-    font-weight: 900;	
+    font-weight: 900;
 }
 
 .helphub-search-box {
@@ -1003,7 +1003,7 @@ h1.site-main-title {
 .helphub-search-btn {
     width: 28%;
     margin: 0 auto;
-}		
+}
 
 .helphub-search-box input#helphub-search {
     width: 100%;
@@ -1012,7 +1012,7 @@ h1.site-main-title {
     text-align: left;
     color: #fff;
 	font-size: 2em;
-    height: 32px;	
+    height: 32px;
 }
 
 .helphub-search-btn button {
@@ -1025,7 +1025,7 @@ h1.site-main-title {
 	background: #073763;
 	color: #fff;
 	font-size: 2em;
-	line-height: 2em;	
+	line-height: 2em;
 }
 
 .main-search-area {
@@ -1048,7 +1048,7 @@ h3.main-widget-box-title {
 }
 
 .main-widget-box ul {
-	list-style: none;	
+	list-style: none;
 	font-size: 1.2em;
 	line-height: 1.4em;
 }
@@ -1063,7 +1063,7 @@ h3.main-widget-box-title {
 --------------------------------------------------------------*/
 
 footer {
-    font-family: sans-serif;	
+    font-family: sans-serif;
 }
 
 footer a {
@@ -1074,7 +1074,7 @@ footer a {
 footer a:visited {
     color: #21759b;
 }
-	    
+
 #wporg-footer .wrapper, .helphub-footerarea .wrapper {
     max-width: 932px;
 	margin: 0 auto;
@@ -1142,15 +1142,15 @@ h2.helphub-footerarea-title {
 }
 
 .helphub-footerarea1 {
-    border-right: 3px solid #000;	
+    border-right: 3px solid #000;
 }
 
 .helphub-footerarea-body {
     font-size: 14px;
 	min-height: 80px;
-	margin-top: 18px;	
+	margin-top: 18px;
 }
-    
+
 #wporg-footer h6.cip-image {
     background: url(//s.w.org/style/images/codeispoetry.png?1) center center no-repeat;
     background-size: 190px 15px;
@@ -1176,16 +1176,11 @@ h2.helphub-footerarea-title {
 		text-align: center;
 		margin-top: 4%;
 	}
-<<<<<<< HEAD
-	
+
 	.main-widget-box.col-3 {
 		width: 94%;
 		margin-left: 1%;
 		margin-right: 1%;
 		margin-bottom: 2%;
-
 	}
 }
-=======
-}
->>>>>>> master
