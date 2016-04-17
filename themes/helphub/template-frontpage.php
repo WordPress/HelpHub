@@ -17,36 +17,40 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 			<div class="main-search-area">
 				<h1 class="site-main-title"><?php the_title(); ?></h1>
-				<!-- #search placeholder only, will be changed later on when search engine code is ready START-->
-				<div class="helphub-search">
-					<div class="helphub-search-box">
-						<input id="helphub-search" class="text" name="search" type="text" value="" maxlength="150" placeholder="What help do you need with?">
-					</div>
-					<div class="helphub-search-btn">
-						<button>SEARCH</button>
-					</div>
-				</div>
 				<div class="helphub-contentarea">
-					<?php
-					while ( have_posts() ) : the_post();
-
-						get_template_part( 'template-parts/content', 'page' );
-
-						// If comments are open or we have at least one comment, load up the comment template.
-						if ( comments_open() || get_comments_number() ) :
-							comments_template();
-						endif;
-
-					endwhile; // End of the loop.
-					?>
+					<?php	while ( have_posts() ) : the_post(); // start the loop?>
+						<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+							<div class="entry-content">
+								<?php
+									the_content();
+									wp_link_pages( array(
+										'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'helphub' ),
+										'after'  => '</div>',
+									) );
+								?>
+							</div><!-- .entry-content -->
+							<footer class="entry-footer">
+								<?php
+									edit_post_link(
+										sprintf(
+											/* translators: %s: Name of current post */
+											esc_html__( 'Edit %s', 'helphub' ),
+											the_title( '<span class="screen-reader-text">"', '"</span>', false )
+										),
+										'<span class="edit-link">',
+										'</span>'
+									);
+								?>
+							</footer><!-- .entry-footer -->
+						</article><!-- #post-## -->
+						<?php
+							if ( comments_open() || get_comments_number() ) :
+								comments_template();
+							endif;
+						?>
+					<?php endwhile; // End of the loop. ?>
 				</div>
 				<!-- #search placeholder only, will be changed later on when search engine code is ready END-->
-			</div>
-			<div class="main-widget-area">
-				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-				<?php endwhile; else : ?>
-<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
-<?php endif; ?>
 			</div>
 		</main><!-- #main -->
 	</div><!-- #primary -->
