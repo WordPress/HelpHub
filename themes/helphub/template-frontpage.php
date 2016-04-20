@@ -17,6 +17,13 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 			<div class="main-search-area">
 				<h1 class="site-main-title"><?php the_title(); ?></h1>
+				<div class="helphub-home-searcharea">
+					<?php
+						if ( is_active_sidebar( 'homewidget-1' ) ) {
+							get_template_part( 'template-parts/widget', 'homesearch' );
+						}
+					?>
+				</div>
 				<div class="helphub-contentarea">
 					<?php	while ( have_posts() ) : the_post(); // start the loop?>
 						<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
