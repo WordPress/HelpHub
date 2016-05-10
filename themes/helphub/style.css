@@ -57,6 +57,10 @@ body {
 	margin: 0;
 }
 
+body.single-post{
+	font-size: 12px;
+}
+
 article,
 aside,
 details,
@@ -266,16 +270,15 @@ th {
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
-body,
+body, body.single-post,
 button,
 input,
 select,
 textarea {
 	color: #404040;
-	font-family: sans-serif;
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 16px;
 	font-size: 1rem;
-	line-height: 1.5;
 }
 
 h1,
@@ -285,6 +288,17 @@ h4,
 h5,
 h6 {
 	clear: both;
+	line-height: 100%;
+}
+
+body.single-post h1,
+body.single-post h2,
+body.single-post h3,
+body.single-post h4,
+body.single-post h5,
+body.single-post h6,
+body p{
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 p {
@@ -343,6 +357,24 @@ big {
 	font-size: 125%;
 }
 
+article h1, article h2, article h3{
+	font-weight: bold;
+	margin: 1em 0;
+}
+
+article h1{
+	font-size: 3em;
+	margin-bottom: 0;
+}
+
+article h2{
+	font-size: 2.5em;
+}
+
+article h3{
+	font-size: 2em;
+}
+
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
@@ -353,7 +385,6 @@ html {
 *,
 *:before,
 *:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-	box-sizing: inherit;
 }
 
 body {
@@ -423,25 +454,12 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
-	border-color: #ccc #ccc #bbb;
-	border-radius: 3px;
-	background: #e6e6e6;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-	color: rgba(0, 0, 0, .8);
-	font-size: 12px;
-	font-size: 0.75rem;
-	line-height: 1;
-	padding: .6em 1em .4em;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
 }
 
 button:focus,
@@ -452,8 +470,6 @@ button:active,
 input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
-	border-color: #aaa #bbb #bbb;
-	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
 input[type="text"],
@@ -472,13 +488,9 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	color: #666;
-	border: 1px solid #ccc;
-	border-radius: 3px;
 }
 
 select {
-	border: 1px solid #ccc;
 }
 
 input[type="text"]:focus,
@@ -769,6 +781,11 @@ a:active {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+
+.main-content{
+	display: flex;
+}
+
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
@@ -801,6 +818,28 @@ a:active {
 	margin: 0 0 1.5em;
 }
 
+.single-post article.post{
+	float: left;
+	width: 70%;
+	padding: 2em;
+	box-sizing: border-box;
+	position: relative
+}
+
+.article-container{
+	position: relative;
+}
+
+.entry-header{
+	border-bottom: 2px solid #000;
+	margin-bottom: 2em;
+	padding-bottom: 0.5em;
+	text-align: center;
+}
+
+.entry-content ul{
+	margin-left: 2em;
+}
 /*--------------------------------------------------------------
 ## Asides
 --------------------------------------------------------------*/
@@ -809,6 +848,18 @@ a:active {
 	display: none;
 }
 
+.single-post .single-post-sidebar{
+	background-color: #d8d8d8;
+	float: left;
+	width: 30%;
+	padding: 1em;
+	box-sizing: border-box;
+	position: relative;
+}
+
+.single-post-sidebar .sidebar-content{
+	position: fixed;
+}
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
@@ -923,4 +974,124 @@ object {
 
 .gallery-caption {
 	display: block;
+}
+
+/*--------------------------------------------------------------
+## Footer Style
+--------------------------------------------------------------*/
+
+footer {
+    font-family: sans-serif;	
+}
+
+footer a {
+	text-decoration: none;
+	color: #4ca6cf;
+}
+
+footer a:visited {
+    color: #21759b;
+}
+	    
+#wporg-footer .wrapper, .helphub-footerarea .wrapper {
+    max-width: 932px;
+	margin: 0 auto;
+    clear: both;
+	overflow: hidden
+}
+
+#wporg-footer {
+    clear: both;
+    overflow: auto;
+    margin: 0 auto;
+    padding: 22px 14px 65px 14px;
+    border-top: 1px solid #dfdfdf;
+    background-color: #f7f7f7;
+}
+
+.helphub-footerarea, .helphub-footerarea1, .helphub-footerarea2 {
+    background-color: #073763;
+    color:#fff;
+}
+
+.helphub-footerarea h2 {
+	text-align: center;
+}
+
+.helphub-footerarea h3 {
+	font-size: 24px;
+	color: #fff;
+}
+
+footer ul li {
+	list-style: none;
+	font-size: 14px;
+}
+
+.helphub-footerarea h2, .helphub-footerarea h3 {
+	margin: 0;
+}
+
+.helphub-footerarea .helphub-footerarea1, .helphub-footerarea .helphub-footerarea2 {
+	width: 42%;
+	float: left
+}
+
+#wporg-footer ul {
+    float: left;
+    overflow: auto;
+    width: 130px;
+    margin-left: 24px;
+    margin-bottom: 20px;
+    padding-left: 0;
+}
+
+.helphub-footerarea1, .helphub-footerarea2 {
+    padding: 0% 2% 0% 4%;
+}
+
+.helphub-footerarea .wrapper {
+	padding-bottom: 2%;
+}
+
+h2.helphub-footerarea-title {
+	margin: 4% 2%;
+	font-size: 32px;
+}
+
+.helphub-footerarea1 {
+    border-right: 3px solid #000;	
+}
+
+.helphub-footerarea-body {
+    font-size: 14px;
+	min-height: 80px;
+	margin-top: 18px;	
+}
+    
+#wporg-footer h6.cip-image {
+    background: url(//s.w.org/style/images/codeispoetry.png?1) center center no-repeat;
+    background-size: 190px 15px;
+    width: 190px;
+    height: 15px;
+    text-indent: -9999px;
+}
+
+#wporg-footer h6 {
+    clear: both;
+    float: none;
+    text-align: center;
+    margin-top: 35px;
+    font-size: 16px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #cccccc;
+}
+
+@media (max-width:768px) {
+	.helphub-footerarea .helphub-footerarea1, .helphub-footerarea .helphub-footerarea2 {
+		width:100%;
+		text-align: center;
+		margin-top: 4%;
+	}
 }
