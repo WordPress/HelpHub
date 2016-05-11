@@ -2,3 +2,13 @@
 	position: absolute;
 	background: #FFF;
 }
+
+	.helphub-suggest-results li {}
+	
+	.helphub-suggest-results li.ac_over {
+		background: #ccc
+	}
+
+	.helphub-suggest-results li:hover {
+		cursor: pointer;
+	}
