@@ -30,8 +30,7 @@
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 add_action('wp_enqueue_scripts', array('HelpHub_Search','enqueue_scripts') );
-wp_localize_script( 'helphub-search-suggest-ajax-url', 'ajax_object', 
-			array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) ); 
+
 /**
  * Main Search Class for HelpHub
  * 
@@ -67,6 +66,8 @@ class HelpHub_Search {
 				'ajax_url' => admin_url( 'admin-ajax.php' )
 			) 
 		);
+
+		wp_enqueue_style( 'helphub-suggesed-search', plugins_url( '/assets/helphub.css' , __FILE__ ) );
 	}
 
 	/**

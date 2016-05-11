@@ -9,7 +9,7 @@ function se_lookup() {
     global $wpdb;
     $search = like_escape($_REQUEST['q']);
 	$query = 'SELECT ID,post_title FROM ' . $wpdb->posts . '
-        WHERE post_title LIKE \'' . $search . '%\'
+        WHERE post_title LIKE \'%' . $search . '%\'
         AND post_status = \'publish\'
         ORDER BY post_title ASC';
 
@@ -20,9 +20,9 @@ function se_lookup() {
         
         $return[] = $post_title;
 
-    	//echo $post_title . "\n";
+    	echo $post_title . "\n";
     }
 
-    print_r( $return );
+    //print_r( $return );
     exit;
 }
