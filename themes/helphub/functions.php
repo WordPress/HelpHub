@@ -119,7 +119,7 @@ function helphub_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer 1', 'helphub' ),
 		'id'            => 'footer-1',
-		'description'   => '',
+		'description'   => 'This widget area appears on the left side before the footer.',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -128,7 +128,7 @@ function helphub_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer 2', 'helphub' ),
 		'id'            => 'footer-2',
-		'description'   => '',
+		'description'   => 'This widget area appears on the right side before the footer.',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',

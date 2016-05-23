@@ -1100,6 +1100,10 @@ footer a:visited {
 	text-align: center;
 }
 
+.helphub-footerarea h2.widget-title {
+	text-align: left;
+}
+
 .helphub-footerarea h3 {
 	font-size: 24px;
 	color: #fff;
