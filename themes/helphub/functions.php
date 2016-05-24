@@ -101,16 +101,34 @@ function helphub_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'helphub' ),
 		'id'            => 'sidebar-1',
-		'description'   => '',
+		'description'   => 'The default sidebar',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
-		'name'          => esc_html__( 'Homepage Widget', 'helphub' ),
-		'id'            => 'homewidget-1',
-		'description'   => '',
+		'name'          => esc_html__( 'Homepage Widget Search', 'helphub' ),
+		'id'            => 'homewidgetsearch-1',
+		'description'   => 'The sidebar/widget that will be dedicated to the custom search bar',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Homepage Widget Row 1', 'helphub' ),
+		'id'            => 'homewidgetrow-1',
+		'description'   => 'The sidebar/widget that will be dedicated to the Post categories for the first row',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Homepage Widget Row 2', 'helphub' ),
+		'id'            => 'homewidgetrow-2',
+		'description'   => 'The sidebar/widget that will be dedicated to the Post categories for the second row',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',

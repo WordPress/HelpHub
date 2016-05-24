@@ -19,7 +19,7 @@ get_header(); ?>
 				<h1 class="site-main-title"><?php the_title(); ?></h1>
 				<div class="helphub-home-searcharea">
 					<?php
-						if ( is_active_sidebar( 'homewidget-1' ) ) {
+						if ( is_active_sidebar( 'homewidgetsearch-1' ) ) {
 							get_template_part( 'template-parts/widget', 'homesearch' );
 						}
 					?>
@@ -58,6 +58,14 @@ get_header(); ?>
 					<?php endwhile; // End of the loop. ?>
 				</div>
 				<!-- #search placeholder only, will be changed later on when search engine code is ready END-->
+				<?php
+					if ( is_active_sidebar( 'homewidgetrow-1' ) ) {
+						get_template_part( 'template-parts/widget', 'homewidgets' );
+					}
+					if ( is_active_sidebar( 'homewidgetrow-2' ) ) {
+						get_template_part( 'template-parts/widget', 'homewidgets2' );
+					}
+				?>
 			</div>
 		</main><!-- #main -->
 	</div><!-- #primary -->

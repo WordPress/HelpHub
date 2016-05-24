@@ -7,5 +7,6 @@
  * @package HelpHub
  */
 ?>
-
-<?php dynamic_sidebar( 'homewidgetsearch-1' ); ?>
+<div class="helphub-homewidget-row1">
+  <?php dynamic_sidebar( 'homewidgetrow-1' ); ?>
+</div>
