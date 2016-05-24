@@ -120,8 +120,8 @@ function helphub_widgets_init() {
 		'name'          => esc_html__( 'Homepage Widget Row 1', 'helphub' ),
 		'id'            => 'homewidgetrow-1',
 		'description'   => 'The sidebar/widget that will be dedicated to the Post categories for the first row',
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
+		'before_widget' => '<section class="widget %2$s"><div class="homewidget-inner" id="%1$s">',
+		'after_widget'  => '</div></section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
@@ -129,8 +129,8 @@ function helphub_widgets_init() {
 		'name'          => esc_html__( 'Homepage Widget Row 2', 'helphub' ),
 		'id'            => 'homewidgetrow-2',
 		'description'   => 'The sidebar/widget that will be dedicated to the Post categories for the second row',
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
+		'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="homewidget-inner" id="%1$s">',
+		'after_widget'  => '</div></section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
