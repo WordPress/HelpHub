@@ -101,7 +101,7 @@ function helphub_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'helphub' ),
 		'id'            => 'sidebar-1',
-		'description'   => 'The default sidebar',
+		'description'   => esc_html__( 'The default sidebar', 'helphub' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -110,7 +110,7 @@ function helphub_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Homepage Widget Search', 'helphub' ),
 		'id'            => 'homewidgetsearch-1',
-		'description'   => 'The sidebar/widget that will be dedicated to the custom search bar',
+		'description'   => esc_html__( 'The sidebar/widget that will be dedicated to the custom search bar', 'helphub' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -119,7 +119,7 @@ function helphub_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Homepage Widget Row 1', 'helphub' ),
 		'id'            => 'homewidgetrow-1',
-		'description'   => 'The sidebar/widget that will be dedicated to the Post categories for the first row',
+		'description'   => esc_html__( 'The sidebar/widget that will be dedicated to the Post categories for the first row', 'helphub' ),
 		'before_widget' => '<section class="widget %2$s"><div class="homewidget-inner" id="%1$s">',
 		'after_widget'  => '</div></section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -128,7 +128,7 @@ function helphub_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Homepage Widget Row 2', 'helphub' ),
 		'id'            => 'homewidgetrow-2',
-		'description'   => 'The sidebar/widget that will be dedicated to the Post categories for the second row',
+		'description'   => esc_html__( 'The sidebar/widget that will be dedicated to the Post categories for the second row', 'helphub' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="homewidget-inner" id="%1$s">',
 		'after_widget'  => '</div></section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -137,7 +137,7 @@ function helphub_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer 1', 'helphub' ),
 		'id'            => 'footer-1',
-		'description'   => 'This widget area appears on the left side before the footer.',
+		'description'   => esc_html__( 'This widget area appears on the left side before the footer.', 'helphub' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -146,7 +146,7 @@ function helphub_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer 2', 'helphub' ),
 		'id'            => 'footer-2',
-		'description'   => 'This widget area appears on the right side before the footer.',
+		'description'   => esc_html__('This widget area appears on the right side before the footer.', 'helphub'),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
