@@ -778,6 +778,41 @@ a:active {
 	max-width: 100%;
 }
 
+.helphub-homewidget-row1 section, .helphub-homewidget-row2 section {
+	width: 30%;
+	float: left;
+	padding: 1%;
+}
+
+.helphub-homewidget-row1 .homewidget-inner, .helphub-homewidget-row2 .homewidget-inner {
+	padding: 6%;
+	background: #999;
+	border: 3px solid #394045;
+	border-radius: 8px;
+	color: #195394;
+  min-height: 180px;
+}
+
+.homewidget-inner li a, .homewidget-inner li, .homewidget-inner div {
+	color: #195394;
+	font-size: 16px;
+}
+
+.homewidget-inner ul {
+	list-style: none;
+}
+
+.homewidget-inner .widget-title {
+	color: #fff;
+	margin: 0% 0 4%;
+	font-size: 24px;
+}
+
+.helphub-homewidget-row1, .helphub-homewidget-row2 {
+	clear: both;
+	display: block;
+}
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
