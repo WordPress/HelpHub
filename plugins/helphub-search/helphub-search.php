@@ -57,7 +57,7 @@ class HelpHub_Search {
 	 * @return [type] [description]
 	 */
 	static function enqueue_scripts(){
-		wp_enqueue_script( 'suggest' );
+		wp_enqueue_script( 'jquery-ui-autocomplete' );
 		wp_enqueue_script( 'helphub-search-suggest-ajax-url' );
 		wp_enqueue_script( 'helphub-search-suggest', plugins_url( '/assets/helphub.js' , __FILE__ ), array( 'jquery' ) );
 

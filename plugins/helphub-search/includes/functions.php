@@ -50,15 +50,8 @@ function se_lookup() {
     }
     $query .= " GROUP BY {$wpdb->prefix}posts.ID";
 
-    $prepare = $wpdb->prepare( $query, $_REQUEST['q'] );
-    foreach ($wpdb->get_results( $prepare ) as $row) {
-        $post_title = $row->title;
-        $id = $row->ID;
-        
-        $return[] = $post_title;
+    $prepare = $wpdb->prepare( $query, $_REQUEST['term'] );
 
-    	echo "<span class=\"term\">" . $post_title .  "</span> in <strong class='category' data-id=\"".$row->slug."\"> " . $row->cat . "</strong> \n";
-    }
-
+    print json_encode( $wpdb->get_results( $prepare, ARRAY_A ) );
     exit;
 }

@@ -1,16 +1,23 @@
-jQuery(document).ready(function() {
-	//alert(helphub_object.ajax_url);
-	jQuery('#helphub_search_form').suggest( helphub_object.ajax_url + '?action=se_lookup', {
-		multiple: false,
-		selectClass: 'ac_over',
-		matchClass: 'ac_match',
-		resultsClass: 'helphub-suggest-results',
-		minChars: 2,
-		onSelect: function(){
-			jQuery('<input />').attr('type', 'hidden')
-          	.attr('name', "category_name")
-          	.attr('value', jQuery('.ac_over').children('.category').data('id') )
-          	.appendTo( jQuery(this) );
-		}
-	} );
-});
+(function($) {
+	$(document).ready(function(){
+
+		jQuery('#helphub_search_input').autocomplete({
+	        source: function(req, response){
+	            jQuery.getJSON(helphub_object.ajax_url + '?action=se_lookup', req, response);
+	        },
+	        focus: function( event, ui ) {
+        		//$( "#project" ).val( ui.item.label );
+        		return false;
+      		},
+	        select: function(event, ui) {
+	        	console.log( ui.item );
+	        },
+	        minLength: 0,
+	    }).autocomplete( "instance" )._renderItem = function( ul, item ) {
+	      return $( "<li>" )
+	        .append( item.title + " in <strong>" + item.cat + "</strong>" )
+	        .appendTo( ul );
+	    };
+
+   	});
+})(jQuery);
