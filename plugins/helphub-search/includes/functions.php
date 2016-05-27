@@ -29,7 +29,7 @@ function se_lookup() {
     ));
     
     $query = "
-        SELECT {$wpdb->prefix}posts.ID AS id,{$wpdb->prefix}posts.post_title AS title,{$wpdb->prefix}terms.name AS cat,{$wpdb->prefix}terms.slug AS slug
+        SELECT {$wpdb->prefix}posts.ID AS id,{$wpdb->prefix}posts.post_title AS value,{$wpdb->prefix}terms.name AS cat,{$wpdb->prefix}terms.slug AS slug
         FROM {$wpdb->prefix}posts 
         INNER JOIN {$wpdb->prefix}term_relationships 
         ON {$wpdb->prefix}term_relationships.object_id={$wpdb->prefix}posts.ID 
@@ -52,6 +52,6 @@ function se_lookup() {
 
     $prepare = $wpdb->prepare( $query, $_REQUEST['term'] );
 
-    print json_encode( $wpdb->get_results( $prepare, ARRAY_A ) );
+    print_r(json_encode($wpdb->get_results( $prepare )));
     exit;
 }
