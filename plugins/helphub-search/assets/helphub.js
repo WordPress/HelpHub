@@ -13,7 +13,7 @@
 	        	console.log( ui );
 	        },
 	        minLength: 0,
-	    }).data( "ui-autocomplete" )._renderItemData = function( ul, item ) {
+	    }).autocomplete( "instance" )._renderItem = function( ul, item ) {
 	      	return $( "<li>" )
 	        	.append( item.value + " in <strong>" + item.cat + "</strong>" )
 	        	.data("ui-autocomplete-item", item)
