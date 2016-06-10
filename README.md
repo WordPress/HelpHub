@@ -38,7 +38,7 @@ See the [HelpHub wireframes](https://wp-commhub.mybalsamiq.com/projects/helphub/
 
 ## Project collaborators
 
-Project Lead: [Hugh Lashbrooke](https://github.com/hlashbrooke/)
+Project Lead: [Jon Ang](https://profiles.wordpress.org/kenshino)
 
 The following people are active developers on the project and are all listed as collaborators on this repo:
 
