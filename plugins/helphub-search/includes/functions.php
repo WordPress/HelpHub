@@ -15,17 +15,11 @@ add_action('wp_ajax_nopriv_se_lookup', 'se_lookup');
  * @return [type] [description]
  */
 function se_lookup() {
-    global $wpdb;
     
+    global $wpdb;
     $restrictions = apply_filters('helphub_search_restrictions', array(
-        'categories' => array(
-            'installing-wordpress',
-            'setting-up-wordpress',
-            'core-functions',
-            'working-with-themes',
-            'all-things-plugins',
-            'advanced-topics'
-        )
+        'installing-wordpress',
+        'setting-up-wordpress'
     ));
     
     $query = "
@@ -41,12 +35,11 @@ function se_lookup() {
         AND {$wpdb->prefix}posts.post_title LIKE '%%%s%%' 
     ";      
 
-    // DOES NOT SEEM TO WORK AS EXPECTED.
-    if( is_array( $restrictions['categories'] ) ){
-        $category_count = count( $restrictions['categories'] );
+    if( is_array( $restrictions ) ){
+        $category_count = count( $restrictions );
         for($x = 0; $x < $category_count; $x++ ){
             $com = $x > 0 ? 'OR ' : 'AND ';
-            $query .= "\n" . $com . " wp_terms.slug = '" . $restrictions['categories'][$x]."'";
+            $query .= "\n" . $com . " {$wpdb->prefix}terms.slug = '" . $restrictions[$x]."'";
         }
     }
     $query .= " GROUP BY {$wpdb->prefix}posts.ID";

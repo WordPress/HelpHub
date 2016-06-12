@@ -39,24 +39,16 @@ add_filter( 'get_search_form', 'helphub_search_form' );
  */
 function helphub_search_restrictions( $restrictions ){
 
-	$restrictions = array_unique(array_merge_recursive(
+	$restrictions = array_unique(array_merge(
 		array(
-			'searchable' => array(
-				'title'
-			),
-			'taxonomies' => array(
-				'helphub_experience' => array()
-			),
-			'categories' => array(
-				'installing-wordpress',
-				'setting-up-wordpress',
-				'core-functions',
-				'working-with-themes',
-				'all-things-plugins',
-				'advanced-topics'
-			),
+			'installing-wordpress',
+			'setting-up-wordpress',
+			'core-functions',
+			'working-with-themes',
+			'all-things-plugins',
+			'advanced-topics'
 		), $restrictions));
 
 	return $restrictions;
 }
-add_filter('helphub_search_restrictions', 'helphub_search_restrictions');
+add_filter('helphub_search_restrictions', 'helphub_search_restrictions', 10);
