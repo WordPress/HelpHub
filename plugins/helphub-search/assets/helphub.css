@@ -3,6 +3,7 @@
 	position: absolute;
 	z-index: 1;
 	padding: 0 2em;
+	list-style: none;
 }
 
 .ui-menu .ui-menu-item a {
