@@ -39,16 +39,18 @@ function se_lookup() {
         ON {$wpdb->prefix}term_taxonomy.term_id={$wpdb->prefix}terms.term_id
         WHERE {$wpdb->prefix}term_taxonomy.taxonomy='category'
         AND {$wpdb->prefix}posts.post_title LIKE '%%%s%%' 
-    ";  
+    ";      
 
+    // DOES NOT SEEM TO WORK AS EXPECTED.
     if( is_array( $restrictions['categories'] ) ){
         $category_count = count( $restrictions['categories'] );
         for($x = 0; $x < $category_count; $x++ ){
             $com = $x > 0 ? 'OR ' : 'AND ';
-            //$query .= "\n" . $com . " wp_terms.slug = '" . $restrictions['categories'][$x]."'";
+            $query .= "\n" . $com . " wp_terms.slug = '" . $restrictions['categories'][$x]."'";
         }
     }
     $query .= " GROUP BY {$wpdb->prefix}posts.ID";
+    $query .= " LIMIT 5";
 
     $prepare = $wpdb->prepare( $query, $_REQUEST['term'] );
     $query = $wpdb->get_results( $prepare, ARRAY_A);
