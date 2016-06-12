@@ -51,7 +51,16 @@ function se_lookup() {
     $query .= " GROUP BY {$wpdb->prefix}posts.ID";
 
     $prepare = $wpdb->prepare( $query, $_REQUEST['term'] );
+    $query = $wpdb->get_results( $prepare, ARRAY_A);
+    
+    $response = array();
+    if( $query ){
+        foreach( $query as $result ){
+            $result['label'] = $result['value'] . ' in <strong>'.$result['cat'].'</strong>';
+            $response[] = $result;
+        }
+    }
 
-    print_r(json_encode($wpdb->get_results( $prepare )));
+    echo( json_encode( $response ) );
     exit;
 }
