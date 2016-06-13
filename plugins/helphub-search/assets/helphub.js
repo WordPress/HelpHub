@@ -10,10 +10,10 @@ jQuery(document).ready(function(){
 			    name: 'cat',
 			    value: ui.item.cat
 			}).appendTo('#hh_search_form');
-			
+
 			jQuery('#hh_search_form').submit();
         },
-        minLength: 0,
+        minLength: 3,
         html: true
     }).data("ui-autocomplete")._renderItemData = function( ul, item) {
 		return jQuery( "<li></li>" ) 
