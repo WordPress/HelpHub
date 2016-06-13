@@ -11,12 +11,6 @@
  * Text Domain: helphub
  * Domain Path: /languages/
  *
- * Developer Objectives:
- *
- * HelpHub Search should extend WordPress's default search functionality to provide awesomness
- * a.k.a tailor search results for HelpHub.
- *
- *
  * @package helphub-search
  */
 
