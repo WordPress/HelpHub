@@ -2,7 +2,7 @@
 /**
  * Help functions
  *
- * @package helphub-search
+ * @package Helphub Search
  */
 
 add_action( 'wp_ajax_se_lookup', 'se_lookup' );
@@ -42,13 +42,13 @@ function se_lookup() {
 		}
 	}
 	$query .= " GROUP BY {$wpdb->prefix}posts.ID";
-	$query .= ' LIMIT 5';
+	$query_sql .= ' LIMIT 5';
 
     $request_term = filter_input( INPUT_GET, $_REQUEST['term'], FILTER_SANITIZE_ENCODED );
 
-    $prepare = $wpdb->prepare( $query, $request_term );
-    
-    $query = $wpdb->get_results( $prepare, ARRAY_A );
+    $prepare_query = $wpdb->prepare( $query_sql, $request_term );
+
+    $results = $wpdb->get_results( $prepare_query, ARRAY_A );
 
 	$response = array();
 	if ( $query ) {
