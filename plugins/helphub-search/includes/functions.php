@@ -44,8 +44,10 @@ function se_lookup() {
 	$query .= " GROUP BY {$wpdb->prefix}posts.ID";
 	$query .= ' LIMIT 5';
 
-    $request_term = filter_input( INPUT_POST, $_REQUEST['term'] );
+    $request_term = filter_input( INPUT_GET, $_REQUEST['term'], FILTER_SANITIZE_ENCODED );
+
     $prepare = $wpdb->prepare( $query, $request_term );
+    
     $query = $wpdb->get_results( $prepare, ARRAY_A );
 
 	$response = array();
