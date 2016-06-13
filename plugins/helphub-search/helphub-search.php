@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * Plugin Name: HelpHub Search
  * Description: Extends WordPress's default search, provide auto suggestion and ability to highlight result results based on search terms.
  * Version:     1.0.0
@@ -13,58 +13,53 @@
  *
  * Developer Objectives:
  *
- * HelpHub Search should extend WordPress's default search functionality to provide awesomness 
+ * HelpHub Search should extend WordPress's default search functionality to provide awesomness
  * a.k.a tailor search results for HelpHub.
  *
- * Goal: Provide a non intrusive auto complete or suggestion drop down in search input
- * Goal: Dig deeper into the heart and get better tailored results on search submission. 
- * Goal: IMPORTANT.... Provide a reason able throttle to prevent abuse. The search after all will be the work horse.
  *
- * Note: To keep things simple and light weight on the front-end, the auto complete feature should only search
- * article titles and maybe excerpts. 
- *
- * Want: Depending on the CPT, category and tag structure, it would be nice to auto suggest defined groups in a
- * nice drop down.
+ * @package helphub-search
  */
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
-add_action('wp_enqueue_scripts', array('HelpHub_Search','enqueue_scripts') );
+add_action( 'wp_enqueue_scripts' , array( 'HelpHub_Search', 'enqueue_scripts' ) );
 
 /**
  * Main Search Class for HelpHub
- * 
  */
 class HelpHub_Search {
 
-	/** Server Instance */
+	/**
+	 * Instance
+	 *
+	 * @var null
+	 */
 	public static $_instance = null;
 
 	/**
-	 * Constructor
+	 * Construct Method
 	 */
-	function __construct(){
-		
+	function __construct() {
+
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/functions.php' );
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/filters.php' );
 
-		// Include certain files only if the call is AJAX
-		if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) {}
 	}
 
 	/**
 	 * Enqueue Styles and Scripts
-	 * @return [type] [description]
+	 *
+	 * @return void
 	 */
-	static function enqueue_scripts(){
+	static function enqueue_scripts() {
 		wp_enqueue_script( 'jquery-ui-autocomplete' );
 		wp_enqueue_script( 'helphub-search-suggest-ajax-url' );
 		wp_enqueue_script( 'helphub-search-suggest', plugins_url( '/assets/helphub.js' , __FILE__ ), array( 'jquery' ) );
 
-		wp_localize_script( 'helphub-search-suggest', 'helphub_object', 
-			array( 
-				'ajax_url' => admin_url( 'admin-ajax.php' )
-			) 
+		wp_localize_script( 'helphub-search-suggest', 'helphub_object',
+			array(
+				'ajax_url' => admin_url( 'admin-ajax.php' ),
+			)
 		);
 
 		wp_enqueue_style( 'helphub-suggesed-search', plugins_url( '/assets/helphub.css' , __FILE__ ) );
@@ -72,6 +67,7 @@ class HelpHub_Search {
 
 	/**
 	 * Populate the instance if the plugin for extendability
+	 *
 	 * @return object plugin instance
 	 */
 	static function _instance() {
@@ -83,9 +79,10 @@ class HelpHub_Search {
 	}
 }
 
-// Start HelpHub Search Class
-function _HH_Search() {
+/**
+ * Load an instance of the search functionality
+ */
+function _hh_search() {
 	return HelpHub_Search::_instance();
 }
-add_action('init', '_HH_Search');
-//$GLOBAL['HH_SEARCH'] = _HH_Search();
+add_action( 'init', '_hh_search' );
