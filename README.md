@@ -20,7 +20,7 @@ Anyone is welcome to fork the repo and send pull requests, but the project colla
 
 ### Feature development
 
-All features are to be built in individual branches named `feature-abc` (where `abc` is a brief descriptor of the feature) and submitted via pull request to the `master` branch. For best results, features should be spearated into their own plugins, but the project lead will evaluate this for each pull request depending on the requirements and scope of the feature.
+All features are to be built in individual branches named `feature-abc` (where `abc` is a brief descriptor of the feature) and submitted via pull request to the `master` branch. For best results, features should be separated into their own plugins, but the project lead will evaluate this for each pull request depending on the requirements and scope of the feature.
 
 ### Bug fixes
 
@@ -38,7 +38,7 @@ See the [HelpHub wireframes](https://wp-commhub.mybalsamiq.com/projects/helphub/
 
 ## Project collaborators
 
-Project Lead: [Hugh Lashbrooke](https://github.com/hlashbrooke/)
+Project Lead: [Jon Ang](https://profiles.wordpress.org/kenshino)
 
 The following people are active developers on the project and are all listed as collaborators on this repo:
 
