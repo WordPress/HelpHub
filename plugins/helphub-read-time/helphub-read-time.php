@@ -51,9 +51,11 @@ function hh_calculate_and_update_post_read_time( $post_id, $post, bool $update )
 	$post_content = $post->post_content;
 
 	// Simple adjustment for pre tags.
+	libxml_use_internal_errors(true);
 	$data = new DOMDocument();
 	$data->loadHTML( $post_content );
 	$xpath = new DomXpath( $data );
+	libxml_use_internal_errors(false);
 
 	$pre_tags = array();
 	$word_count_offset = 0;
@@ -147,3 +149,22 @@ function hh_get_the_read_time( $post_id = null ) {
 
 	return sprintf( _n( 'Reading Time: %s Minute','Reading Time: %s Minutes', $reading_time, 'helphub' ), $reading_time );
 }
+
+
+function hh_mass_calculate_readtime() {
+	$qry_args = array(
+		'post_status' => 'publish', // optional
+		'post_type' => 'post', // Change to match your post_type
+		'posts_per_page' => -1, // ALL posts
+		);
+
+	$query = new WP_Query( $qry_args );
+    while ( $query->have_posts() ) {
+		$query->the_post();
+		hh_calculate_and_update_post_read_time( $query->post->ID, $query->post, false );
+
+		print 'updating ' . $query->post->ID . '</br>';
+	}
+	exit;
+}
+//add_action('init', 'hh_mass_calculate_readtime', 100);
