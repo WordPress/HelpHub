@@ -21,7 +21,12 @@ function se_lookup() {
 		'setting-up-wordpress',
 	));
 
-	$query = "
+	$request_term = $_REQUEST['term'];
+	if( ctype_space( $request_term ) ){
+		return;
+	}
+
+	$query_sql = "
         SELECT {$wpdb->prefix}posts.ID AS id,{$wpdb->prefix}posts.post_title AS value,{$wpdb->prefix}terms.name AS cat,{$wpdb->prefix}terms.slug AS slug
         FROM {$wpdb->prefix}posts 
         INNER JOIN {$wpdb->prefix}term_relationships 
@@ -38,21 +43,18 @@ function se_lookup() {
 		$category_count = count( $restrictions );
 		for ( $x = 0; $x < $category_count; $x++ ) {
 			$com = $x > 0 ? 'OR ' : 'AND ';
-			$query .= "\n" . $com . " {$wpdb->prefix}terms.slug = '" . $restrictions[ $x ]."'";
+			$query_sql .= "\n" . $com . " {$wpdb->prefix}terms.slug = '" . $restrictions[ $x ]."'";
 		}
 	}
-	$query .= " GROUP BY {$wpdb->prefix}posts.ID";
+	$query_sql .= " GROUP BY {$wpdb->prefix}posts.ID";
 	$query_sql .= ' LIMIT 5';
 
-    $request_term = filter_input( INPUT_GET, $_REQUEST['term'], FILTER_SANITIZE_ENCODED );
-
     $prepare_query = $wpdb->prepare( $query_sql, $request_term );
-
     $results = $wpdb->get_results( $prepare_query, ARRAY_A );
 
 	$response = array();
-	if ( $query ) {
-		foreach ( $query as $result ) {
+	if ( $results ) {
+		foreach ( $results as $result ) {
 			$result['label'] = $result['value'] . ' in <strong>'.$result['cat'].'</strong>';
 			$response[] = $result;
 		}
