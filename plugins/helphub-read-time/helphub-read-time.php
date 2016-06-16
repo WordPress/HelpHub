@@ -165,8 +165,6 @@ function hh_mass_calculate_readtime() {
     while ( $query->have_posts() ) {
 		$query->the_post();
 		hh_calculate_and_update_post_read_time( $query->post->ID, $query->post, false );
-		sleep(1);
 	}
-	exit;
 }
 register_activation_hook( __FILE__, 'hh_mass_calculate_readtime' );
