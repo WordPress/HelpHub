@@ -24,7 +24,7 @@ add_action( 'save_post', 'hh_calculate_and_update_post_read_time', 10, 3 );
  * @param  boolean $update  Is this an update or new.
  * @return void
  */
-function hh_calculate_and_update_post_read_time( $post_id, $post, bool $update ) {
+function hh_calculate_and_update_post_read_time( $post_id, $post, $update ) {
 
 	// Only those allowed.
 	if ( ! current_user_can( 'edit_posts', $post_id ) ) {
@@ -122,7 +122,7 @@ function hh_get_readtime( $post_id ) {
  * @param  int $post_id 	ID of post to retrieve read time for.
  */
 function hh_the_read_time( $post_id = null ) {
-	$post__id = intval( $post_id );
+	$post_id = intval( $post_id );
 	echo hh_get_the_read_time( $post_id );
 }
 
@@ -150,21 +150,23 @@ function hh_get_the_read_time( $post_id = null ) {
 	return sprintf( _n( 'Reading Time: %s Minute','Reading Time: %s Minutes', $reading_time, 'helphub' ), $reading_time );
 }
 
-
+/**
+ * Mass calculate the read time of all published posts
+ * @return [type] [description]
+ */
 function hh_mass_calculate_readtime() {
 	$qry_args = array(
-		'post_status' => 'publish', // optional
-		'post_type' => 'post', // Change to match your post_type
-		'posts_per_page' => -1, // ALL posts
+		'post_status' => 'publish',
+		'post_type' => 'post',
+		'posts_per_page' => -1,
 		);
 
 	$query = new WP_Query( $qry_args );
     while ( $query->have_posts() ) {
 		$query->the_post();
 		hh_calculate_and_update_post_read_time( $query->post->ID, $query->post, false );
-
-		print 'updating ' . $query->post->ID . '</br>';
+		sleep(1);
 	}
 	exit;
 }
-//add_action('init', 'hh_mass_calculate_readtime', 100);
+register_activation_hook( __FILE__, 'hh_mass_calculate_readtime' );
