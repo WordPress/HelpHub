@@ -84,7 +84,7 @@ class HelpHub_Post_Types_Post_Type {
 			global $pagenow;
 
 			add_action( 'admin_menu', array( $this, 'meta_box_setup' ), 20 );
-			add_action( 'save_post', array( $this, 'meta_box_save' ) );
+			add_action( 'save_post', array( $this, 'meta_box_save' ), 50 );
 			add_filter( 'enter_title_here', array( $this, 'enter_title_here' ) );
 			add_filter( 'post_updated_messages', array( $this, 'updated_messages' ) );
 
@@ -226,7 +226,9 @@ class HelpHub_Post_Types_Post_Type {
 	 * @return array           Modified array.
 	 */
 	public function updated_messages( $messages ) {
-		global $post, $post_id;
+		global $post;
+
+		$post_id = $post->ID;
 
 		$messages[ $this->post_type ] = array(
 			0 => '', // Unused. Messages start at index 1.
@@ -242,7 +244,7 @@ class HelpHub_Post_Types_Post_Type {
 			9 => sprintf( __( '%s scheduled for: %1$s. %2$sPreview %s%3$s', 'helphub' ), $this->singular, strtolower( $this->singular ),
 				// Translators: Publish box date format, see http://php.net/date.
 			'<strong>' . date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ) . '</strong>', '<a target="_blank" href="' . esc_url( get_permalink( $post_id ) ) . '">', '</a>' ),
-			10 => sprintf( __( '%s draft updated. %sPreview %s%s', 'helphub' ), $this->singular, strtolower( $this->singular ), '<a target="_blank" href="' . esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_id ) ) ) . '">', '</a>' ),
+			10 => sprintf( __( '%3$s draft updated. %sPreview %4$s%s', 'helphub' ), '<a target="_blank" href="' . esc_url( get_preview_post_link() ) . '">', '</a>', $this->singular, strtolower( $this->singular ) ),
 		);
 
 		return $messages;
@@ -443,7 +445,8 @@ class HelpHub_Post_Types_Post_Type {
 		}
 
 		// Verify
-		if ( ( get_post_type() !== $this->post_type ) || ! wp_verify_nonce( $_POST['helphub_' . $this->post_type . '_noonce'], plugin_basename( dirname( HelpHub_Post_Types()->plugin_path ) ) ) ) {
+		if ( ( get_post_type() !== $this->post_type ) ||
+		     ( isset( $_POST['helphub_' . $this->post_type . '_noonce'] ) && !wp_verify_nonce( $_POST['helphub_' . $this->post_type . '_noonce'], plugin_basename( dirname( HelpHub_Post_Types()->plugin_path ) ) ) ) ){
 			return $post_id;
 		}
 
@@ -499,8 +502,10 @@ class HelpHub_Post_Types_Post_Type {
 		endforeach;
 
 		// Save the project gallery image IDs.
-		$attachment_ids = array_filter( explode( ',', sanitize_text_field( $_POST['helphub_image_gallery'] ) ) );
-		update_post_meta( $post_id, '_helphub_image_gallery', implode( ',', $attachment_ids ) );
+		if ( isset( $_POST['helphub_image_gallery'] ) ) :
+			$attachment_ids = array_filter( explode( ',', sanitize_text_field( $_POST['helphub_image_gallery'] ) ) );
+			update_post_meta( $post_id, '_helphub_image_gallery', implode( ',', $attachment_ids ) );
+		endif;
 	} // End meta_box_save()
 
 	/**
