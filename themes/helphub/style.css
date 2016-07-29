@@ -673,16 +673,13 @@ a:active {
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
-	float: left;
-	width: 50%;
+
 }
 
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
-	float: right;
-	text-align: right;
-	width: 50%;
+
 }
 
 /*--------------------------------------------------------------
@@ -865,11 +862,9 @@ a:active {
 }
 
 .single-post article.post{
-	float: left;
-	width: 70%;
-	padding: 2em;
 	box-sizing: border-box;
-	position: relative
+	position: relative;
+	padding: 0 10px;
 }
 
 .article-container{
@@ -896,11 +891,9 @@ a:active {
 
 .single-post .single-post-sidebar{
 	background-color: #d8d8d8;
-	float: left;
-	width: 30%;
-	padding: 1em;
 	box-sizing: border-box;
 	position: relative;
+	padding: 0 10px;
 }
 
 .single-post-sidebar .sidebar-content{
@@ -1268,6 +1261,34 @@ h2.helphub-footerarea-title {
 		padding: 0% 2% 0% 4%;
 	}
 
+	/* Sinlge Post */
+	.single-post article.post {
+		float: left;
+		width: 70%;
+		padding: 2em;
+	}
+	.single-post .single-post-sidebar {
+		float: left;
+		width: 30%;
+		padding: 1em;
+	}
+	.comment-navigation .nav-previous,
+	.posts-navigation .nav-previous,
+	.post-navigation .nav-previous {
+		float: left;
+		width: 50%;
+	}
+	.comment-navigation .nav-next,
+	.posts-navigation .nav-next,
+	.post-navigation .nav-next {
+		float: right;
+		text-align: right;
+		width: 50%;
+	}
+	.widget-area .widget {
+		width: 50%;
+		float: left;
+	}
 }
 
 /**
@@ -1283,7 +1304,10 @@ h2.helphub-footerarea-title {
  */
 
 @media screen and (min-width: 56.875em) {
-
+	.widget-area .widget {
+		width: 25%;
+		float: left;
+	}
 }
 
 /**
