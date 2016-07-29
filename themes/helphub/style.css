@@ -42,6 +42,13 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Media
 	## Captions
 	## Galleries
+# Media Queries
+    ##>= 710px
+    ##>= 783px
+    ##>= 910px
+    ##>= 985px
+    ##>= 1200px
+
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -778,13 +785,19 @@ a:active {
 	max-width: 100%;
 }
 
-.helphub-homewidget-row1 section, .helphub-homewidget-row2 section {
-	width: 30%;
-	float: left;
-	padding: 1%;
+.helphub-homewidget-row1, 
+.helphub-homewidget-row2 {
+	clear: both;
+	display: block;
 }
 
-.helphub-homewidget-row1 .homewidget-inner, .helphub-homewidget-row2 .homewidget-inner {
+.helphub-homewidget-row1 section, 
+.helphub-homewidget-row2 section {
+	width: 100%;
+}
+
+.helphub-homewidget-row1 .homewidget-inner, 
+.helphub-homewidget-row2 .homewidget-inner {
 	padding: 6%;
 	background: #999;
 	border: 3px solid #394045;
@@ -793,7 +806,9 @@ a:active {
   min-height: 180px;
 }
 
-.homewidget-inner li a, .homewidget-inner li, .homewidget-inner div {
+.homewidget-inner li a, 
+.homewidget-inner li, 
+.homewidget-inner div {
 	color: #195394;
 	font-size: 16px;
 }
@@ -808,10 +823,6 @@ a:active {
 	font-size: 24px;
 }
 
-.helphub-homewidget-row1, .helphub-homewidget-row2 {
-	clear: both;
-	display: block;
-}
 
 /*--------------------------------------------------------------
 # Content
@@ -1065,6 +1076,7 @@ h1.site-main-title {
 
 .main-search-area {
 	margin-bottom: 6%;
+	padding: 0px 10px;
 }
 
 h3.main-widget-box-title {
@@ -1125,8 +1137,12 @@ footer a:visited {
     border-top: 1px solid #dfdfdf;
     background-color: #f7f7f7;
 }
-
-.helphub-footerarea, .helphub-footerarea1, .helphub-footerarea2 {
+.helphub-footerarea {
+	padding: 4% 0px;
+}
+.helphub-footerarea, 
+.helphub-footerarea1, 
+.helphub-footerarea2 {
     background-color: #073763;
     color:#fff;
 }
@@ -1149,13 +1165,14 @@ footer ul li {
 	font-size: 14px;
 }
 
-.helphub-footerarea h2, .helphub-footerarea h3 {
+.helphub-footerarea h2, 
+.helphub-footerarea h3 {
 	margin: 0;
 }
 
-.helphub-footerarea .helphub-footerarea1, .helphub-footerarea .helphub-footerarea2 {
-	width: 42%;
-	float: left
+.helphub-footerarea1, 
+.helphub-footerarea2 {
+	width: 100%;
 }
 
 #wporg-footer ul {
@@ -1167,22 +1184,22 @@ footer ul li {
     padding-left: 0;
 }
 
-.helphub-footerarea1, .helphub-footerarea2 {
-    padding: 0% 2% 0% 4%;
+.helphub-footerarea1 {
+	/*margin-top: 4%;*/
+    border-right: 3px solid #000;
 }
 
 .helphub-footerarea .wrapper {
 	padding-bottom: 2%;
+	padding: 0px 10px;
 }
 
 h2.helphub-footerarea-title {
-	margin: 4% 2%;
+	margin: 0 2% 4%;
 	font-size: 32px;
 }
 
-.helphub-footerarea1 {
-    border-right: 3px solid #000;
-}
+
 
 .helphub-footerarea-body {
     font-size: 14px;
@@ -1209,12 +1226,103 @@ h2.helphub-footerarea-title {
     color: #cccccc;
 }
 
-@media (max-width:768px) {
-	.helphub-footerarea .helphub-footerarea1, .helphub-footerarea .helphub-footerarea2 {
-		width:100%;
-		text-align: center;
-		margin-top: 4%;
+/*--------------------------------------------------------------
+## Media Queries
+--------------------------------------------------------------*/
+
+/**
+ * Does the same thing as <meta name="viewport" content="width=device-width">,
+ * but in the future W3C standard way. -ms- prefix is required for IE10+ to
+ * render responsive styling in Windows 8 "snapped" views; IE10+ does not honor
+ * the meta tag. See https://core.trac.wordpress.org/ticket/25888.
+ */
+@-ms-viewport {
+	width: device-width;
+}
+
+@viewport {
+	width: device-width;
+}
+
+/**
+ * >= 710px
+ */
+
+@media screen and (min-width: 44.375em) {
+	.helphub-homewidget-row1 section, 
+	.helphub-homewidget-row2 section {
+		width: 47.5%;
+		float: left;
 	}
+	.helphub-homewidget-row1 section:nth-child(odd), 
+	.helphub-homewidget-row2 section:nth-child(odd) {
+		margin-right: 5%;
+	}
+	.helphub-footerarea1 {
+	    border-right: 3px solid #000;
+	}
+	.helphub-footerarea1, 
+	.helphub-footerarea2 {
+		width: 42%;
+		float: left;
+		padding: 0% 2% 0% 4%;
+	}
+
+}
+
+/**
+ * >= 783px
+ */
+
+@media screen and (min-width: 48.9375em) {
+
+}
+
+/**
+ * >= 910px
+ */
+
+@media screen and (min-width: 56.875em) {
+
+}
+
+/**
+ * >= 985px
+ */
+
+@media screen and (min-width: 61.5625em) {
+	
+}
+
+/**
+ * >= 1100px
+ */
+@media screen and (min-width: 68.75em) {
+	.helphub-homewidget-row1 section, 
+	.helphub-homewidget-row2 section {
+		margin: 0 4% 4% 0;
+    	width: 30.6%;
+	}
+	.helphub-homewidget-row1 section:nth-child(odd), 
+	.helphub-homewidget-row2 section:nth-child(odd) {
+		margin-right: 4%;
+	}
+	.helphub-homewidget-row1 section:nth-child(3n), 
+	.helphub-homewidget-row2 section:nth-child(3n) {
+		margin-right: 0px;
+	}
+}
+
+/**
+ * >= 1200px
+ */
+
+@media screen and (min-width: 75em) {
+
+}
+
+/* @TODO: Move it appropriately */
+@media (max-width:768px) {
 
 	.main-widget-box.col-3 {
 		width: 94%;
