@@ -206,3 +206,8 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Short code codex_languages for Languages Template
+ */
+require get_template_directory() . '/inc/codex-languages.php';

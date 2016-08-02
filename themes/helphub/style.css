@@ -875,6 +875,16 @@ a:active {
 .entry-content ul{
 	margin-left: 2em;
 }
+
+.entry-content .language-links {
+	border:1px solid #ccc;
+	color:#333;
+	font-size:90%;
+	line-height:1.5;
+	padding:10px;
+	text-align:left;
+}
+
 /*--------------------------------------------------------------
 ## Asides
 --------------------------------------------------------------*/
