@@ -53,3 +53,6 @@ Installing "Helphub Read Time" can be done either by searching for "Helphub Read
 = 1.0.1 =
 * Adjusted Read Time "Words Per Minute" for documentation style reading
 * Added Pre tag adjustment to add more weight for words count in pre tags.
+
+= 1.0.3 =
+* Fix for the Quick Draft DOM issues.
