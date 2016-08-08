@@ -95,7 +95,6 @@ function hh_calculate_and_update_post_read_time( $post_id, $post, $update ) {
 
 	// Update the post read time.
 	update_post_meta( $post_id, '_read_time', $readtime );
-	update_post_meta( $post_id, 'read_time', $readtime );
 }
 
 /**
@@ -108,18 +107,22 @@ function hh_calculate_and_update_post_read_time( $post_id, $post, $update ) {
  * @return string|int     Raw value of read time
  */
 function hh_get_readtime( $post_id ) {
-	if ( is_null( $post_id ) || ! is_numeric( $post_id ) ) {
+
+	if ( 0 == $post_id || ! is_numeric( $post_id ) ) {
 		global $post;
 		$post_id = $post->ID;
 	}
 
 	$custom_read_time = get_post_meta( $post_id, '_custom_read_time', true );
-	if ( '' != $custom_read_time ) {
+
+	// Possible issue if the string is empty.
+	if ( $custom_read_time ) {
 		$read_time = $custom_read_time;
 	} else {
 		$read_time = get_post_meta( $post_id, '_read_time', true );
 	}
 
+	//echo $read_time;
 	return $read_time;
 }
 
