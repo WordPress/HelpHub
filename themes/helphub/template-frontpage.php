@@ -62,9 +62,6 @@ get_header(); ?>
 					if ( is_active_sidebar( 'homewidgetrow-1' ) ) {
 						get_template_part( 'template-parts/widget', 'homewidgets' );
 					}
-					if ( is_active_sidebar( 'homewidgetrow-2' ) ) {
-						get_template_part( 'template-parts/widget', 'homewidgets2' );
-					}
 				?>
 			</div>
 		</main><!-- #main -->
