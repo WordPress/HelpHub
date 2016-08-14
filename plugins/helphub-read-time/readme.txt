@@ -1,8 +1,8 @@
 === Helphub Post Types ===
 Contributors: justingreerbbi
-Requires at least: 4.3
-Tested up to: 4.0.0
-Stable tag: 1.0.1
+Requires at least: 4.5
+Tested up to: 4.6-RC1-38210
+Stable tag: 1.0.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -53,3 +53,7 @@ Installing "Helphub Read Time" can be done either by searching for "Helphub Read
 = 1.0.1 =
 * Adjusted Read Time "Words Per Minute" for documentation style reading
 * Added Pre tag adjustment to add more weight for words count in pre tags.
+
+= 1.0.3 =
+* Fix for the Quick Draft DOM issues.
+* Read time fix for and integer & null check.
