@@ -229,6 +229,9 @@ class Table_Of_Contents_Lite {
 		if ( is_null( self::$_instance ) ) {
 			self::$_instance = new self( $file, $version );
 		}
+
+
+
 		return self::$_instance;
 	} // End instance ()
 
