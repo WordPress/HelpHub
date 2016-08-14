@@ -8,7 +8,7 @@ Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Lightweight Table of Content Plugin for the HelpHub Project. Automatically detects h1, h2, h3 tags in your post content and convert it to your table of contents. 
+Lightweight Table of Content Plugin for the HelpHub Project. Automatically detects h1, h2, h3 tags in your post content and convert it to your table of contents.
 
 == Description ==
 
