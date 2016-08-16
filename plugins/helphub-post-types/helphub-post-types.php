@@ -3,10 +3,10 @@
  * Plugin Name: Helphub Post Types
  * Plugin URI: http://www.wordpress.org
  * Description: This is what powers Post Types and Taxonomies.
- * Version: 1.0.0
+ * Version: 1.3.0
  * Author: Jon Ang
  * Author URI: http://www.helphubcommunications.com/
- * Requires at least: 4.0.0
+ * Requires at least: 4.6.0
  * Tested up to: 4.0.0
  *
  * Text Domain: helphub
@@ -115,9 +115,7 @@ final class HelpHub_Post_Types {
 	 * @since   1.0.0
 	 */
 	public $post_types = array();
-	// Post Types - End.
-	
-	// Taxonomies - Start.
+
 	/**
 	 * The taxonomies we're registering.
 	 *
@@ -126,8 +124,7 @@ final class HelpHub_Post_Types {
 	 * @since   1.0.0
 	 */
 	public $taxonomies = array();
-	// Taxonomies - End.
-	
+
 	/**
 	 * Constructor function.
 	 *
@@ -201,8 +198,10 @@ final class HelpHub_Post_Types {
 
 		if ( ( 'post.php' === $pagenow || 'post-new.php' === $pagenow ) ) :
 			if ( array_key_exists( get_post_type(), $this->post_types ) ) :
-				wp_enqueue_script( 'helphub-post-types-admin', $this->plugin_url . 'assets/js/admin.js', array( 'jquery' ), '1.0.0', true );
+				wp_enqueue_script( 'helphub-post-types-admin', $this->plugin_url . 'assets/js/admin.js', array( 'jquery' ), '1.0.1', true );
 				wp_enqueue_script( 'helphub-post-types-gallery', $this->plugin_url . 'assets/js/gallery.js', array( 'jquery' ), '1.0.0', true );
+				wp_enqueue_script( 'jquery-ui-datepicker' );
+				wp_enqueue_style( 'jquery-ui-datepicker' );
 			endif;
 		endif;
 		wp_localize_script( 'helphub-post-types-admin', 'helphub_admin',

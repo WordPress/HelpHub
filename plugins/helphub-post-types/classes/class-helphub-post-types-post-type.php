@@ -261,12 +261,13 @@ class HelpHub_Post_Types_Post_Type {
 	public function meta_box_setup() {
 		if ( 'post' === $this->post_type ) :
 			add_meta_box( $this->post_type . '-display', __( 'Display Settings', 'helphub' ), array( $this, 'meta_box_content' ), $this->post_type, 'normal', 'high' );
-
+		elseif ( 'helphub_version' === $this->post_type ) :
+			add_meta_box( $this->post_type . '-version-meta', __( 'Display Settings', 'helphub' ), array( $this, 'meta_box_version_content' ), $this->post_type, 'normal', 'high' );
 		endif;
 	} // End meta_box_setup()
 
 	/**
-	 * The contents of our meta box.
+	 * The contents of our post meta box.
 	 * Duplicate this function for more callbacks
 	 *
 	 * @access public
@@ -275,6 +276,19 @@ class HelpHub_Post_Types_Post_Type {
 	 */
 	public function meta_box_content() {
 		$field_data = $this->get_custom_fields_post_display_settings();
+		$this->meta_box_content_render( $field_data );
+	}
+
+	/**
+	 * The contents of our post meta box.
+	 * Duplicate this function for more callbacks
+	 *
+	 * @access public
+	 * @since  1.0.0
+	 * @return void
+	 */
+	public function meta_box_version_content() {
+		$field_data = $this->get_custom_fields_version_display_settings();
 		$this->meta_box_content_render( $field_data );
 	}
 
@@ -406,6 +420,14 @@ class HelpHub_Post_Types_Post_Type {
 						}
 						$html .= '</td></tr>' . "\n";
 						break;
+					case 'date':
+						$field = '<input name="' . esc_attr( $k ) . '" type="date" id="' . esc_attr( $k ) . '" class="helphub-meta-date" value="' . esc_attr( $data ) . '" />';
+						$html .= '<tr valign="top"><th scope="row"><label for="' . esc_attr( $k ) . '">' . $v['name'] . '</label></th><td>' . $field . "\n";
+						if ( isset( $v['description'] ) ) {
+							$html .= '<p class="description">' . $v['description'] . '</p>' . "\n";
+						}
+						$html .= '</td></tr>' . "\n";
+						break;
 					default:
 						$field = apply_filters( 'helphub_data_field_type_' . $v['type'], null, $k, $data, $v );
 						if ( $field ) {
@@ -489,6 +511,9 @@ class HelpHub_Post_Types_Post_Type {
 					}
 					${$f} = isset( $_POST[ $f ] ) && in_array( $_POST[ $f ], $values ) ? $_POST[ $f ] : '';
 					break;
+				case 'date':
+					${$f} = isset( $_POST[ $f ] ) ? preg_replace( '([^0-9/])', '', $_POST[ $f ] ) : '';
+					break;
 				default :
 					${$f} = isset( $_POST[ $f ] ) ? strip_tags( trim( $_POST[ $f ] ) ) : '';
 					break;
@@ -537,8 +562,10 @@ class HelpHub_Post_Types_Post_Type {
 	public function get_custom_fields_settings() {
 
 		$fields = array();
-		if ( get_post_type() === 'post' ) :
+		if ( 'post' === get_post_type() ) :
 			$fields = $this->get_custom_fields_post_display_settings();
+		elseif ( 'helphub_version' === get_post_type() ) :
+			$fields = $this->get_custom_fields_version_display_settings();
 		endif;
 
 		return $fields;
@@ -561,7 +588,7 @@ class HelpHub_Post_Types_Post_Type {
 			'description' => __( 'Leave this empty, calculation is automatic', 'helphub' ),
 			'type' => 'text',
 			'default' => '',
-			'section' => 'info'
+			'section' => 'info',
 		);
 
 		$fields['custom_read_time'] = array(
@@ -569,20 +596,51 @@ class HelpHub_Post_Types_Post_Type {
 			'description' => __( 'Only fill up this field if the automated calculation is incorrect', 'helphub' ),
 			'type' => 'text',
 			'default' => '',
-			'section' => 'info'
+			'section' => 'info',
+		);
+
+		return $fields;
+	}
+
+	/**
+	 * Get the settings for the post display custom fields.
+	 *
+	 * @access public
+	 * @since  1.0.0
+	 * @return array
+	 */
+	public function get_custom_fields_version_display_settings() {
+		$fields = array();
+
+
+		$fields['version_date'] = array(
+			'name'        => __( 'Date Released', 'helphub' ),
+			'description' => __( 'Date this WordPress Version was released', 'helphub' ),
+			'type'        => 'date',
+			'default'     => '',
+			'section'     => 'info',
+		);
+
+		$fields['musician_codename'] = array(
+			'name'        => __( 'Musician', 'helphub' ),
+			'description' => __( 'The Jazz Musician this release was named after', 'helphub' ),
+			'type'        => 'text',
+			'default'     => '',
+			'section'     => 'info',
 		);
 
 		return $fields;
 	}
 
 
+
 	/**
 	 * Get the image for the given ID.
 	 *
-	 * @param  int 				$id   Post ID.
-	 * @param  mixed $size Image dimension. (default: "thing-thumbnail")
+	 * @param  int      $id   Post ID.
+	 * @param  mixed    $size Image dimension. (default: "thing-thumbnail")
 	 * @since  1.0.0
-	 * @return string       	<img> tag.
+	 * @return string   <img> tag.
 	 */
 	protected function get_image( $id, $size = 'thing-thumbnail' ) {
 		$response = '';

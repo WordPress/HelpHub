@@ -45,4 +45,8 @@ jQuery(document).ready(function($){
 		gallery_data_frame.open();
 	});
 
+	if ( $( 'input[type="date"]' ).hasClass( 'helphub-meta-date' ) ) {
+		$( '.helphub-meta-date' ).datepicker();
+	} // bust cache
+
 });
