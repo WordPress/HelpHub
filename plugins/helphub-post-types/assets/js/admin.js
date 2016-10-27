@@ -46,7 +46,11 @@ jQuery(document).ready(function($){
 	});
 
 	if ( $( 'input[type="date"]' ).hasClass( 'helphub-meta-date' ) ) {
-		$( '.helphub-meta-date' ).datepicker();
+		$( '.helphub-meta-date' ).datepicker({
+			changeMonth: 	true,
+			changeYear:		true,
+			formatDate:		'MM, dd, yy'
+		});
 	} // bust cache
 
 });

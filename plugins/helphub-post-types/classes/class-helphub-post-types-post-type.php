@@ -1,5 +1,4 @@
 <?php
-
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly.
 
 /**
@@ -140,7 +139,7 @@ class HelpHub_Post_Types_Post_Type {
 			'capability_type' => 'post',
 			'has_archive' => $archive_slug,
 			'hierarchical' => false,
-			'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'page-attributes' ),
+			'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'page-attributes', 'revisions' ),
 			'menu_position' => 5,
 			'menu_icon' => 'dashicons-smiley',
 		);
@@ -421,7 +420,7 @@ class HelpHub_Post_Types_Post_Type {
 						$html .= '</td></tr>' . "\n";
 						break;
 					case 'date':
-						$field = '<input name="' . esc_attr( $k ) . '" type="date" id="' . esc_attr( $k ) . '" class="helphub-meta-date" value="' . esc_attr( $data ) . '" />';
+						$field = '<input name="' . esc_attr( $k ) . '" type="date" id="' . esc_attr( $k ) . '" class="helphub-meta-date" value="' . esc_attr( date_i18n( 'F d, Y', $data ) ). '" />';
 						$html .= '<tr valign="top"><th scope="row"><label for="' . esc_attr( $k ) . '">' . $v['name'] . '</label></th><td>' . $field . "\n";
 						if ( isset( $v['description'] ) ) {
 							$html .= '<p class="description">' . $v['description'] . '</p>' . "\n";
@@ -453,8 +452,8 @@ class HelpHub_Post_Types_Post_Type {
 	 *
 	 * @access public
 	 * @since  1.0.0
-	 * @param int $post_id The post id.
-	 * @return int $post_id
+	 * @param int       $post_id The post id.
+	 * @return mixed    $post_id
 	 */
 	public function meta_box_save( $post_id ) {
 		global $post, $messages;
@@ -512,7 +511,7 @@ class HelpHub_Post_Types_Post_Type {
 					${$f} = isset( $_POST[ $f ] ) && in_array( $_POST[ $f ], $values ) ? $_POST[ $f ] : '';
 					break;
 				case 'date':
-					${$f} = isset( $_POST[ $f ] ) ? preg_replace( '([^0-9/])', '', $_POST[ $f ] ) : '';
+					${$f} = isset( $_POST[ $f ] ) ? strtotime( wp_strip_all_tags( $_POST[ $f ] ) ) : '';
 					break;
 				default :
 					${$f} = isset( $_POST[ $f ] ) ? strip_tags( trim( $_POST[ $f ] ) ) : '';
