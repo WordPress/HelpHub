@@ -54,3 +54,6 @@ The following people are active developers on the project and are all listed as 
 | Rachel Whitton     	| Rachelwhitton     	| rachelwhitton  	|
 | Jay Hoffmann       	| JasonHoffmann     	| jayhoffmann    	|
 | Carl Alberto        | carl-alberto        | carlalberto     |
+| Marius Jensen       | clorith             | clorith         |
+| Jude Rosario        | JudeRosario         | lumberhack      |
+| Stephen Edgar       | ntwb                | netweb          |
