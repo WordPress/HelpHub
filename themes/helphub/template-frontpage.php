@@ -5,9 +5,9 @@
  * If the user has selected a static page for their homepage, this is what will
  * appear. Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- *
  * @package components
  */
+
 /**
  * Load pattern maker file.
  */
@@ -25,7 +25,7 @@ get_header(); ?>
 					?>
 				</div>
 				<div class="helphub-contentarea">
-					<?php	while ( have_posts() ) : the_post(); // start the loop?>
+					<?php while ( have_posts() ) : the_post(); // start the loop. ?>
 						<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 							<div class="entry-content">
 								<?php
