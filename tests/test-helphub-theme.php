@@ -8,7 +8,7 @@
 /**
  * Sample test case.
  */
-class SampleTest extends WP_UnitTestCase {
+class Helphub_Theme_Test extends WP_UnitTestCase {
 
 	/**
 	 * A single example test.
