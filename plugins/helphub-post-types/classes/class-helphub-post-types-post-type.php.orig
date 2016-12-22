@@ -252,11 +252,19 @@ class HelpHub_Post_Types_Post_Type {
 			5 => isset( $_GET['revision'] ) ? sprintf( __( '%1$s restored to revision from %2$s', 'helphub' ), $this->singular, wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
 			6 => sprintf( __( '%1$s published. %3$sView %2$s%4$s', 'helphub' ), $this->singular, strtolower( $this->singular ), '<a href="' . esc_url( $permalink ) . '">', '</a>' ),
 			7 => sprintf( __( '%s saved.', 'helphub' ), $this->singular ),
+<<<<<<< HEAD
 			8 => sprintf( __( '%1$s submitted. %2$sPreview %3$s%4$s', 'helphub' ), $this->singular, strtolower( $this->singular ), '<a target="_blank" href="' . esc_url( add_query_arg( 'preview', 'true', $permalink ) ) . '">', '</a>' ),
 			9 => sprintf( __( '%1$s scheduled for: %1$s. %2$sPreview %2$s%3$s', 'helphub' ), $this->singular, strtolower( $this->singular ),
 			// translators: Publish box date format, see http://php.net/date.
-			'<strong>' . date_i18n( __( 'M j, Y @ G:i', 'helphub' ), strtotime( $post->post_date ) ) . '</strong>', '<a target="_blank" href="' . esc_url( $permalink ) . '">', '</a>' ),
+			'<strong>' . date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ) . '</strong>', '<a target="_blank" href="' . esc_url( $permalink ) . '">', '</a>' ),
 			10 => sprintf( __( '%1$s draft updated. %2$sPreview %3$s%4$s', 'helphub' ), $this->singular, strtolower( $this->singular ), '<a target="_blank" href="' . esc_url( add_query_arg( 'preview', 'true', $permalink ) ) . '">', '</a>' ),
+=======
+			8 => sprintf( __( '%s submitted. %sPreview %s%s', 'helphub' ), $this->singular, strtolower( $this->singular ), '<a target="_blank" href="' . esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_ID ) ) ) . '">', '</a>' ),
+			9 => sprintf( __( '%s scheduled for: %1$s. %2$sPreview %s%3$s', 'helphub' ), $this->singular, strtolower( $this->singular ),
+			// translators: Publish box date format, see http://php.net/date
+			'<strong>' . date_i18n( __( 'M j, Y @ G:i', 'helphub' ), strtotime( $post->post_date ) ) . '</strong>', '<a target="_blank" href="' . esc_url( get_permalink($post_ID) ) . '">', '</a>' ),
+			10 => sprintf( __( '%s draft updated. %sPreview %s%s', 'helphub' ), $this->singular, strtolower( $this->singular ), '<a target="_blank" href="' . esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_ID ) ) ) . '">', '</a>' ),
+>>>>>>> master
 		);
 
 		return $messages;
@@ -449,11 +457,15 @@ class HelpHub_Post_Types_Post_Type {
 	public function meta_box_save( $post_id ) {
 		global $post, $messages;
 
+<<<<<<< HEAD
 		// Verify.
+		if ( ( get_post_type() != $this->post_type ) || ! wp_verify_nonce( $_POST['helphub_' . $this->post_type . '_noonce'], plugin_basename( dirname( HelpHub_Post_Types()->plugin_path ) ) ) ) {
+=======
+		// Verify
 		$plugin_basename = plugin_basename( dirname( HelpHub_Post_Types()->plugin_path ) );
 		$nonce_key = 'helphub_' . $this->post_type . '_noonce';
-		/* @codingStandardsIgnoreLine */
 		if ( empty( $_POST[ $nonce_key ] ) || ( get_post_type() != $this->post_type ) || ! wp_verify_nonce( $_POST[ $nonce_key ], $plugin_basename ) ) {
+>>>>>>> master
 			return $post_id;
 		}
 
