@@ -3,7 +3,7 @@
 module.exports = function( grunt ) {
 	var HH_CSS = [
 			'plugins/helphub-post-types/assets/css/*.css',
-			'themes/helphub/layouts/*.css'
+			'themes/helphub/**/*.css'
 		],
 
 		HH_JS = [
