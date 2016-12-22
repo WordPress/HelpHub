@@ -137,7 +137,7 @@ function helphub_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer 2', 'helphub' ),
 		'id'            => 'footer-2',
-		'description'   => esc_html__('This widget area appears on the right side before the footer.', 'helphub'),
+		'description'   => esc_html__( 'This widget area appears on the right side before the footer.', 'helphub' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
