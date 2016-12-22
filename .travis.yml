@@ -17,6 +17,14 @@ php:
 # @link https://docs.travis-ci.com/user/ci-environment/
 sudo: false
 
+# Setup NPM modules for Travis CI cache maintanence.
+cache:
+  directories:
+    - node_modules
+before_install:
+  - npm prune
+  - npm update
+  
 # Use this to prepare your build for testing.
 # e.g. copy database configurations, environment variables, etc.
 # Failures in this section will result in build status 'errored'.
@@ -51,3 +59,14 @@ script:
     - find . \( -name '*.php' \) -exec php -lf {} \;
     # PHPCS WordPress Coding Standards
     - ../php-codesniffer/scripts/phpcs -p -s -v -n . --standard=../phpcs.ruleset.xml --extensions=php
+    # Setup NodeJS version using NVM
+    - node --version
+    - npm --version
+    - nvm install 4
+    - npm --version
+    - node --version
+    # Install NPM modules
+    - npm install
+    - npm install -g grunt-cli
+    # Run CSS, JS, & PHP Grunt tasks (Temporarily using --force so all tasks run)
+    - grunt --force
