@@ -59,4 +59,4 @@ script:
     # PHPCS WordPress Coding Standards
     - ../php-codesniffer/scripts/phpcs -p -s -v -n . --standard=../phpcs.ruleset.xml --extensions=php
     # phpunit
-    - phpunit
+    - cd .. && phpunit
