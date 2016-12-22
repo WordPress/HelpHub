@@ -1,9 +1,12 @@
 .post-type.edit-php table.wp-list-table .column-image {
   width: 120px;
-  text-align: center; }
-  .post-type.edit-php table.wp-list-table .column-image img {
+  text-align: center; 
+}
+
+.post-type.edit-php table.wp-list-table .column-image img {
 	width: 60px;
-	height: auto; }
+	height: auto; 
+}
 
 
 /*!
