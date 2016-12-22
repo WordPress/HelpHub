@@ -59,5 +59,6 @@ script:
     - node --version
     # Install NPM modules
     - npm install
+    - npm install -g grunt-cli
     # Run CSS, JS, & PHP Grunt tasks (Temporarily using --force so all tasks run)
     - grunt --force
