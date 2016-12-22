@@ -1,22 +1,72 @@
+# Travis CI configuration file.
+# @link https://travis-ci.org/
+
+# For use with the HelpHub project
+
+# Declare project language and PHP versions to test against.
+# @link http://about.travis-ci.org/docs/user/languages/php/
 language: php
 
+# Declare versions of PHP to use, w.org currently uses 5.6.18, soon to be 7.x
+php:
+    - 7.1
+    - 7.0
+    - 5.6
+
+# Ditch sudo and use containers.
+# @link https://docs.travis-ci.com/user/ci-environment/
 sudo: false
 
-# Test main supported versions of PHP and HHVM against latest WP. 5.2 is min supported version.
-php:
-  - 5.2
-  - 5.3
-  - 5.4
-  - 5.5
-  - 5.6
-  - 7.0
-  - hhvm
+# Setup NPM modules for Travis CI cache maintanence.
+cache:
+  directories:
+    - node_modules
+before_install:
+  - npm prune
+  - npm update
+  
+# Use this to prepare your build for testing.
+# e.g. copy database configurations, environment variables, etc.
+# Failures in this section will result in build status 'errored'.
+before_script:
+    # Install CodeSniffer for WordPress Coding Standards checks.
+    - mkdir php-codesniffer && curl -L https://github.com/squizlabs/PHP_CodeSniffer/archive/master.tar.gz | tar xz --strip-components=1 -C php-codesniffer
+    # Install WordPress Coding Standards.
+    - mkdir wordpress-coding-standards && curl -L https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/archive/master.tar.gz | tar xz --strip-components=1 -C wordpress-coding-standards
+    # Hop into CodeSniffer directory.
+    - cd php-codesniffer
+    # Set install path for WordPress Coding Standards
+    # @link https://github.com/squizlabs/PHP_CodeSniffer/blob/4237c2fc98cc838730b76ee9cee316f99286a2a7/CodeSniffer.php#L1941
+    - scripts/phpcs --config-set installed_paths ../wordpress-coding-standards
+    # After CodeSniffer install you should refresh your path.
+    - phpenv rehash
+    # Back to the top-level directory
+    - cd ..
 
-env:
-  - WP_VERSION=latest WP_MULTISITE=0
-
-# Additonal tests against stable PHP (min recommended version is 5.6) and past supported versions of WP.
-matrix:
-  include:
-  - php: 5.6
-    env: WP_VERSION=latest WP_MULTISITE=1
+# Run test script commands.
+# Default is specific to project language.
+# All commands must exit with code 0 on success. Anything else is considered failure.
+script:
+    # Change to the themes folder
+    - cd themes
+    # Search theme for PHP syntax errors.
+    - find . \( -name '*.php' \) -exec php -lf {} \;
+    # PHPCS WordPress Coding Standards
+    - ../php-codesniffer/scripts/phpcs -p -s -v -n . --standard=../phpcs.ruleset.xml --extensions=php
+    # Change to the plugins folder
+    - cd .. && cd plugins
+    # Search theme for PHP syntax errors.
+    - find . \( -name '*.php' \) -exec php -lf {} \;
+    # PHPCS WordPress Coding Standards
+    - ../php-codesniffer/scripts/phpcs -p -s -v -n . --standard=../phpcs.ruleset.xml --extensions=php
+    # Setup NodeJS version using NVM
+    - node --version
+    - npm --version
+    - nvm install 4
+    - npm --version
+    - node --version
+    # Install NPM modules
+    - npm install
+    - npm install -g grunt-cli
+    # Run CSS, JS, & PHP Grunt tasks (Temporarily using --force so all tasks run)
+    - grunt --force
