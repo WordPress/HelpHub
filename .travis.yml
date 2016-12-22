@@ -17,6 +17,14 @@ php:
 # @link https://docs.travis-ci.com/user/ci-environment/
 sudo: false
 
+# Setup NPM modules for Travis CI cache maintanence.
+cache:
+  directories:
+    - node_modules
+before_install:
+  - npm prune
+  - npm update
+  
 # Use this to prepare your build for testing.
 # e.g. copy database configurations, environment variables, etc.
 # Failures in this section will result in build status 'errored'.
