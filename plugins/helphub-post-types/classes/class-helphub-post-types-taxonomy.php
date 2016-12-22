@@ -73,7 +73,7 @@ class HelpHub_Post_Types_Taxonomy {
 		if ( '' == $this->plural ) $this->plural = __( 'Categories', 'helphub' );
 
 		$this->args = wp_parse_args( $args, $this->_get_default_args() );
-		
+
 		add_action( 'init', array( $this, 'register' ) );
 	} // End __construct()
 
