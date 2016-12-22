@@ -51,3 +51,7 @@ script:
     - find . \( -name '*.php' \) -exec php -lf {} \;
     # PHPCS WordPress Coding Standards
     - ../php-codesniffer/scripts/phpcs -p -s -v -n . --standard=../phpcs.ruleset.xml --extensions=php
+    # Install NPM modules
+    - npm install
+    # Run CSS, JS, & PHP Grunt tasks (Temporarily using --force so all tasks run)
+    - grunt --force
