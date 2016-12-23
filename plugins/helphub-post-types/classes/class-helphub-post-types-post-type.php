@@ -241,9 +241,10 @@ class HelpHub_Post_Types_Post_Type {
 			7 => sprintf( __( '%s saved.', 'helphub' ), $this->singular ),
 			8 => sprintf( __( '%s submitted. %sPreview %s%s', 'helphub' ), $this->singular, strtolower( $this->singular ), '<a target="_blank" href="' . esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_id ) ) ) . '">', '</a>' ),
 			9 => sprintf( __( '%s scheduled for: %1$s. %2$sPreview %s%3$s', 'helphub' ), $this->singular, strtolower( $this->singular ),
-				// Translators: Publish box date format, see http://php.net/date.
-			'<strong>' . date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ) . '</strong>', '<a target="_blank" href="' . esc_url( get_permalink( $post_id ) ) . '">', '</a>' ),
-			10 => sprintf( __( '%3$s draft updated. %sPreview %4$s%s', 'helphub' ), '<a target="_blank" href="' . esc_url( get_preview_post_link() ) . '">', '</a>', $this->singular, strtolower( $this->singular ) ),
+
+			// translators: Publish box date format, see http://php.net/date
+			'<strong>' . date_i18n( __( 'M j, Y @ G:i', 'helphub' ), strtotime( $post->post_date ) ) . '</strong>', '<a target="_blank" href="' . esc_url( get_permalink($post_ID) ) . '">', '</a>' ),
+			10 => sprintf( __( '%s draft updated. %sPreview %s%s', 'helphub' ), $this->singular, strtolower( $this->singular ), '<a target="_blank" href="' . esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_ID ) ) ) . '">', '</a>' ),
 		);
 
 		return $messages;
@@ -466,8 +467,10 @@ class HelpHub_Post_Types_Post_Type {
 		}
 
 		// Verify
-		if ( ( get_post_type() !== $this->post_type ) ||
-		     ( isset( $_POST['helphub_' . $this->post_type . '_noonce'] ) && !wp_verify_nonce( $_POST['helphub_' . $this->post_type . '_noonce'], plugin_basename( dirname( HelpHub_Post_Types()->plugin_path ) ) ) ) ){
+
+		$plugin_basename = plugin_basename( dirname( HelpHub_Post_Types()->plugin_path ) );
+		$nonce_key = 'helphub_' . $this->post_type . '_noonce';
+		if ( empty( $_POST[ $nonce_key ] ) || ( get_post_type() != $this->post_type ) || ! wp_verify_nonce( $_POST[ $nonce_key ], $plugin_basename ) ) {
 			return $post_id;
 		}
 
