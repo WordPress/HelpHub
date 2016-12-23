@@ -138,7 +138,7 @@ class HelpHub_Post_Types_Taxonomy {
 			'update_item'         => sprintf( __( 'Update %s', 'helphub' ), $this->singular ),
 			'add_new_item'        => sprintf( __( 'Add New %s', 'helphub' ), $this->singular ),
 			'new_item_name'       => sprintf( __( 'New %s Name', 'helphub' ), $this->singular ),
-			'menu_name'           => sprintf( __( '%s', 'helphub' ), $this->plural ), /* @codingStandardsIgnoreLine */
+			'menu_name'           => $this->plural,
 		);
 	} // End _get_default_labels()
 
