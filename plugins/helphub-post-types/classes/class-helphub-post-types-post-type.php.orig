@@ -70,12 +70,15 @@ class HelpHub_Post_Types_Post_Type {
 	/**
 	 * Constructor function.
 	 *
+<<<<<<< HEAD
+=======
 	 * @param string $post_type   The post type key.
 	 * @param string $singular    Singular name.
 	 * @param string $plural      Plural name.
 	 * @param array  $args        Array of arguments.
 	 * @param array  $taxonomies  Array of taxonomies.
 	 *
+>>>>>>> fix-phpcs-error-in-helphub-post-types
 	 * @access public
 	 * @since 1.0.0
 	 * @param string $post_type The post type id/handle.
@@ -102,7 +105,11 @@ class HelpHub_Post_Types_Post_Type {
 			add_filter( 'enter_title_here', array( $this, 'enter_title_here' ) );
 			add_filter( 'post_updated_messages', array( $this, 'updated_messages' ) );
 
+<<<<<<< HEAD
+			if ( 'edit.php' ===  $pagenow && isset( $_GET['post_type'] ) && $_GET['post_type'] === $this->post_type ) {
+=======
 			if ( 'edit.php' === $pagenow && isset( $_GET['post_type'] ) && $this->post_type === $_GET['post_type'] ) {
+>>>>>>> fix-phpcs-error-in-helphub-post-types
 				add_filter( 'manage_edit-' . $this->post_type . '_columns', array( $this, 'register_custom_column_headings' ), 10, 1 );
 				add_action( 'manage_posts_custom_column', array( $this, 'register_custom_columns' ), 10, 2 );
 			}
@@ -184,8 +191,13 @@ class HelpHub_Post_Types_Post_Type {
 	 * Add custom columns for the "manage" screen of this post type.
 	 *
 	 * @access public
+<<<<<<< HEAD
+	 * @var string $column_name The name of the column.
+	 * @var int $id The post id.
+=======
 	 * @param string $column_name The name of the column.
 	 * @param int    $id          The ID.
+>>>>>>> fix-phpcs-error-in-helphub-post-types
 	 * @since  1.0.0
 	 * @return void
 	 */
@@ -207,7 +219,11 @@ class HelpHub_Post_Types_Post_Type {
 	 * Add custom column headings for the "manage" screen of this post type.
 	 *
 	 * @access public
+<<<<<<< HEAD
+	 * @var array $defaults The default array.
+=======
 	 * @param array $defaults The default value.
+>>>>>>> fix-phpcs-error-in-helphub-post-types
 	 * @since  1.0.0
 	 * @return array $defaults
 	 */
@@ -243,6 +259,15 @@ class HelpHub_Post_Types_Post_Type {
 	 * @return array           Modified array.
 	 */
 	public function updated_messages( $messages ) {
+<<<<<<< HEAD
+		global $post;
+
+		$post_id = $post->ID;
+
+		$messages[ $this->post_type ] = array(
+			0 => '', // Unused. Messages start at index 1.
+			1 => sprintf( __( '%3$s updated. %sView %4$s%s', 'helphub' ), '<a href="' . esc_url( get_permalink( $post_id ) ) . '">', '</a>', $this->singular, strtolower( $this->singular ) ),
+=======
 		global $post, $post_ID; /* @codingStandardsIgnoreLine */
 
 		$permalink = get_permalink( $post_ID ); /* @codingStandardsIgnoreLine */
@@ -250,10 +275,22 @@ class HelpHub_Post_Types_Post_Type {
 		$messages[ $this->post_type ] = array(
 			0 => '', // Unused. Messages start at index 1.
 			1 => sprintf( __( '%3$s updated. %1$sView %4$s%2$s', 'helphub' ), '<a href="' . esc_url( $permalink ) . '">', '</a>', $this->singular, strtolower( $this->singular ) ),
+>>>>>>> fix-phpcs-error-in-helphub-post-types
 			2 => __( 'Custom field updated.', 'helphub' ),
 			3 => __( 'Custom field deleted.', 'helphub' ),
 			4 => sprintf( __( '%s updated.', 'helphub' ), $this->singular ),
 			/* translators: %s: date and time of the revision */
+<<<<<<< HEAD
+			5 => isset( $_GET['revision'] ) ? sprintf( __( '%s restored to revision from %s', 'helphub' ), $this->singular, wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+			6 => sprintf( __( '%1$s published. %3$sView %2$s%4$s', 'helphub' ), $this->singular, strtolower( $this->singular ), '<a href="' . esc_url( get_permalink( $post_id ) ) . '">', '</a>' ),
+			7 => sprintf( __( '%s saved.', 'helphub' ), $this->singular ),
+			8 => sprintf( __( '%s submitted. %sPreview %s%s', 'helphub' ), $this->singular, strtolower( $this->singular ), '<a target="_blank" href="' . esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_id ) ) ) . '">', '</a>' ),
+			9 => sprintf( __( '%s scheduled for: %1$s. %2$sPreview %s%3$s', 'helphub' ), $this->singular, strtolower( $this->singular ),
+
+			// translators: Publish box date format, see http://php.net/date
+			'<strong>' . date_i18n( __( 'M j, Y @ G:i', 'helphub' ), strtotime( $post->post_date ) ) . '</strong>', '<a target="_blank" href="' . esc_url( get_permalink($post_ID) ) . '">', '</a>' ),
+			10 => sprintf( __( '%s draft updated. %sPreview %s%s', 'helphub' ), $this->singular, strtolower( $this->singular ), '<a target="_blank" href="' . esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_ID ) ) ) . '">', '</a>' ),
+=======
 			5 => isset( $_GET['revision'] ) ? sprintf( __( '%1$s restored to revision from %2$s', 'helphub' ), $this->singular, wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
 			6 => sprintf( __( '%1$s published. %3$sView %2$s%4$s', 'helphub' ), $this->singular, strtolower( $this->singular ), '<a href="' . esc_url( $permalink ) . '">', '</a>' ),
 			7 => sprintf( __( '%s saved.', 'helphub' ), $this->singular ),
@@ -262,6 +299,7 @@ class HelpHub_Post_Types_Post_Type {
 			// translators: Publish box date format, see http://php.net/date.
 			'<strong>' . date_i18n( __( 'M j, Y @ G:i', 'helphub' ), strtotime( $post->post_date ) ) . '</strong>', '<a target="_blank" href="' . esc_url( $permalink ) . '">', '</a>' ),
 			10 => sprintf( __( '%1$s draft updated. %2$sPreview %3$s%4$s', 'helphub' ), $this->singular, strtolower( $this->singular ), '<a target="_blank" href="' . esc_url( add_query_arg( 'preview', 'true', $permalink ) ) . '">', '</a>' ),
+>>>>>>> fix-phpcs-error-in-helphub-post-types
 		);
 
 		return $messages;
@@ -297,13 +335,19 @@ class HelpHub_Post_Types_Post_Type {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * The contents of our post meta box.
 	 * Duplicate this function for more callbacks
+=======
+	 * The rendering of fields in meta boxes
+>>>>>>> fix-phpcs-error-in-helphub-post-types
 	 *
 	 * @access public
+	 * @param array $field_data An array of fields.
 	 * @since  1.0.0
 	 * @return void
 	 */
+<<<<<<< HEAD
 	public function meta_box_version_content() {
 		$field_data = $this->get_custom_fields_version_display_settings();
 		$this->meta_box_content_render( $field_data );
@@ -313,11 +357,12 @@ class HelpHub_Post_Types_Post_Type {
 	 * The rendering of fields in meta boxes
 	 *
 	 * @access public
-	 * @param array $field_data An array of fields.
 	 * @since  1.0.0
 	 * @param array $field_data The field data to populate the rendering function.
 	 * @return void
 	 */
+=======
+>>>>>>> fix-phpcs-error-in-helphub-post-types
 	public function meta_box_content_render( $field_data ) {
 		global $post_id;
 		$fields = get_post_custom( $post_id );
@@ -385,7 +430,11 @@ class HelpHub_Post_Types_Post_Type {
 						$field = '<input name="' . esc_attr( $k ) . '" type="text" id="' . esc_attr( $k ) . '" class="regular-text helphub-upload-field" value="' . esc_attr( $data ) . '" />';
 						$field .= '<button id="' . esc_attr( $k ) . '" class="helphub-upload button"' . $data_atts . '>' . $v['label'] . '</button>';
 						$html .= '<tr valign="top"><th scope="row"><label for="' . esc_attr( $k ) . '">' . $v['name'] . '</label></th><td>' . $field . "\n";
+<<<<<<< HEAD
+						if( isset( $v['description'] ) ){
+=======
 						if ( isset( $v['description'] ) ) {
+>>>>>>> fix-phpcs-error-in-helphub-post-types
 							$html .= '<p class="description">' . $v['description'] . '</p>' . "\n";
 						}
 						$html .= '</td></tr>' . "\n";
@@ -394,11 +443,19 @@ class HelpHub_Post_Types_Post_Type {
 						$field = '';
 						if ( isset( $v['options'] ) && is_array( $v['options'] ) ) {
 							foreach ( $v['options'] as $val => $option ) {
+<<<<<<< HEAD
+								$field .= '<p><label for="' . esc_attr( $v['name'] . '-' . $val ) . '"><input id="' . esc_attr( $v['name'] . '-' . $val ) . '" type="radio" name="' . esc_attr( $k ) . '" value="' . esc_attr( $val ) . '" ' . checked( $val, $data, false ) . ' / >'. $option . '</label></p>' . "\n";
+							}
+						}
+						$html .= '<tr valign="top"><th scope="row"><label>' . $v['name'] . '</label></th><td>' . $field . "\n";
+						if( isset( $v['description'] ) ) {
+=======
 								$field .= '<p><label for="' . esc_attr( $v['name'] . '-' . $val ) . '"><input id="' . esc_attr( $v['name'] . '-' . $val ) . '" type="radio" name="' . esc_attr( $k ) . '" value="' . esc_attr( $val ) . '" ' . checked( $val, $data, false ) . ' / >' . $option . '</label></p>' . "\n";
 							}
 						}
 						$html .= '<tr valign="top"><th scope="row"><label>' . $v['name'] . '</label></th><td>' . $field . "\n";
 						if ( isset( $v['description'] ) ) {
+>>>>>>> fix-phpcs-error-in-helphub-post-types
 							$html .= '<p class="description">' . $v['description'] . '</p>' . "\n";
 						}
 						$html .= '</td></tr>' . "\n";
@@ -415,7 +472,11 @@ class HelpHub_Post_Types_Post_Type {
 						$field = '';
 						if ( isset( $v['options'] ) && is_array( $v['options'] ) ) {
 							foreach ( $v['options'] as $val => $option ) {
+<<<<<<< HEAD
+								$field .= '<p><label for="' . esc_attr( $v['name'] . '-' . $val ) . '"><input id="' . esc_attr( $v['name'] . '-' . $val ) . '" type="checkbox" name="' . esc_attr( $k ) . '[]" value="' . esc_attr( $val ) . '" ' . checked( 1, in_array( $val, (array) $data ), false ) . ' / >'. $option . '</label></p>' . "\n";
+=======
 								$field .= '<p><label for="' . esc_attr( $v['name'] . '-' . $val ) . '"><input id="' . esc_attr( $v['name'] . '-' . $val ) . '" type="checkbox" name="' . esc_attr( $k ) . '[]" value="' . esc_attr( $val ) . '" ' . checked( 1, in_array( $val, (array) $data ), false ) . ' / >' . $option . '</label></p>' . "\n";
+>>>>>>> fix-phpcs-error-in-helphub-post-types
 							}
 						}
 						$html .= '<tr valign="top"><th scope="row"><label>' . $v['name'] . '</label></th><td>' . $field . "\n";
@@ -428,7 +489,11 @@ class HelpHub_Post_Types_Post_Type {
 						$field = '<select name="' . esc_attr( $k ) . '" id="' . esc_attr( $k ) . '" >' . "\n";
 						if ( isset( $v['options'] ) && is_array( $v['options'] ) ) {
 							foreach ( $v['options'] as $val => $option ) {
+<<<<<<< HEAD
+								$field .= '<option value="' . esc_attr( $val ) . '" ' . selected( $val, $data, false ) . '>'. $option .'</option>' . "\n";
+=======
 								$field .= '<option value="' . esc_attr( $val ) . '" ' . selected( $val, $data, false ) . '>' . $option . '</option>' . "\n";
+>>>>>>> fix-phpcs-error-in-helphub-post-types
 							}
 						}
 						$field .= '</select>' . "\n";
@@ -436,6 +501,17 @@ class HelpHub_Post_Types_Post_Type {
 						if ( isset( $v['description'] ) ) {
 							$html .= '<p class="description">' . $v['description'] . '</p>' . "\n";
 						}
+<<<<<<< HEAD
+						$html .= '</td></tr>' . "\n";
+						break;
+					case 'date':
+						$field = '<input name="' . esc_attr( $k ) . '" type="date" id="' . esc_attr( $k ) . '" class="helphub-meta-date" value="' . esc_attr( date_i18n( 'F d, Y', $data ) ). '" />';
+						$html .= '<tr valign="top"><th scope="row"><label for="' . esc_attr( $k ) . '">' . $v['name'] . '</label></th><td>' . $field . "\n";
+						if ( isset( $v['description'] ) ) {
+							$html .= '<p class="description">' . $v['description'] . '</p>' . "\n";
+						}
+=======
+>>>>>>> fix-phpcs-error-in-helphub-post-types
 						$html .= '</td></tr>' . "\n";
 						break;
 					default :
@@ -463,13 +539,30 @@ class HelpHub_Post_Types_Post_Type {
 	 *
 	 * @access public
 	 * @since  1.0.0
+<<<<<<< HEAD
+	 * @param int       $post_id The post id.
+	 * @return mixed    $post_id
+=======
 	 * @param int $post_id The post ID.
 	 * @return int $post_id
+>>>>>>> fix-phpcs-error-in-helphub-post-types
 	 */
 	public function meta_box_save( $post_id ) {
 		global $post, $messages;
 
+<<<<<<< HEAD
+		// Dashboard Widget does not like our function. This also does not need to be ran there.
+		$screen = get_current_screen();
+
+		if ( $screen->id === 'dashboard' ) {
+			return $screen;
+		}
+
+		// Verify
+
+=======
 		// Verify.
+>>>>>>> fix-phpcs-error-in-helphub-post-types
 		$plugin_basename = plugin_basename( dirname( HelpHub_Post_Types()->plugin_path ) );
 		$nonce_key = 'helphub_' . $this->post_type . '_noonce';
 		/* @codingStandardsIgnoreLine */
@@ -477,7 +570,11 @@ class HelpHub_Post_Types_Post_Type {
 			return $post_id;
 		}
 
+<<<<<<< HEAD
+		if ( isset( $_POST['post_type'] ) && 'page' === $_POST['post_type'] ) {
+=======
 		if ( isset( $_POST['post_type'] ) && 'page' == $_POST['post_type'] ) {
+>>>>>>> fix-phpcs-error-in-helphub-post-types
 			if ( ! current_user_can( 'edit_page', $post_id ) ) {
 				return $post_id;
 			}
@@ -494,30 +591,58 @@ class HelpHub_Post_Types_Post_Type {
 
 			switch ( $field_data[ $f ]['type'] ) {
 				case 'url':
+<<<<<<< HEAD
+					${$f} = isset( $_POST[ $f ] ) ? esc_url( $_POST[ $f ] ) : '';
+					break;
+				case 'textarea':
+				case 'editor':
+					${$f} = isset( $_POST[ $f ] ) ? wp_kses_post( trim( $_POST[ $f ] ) ) : '';
+=======
 					${$f} = isset( $_POST[ $f ] ) ? esc_url( $_POST[ $f ] ) : ''; /* @codingStandardsIgnoreLine */
 					break;
 				case 'textarea':
 				case 'editor':
 					${$f} = isset( $_POST[ $f ] ) ? wp_kses_post( trim( $_POST[ $f ] ) ) : ''; /* @codingStandardsIgnoreLine */
+>>>>>>> fix-phpcs-error-in-helphub-post-types
 					break;
 				case 'checkbox':
 					${$f} = isset( $_POST[ $f ] ) ? 'yes' : 'no';
 					break;
 				case 'multicheck':
+<<<<<<< HEAD
+					// Ensure checkbox is array and whitelist accepted values against options.
+					${$f} = isset( $_POST[ $f ] ) && is_array( $field_data[ $f ]['options'] ) ? (array) array_intersect( (array) $_POST[ $f ], array_flip( $field_data[ $f ]['options'] ) ) : '';
+					break;
+				case 'radio':
+				case 'select':
+					// Whitelist accepted value against options.
+=======
 					// ensure checkbox is array and whitelist accepted values against options.
 					${$f} = isset( $_POST[ $f ] ) && is_array( $field_data[ $f ]['options'] ) ? (array) array_intersect( (array) $_POST[ $f ], array_flip( $field_data[ $f ]['options'] ) ) : ''; /* @codingStandardsIgnoreLine */
 					break;
 				case 'radio':
 				case 'select':
 					// whitelist accepted value against options.
+>>>>>>> fix-phpcs-error-in-helphub-post-types
 					$values = array();
 					if ( is_array( $field_data[ $f ]['options'] ) ) {
 						$values = array_keys( $field_data[ $f ]['options'] );
 					}
-					${$f} = isset( $_POST[ $f ] ) && in_array( $_POST[ $f ], $values ) ? $_POST[ $f ] : ''; /* @codingStandardsIgnoreLine */
+<<<<<<< HEAD
+					${$f} = isset( $_POST[ $f ] ) && in_array( $_POST[ $f ], $values ) ? $_POST[ $f ] : '';
 					break;
 				case 'date':
 					${$f} = isset( $_POST[ $f ] ) ? strtotime( wp_strip_all_tags( $_POST[ $f ] ) ) : '';
+					break;
+				default :
+					${$f} = isset( $_POST[ $f ] ) ? strip_tags( trim( $_POST[ $f ] ) ) : '';
+					break;
+			}
+
+			// Save it.
+			if ( $f !== 'read_time' ) :
+=======
+					${$f} = isset( $_POST[ $f ] ) && in_array( $_POST[ $f ], $values ) ? $_POST[ $f ] : ''; /* @codingStandardsIgnoreLine */
 					break;
 				default :
 					${$f} = isset( $_POST[ $f ] ) ? strip_tags( trim( $_POST[ $f ] ) ) : ''; /* @codingStandardsIgnoreLine */
@@ -526,14 +651,22 @@ class HelpHub_Post_Types_Post_Type {
 
 			// save it.
 			if ( 'read_time' !== $f ) :
+>>>>>>> fix-phpcs-error-in-helphub-post-types
 				update_post_meta( $post_id, '_' . $f, ${$f} );
 			endif;
 
 		endforeach;
 
 		// Save the project gallery image IDs.
+<<<<<<< HEAD
+		if ( isset( $_POST['helphub_image_gallery'] ) ) :
+			$attachment_ids = array_filter( explode( ',', sanitize_text_field( $_POST['helphub_image_gallery'] ) ) );
+			update_post_meta( $post_id, '_helphub_image_gallery', implode( ',', $attachment_ids ) );
+		endif;
+=======
 		$attachment_ids = array_filter( explode( ',', sanitize_text_field( $_POST['helphub_image_gallery'] ) ) ); /* @codingStandardsIgnoreLine */
 		update_post_meta( $post_id, '_helphub_image_gallery', implode( ',', $attachment_ids ) );
+>>>>>>> fix-phpcs-error-in-helphub-post-types
 	} // End meta_box_save()
 
 	/**
@@ -545,7 +678,11 @@ class HelpHub_Post_Types_Post_Type {
 	 * @return string $title
 	 */
 	public function enter_title_here( $title ) {
+<<<<<<< HEAD
+		if ( get_post_type() === $this->post_type ) :
+=======
 		if ( get_post_type() == $this->post_type ) :
+>>>>>>> fix-phpcs-error-in-helphub-post-types
 			if ( 'post' === get_post_type() ) :
 				$title = __( 'Enter the article title here', 'helphub' );
 			endif;
@@ -639,10 +776,17 @@ class HelpHub_Post_Types_Post_Type {
 	/**
 	 * Get the image for the given ID.
 	 *
+<<<<<<< HEAD
+	 * @param  int      $id   Post ID.
+	 * @param  mixed    $size Image dimension. (default: "thing-thumbnail")
+	 * @since  1.0.0
+	 * @return string   <img> tag.
+=======
 	 * @param  int   $id   The post ID.
 	 * @param  mixed $size Image dimension. (default: "thing-thumbnail").
 	 * @since  1.0.0
 	 * @return string <img> tag.
+>>>>>>> fix-phpcs-error-in-helphub-post-types
 	 */
 	protected function get_image( $id, $size = 'thing-thumbnail' ) {
 		$response = '';
@@ -667,9 +811,15 @@ class HelpHub_Post_Types_Post_Type {
 	 * @since  1.0.0
 	 */
 	public function register_image_sizes() {
+<<<<<<< HEAD
+		if ( function_exists( 'add_image_size' ) ) {
+			//add_image_size( $this->post_type . '-thumbnail', 150, 9999 ); // 150 pixels wide (and unlimited height)
+		}
+=======
 		// if ( function_exists( 'add_image_size' ) ) {
 			// add_image_size( $this->post_type . '-thumbnail', 150, 9999 ); // 150 pixels wide (and unlimited height)
 		// }
+>>>>>>> fix-phpcs-error-in-helphub-post-types
 	} // End register_image_sizes()
 
 	/**
