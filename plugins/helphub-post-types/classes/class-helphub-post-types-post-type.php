@@ -70,18 +70,12 @@ class HelpHub_Post_Types_Post_Type {
 	/**
 	 * Constructor function.
 	 *
-	 * @param string $post_type   The post type key.
-	 * @param string $singular    Singular name.
-	 * @param string $plural      Plural name.
-	 * @param array  $args        Array of arguments.
-	 * @param array  $taxonomies  Array of taxonomies.
-	 *
 	 * @access public
 	 * @since 1.0.0
-	 * @param string $post_type The post type id/handle.
-	 * @param string $singular The singular pronunciation of the post type name.
-	 * @param string $plural The plural pronunciation of the post type name.
-	 * @param array  $args The typical arguments allowed to register a post type.
+	 * @param string $post_type  The post type id/handle.
+	 * @param string $singular   The singular pronunciation of the post type name.
+	 * @param string $plural     The plural pronunciation of the post type name.
+	 * @param array  $args       The typical arguments allowed to register a post type.
 	 * @param array  $taxonomies The list of taxonomies that the post type is associated with.
 	 */
 	public function __construct( $post_type = 'thing', $singular = '', $plural = '', $args = array(), $taxonomies = array() ) {
@@ -313,7 +307,6 @@ class HelpHub_Post_Types_Post_Type {
 	 * The rendering of fields in meta boxes
 	 *
 	 * @access public
-	 * @param array $field_data An array of fields.
 	 * @since  1.0.0
 	 * @param array $field_data The field data to populate the rendering function.
 	 * @return void
@@ -517,7 +510,7 @@ class HelpHub_Post_Types_Post_Type {
 					${$f} = isset( $_POST[ $f ] ) && in_array( $_POST[ $f ], $values ) ? $_POST[ $f ] : ''; /* @codingStandardsIgnoreLine */
 					break;
 				case 'date':
-					${$f} = isset( $_POST[ $f ] ) ? strtotime( wp_strip_all_tags( $_POST[ $f ] ) ) : '';
+					${$f} = isset( $_POST[ $f ] ) ? strtotime( wp_strip_all_tags( $_POST[ $f ] ) ) : ''; /* @codingStandardsIgnoreLine */
 					break;
 				default :
 					${$f} = isset( $_POST[ $f ] ) ? strip_tags( trim( $_POST[ $f ] ) ) : ''; /* @codingStandardsIgnoreLine */
@@ -613,7 +606,6 @@ class HelpHub_Post_Types_Post_Type {
 	 */
 	public function get_custom_fields_version_display_settings() {
 		$fields = array();
-
 
 		$fields['version_date'] = array(
 			'name'        => __( 'Date Released', 'helphub' ),
