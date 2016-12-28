@@ -54,7 +54,6 @@ The following people are active developers on the project and are all listed as 
 | Jon Ang           	| kenshino          	| kenshino       	|
 | Stephanie Green    	| greensteph        	| greensteph     	|
 | Jonathan Bossenger 	| jonathanbossenger 	| jon_bossenger  	|
-| Rachel Whitton     	| Rachelwhitton     	| rachelwhitton  	|
 | Jay Hoffmann       	| JasonHoffmann     	| jayhoffmann    	|
 | Carl Alberto        | carl-alberto        | carlalberto     |
 | Marius Jensen       | clorith             | clorith         |

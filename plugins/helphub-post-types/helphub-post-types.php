@@ -187,8 +187,8 @@ final class HelpHub_Post_Types {
 		if ( is_null( self::$_instance ) ) {
 			self::$_instance = new self();
 		}
-      return self::$_instance;
-  } // End instance()
+		return self::$_instance;
+	} // End instance()
 
 	/**
 	 * Load the localisation file.
