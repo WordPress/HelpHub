@@ -430,7 +430,7 @@ class HelpHub_Post_Types_Post_Type {
 						$html .= '</td></tr>' . "\n";
 						break;
 					case 'date':
-						$field = '<input name="' . esc_attr( $k ) . '" type="date" id="' . esc_attr( $k ) . '" class="helphub-meta-date" value="' . esc_attr( date_i18n( 'F d, Y', $data ) ). '" />';
+						$field = '<input name="' . esc_attr( $k ) . '" type="date" id="' . esc_attr( $k ) . '" class="helphub-meta-date" value="' . esc_attr( date_i18n( 'F d, Y', $data ) ) . '" />';
 						$html .= '<tr valign="top"><th scope="row"><label for="' . esc_attr( $k ) . '">' . $v['name'] . '</label></th><td>' . $field . "\n";
 						if ( isset( $v['description'] ) ) {
 							$html .= '<p class="description">' . $v['description'] . '</p>' . "\n";
