@@ -429,6 +429,14 @@ class HelpHub_Post_Types_Post_Type {
 						}
 						$html .= '</td></tr>' . "\n";
 						break;
+					case 'date':
+						$field = '<input name="' . esc_attr( $k ) . '" type="date" id="' . esc_attr( $k ) . '" class="helphub-meta-date" value="' . esc_attr( date_i18n( 'F d, Y', $data ) ). '" />';
+						$html .= '<tr valign="top"><th scope="row"><label for="' . esc_attr( $k ) . '">' . $v['name'] . '</label></th><td>' . $field . "\n";
+						if ( isset( $v['description'] ) ) {
+							$html .= '<p class="description">' . $v['description'] . '</p>' . "\n";
+						}
+						$html .= '</td></tr>' . "\n";
+						break;
 					default:
 						$field = apply_filters( 'helphub_data_field_type_' . $v['type'], null, $k, $data, $v );
 						if ( $field ) {
@@ -468,7 +476,7 @@ class HelpHub_Post_Types_Post_Type {
 			return $post_id;
 		}
 
-		if ( isset( $_POST['post_type'] ) && 'page' == $_POST['post_type'] ) {
+		if ( isset( $_POST['post_type'] ) && 'page' === $_POST['post_type'] ) { /* @codingStandardsIgnoreLine */
 			if ( ! current_user_can( 'edit_page', $post_id ) ) {
 				return $post_id;
 			}
@@ -492,7 +500,7 @@ class HelpHub_Post_Types_Post_Type {
 					${$f} = isset( $_POST[ $f ] ) ? wp_kses_post( trim( $_POST[ $f ] ) ): ''; /* @codingStandardsIgnoreLine */
 					break;
 				case 'checkbox':
-					${$f} = isset( $_POST[ $f ] ) ? 'yes': 'no';
+					${$f} = isset( $_POST[ $f ] ) ? 'yes': 'no'; /* @codingStandardsIgnoreLine */
 					break;
 				case 'multicheck':
 					// Ensure checkbox is array and whitelist accepted values against options.
@@ -522,8 +530,10 @@ class HelpHub_Post_Types_Post_Type {
 		}
 
 		// Save the project gallery image IDs.
-		$attachment_ids = array_filter( explode( ',', sanitize_text_field( $_POST['helphub_image_gallery'] ) ) ); /* @codingStandardsIgnoreLine */
-		update_post_meta( $post_id, '_helphub_image_gallery', implode( ',', $attachment_ids ) );
+		if ( isset( $_POST['helphub_image_gallery'] ) ) : /* @codingStandardsIgnoreLine */
+			$attachment_ids = array_filter( explode( ',', sanitize_text_field( $_POST['helphub_image_gallery'] ) ) ); /* @codingStandardsIgnoreLine */
+			update_post_meta( $post_id, '_helphub_image_gallery', implode( ',', $attachment_ids ) );
+		endif;
 	} // End meta_box_save()
 
 	/**
