@@ -3,10 +3,10 @@
  * Plugin Name: Helphub Post Types
  * Plugin URI: http://www.wordpress.org
  * Description: This is what powers Post Types and Taxonomies.
- * Version: 1.0.0
+ * Version: 1.3.0
  * Author: Jon Ang
  * Author URI: http://www.helphubcommunications.com/
- * Requires at least: 4.0.0
+ * Requires at least: 4.6.0
  * Tested up to: 4.0.0
  *
  * Text Domain: helphub
@@ -21,6 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
+
 /**
  * Returns the main instance of HelpHub_Post_Types to prevent the need to use globals.
  *
@@ -31,7 +32,7 @@ function helphub_post_types() {
 	return HelpHub_Post_Types::instance();
 } // End HelpHub_Post_Types()
 
-add_action( 'plugins_loaded', 'HelpHub_Post_Types' );
+add_action( 'plugins_loaded', 'helphub_post_types' );
 
 /**
  * Main HelpHub_Post_Types Class
@@ -89,6 +90,7 @@ final class HelpHub_Post_Types {
 	public $plugin_path;
 
 	/* Admin - Start */
+
 	/**
 	 * The admin object.
 	 *
@@ -106,9 +108,11 @@ final class HelpHub_Post_Types {
 	 * @since   1.0.0
 	 */
 	public $settings;
+
 	/* Admin - End */
 
 	/* Post Types - Start */
+
 	/**
 	 * The post types we're registering.
 	 *
@@ -117,9 +121,11 @@ final class HelpHub_Post_Types {
 	 * @since   1.0.0
 	 */
 	public $post_types = array();
+
 	/* Post Types - End */
 
 	/* Taxonomies - Start */
+
 	/**
 	 * The taxonomies we're registering.
 	 *
@@ -128,7 +134,9 @@ final class HelpHub_Post_Types {
 	 * @since   1.0.0
 	 */
 	public $taxonomies = array();
+
 	/* Taxonomies - End */
+
 
 	/**
 	 * Constructor function.
@@ -143,17 +151,20 @@ final class HelpHub_Post_Types {
 		$this->version      = '1.0.0';
 
 		/* Post Types - Start */
+
 		require_once( 'classes/class-helphub-post-types-post-type.php' );
 		require_once( 'classes/class-helphub-post-types-taxonomy.php' );
 
 		// Register an example post type. To register other post types, duplicate this line.
 		$this->post_types['post'] = new HelpHub_Post_Types_Post_Type( 'post', __( 'Post', 'helphub' ), __( 'Posts', 'helphub' ), array( 'menu_icon' => 'dashicons-post' ) );
+		$this->post_types['helphub_version'] = new HelpHub_Post_Types_Post_Type( 'helphub_version', __( 'WordPress Version', 'helphub' ), __( 'WordPress Versions', 'helphub' ), array( 'menu_icon' => 'dashicons-wordpress' ) );
 
 		/* Post Types - End */
 
 		// Register an example taxonomy. To register more taxonomies, duplicate this line.
 		$this->taxonomies['helphub_persona']  = new HelpHub_Post_Types_Taxonomy( 'post', 'helphub_persona', __( 'Persona', 'helphub' ), __( 'Personas', 'helphub' ) );
 		$this->taxonomies['helphub_experience']   = new HelpHub_Post_Types_Taxonomy( 'post', 'helphub_experience', __( 'Experience', 'helphub' ), __( 'Experiences', 'helphub' ) );
+		$this->taxonomies['helphub_major_release']   = new HelpHub_Post_Types_Taxonomy( 'helphub_version', 'helphub_major_release', __( 'Major Release', 'helphub' ), __( 'Major Releases', 'helphub' ) );
 
 		register_activation_hook( __FILE__, array( $this, 'install' ) );
 
@@ -169,9 +180,10 @@ final class HelpHub_Post_Types {
 	 * @since 1.0.0
 	 * @static
 	 * @see HelpHub_Post_Types()
-	 * @return Main HelpHub_Post_Types instance
+	 * @return HelpHub_Post_Types instance
 	 */
 	public static function instance() {
+
 		if ( is_null( self::$_instance ) ) {
 			self::$_instance = new self();
 		}
@@ -202,8 +214,10 @@ final class HelpHub_Post_Types {
 
 		if ( ( 'post.php' === $pagenow || 'post-new.php' === $pagenow ) ) :
 			if ( array_key_exists( get_post_type(), $this->post_types ) ) :
-				wp_enqueue_script( 'helphub-post-types-admin', $this->plugin_url . 'assets/js/admin.js', array( 'jquery' ), '1.0.0', true );
+				wp_enqueue_script( 'helphub-post-types-admin', $this->plugin_url . 'assets/js/admin.js', array( 'jquery' ), '1.0.1', true );
 				wp_enqueue_script( 'helphub-post-types-gallery', $this->plugin_url . 'assets/js/gallery.js', array( 'jquery' ), '1.0.0', true );
+				wp_enqueue_script( 'jquery-ui-datepicker' );
+				wp_enqueue_style( 'jquery-ui-datepicker' );
 			endif;
 		endif;
 		wp_localize_script( 'helphub-post-types-admin', 'helphub_admin',
