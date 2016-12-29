@@ -114,9 +114,9 @@ class HelpHub_Post_Types_Post_Type {
 	 */
 	public function register_post_type() {
 
-		if ( post_type_exists( $this->post_type ) ) :
+		if ( post_type_exists( $this->post_type ) ) {
 			return;
-		endif;
+		}
 
 		$labels = array(
 			'name' => sprintf( _x( '%s', 'post type general name', 'helphub' ), $this->plural ), /* @codingStandardsIgnoreLine */
@@ -134,9 +134,7 @@ class HelpHub_Post_Types_Post_Type {
 			'menu_name' => $this->plural,
 		);
 
-		/* @codingStandardsIgnoreLine */
 		$single_slug = apply_filters( 'helphub_single_slug', sanitize_title_with_dashes( $this->singular ) );
-		/* @codingStandardsIgnoreLine */
 		$archive_slug = apply_filters( 'helphub_archive_slug', sanitize_title_with_dashes( $this->plural ) );
 
 		$defaults = array(
@@ -168,10 +166,10 @@ class HelpHub_Post_Types_Post_Type {
 	 * @return void
 	 */
 	public function register_taxonomy() {
-		foreach ( $this->taxonomies as $taxonomy ) :
+		foreach ( $this->taxonomies as $taxonomy ) {
 			$taxonomy = new HelpHub_Post_Types_Taxonomy( esc_attr( $this->post_type ), $taxonomy, '', '', array() ); // Leave arguments empty, to use the default arguments.
 			$taxonomy->register();
-		endforeach;
+		}
 	} // End register_taxonomy()
 
 	/**
@@ -248,7 +246,7 @@ class HelpHub_Post_Types_Post_Type {
 			3 => __( 'Custom field deleted.', 'helphub' ),
 			4 => sprintf( __( '%s updated.', 'helphub' ), $this->singular ),
 			/* translators: %s: date and time of the revision */
-			5 => isset( $_GET['revision'] ) ? sprintf( __( '%1$s restored to revision from %2$s', 'helphub' ), $this->singular, wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+			5 => isset( $_GET['revision'] ) ? sprintf( __( '%1$s restored to revision from %2$s', 'helphub' ), $this->singular, wp_post_revision_title( (int) $_GET['revision'], false ) ): false,
 			6 => sprintf( __( '%1$s published. %3$sView %2$s%4$s', 'helphub' ), $this->singular, strtolower( $this->singular ), '<a href="' . esc_url( $permalink ) . '">', '</a>' ),
 			7 => sprintf( __( '%s saved.', 'helphub' ), $this->singular ),
 			8 => sprintf( __( '%1$s submitted. %2$sPreview %3$s%4$s', 'helphub' ), $this->singular, strtolower( $this->singular ), '<a target="_blank" href="' . esc_url( add_query_arg( 'preview', 'true', $permalink ) ) . '">', '</a>' ),
@@ -270,11 +268,11 @@ class HelpHub_Post_Types_Post_Type {
 	 * @return void
 	 */
 	public function meta_box_setup() {
-		if ( 'post' === $this->post_type ) :
+		if ( 'post' === $this->post_type ) {
 			add_meta_box( $this->post_type . '-display', __( 'Display Settings', 'helphub' ), array( $this, 'meta_box_content' ), $this->post_type, 'normal', 'high' );
-		elseif ( 'helphub_version' === $this->post_type ) :
+		} elseif ( 'helphub_version' === $this->post_type ) {
 			add_meta_box( $this->post_type . '-version-meta', __( 'Display Settings', 'helphub' ), array( $this, 'meta_box_version_content' ), $this->post_type, 'normal', 'high' );
-		endif;
+		}
 	} // End meta_box_setup()
 
 	/**
@@ -404,7 +402,7 @@ class HelpHub_Post_Types_Post_Type {
 						$html .= '<tr valign="top"><th scope="row"><label for="' . esc_attr( $v['name'] ) . '">' . $v['name'] . '</label></th><td>' . $field . "\n";
 						$html .= '</td></tr>' . "\n";
 						break;
-					case 'multicheck' :
+					case 'multicheck':
 						$field = '';
 						if ( isset( $v['options'] ) && is_array( $v['options'] ) ) {
 							foreach ( $v['options'] as $val => $option ) {
@@ -417,7 +415,7 @@ class HelpHub_Post_Types_Post_Type {
 						}
 						$html .= '</td></tr>' . "\n";
 						break;
-					case 'select' :
+					case 'select':
 						$field = '<select name="' . esc_attr( $k ) . '" id="' . esc_attr( $k ) . '" >' . "\n";
 						if ( isset( $v['options'] ) && is_array( $v['options'] ) ) {
 							foreach ( $v['options'] as $val => $option ) {
@@ -431,7 +429,7 @@ class HelpHub_Post_Types_Post_Type {
 						}
 						$html .= '</td></tr>' . "\n";
 						break;
-					default :
+					default:
 						$field = apply_filters( 'helphub_data_field_type_' . $v['type'], null, $k, $data, $v );
 						if ( $field ) {
 							$html .= '<tr valign="top"><th scope="row"><label for="' . esc_attr( $k ) . '">' . $v['name'] . '</label></th><td>' . $field . "\n";
@@ -483,46 +481,45 @@ class HelpHub_Post_Types_Post_Type {
 		$field_data = $this->get_custom_fields_settings();
 		$fields = array_keys( $field_data );
 
-		foreach ( $fields as $f ) :
+		foreach ( $fields as $f ) {
 
 			switch ( $field_data[ $f ]['type'] ) {
 				case 'url':
-					${$f} = isset( $_POST[ $f ] ) ? esc_url( $_POST[ $f ] ) : ''; /* @codingStandardsIgnoreLine */
+					${$f} = isset( $_POST[ $f ] ) ? esc_url( $_POST[ $f ] ): ''; /* @codingStandardsIgnoreLine */
 					break;
 				case 'textarea':
 				case 'editor':
-					${$f} = isset( $_POST[ $f ] ) ? wp_kses_post( trim( $_POST[ $f ] ) ) : ''; /* @codingStandardsIgnoreLine */
+					${$f} = isset( $_POST[ $f ] ) ? wp_kses_post( trim( $_POST[ $f ] ) ): ''; /* @codingStandardsIgnoreLine */
 					break;
 				case 'checkbox':
-					${$f} = isset( $_POST[ $f ] ) ? 'yes' : 'no';
+					${$f} = isset( $_POST[ $f ] ) ? 'yes': 'no';
 					break;
 				case 'multicheck':
-					// ensure checkbox is array and whitelist accepted values against options.
+					// Ensure checkbox is array and whitelist accepted values against options.
 					${$f} = isset( $_POST[ $f ] ) && is_array( $field_data[ $f ]['options'] ) ? (array) array_intersect( (array) $_POST[ $f ], array_flip( $field_data[ $f ]['options'] ) ) : ''; /* @codingStandardsIgnoreLine */
 					break;
 				case 'radio':
 				case 'select':
-					// whitelist accepted value against options.
+					// Whitelist accepted value against options.
 					$values = array();
 					if ( is_array( $field_data[ $f ]['options'] ) ) {
 						$values = array_keys( $field_data[ $f ]['options'] );
 					}
-					${$f} = isset( $_POST[ $f ] ) && in_array( $_POST[ $f ], $values ) ? $_POST[ $f ] : ''; /* @codingStandardsIgnoreLine */
+					${$f} = isset( $_POST[ $f ] ) && in_array( $_POST[ $f ], $values ) ? $_POST[ $f ]: ''; /* @codingStandardsIgnoreLine */
 					break;
 				case 'date':
-					${$f} = isset( $_POST[ $f ] ) ? strtotime( wp_strip_all_tags( $_POST[ $f ] ) ) : ''; /* @codingStandardsIgnoreLine */
+					${$f} = isset( $_POST[ $f ] ) ? strtotime( wp_strip_all_tags( $_POST[ $f ] ) ): ''; /* @codingStandardsIgnoreLine */
 					break;
-				default :
-					${$f} = isset( $_POST[ $f ] ) ? strip_tags( trim( $_POST[ $f ] ) ) : ''; /* @codingStandardsIgnoreLine */
+				default:
+					${$f} = isset( $_POST[ $f ] ) ? strip_tags( trim( $_POST[ $f ] ) ): ''; /* @codingStandardsIgnoreLine */
 					break;
 			}
 
-			// save it.
-			if ( 'read_time' !== $f ) :
+			// Save it.
+			if ( 'read_time' !== $f ) {
 				update_post_meta( $post_id, '_' . $f, ${$f} );
-			endif;
-
-		endforeach;
+			}
+		}
 
 		// Save the project gallery image IDs.
 		$attachment_ids = array_filter( explode( ',', sanitize_text_field( $_POST['helphub_image_gallery'] ) ) ); /* @codingStandardsIgnoreLine */
@@ -538,11 +535,11 @@ class HelpHub_Post_Types_Post_Type {
 	 * @return string $title
 	 */
 	public function enter_title_here( $title ) {
-		if ( get_post_type() == $this->post_type ) :
-			if ( 'post' === get_post_type() ) :
+		if ( get_post_type() == $this->post_type ) {
+			if ( 'post' === get_post_type() ) {
 				$title = __( 'Enter the article title here', 'helphub' );
-			endif;
-		endif;
+			}
+		}
 		return $title;
 	} // End enter_title_here()
 
@@ -558,11 +555,11 @@ class HelpHub_Post_Types_Post_Type {
 	public function get_custom_fields_settings() {
 
 		$fields = array();
-		if ( 'post' === get_post_type() ) :
+		if ( 'post' === get_post_type() ) {
 			$fields = $this->get_custom_fields_post_display_settings();
-		elseif ( 'helphub_version' === get_post_type() ) :
+		} elseif ( 'helphub_version' === get_post_type() ) {
 			$fields = $this->get_custom_fields_version_display_settings();
-		endif;
+		}
 
 		return $fields;
 
