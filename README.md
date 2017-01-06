@@ -19,7 +19,7 @@ define( 'WPORGPATH', 'https://wordpress.org/' );
 
 ## Workflow
 
-Anyone is welcome to fork the repo and send pull requests, but the project collaborators (listed below) have push access directly to the repo. **All pull requests will be discussed and must be approved by the project lead before merge, but contributors will be responsible for merging their own pull requests once the contribution has been approved.**
+Anyone is welcome to fork the repo and send pull requests, but the project collaborators (listed below) have push access directly to the repo. **All pull requests will be be reviewed by at least one collaborator with commit access and pass tests. The collaborators will be responsible for merging their own pull requests once the reviews has been approved. Major feature development will require a review from the project lead, minor ones do not.**
 
 ### Feature development
 
