@@ -33,7 +33,7 @@
 			<div class="helphub-footerarea2">
 				<?php
 					if ( is_active_sidebar( 'footer-2' ) ) {
-						get_template_part( 'template-parts/widget', 'footer1' );
+						get_template_part( 'template-parts/widget', 'footer2' );
 					} else { ?>
 						<h2 class="widget-title">
 							<?php echo esc_html__( 'Footer 2 Title', 'helphub' ); ?>
