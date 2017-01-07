@@ -327,7 +327,6 @@ class HelpHub_Post_Types_Post_Type {
 					$data = $fields[ '_' . $k ][0];
 				}
 
-
 				switch ( $v['type'] ) {
 					case 'hidden':
 						$field = '<input name="' . esc_attr( $k ) . '" type="hidden" id="' . esc_attr( $k ) . '" value="' . esc_attr( $data ) . '" />';
