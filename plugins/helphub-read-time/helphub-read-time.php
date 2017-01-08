@@ -19,9 +19,9 @@ add_action( 'save_post', 'hh_calculate_and_update_post_read_time', 10, 3 );
 /**
  * Calculates the read time of a post when created or updated.
  *
- * @param  int $post_id Post id to calculate read time for.
- * @param  object $post Post object.
- * @param  boolean $update Is this an update or new.
+ * @param int     $post_id Post id to calculate read time for.
+ * @param object  $post Post object.
+ * @param boolean $update Is this an update or new.
  *
  * @return void
  */
@@ -75,7 +75,9 @@ function hh_calculate_and_update_post_read_time( $post_id, $post, $update ) {
 	$offset_weight = apply_filters( 'read_time_offset_weight', 1 );
 
 	foreach ( $xpath->query( '//pre' ) as $node ) {
+		/* @codingStandardsIgnoreLine */
 		$pre_tags[]        = $node->nodeValue;
+		/* @codingStandardsIgnoreLine */
 		$word_count_offset = str_word_count( $node->nodeValue ) + ( $word_count_offset * $offset_weight );
 	}
 
@@ -122,7 +124,7 @@ function hh_get_readtime( $post_id ) {
 		$read_time = get_post_meta( $post_id, '_read_time', true );
 	}
 
-	//echo $read_time;
+	/* echo $read_time; */
 	return $read_time;
 }
 
@@ -139,7 +141,7 @@ function hh_get_readtime( $post_id ) {
  */
 function hh_the_read_time( $post_id = null ) {
 	$post_id = intval( $post_id );
-	echo hh_get_the_read_time( $post_id );
+	echo esc_html( hh_get_the_read_time( $post_id ) );
 }
 
 /**
@@ -169,7 +171,8 @@ function hh_get_the_read_time( $post_id = null ) {
 
 /**
  * Mass calculate the read time of all published posts
- * @return [type] [description]
+ *
+ * @return void
  */
 function hh_mass_calculate_readtime() {
 	$qry_args = array(
