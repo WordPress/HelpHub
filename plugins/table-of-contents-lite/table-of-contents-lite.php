@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * Plugin Name: Table Of Contents Lite
  * Version: 1.0
  * Plugin URI: https://carl.alber2.com
@@ -19,7 +19,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-// Load plugin class files
+// Load plugin class files.
 require_once( 'includes/class-table-of-contents-lite.php' );
 
 /**
