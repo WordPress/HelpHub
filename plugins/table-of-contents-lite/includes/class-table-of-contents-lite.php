@@ -96,99 +96,12 @@ class Table_Of_Contents_Lite {
 
 		register_activation_hook( $this->file, array( $this, 'install' ) );
 
-		// Load frontend JS & CSS
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ), 10 );
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ), 10 );
-
-		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_styles' ), 10, 1 );
-
-		// Load API for generic admin functions
-		if ( is_admin() ) {
-		//	$this->admin = new Table_Of_Contents_Lite_Admin_API();
-		}
+		add_filter( 'the_content', array( $this, 'add_toc' ) );
 
 		// Handle localisation
 		$this->load_plugin_textdomain();
 		add_action( 'init', array( $this, 'load_localisation' ), 0 );
 	} // End __construct ()
-
-	/**
-	 * Wrapper function to register a new post type
-	 * @param  string $post_type   Post type name
-	 * @param  string $plural      Post type item plural name
-	 * @param  string $single      Post type item single name
-	 * @param  string $description Description of post type
-	 * @return object              Post type class object
-	 */
-	public function register_post_type ( $post_type = '', $plural = '', $single = '', $description = '', $options = array() ) {
-
-		if ( ! $post_type || ! $plural || ! $single ) return;
-
-		$post_type = new Table_Of_Contents_Lite_Post_Type( $post_type, $plural, $single, $description, $options );
-
-		return $post_type;
-	}
-
-	/**
-	 * Wrapper function to register a new taxonomy
-	 * @param  string $taxonomy   Taxonomy name
-	 * @param  string $plural     Taxonomy single name
-	 * @param  string $single     Taxonomy plural name
-	 * @param  array  $post_types Post types to which this taxonomy applies
-	 * @return object             Taxonomy class object
-	 */
-	public function register_taxonomy ( $taxonomy = '', $plural = '', $single = '', $post_types = array(), $taxonomy_args = array() ) {
-
-		if ( ! $taxonomy || ! $plural || ! $single ) return;
-
-		$taxonomy = new Table_Of_Contents_Lite_Taxonomy( $taxonomy, $plural, $single, $post_types, $taxonomy_args );
-
-		return $taxonomy;
-	}
-
-	/**
-	 * Load frontend CSS.
-	 * @access  public
-	 * @since   1.0.0
-	 * @return void
-	 */
-	public function enqueue_styles () {
-		wp_register_style( $this->_token . '-frontend', esc_url( $this->assets_url ) . 'css/frontend.css', array(), $this->_version );
-		wp_enqueue_style( $this->_token . '-frontend' );
-	} // End enqueue_styles ()
-
-	/**
-	 * Load frontend Javascript.
-	 * @access  public
-	 * @since   1.0.0
-	 * @return  void
-	 */
-	public function enqueue_scripts () {
-		wp_register_script( $this->_token . '-frontend', esc_url( $this->assets_url ) . 'js/frontend' . $this->script_suffix . '.js', array( 'jquery' ), $this->_version );
-		wp_enqueue_script( $this->_token . '-frontend' );
-	} // End enqueue_scripts ()
-
-	/**
-	 * Load admin CSS.
-	 * @access  public
-	 * @since   1.0.0
-	 * @return  void
-	 */
-	public function admin_enqueue_styles ( $hook = '' ) {
-		wp_register_style( $this->_token . '-admin', esc_url( $this->assets_url ) . 'css/admin.css', array(), $this->_version );
-		wp_enqueue_style( $this->_token . '-admin' );
-	} // End admin_enqueue_styles ()
-
-	/**
-	 * Load admin Javascript.
-	 * @access  public
-	 * @since   1.0.0
-	 * @return  void
-	 */
-	public function admin_enqueue_scripts ( $hook = '' ) {
-		wp_register_script( $this->_token . '-admin', esc_url( $this->assets_url ) . 'js/admin' . $this->script_suffix . '.js', array( 'jquery' ), $this->_version );
-		wp_enqueue_script( $this->_token . '-admin' );
-	} // End admin_enqueue_scripts ()
 
 	/**
 	 * Load plugin localisation
@@ -273,6 +186,90 @@ class Table_Of_Contents_Lite {
 		update_option( $this->_token . '_version', $this->_version );
 	} // End _log_version_number ()
 
+	/**
+	* Main function that adds the TOC to the regular content of each post
+	* @param longtext 	$content
+	* @return longtext 	generatod TOC based from the h tags in the $content plus the $content at the end
+	*/
+	public function add_toc( $content ) {
 
+		$toc = '';
+
+		$items = $this->get_tags_in_content( 'h([1-4])', $content ); //returns the h1-h4 tags inside the_content
+		if ( count( $items ) < 2 ) {
+			return $content;
+		}
+
+		for ( $i = 1; $i <= 4; $i++ )
+			$content = $this->add_ids_and_jumpto_links( "h$i", $content );
+
+		if ( $items ) {
+			$contents_header = 'h' . $items[0][2]; // Duplicate the first <h#> tag in the document.
+			$toc .= '<div class="table-of-contents">';
+			$last_item = false;
+			foreach ( $items as $item ) {
+				if ( $last_item ) {
+					if ( $last_item < $item[2] )
+						$toc .= "\n<ul>\n";
+					elseif ( $last_item > $item[2] )
+						$toc .= "\n</ul></li>\n";
+					else
+						$toc .= "</li>\n";
+				}
+				$last_item = $item[2];
+				$toc .= '<li><a href="#' . sanitize_title_with_dashes($item[3])  . '">' . $item[3]  . '</a>';
+			}
+			$toc .= "</ul>\n</div>\n";
+		}
+		return $toc . $content;
+	}
+
+	/**
+	* Filters all header tags in the current content
+	* @param longtext 	$content	content to be filtered
+	* @param string 	$tag		header tags to be included, default h1-h4
+	* @return array 	$matches 	all filtered header tags
+	*/
+	public function get_tags_in_content( $tag, $content = '' ) {
+		if ( empty( $content ) )
+			$content = get_the_content();
+		preg_match_all( "/(<{$tag}>)(.*)(<\/{$tag}>)/", $content, $matches, PREG_SET_ORDER );
+		return $matches;
+	}
+
+	/**
+	* Appends the filtered header tags on the start fo the $content
+	* @param longtext 	$content	content to be filtered
+	* @param string 	$tag		depending on the tag, it will place the TOC link deeper in the ul - li tag
+	* @return array 	$content 	returns the content with the partial TOC on top
+	*/
+	public function add_ids_and_jumpto_links( $tag, $content ) {
+		$items = $this->get_tags_in_content( $tag, $content );
+		$first = true;
+		$matches = array();
+		$replacements = array();
+
+		foreach ( $items as $item ) {
+			$replacement = '';
+			$matches[] = $item[0];
+			$id = sanitize_title_with_dashes($item[2]);
+			if ( ! $first ) {
+				$replacement .= '<p class="toc-jump"><a href="#top">' . __( 'Top &uarr;', 'wporg' ) . '</a></p>';
+			} else {
+				$first = false;
+			}
+			$a11y_text      = sprintf( '<span class="screen-reader-text">%s</span>', $item[2] );
+
+			$anchor         = sprintf( '<a href="#%1$s" class="anchor">%2$s</a>', $id, $a11y_text );
+			$replacement   .= sprintf( '<%1$s class="toc-heading" id="%2$s" tabindex="-1">%3$s %4$s</%1$s>', $tag, $id, $item[2], $anchor );
+			$replacements[] = $replacement;
+		}
+
+		if ( $replacements ) {
+			$content = str_replace( $matches, $replacements, $content );
+		}
+
+		return $content;
+	}
 
 }
