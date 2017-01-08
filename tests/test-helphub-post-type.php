@@ -103,7 +103,7 @@ class Helphub_Post_Type_Test extends WP_UnitTestCase {
 		$html = $this->meta_box_content_render( $fields );
 		$this->assertContains( '<textarea name="textarea-field" id="textarea-field" class="large-text"></textarea>', $html );
 
-		$fields['textarea-field']['default'] = "<b>It should be escaped</b>";
+		$fields['textarea-field']['default'] = '<b>It should be escaped</b>';
 		$html = $this->meta_box_content_render( $fields );
 		$this->assertContains( '<textarea name="textarea-field" id="textarea-field" class="large-text">&lt;b&gt;It should be escaped&lt;/b&gt;</textarea>', $html );
 	}
