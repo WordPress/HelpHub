@@ -17,12 +17,13 @@
  * @since 1.0.0
  */
 
-if (! defined('ABSPATH')) {
-    exit;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
 }
 
 // Load plugin class files.
-require_once('includes/class-table-of-contents-lite.php');
+require_once( 'includes/class-table-of-contents-lite.php' );
 
 /**
  * Returns the main instance of Table_Of_Contents_Lite to prevent the need to use globals.
@@ -30,10 +31,9 @@ require_once('includes/class-table-of-contents-lite.php');
  * @since  1.0.0
  * @return object Table_Of_Contents_Lite
  */
-function table_of_contents_lite()
-{
-    $instance = Table_Of_Contents_Lite::instance(__FILE__, '1.0.0');
-    return $instance;
+function table_of_contents_lite() {
+	$instance = Table_Of_Contents_Lite::instance( __FILE__ , '1.0.0' );
+	return $instance;
 }
 
 table_of_contents_lite();
