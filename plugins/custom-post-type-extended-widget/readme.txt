@@ -1,10 +1,10 @@
 === Custom Post Type Extended Widget ===
 Contributors: carl-alberto
-Donate link: http://carlalberto.ml/donate
+Donate link: https://carl.alber2.com/
 Tags: plugin, widget, custom post type widget
 Requires at least: 3.9
 Tested up to: 4.5
-Stable tag: 1.0
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -29,6 +29,10 @@ Installing "Custom Post Type Extended Widget" can be done either by searching fo
 == Frequently Asked Questions ==
 
 == Changelog ==
+
+= 1.1 =
+* 2017-01-09
+* Updated codebase to conform with WP standards
 
 = 1.0 =
 * 2016-05-31
