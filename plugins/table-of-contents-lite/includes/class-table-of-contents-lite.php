@@ -25,6 +25,7 @@ class Table_Of_Contents_Lite {
 
 	/**
 	 * The single instance of Table_Of_Contents_Lite.
+	 *
 	 * @var 	object
 	 * @access  private
 	 * @since 	1.0.0
@@ -33,6 +34,7 @@ class Table_Of_Contents_Lite {
 
 	/**
 	 * Settings class object
+	 *
 	 * @var     object
 	 * @access  public
 	 * @since   1.0.0
@@ -41,6 +43,7 @@ class Table_Of_Contents_Lite {
 
 	/**
 	 * The version number.
+	 *
 	 * @var     string
 	 * @access  public
 	 * @since   1.0.0
@@ -49,6 +52,7 @@ class Table_Of_Contents_Lite {
 
 	/**
 	 * The token.
+	 *
 	 * @var     string
 	 * @access  public
 	 * @since   1.0.0
@@ -57,6 +61,7 @@ class Table_Of_Contents_Lite {
 
 	/**
 	 * The main plugin file.
+	 *
 	 * @var     string
 	 * @access  public
 	 * @since   1.0.0
@@ -65,6 +70,7 @@ class Table_Of_Contents_Lite {
 
 	/**
 	 * The main plugin directory.
+	 *
 	 * @var     string
 	 * @access  public
 	 * @since   1.0.0
@@ -73,6 +79,7 @@ class Table_Of_Contents_Lite {
 
 	/**
 	 * The plugin assets directory.
+	 *
 	 * @var     string
 	 * @access  public
 	 * @since   1.0.0
@@ -81,6 +88,7 @@ class Table_Of_Contents_Lite {
 
 	/**
 	 * The plugin assets URL.
+	 *
 	 * @var     string
 	 * @access  public
 	 * @since   1.0.0
@@ -89,6 +97,7 @@ class Table_Of_Contents_Lite {
 
 	/**
 	 * Suffix for Javascripts.
+	 *
 	 * @var     string
 	 * @access  public
 	 * @since   1.0.0
@@ -97,6 +106,7 @@ class Table_Of_Contents_Lite {
 
 	/**
 	 * Constructor function.
+	 *
 	 * @access  public
 	 * @since   1.0.0
 	 * @return  void
@@ -124,6 +134,7 @@ class Table_Of_Contents_Lite {
 
 	/**
 	 * Load plugin localisation
+	 *
 	 * @access  public
 	 * @since   1.0.0
 	 * @return  void
@@ -134,6 +145,7 @@ class Table_Of_Contents_Lite {
 
 	/**
 	 * Load plugin textdomain
+	 *
 	 * @access  public
 	 * @since   1.0.0
 	 * @return  void
@@ -161,9 +173,6 @@ class Table_Of_Contents_Lite {
 		if ( is_null( self::$_instance ) ) {
 			self::$_instance = new self( $file, $version );
 		}
-
-
-
 		return self::$_instance;
 	} // End instance ()
 
@@ -187,6 +196,7 @@ class Table_Of_Contents_Lite {
 
 	/**
 	 * Installation. Runs on activation.
+	 *
 	 * @access  public
 	 * @since   1.0.0
 	 * @return  void
@@ -197,6 +207,7 @@ class Table_Of_Contents_Lite {
 
 	/**
 	 * Log the plugin version number.
+	 *
 	 * @access  public
 	 * @since   1.0.0
 	 * @return  void
@@ -207,6 +218,7 @@ class Table_Of_Contents_Lite {
 
 	/**
 	 * Main function that adds the TOC to the regular content of each post
+	 *
 	 * @param longtext 	$content
 	 * @return longtext 	generatod TOC based from the h tags in the $content plus the $content at the end
 	 */
@@ -236,7 +248,7 @@ class Table_Of_Contents_Lite {
 						$toc .= "</li>\n";
 				}
 				$last_item = $item[2];
-				$toc .= '<li><a href="#' . sanitize_title_with_dashes($item[3])  . '">' . $item[3]  . '</a>';
+				$toc .= '<li><a href="#' . sanitize_title_with_dashes( $item[3] )  . '">' . $item[3]  . '</a>';
 			}
 			$toc .= "</ul>\n</div>\n";
 		}
@@ -245,6 +257,7 @@ class Table_Of_Contents_Lite {
 
 	/**
 	 * Filters all header tags in the current content
+	 *
 	 * @param longtext 	$content	content to be filtered
 	 * @param string 	$tag		header tags to be included, default h1-h4
 	 * @return array 	$matches 	all filtered header tags
@@ -258,6 +271,7 @@ class Table_Of_Contents_Lite {
 
 	/**
 	 * Appends the filtered header tags on the start fo the $content
+	 *
 	 * @param longtext 	$content	content to be filtered
 	 * @param string 	$tag		depending on the tag, it will place the TOC link deeper in the ul - li tag
 	 * @return array 	$content 	returns the content with the partial TOC on top
@@ -271,7 +285,7 @@ class Table_Of_Contents_Lite {
 		foreach ( $items as $item ) {
 			$replacement = '';
 			$matches[] = $item[0];
-			$id = sanitize_title_with_dashes($item[2]);
+			$id = sanitize_title_with_dashes( $item[2] );
 			if ( ! $first ) {
 				$replacement .= '<p class="toc-jump"><a href="#top">' . __( 'Top &uarr;', 'wporg' ) . '</a></p>';
 			} else {
