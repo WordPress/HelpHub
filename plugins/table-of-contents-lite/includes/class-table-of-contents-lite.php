@@ -107,9 +107,9 @@ class Table_Of_Contents_Lite {
 	/**
 	 * Constructor function.
 	 *
-	 * @access  public
-	 * @param 	string	$file	filename of the plugin.
-	 * @param	string	$version	version number of plugin.
+	 * @access public
+	 * @param	string $file filename of the plugin.
+	 * @param	string $version version number of plugin.
 	 * @since   1.0.0
 	 * @return  void
 	 */
@@ -166,10 +166,10 @@ class Table_Of_Contents_Lite {
 	 *
 	 * @since 1.0.0
 	 * @static
-	 * @param	string	$file	filename of the plugin.
-	 * @param	string	$version	version number of plugin.
-	 * @see Table_Of_Contents_Lite()
-	 * @return Main Table_Of_Contents_Lite instance
+	 * @param	string $file filename of the plugin.
+	 * @param	string $version version number of plugin.
+	 * @see	Table_Of_Contents_Lite()
+	 * @return	Main Table_Of_Contents_Lite instance
 	 */
 	public static function instance( $file = '', $version = '1.0.0' ) {
 		if ( is_null( self::$_instance ) ) {
@@ -184,7 +184,7 @@ class Table_Of_Contents_Lite {
 	 * @since 1.0.0
 	 */
 	public function __clone() {
-		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?' ), $this->_version );
+		_doing_it_wrong( __FUNCTION__, esc_html_e( 'Cheatin&#8217; huh?' ) );
 	} // End __clone ()
 
 	/**
@@ -193,7 +193,7 @@ class Table_Of_Contents_Lite {
 	 * @since 1.0.0
 	 */
 	public function __wakeup() {
-		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?' ), $this->_version );
+		_doing_it_wrong( __FUNCTION__, esc_html_e( 'Cheatin&#8217; huh?' ) );
 	} // End __wakeup ()
 
 	/**
@@ -221,8 +221,8 @@ class Table_Of_Contents_Lite {
 	/**
 	 * Main function that adds the TOC to the regular content of each post.
 	 *
-	 * @param longtext	$content	contains the post content.
-	 * @return longtext	generatod TOC based from the h tags in the $content plus the $content at the end.
+	 * @param	longtext $content contains the post content.
+	 * @return	longtext generatod TOC based from the h tags in the $content plus the $content at the end.
 	 */
 	public function add_toc( $content ) {
 
@@ -252,7 +252,10 @@ class Table_Of_Contents_Lite {
 					}
 				}
 				$last_item = $item[2];
-				$toc .= '<li><a href="#' . sanitize_title_with_dashes( $item[3] )  . '">' . $item[3] . '</a>';
+				$toc .= ' <li><a href="#'
+					. sanitize_title_with_dashes( $item[3] )
+					. '">' . $item[3]
+					. '</a> ';
 			}
 			$toc .= "</ul>\n</div>\n";
 		}
@@ -262,13 +265,14 @@ class Table_Of_Contents_Lite {
 	/**
 	 * Filters all header tags in the current content.
 	 *
-	 * @param string	$content	content to be filtered.
-	 * @param string	$tag	header tags to be included, default h1-h4.
-	 * @return array $matches	all filtered header tags.
+	 * @param	string $tag header tags to be included, default h1-h4.
+	 * @param	string $content	content to be filtered.
+	 * @return	array $matches all filtered header tags.
 	 */
 	public function get_tags_in_content( $tag, $content = '' ) {
-		if ( empty( $content ) )
+		if ( empty( $content ) ) {
 			$content = get_the_content();
+		}
 		preg_match_all( "/(<{$tag}>)(.*)(<\/{$tag}>)/", $content, $matches, PREG_SET_ORDER );
 		return $matches;
 	}
@@ -276,8 +280,8 @@ class Table_Of_Contents_Lite {
 	/**
 	 * Appends the filtered header tags on the start fo the $content.
 	 *
-	 * @param longtext 	$content	content to be filtered.
-	 * @param string	$tag	depending on the tag, it will place the TOC link deeper in the ul - li tag.
+	 * @param string   $tag    depending on the tag, it will place the TOC link deeper in the ul - li tag.
+	 * @param longtext $content    content to be filtered.
 	 * @return array $content	returns the content with the partial TOC on top.
 	 */
 	public function add_ids_and_jumpto_links( $tag, $content ) {
