@@ -108,14 +108,16 @@ class Table_Of_Contents_Lite {
 	 * Constructor function.
 	 *
 	 * @access  public
+	 * @param 	string	$file		filename of the plugin
+	 * @param	string	$version	version number of plugin
 	 * @since   1.0.0
 	 * @return  void
 	 */
-	public function __construct ( $file = '', $version = '1.0.0' ) {
+	public function __construct( $file = '', $version = '1.0.0' ) {
 		$this->_version = $version;
 		$this->_token = 'table_of_contents_lite';
 
-		// Load plugin environment variables
+		// Load plugin environment variables.
 		$this->file = $file;
 		$this->dir = dirname( $this->file );
 		$this->assets_dir = trailingslashit( $this->dir ) . 'assets';
@@ -127,7 +129,7 @@ class Table_Of_Contents_Lite {
 
 		add_filter( 'the_content', array( $this, 'add_toc' ) );
 
-		// Handle localisation
+		// Handle localisation.
 		$this->load_plugin_textdomain();
 		add_action( 'init', array( $this, 'load_localisation' ), 0 );
 	} // End __construct ()
@@ -139,7 +141,7 @@ class Table_Of_Contents_Lite {
 	 * @since   1.0.0
 	 * @return  void
 	 */
-	public function load_localisation () {
+	public function load_localisation() {
 		load_plugin_textdomain( 'table-of-contents-lite', false, dirname( plugin_basename( $this->file ) ) . '/lang/' );
 	} // End load_localisation ()
 
@@ -150,7 +152,7 @@ class Table_Of_Contents_Lite {
 	 * @since   1.0.0
 	 * @return  void
 	 */
-	public function load_plugin_textdomain () {
+	public function load_plugin_textdomain() {
 		$domain = 'table-of-contents-lite';
 
 		$locale = apply_filters( 'plugin_locale', get_locale(), $domain );
@@ -160,16 +162,16 @@ class Table_Of_Contents_Lite {
 	} // End load_plugin_textdomain ()
 
 	/**
-	 * Main Table_Of_Contents_Lite Instance
-	 *
-	 * Ensures only one instance of Table_Of_Contents_Lite is loaded or can be loaded.
+	 * Main Table_Of_Contents_Lite Instance. This ensures only one instance of Table_Of_Contents_Lite is loaded or can be loaded.
 	 *
 	 * @since 1.0.0
 	 * @static
+	 * @param 	string	$file		filename of the plugin
+	 * @param	string	$version	version number of plugin
 	 * @see Table_Of_Contents_Lite()
 	 * @return Main Table_Of_Contents_Lite instance
 	 */
-	public static function instance ( $file = '', $version = '1.0.0' ) {
+	public static function instance( $file = '', $version = '1.0.0' ) {
 		if ( is_null( self::$_instance ) ) {
 			self::$_instance = new self( $file, $version );
 		}
@@ -181,7 +183,7 @@ class Table_Of_Contents_Lite {
 	 *
 	 * @since 1.0.0
 	 */
-	public function __clone () {
+	public function __clone() {
 		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?' ), $this->_version );
 	} // End __clone ()
 
@@ -190,7 +192,7 @@ class Table_Of_Contents_Lite {
 	 *
 	 * @since 1.0.0
 	 */
-	public function __wakeup () {
+	public function __wakeup() {
 		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?' ), $this->_version );
 	} // End __wakeup ()
 
@@ -201,7 +203,7 @@ class Table_Of_Contents_Lite {
 	 * @since   1.0.0
 	 * @return  void
 	 */
-	public function install () {
+	public function install() {
 		$this->_log_version_number();
 	} // End install ()
 
@@ -212,21 +214,21 @@ class Table_Of_Contents_Lite {
 	 * @since   1.0.0
 	 * @return  void
 	 */
-	private function _log_version_number () {
+	private function _log_version_number() {
 		update_option( $this->_token . '_version', $this->_version );
 	} // End _log_version_number ()
 
 	/**
-	 * Main function that adds the TOC to the regular content of each post
+	 * Main function that adds the TOC to the regular content of each post.
 	 *
-	 * @param longtext 	$content
-	 * @return longtext 	generatod TOC based from the h tags in the $content plus the $content at the end
+	 * @param longtext 		$content	contains the post content.
+	 * @return longtext 	generatod TOC based from the h tags in the $content plus the $content at the end.
 	 */
 	public function add_toc( $content ) {
 
 		$toc = '';
 
-		$items = $this->get_tags_in_content( 'h([1-4])', $content ); //returns the h1-h4 tags inside the_content
+		$items = $this->get_tags_in_content( 'h([1-4])', $content ); // returns the h1-h4 tags inside the_content.
 		if ( count( $items ) < 2 ) {
 			return $content;
 		}
@@ -256,7 +258,7 @@ class Table_Of_Contents_Lite {
 	}
 
 	/**
-	 * Filters all header tags in the current content
+	 * Filters all header tags in the current content.
 	 *
 	 * @param longtext 	$content	content to be filtered
 	 * @param string 	$tag		header tags to be included, default h1-h4
@@ -270,11 +272,11 @@ class Table_Of_Contents_Lite {
 	}
 
 	/**
-	 * Appends the filtered header tags on the start fo the $content
+	 * Appends the filtered header tags on the start fo the $content.
 	 *
 	 * @param longtext 	$content	content to be filtered
-	 * @param string 	$tag		depending on the tag, it will place the TOC link deeper in the ul - li tag
-	 * @return array 	$content 	returns the content with the partial TOC on top
+	 * @param string 	$tag		depending on the tag, it will place the TOC link deeper in the ul - li tag.
+	 * @return array 	$content 	returns the content with the partial TOC on top.
 	 */
 	public function add_ids_and_jumpto_links( $tag, $content ) {
 		$items = $this->get_tags_in_content( $tag, $content );
