@@ -108,8 +108,8 @@ class Table_Of_Contents_Lite {
 	 * Constructor function.
 	 *
 	 * @access  public
-	 * @param 	string	$file		filename of the plugin
-	 * @param	string	$version	version number of plugin
+	 * @param 	string	$file	filename of the plugin.
+	 * @param	string	$version	version number of plugin.
 	 * @since   1.0.0
 	 * @return  void
 	 */
@@ -166,8 +166,8 @@ class Table_Of_Contents_Lite {
 	 *
 	 * @since 1.0.0
 	 * @static
-	 * @param 	string	$file		filename of the plugin
-	 * @param	string	$version	version number of plugin
+	 * @param	string	$file	filename of the plugin.
+	 * @param	string	$version	version number of plugin.
 	 * @see Table_Of_Contents_Lite()
 	 * @return Main Table_Of_Contents_Lite instance
 	 */
@@ -221,8 +221,8 @@ class Table_Of_Contents_Lite {
 	/**
 	 * Main function that adds the TOC to the regular content of each post.
 	 *
-	 * @param longtext 		$content	contains the post content.
-	 * @return longtext 	generatod TOC based from the h tags in the $content plus the $content at the end.
+	 * @param longtext	$content	contains the post content.
+	 * @return longtext	generatod TOC based from the h tags in the $content plus the $content at the end.
 	 */
 	public function add_toc( $content ) {
 
@@ -233,8 +233,9 @@ class Table_Of_Contents_Lite {
 			return $content;
 		}
 
-		for ( $i = 1; $i <= 4; $i++ )
+		for ( $i = 1; $i <= 4; $i++ ) {
 			$content = $this->add_ids_and_jumpto_links( "h$i", $content );
+		}
 
 		if ( $items ) {
 			$contents_header = 'h' . $items[0][2]; // Duplicate the first <h#> tag in the document.
@@ -242,15 +243,16 @@ class Table_Of_Contents_Lite {
 			$last_item = false;
 			foreach ( $items as $item ) {
 				if ( $last_item ) {
-					if ( $last_item < $item[2] )
+					if ( $last_item < $item[2] ) {
 						$toc .= "\n<ul>\n";
-					elseif ( $last_item > $item[2] )
+					} elseif ( $last_item > $item[2] ) {
 						$toc .= "\n</ul></li>\n";
-					else
+					} else {
 						$toc .= "</li>\n";
+					}
 				}
 				$last_item = $item[2];
-				$toc .= '<li><a href="#' . sanitize_title_with_dashes( $item[3] )  . '">' . $item[3]  . '</a>';
+				$toc .= '<li><a href="#' . sanitize_title_with_dashes( $item[3] )  . '">' . $item[3] . '</a>';
 			}
 			$toc .= "</ul>\n</div>\n";
 		}
@@ -260,9 +262,9 @@ class Table_Of_Contents_Lite {
 	/**
 	 * Filters all header tags in the current content.
 	 *
-	 * @param longtext 	$content	content to be filtered
-	 * @param string 	$tag		header tags to be included, default h1-h4
-	 * @return array 	$matches 	all filtered header tags
+	 * @param string	$content	content to be filtered.
+	 * @param string	$tag	header tags to be included, default h1-h4.
+	 * @return array $matches	all filtered header tags.
 	 */
 	public function get_tags_in_content( $tag, $content = '' ) {
 		if ( empty( $content ) )
@@ -274,9 +276,9 @@ class Table_Of_Contents_Lite {
 	/**
 	 * Appends the filtered header tags on the start fo the $content.
 	 *
-	 * @param longtext 	$content	content to be filtered
-	 * @param string 	$tag		depending on the tag, it will place the TOC link deeper in the ul - li tag.
-	 * @return array 	$content 	returns the content with the partial TOC on top.
+	 * @param longtext 	$content	content to be filtered.
+	 * @param string	$tag	depending on the tag, it will place the TOC link deeper in the ul - li tag.
+	 * @return array $content	returns the content with the partial TOC on top.
 	 */
 	public function add_ids_and_jumpto_links( $tag, $content ) {
 		$items = $this->get_tags_in_content( $tag, $content );
