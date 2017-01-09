@@ -1,5 +1,8 @@
 # HelpHub
 
+[![Build Status](https://travis-ci.org/Kenshino/HelpHub.svg?branch=master)](https://travis-ci.org/Kenshino/HelpHub) 
+
+
 HelpHub is going to be the new portal for all WordPress user documentation that currently resides on the [WordPress Codex](https://codex.wordpress.org/). This repo is where we will be managing development of this new portal.
 
 ## Get Involved
@@ -16,7 +19,7 @@ define( 'WPORGPATH', 'https://wordpress.org/' );
 
 ## Workflow
 
-Anyone is welcome to fork the repo and send pull requests, but the project collaborators (listed below) have push access directly to the repo. **All pull requests will be discussed and must be approved by the project lead before merge, but contributors will be responsible for merging their own pull requests once the contribution has been approved.**
+Anyone is welcome to fork the repo and send pull requests, but the project collaborators (listed below) have push access directly to the repo. **All pull requests will be be reviewed by at least one collaborator with commit access and the PR must pass tests. Collaborators will be responsible for merging their own pull requests once the reviews has been approved. Major feature development will require a review from the project lead, minor ones do not.**
 
 ### Feature development
 
@@ -51,6 +54,8 @@ The following people are active developers on the project and are all listed as 
 | Jon Ang           	| kenshino          	| kenshino       	|
 | Stephanie Green    	| greensteph        	| greensteph     	|
 | Jonathan Bossenger 	| jonathanbossenger 	| jon_bossenger  	|
-| Rachel Whitton     	| Rachelwhitton     	| rachelwhitton  	|
 | Jay Hoffmann       	| JasonHoffmann     	| jayhoffmann    	|
 | Carl Alberto        | carl-alberto        | carlalberto     |
+| Marius Jensen       | clorith             | clorith         |
+| Jude Rosario        | JudeRosario         | lumberhack      |
+| Stephen Edgar       | ntwb                | netweb          |

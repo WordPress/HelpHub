@@ -15,17 +15,17 @@
 	</div><!-- #content wrapper -->
 	<div class="helphub-footerarea">
 		<div class="wrapper">
-			<h2 class="helphub-footerarea-title"><?php echo __( 'Join the Conversation and Learn More', 'helphub' ); ?></h2>
+			<h2 class="helphub-footerarea-title"><?php echo esc_html__( 'Join the Conversation and Learn More', 'helphub' ); ?></h2>
 			<div class="helphub-footerarea1">
 				<?php
 					if ( is_active_sidebar( 'footer-1' ) ) {
 						get_template_part( 'template-parts/widget', 'footer1' );
 					} else { ?>
 						<h2 class="widget-title">
-							<?php echo __( 'Footer 1 Title', 'helphub' ); ?>
+							<?php echo esc_html__( 'Footer 1 Title', 'helphub' ); ?>
 						</h2>
 						<div class="textwidget">
-							<?php echo __( 'This is the Footer 1 sidebar. Please assign a widget to here', 'helphub' ); ?>
+							<?php echo esc_html__( 'This is the Footer 1 sidebar. Please assign a widget to here', 'helphub' ); ?>
 						</div> <?php
 					}
 				?>
@@ -33,13 +33,13 @@
 			<div class="helphub-footerarea2">
 				<?php
 					if ( is_active_sidebar( 'footer-2' ) ) {
-						get_template_part( 'template-parts/widget', 'footer1' );
+						get_template_part( 'template-parts/widget', 'footer2' );
 					} else { ?>
 						<h2 class="widget-title">
-							<?php echo __( 'Footer 2 Title', 'helphub' ); ?>
+							<?php echo esc_html__( 'Footer 2 Title', 'helphub' ); ?>
 						</h2>
 						<div class="textwidget">
-							<?php echo __( 'This is the Footer 2 sidebar. Please assign a widget to here', 'helphub' ); ?>
+							<?php echo esc_html__( 'This is the Footer 2 sidebar. Please assign a widget to here', 'helphub' ); ?>
 						</div> <?php
 					}
 				?>

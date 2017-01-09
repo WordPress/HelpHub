@@ -11,9 +11,12 @@ Text Domain: helphub
 Tags:
 
 This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
+Use it to make something cool, have fun,
+    and share what you've learned with others.
 
-HelpHub is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+HelpHub is based on Underscores http://underscores.me/,
+    (C) 2012-2015 Automattic, Inc.
+
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
@@ -50,14 +53,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 html {
 	font-family: sans-serif;
 	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust:     100%;
+	-ms-text-size-adjust: 100%;
 }
 
 body {
 	margin: 0;
 }
 
-body.single-post{
+body.single-post {
 	font-size: 12px;
 }
 
@@ -109,7 +112,7 @@ abbr[title] {
 
 b,
 strong {
-	font-weight: bold;
+	font-weight: 700;
 }
 
 dfn {
@@ -254,7 +257,7 @@ textarea {
 }
 
 optgroup {
-	font-weight: bold;
+	font-weight: 700;
 }
 
 table {
@@ -270,7 +273,8 @@ th {
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
-body, body.single-post,
+body,
+body.single-post,
 button,
 input,
 select,
@@ -297,7 +301,7 @@ body.single-post h3,
 body.single-post h4,
 body.single-post h5,
 body.single-post h6,
-body p{
+body p {
 	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -357,21 +361,23 @@ big {
 	font-size: 125%;
 }
 
-article h1, article h2, article h3{
-	font-weight: bold;
+article h1,
+article h2,
+article h3 {
+	font-weight: 700;
 	margin: 1em 0;
 }
 
-article h1{
+article h1 {
 	font-size: 3em;
 	margin-bottom: 0;
 }
 
-article h2{
+article h2 {
 	font-size: 2.5em;
 }
 
-article h3{
+article h3 {
 	font-size: 2em;
 }
 
@@ -430,7 +436,7 @@ li > ol {
 }
 
 dt {
-	font-weight: bold;
+	font-weight: 700;
 }
 
 dd {
@@ -538,21 +544,22 @@ textarea {
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
+
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: royalblue;
+	color: #4169e1;
 }
 
 a:visited {
-	color: purple;
+	color: #800080;
 }
 
 a:hover,
 a:focus,
 a:active {
-	color: midnightblue;
+	color: #191970;
 }
 
 a:focus {
@@ -648,9 +655,11 @@ a:active {
 }
 
 @media screen and (min-width: 37.5em) {
+
 	.menu-toggle {
 		display: none;
 	}
+
 	.main-navigation ul {
 		display: block;
 	}
@@ -681,6 +690,7 @@ a:active {
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
+
 /* Text meant only for screen readers. */
 .screen-reader-text {
 	clip: rect(1px, 1px, 1px, 1px);
@@ -699,7 +709,7 @@ a:active {
 	display: block;
 	font-size: 14px;
 	font-size: 0.875rem;
-	font-weight: bold;
+	font-weight: 700;
 	height: auto;
 	left: 5px;
 	line-height: normal;
@@ -778,22 +788,26 @@ a:active {
 	max-width: 100%;
 }
 
-.helphub-homewidget-row1 section, .helphub-homewidget-row2 section {
+.helphub-homewidget-row1 section,
+.helphub-homewidget-row2 section {
 	width: 30%;
 	float: left;
 	padding: 1%;
 }
 
-.helphub-homewidget-row1 .homewidget-inner, .helphub-homewidget-row2 .homewidget-inner {
+.helphub-homewidget-row1 .homewidget-inner,
+.helphub-homewidget-row2 .homewidget-inner {
 	padding: 6%;
 	background: #999;
 	border: 3px solid #394045;
 	border-radius: 8px;
 	color: #195394;
-  min-height: 180px;
+	min-height: 180px;
 }
 
-.homewidget-inner li a, .homewidget-inner li, .homewidget-inner div {
+.homewidget-inner li a,
+.homewidget-inner li,
+.homewidget-inner div {
 	color: #195394;
 	font-size: 16px;
 }
@@ -808,7 +822,8 @@ a:active {
 	font-size: 24px;
 }
 
-.helphub-homewidget-row1, .helphub-homewidget-row2 {
+.helphub-homewidget-row1,
+.helphub-homewidget-row2 {
 	clear: both;
 	display: block;
 }
@@ -817,7 +832,7 @@ a:active {
 # Content
 --------------------------------------------------------------*/
 
-.main-content{
+.main-content {
 	display: flex;
 }
 
@@ -853,28 +868,29 @@ a:active {
 	margin: 0 0 1.5em;
 }
 
-.single-post article.post{
+.single-post article.post {
 	float: left;
 	width: 70%;
 	padding: 2em;
 	box-sizing: border-box;
-	position: relative
-}
-
-.article-container{
 	position: relative;
 }
 
-.entry-header{
+.article-container {
+	position: relative;
+}
+
+.entry-header {
 	border-bottom: 2px solid #000;
 	margin-bottom: 2em;
 	padding-bottom: 0.5em;
 	text-align: center;
 }
 
-.entry-content ul{
+.entry-content ul {
 	margin-left: 2em;
 }
+
 /*--------------------------------------------------------------
 ## Asides
 --------------------------------------------------------------*/
@@ -883,7 +899,7 @@ a:active {
 	display: none;
 }
 
-.single-post .single-post-sidebar{
+.single-post .single-post-sidebar {
 	background-color: #d8d8d8;
 	float: left;
 	width: 30%;
@@ -892,9 +908,10 @@ a:active {
 	position: relative;
 }
 
-.single-post-sidebar .sidebar-content{
+.single-post-sidebar .sidebar-content {
 	position: fixed;
 }
+
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
@@ -909,13 +926,15 @@ a:active {
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
+
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
 .infinite-scroll .posts-navigation, /* Older / Newer Posts Navigation (always hidden) */
 .infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
 	display: none;
 }
 
-/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+/* When Infinite Scroll has reached its end we need to re-display elements that
+   were hidden (via .neverending) before. */
 .infinity-end.neverending .site-footer {
 	display: block;
 }
@@ -1017,17 +1036,17 @@ object {
 
 #main {
 	max-width: 932px;
-    margin: 0 auto;
-    clear: both;
-    overflow: hidden;
+	margin: 0 auto;
+	clear: both;
+	overflow: hidden;
 }
 
 h1.site-main-title {
-    font-size: 5em;
-    line-height: 2em;
-    text-align: center;
-    color: #073763;
-    font-weight: 900;
+	font-size: 5em;
+	line-height: 2em;
+	text-align: center;
+	color: #073763;
+	font-weight: 900;
 }
 
 .helphub-search-box {
@@ -1036,18 +1055,17 @@ h1.site-main-title {
 }
 
 .helphub-search-btn {
-    width: 28%;
-    margin: 0 auto;
+	width: 28%;
+	margin: 0 auto;
 }
 
 .helphub-search-box input#helphub-search {
-    width: 100%;
-    text-align: center;
-    border-radius: 6px;
-    text-align: left;
-    color: #fff;
+	width: 100%;
+	border-radius: 6px;
+	text-align: left;
+	color: #fff;
 	font-size: 2em;
-    height: 32px;
+	height: 32px;
 }
 
 .helphub-search-btn button {
@@ -1074,12 +1092,12 @@ h3.main-widget-box-title {
 
 .main-widget-box {
 	width: 27%;
-	background: whitesmoke;
+	background: #f5f5f5;
 	float: left;
 	border-radius: 10px;
 	padding: 2%;
 	margin: 1%;
-	border: 1px solid #CCCCCC;
+	border: 1px solid #ccc;
 }
 
 .main-widget-box ul {
@@ -1098,7 +1116,7 @@ h3.main-widget-box-title {
 --------------------------------------------------------------*/
 
 footer {
-    font-family: sans-serif;
+	font-family: sans-serif;
 }
 
 footer a {
@@ -1107,28 +1125,31 @@ footer a {
 }
 
 footer a:visited {
-    color: #21759b;
+	color: #21759b;
 }
 
-#wporg-footer .wrapper, .helphub-footerarea .wrapper {
-    max-width: 932px;
+#wporg-footer .wrapper,
+.helphub-footerarea .wrapper {
+	max-width: 932px;
 	margin: 0 auto;
-    clear: both;
-	overflow: hidden
+	clear: both;
+	overflow: hidden;
 }
 
 #wporg-footer {
-    clear: both;
-    overflow: auto;
-    margin: 0 auto;
-    padding: 22px 14px 65px 14px;
-    border-top: 1px solid #dfdfdf;
-    background-color: #f7f7f7;
+	clear: both;
+	overflow: auto;
+	margin: 0 auto;
+	padding: 22px 14px 65px;
+	border-top: 1px solid #dfdfdf;
+	background-color: #f7f7f7;
 }
 
-.helphub-footerarea, .helphub-footerarea1, .helphub-footerarea2 {
-    background-color: #073763;
-    color:#fff;
+.helphub-footerarea,
+.helphub-footerarea1,
+.helphub-footerarea2 {
+	background-color: #073763;
+	color: #fff;
 }
 
 .helphub-footerarea h2 {
@@ -1149,26 +1170,29 @@ footer ul li {
 	font-size: 14px;
 }
 
-.helphub-footerarea h2, .helphub-footerarea h3 {
+.helphub-footerarea h2,
+.helphub-footerarea h3 {
 	margin: 0;
 }
 
-.helphub-footerarea .helphub-footerarea1, .helphub-footerarea .helphub-footerarea2 {
+.helphub-footerarea .helphub-footerarea1,
+.helphub-footerarea .helphub-footerarea2 {
 	width: 42%;
-	float: left
+	float: left;
 }
 
 #wporg-footer ul {
-    float: left;
-    overflow: auto;
-    width: 130px;
-    margin-left: 24px;
-    margin-bottom: 20px;
-    padding-left: 0;
+	float: left;
+	overflow: auto;
+	width: 130px;
+	margin-left: 24px;
+	margin-bottom: 20px;
+	padding-left: 0;
 }
 
-.helphub-footerarea1, .helphub-footerarea2 {
-    padding: 0% 2% 0% 4%;
+.helphub-footerarea1,
+.helphub-footerarea2 {
+	padding: 0% 2% 0% 4%;
 }
 
 .helphub-footerarea .wrapper {
@@ -1181,37 +1205,39 @@ h2.helphub-footerarea-title {
 }
 
 .helphub-footerarea1 {
-    border-right: 3px solid #000;
+	border-right: 3px solid #000;
 }
 
 .helphub-footerarea-body {
-    font-size: 14px;
+	font-size: 14px;
 	min-height: 80px;
 	margin-top: 18px;
 }
 
 #wporg-footer h6.cip-image {
-    background: url(//s.w.org/style/images/codeispoetry.png?1) center center no-repeat;
-    background-size: 190px 15px;
-    width: 190px;
-    height: 15px;
-    text-indent: -9999px;
+	background: url(//s.w.org/style/images/codeispoetry.png?1) center center no-repeat;
+	background-size: 190px 15px;
+	width: 190px;
+	height: 15px;
+	text-indent: -9999px;
 }
 
 #wporg-footer h6 {
-    clear: both;
-    float: none;
-    text-align: center;
-    margin-top: 35px;
-    font-size: 16px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: #cccccc;
+	clear: both;
+	float: none;
+	text-align: center;
+	margin-top: 35px;
+	font-size: 16px;
+	letter-spacing: 0.3em;
+	text-transform: uppercase;
+	color: #ccc;
 }
 
-@media (max-width:768px) {
-	.helphub-footerarea .helphub-footerarea1, .helphub-footerarea .helphub-footerarea2 {
-		width:100%;
+@media (max-width: 768px) {
+
+	.helphub-footerarea .helphub-footerarea1,
+	.helphub-footerarea .helphub-footerarea2 {
+		width: 100%;
 		text-align: center;
 		margin-top: 4%;
 	}

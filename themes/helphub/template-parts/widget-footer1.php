@@ -6,6 +6,9 @@
  *
  * @package HelpHub
  */
+
 ?>
 
-<?php dynamic_sidebar( 'footer-1' ); ?>
+<?php
+
+dynamic_sidebar( 'footer-1' );
