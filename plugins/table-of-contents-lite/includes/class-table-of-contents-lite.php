@@ -1,9 +1,26 @@
 <?php
+/**
+ * Table_Of_Contents_Lite Class
+ *
+ * @package WordPress
+ * @author Carl Alberto
+ */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+/**
+ * Helphub Table of Content Class
+ *
+ * Functionalities needed to generate the table of contents.
+ *
+ * @package WordPress
+ * @subpackage HelpHub_Post_Types
+ * @category Plugin
+ * @author Carl Alberto
+ * @since 1.0.0
+ */
 class Table_Of_Contents_Lite {
 
 	/**
@@ -122,12 +139,12 @@ class Table_Of_Contents_Lite {
 	 * @return  void
 	 */
 	public function load_plugin_textdomain () {
-	    $domain = 'table-of-contents-lite';
+		$domain = 'table-of-contents-lite';
 
-	    $locale = apply_filters( 'plugin_locale', get_locale(), $domain );
+		$locale = apply_filters( 'plugin_locale', get_locale(), $domain );
 
-	    load_textdomain( $domain, WP_LANG_DIR . '/' . $domain . '/' . $domain . '-' . $locale . '.mo' );
-	    load_plugin_textdomain( $domain, false, dirname( plugin_basename( $this->file ) ) . '/lang/' );
+		load_textdomain( $domain, WP_LANG_DIR . '/' . $domain . '/' . $domain . '-' . $locale . '.mo' );
+		load_plugin_textdomain( $domain, false, dirname( plugin_basename( $this->file ) ) . '/lang/' );
 	} // End load_plugin_textdomain ()
 
 	/**
@@ -189,10 +206,10 @@ class Table_Of_Contents_Lite {
 	} // End _log_version_number ()
 
 	/**
-	* Main function that adds the TOC to the regular content of each post
-	* @param longtext 	$content
-	* @return longtext 	generatod TOC based from the h tags in the $content plus the $content at the end
-	*/
+	 * Main function that adds the TOC to the regular content of each post
+	 * @param longtext 	$content
+	 * @return longtext 	generatod TOC based from the h tags in the $content plus the $content at the end
+	 */
 	public function add_toc( $content ) {
 
 		$toc = '';
@@ -227,11 +244,11 @@ class Table_Of_Contents_Lite {
 	}
 
 	/**
-	* Filters all header tags in the current content
-	* @param longtext 	$content	content to be filtered
-	* @param string 	$tag		header tags to be included, default h1-h4
-	* @return array 	$matches 	all filtered header tags
-	*/
+	 * Filters all header tags in the current content
+	 * @param longtext 	$content	content to be filtered
+	 * @param string 	$tag		header tags to be included, default h1-h4
+	 * @return array 	$matches 	all filtered header tags
+	 */
 	public function get_tags_in_content( $tag, $content = '' ) {
 		if ( empty( $content ) )
 			$content = get_the_content();
@@ -240,11 +257,11 @@ class Table_Of_Contents_Lite {
 	}
 
 	/**
-	* Appends the filtered header tags on the start fo the $content
-	* @param longtext 	$content	content to be filtered
-	* @param string 	$tag		depending on the tag, it will place the TOC link deeper in the ul - li tag
-	* @return array 	$content 	returns the content with the partial TOC on top
-	*/
+	 * Appends the filtered header tags on the start fo the $content
+	 * @param longtext 	$content	content to be filtered
+	 * @param string 	$tag		depending on the tag, it will place the TOC link deeper in the ul - li tag
+	 * @return array 	$content 	returns the content with the partial TOC on top
+	 */
 	public function add_ids_and_jumpto_links( $tag, $content ) {
 		$items = $this->get_tags_in_content( $tag, $content );
 		$first = true;
