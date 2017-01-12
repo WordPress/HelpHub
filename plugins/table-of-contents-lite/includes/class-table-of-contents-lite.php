@@ -127,11 +127,11 @@ class Table_Of_Contents_Lite {
 
 		register_activation_hook( $this->file, array( $this, 'install' ) );
 
-		add_filter( 'the_content', array( $this, 'add_toc' ) );
-
 		// Handle localisation.
 		add_action( 'init', array( $this, 'load_localisation' ), 0 );
 		$this->load_plugin_textdomain();
+
+		add_filter( 'the_content', array( $this, 'add_toc' ) );
 	} // End __construct ()
 
 	/**
@@ -238,26 +238,23 @@ class Table_Of_Contents_Lite {
 		}
 
 		if ( $items ) {
-			$contents_header = 'h' . $items[0][2]; // Duplicate the first <h#> tag in the document.
-			$toc .= '<div class="table-of-contents">';
+			$contents_header = sprintf( 'h%s', $items[0][2] );
+			$toc = sprintf( '%s<div class="table-of-contents">', $toc );
 			$last_item = false;
 			foreach ( $items as $item ) {
 				if ( $last_item ) {
 					if ( $last_item < $item[2] ) {
-						$toc .= "\n<ul>\n";
+						$toc = sprintf( '%s<ul>', $toc );
 					} elseif ( $last_item > $item[2] ) {
-						$toc .= "\n</ul></li>\n";
+						$toc = sprintf( '%s</ul></li>', $toc );
 					} else {
-						$toc .= "</li>\n";
+						$toc = sprintf( '%s</li>', $toc );
 					}
 				}
 				$last_item = $item[2];
-				$toc .= ' <li><a href="#'
-					. sanitize_title_with_dashes( $item[3] )
-					. '">' . $item[3]
-					. '</a> ';
+				$toc .= sprintf( '<li><a href="#%1s">%2s</a>', sanitize_title_with_dashes( $item[3] ), $item[3] );
 			}
-			$toc .= "</ul>\n</div>\n";
+			$toc = sprintf( '%s</ul></div>', $toc );
 		}
 		return $toc . $content;
 	}
@@ -295,12 +292,11 @@ class Table_Of_Contents_Lite {
 			$matches[] = $item[0];
 			$id = sanitize_title_with_dashes( $item[2] );
 			if ( ! $first ) {
-				$replacement .= '<p class="toc-jump"><a href="#top">' . __( 'Top &uarr;', 'wporg' ) . '</a></p>';
+				$replacement .= '<p class="toc-jump"><a href="#top">' . __( 'Top &uarr;', 'table-of-contents-lite' ) . '</a></p>';
 			} else {
 				$first = false;
 			}
 			$a11y_text      = sprintf( '<span class="screen-reader-text">%s</span>', $item[2] );
-
 			$anchor         = sprintf( '<a href="#%1$s" class="anchor">%2$s</a>', $id, $a11y_text );
 			$replacement   .= sprintf( '<%1$s class="toc-heading" id="%2$s" tabindex="-1">%3$s %4$s</%1$s>', $tag, $id, $item[2], $anchor );
 			$replacements[] = $replacement;
