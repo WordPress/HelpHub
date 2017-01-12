@@ -1,4 +1,4 @@
-# Copyright (C) 2014 Table Of Contents Lite
+# Copyright (C) 2017 Table Of Contents For HelpHub
 # This file is distributed under the same license as the Table Of Contents Lite package.
 msgid ""
 msgstr ""
@@ -8,9 +8,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2017-01-12 10:00+08:00\n"
+"Last-Translator: Carl Alberto<carl@alber2.com>\n"
 
 #: classes/post-types/class-table-of-contents-lite-post_type.php:52
 #: includes/post-types/class-table-of-contents-lite-post_type.php:42
