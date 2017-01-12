@@ -125,41 +125,24 @@ class Table_Of_Contents_Lite {
 
 		$this->script_suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
-		register_activation_hook( $this->file, array( $this, 'install' ) );
+		add_action( 'init', array( $this, 'plugin_init' ), 99 );
 
-		// Handle localisation.
-		add_action( 'init', array( $this, 'load_localisation' ), 0 );
-		$this->load_plugin_textdomain();
+		register_activation_hook( $this->file, array( $this, 'install' ) );
 
 		add_filter( 'the_content', array( $this, 'add_toc' ) );
 	} // End __construct ()
 
 	/**
-	 * Load plugin localisation
+	 * Load plugin initialization
 	 *
 	 * @access  public
 	 * @since   1.0.0
 	 * @return  void
 	 */
-	public function load_localisation() {
-		load_plugin_textdomain( 'table-of-contents-lite', false, dirname( plugin_basename( $this->file ) ) . '/lang/' );
-	} // End load_localisation ()
-
-	/**
-	 * Load plugin textdomain
-	 *
-	 * @access  public
-	 * @since   1.0.0
-	 * @return  void
-	 */
-	public function load_plugin_textdomain() {
-		$domain = 'table-of-contents-lite';
-
-		$locale = apply_filters( 'plugin_locale', get_locale(), $domain );
-
-		load_textdomain( $domain, WP_LANG_DIR . '/' . $domain . '/' . $domain . '-' . $locale . '.mo' );
-		load_plugin_textdomain( $domain, false, dirname( plugin_basename( $this->file ) ) . '/lang/' );
-	} // End load_plugin_textdomain ()
+	public function plugin_init() {
+		$plugin_text_domain = 'table-of-contents-lite';
+		load_plugin_textdomain( $plugin_text_domain, false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+	}
 
 	/**
 	 * Main Table_Of_Contents_Lite Instance. This ensures only one instance of Table_Of_Contents_Lite is loaded or can be loaded.
