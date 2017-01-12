@@ -130,8 +130,8 @@ class Table_Of_Contents_Lite {
 		add_filter( 'the_content', array( $this, 'add_toc' ) );
 
 		// Handle localisation.
-		$this->load_plugin_textdomain();
 		add_action( 'init', array( $this, 'load_localisation' ), 0 );
+		$this->load_plugin_textdomain();
 	} // End __construct ()
 
 	/**
