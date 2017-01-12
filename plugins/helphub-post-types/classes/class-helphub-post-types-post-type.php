@@ -373,7 +373,7 @@ class HelpHub_Post_Types_Post_Type {
 							$data_atts .= sprintf( 'data-library="%s" ', esc_attr( $v['media-frame']['library'] ) );
 						}
 
-						$field = '<input name="' . esc_attr( $k ) . '" type="text" id="' . esc_attr( $k ) . '" class="regular-text helphub-upload-field" value="' . esc_attr( $data ) . '" />';
+						$field = '<input name="' . esc_attr( $k ) . '" type="file" id="' . esc_attr( $k ) . '" class="regular-text helphub-upload-field" />';
 						$field .= '<button id="' . esc_attr( $k ) . '" class="helphub-upload button"' . $data_atts . '>' . $v['label'] . '</button>';
 						$html .= '<tr valign="top"><th scope="row"><label for="' . esc_attr( $k ) . '">' . $v['name'] . '</label></th><td>' . $field . "\n";
 						if ( isset( $v['description'] ) ) {
@@ -385,7 +385,7 @@ class HelpHub_Post_Types_Post_Type {
 						$field = '';
 						if ( isset( $v['options'] ) && is_array( $v['options'] ) ) {
 							foreach ( $v['options'] as $val => $option ) {
-								$field .= '<p><label for="' . esc_attr( $v['name'] . '-' . $val ) . '"><input id="' . esc_attr( $v['name'] . '-' . $val ) . '" type="radio" name="' . esc_attr( $k ) . '" value="' . esc_attr( $val ) . '" ' . checked( $val, $data, false ) . ' / >' . $option . '</label></p>' . "\n";
+								$field .= '<p><label for="' . esc_attr( $k . '-' . $val ) . '"><input id="' . esc_attr( $k . '-' . $val ) . '" type="radio" name="' . esc_attr( $k ) . '" value="' . esc_attr( $val ) . '" ' . checked( $val, $data, false ) . ' />' . $option . '</label></p>' . "\n";
 							}
 						}
 						$html .= '<tr valign="top"><th scope="row"><label>' . $v['name'] . '</label></th><td>' . $field . "\n";
@@ -406,7 +406,7 @@ class HelpHub_Post_Types_Post_Type {
 						$field = '';
 						if ( isset( $v['options'] ) && is_array( $v['options'] ) ) {
 							foreach ( $v['options'] as $val => $option ) {
-								$field .= '<p><label for="' . esc_attr( $v['name'] . '-' . $val ) . '"><input id="' . esc_attr( $v['name'] . '-' . $val ) . '" type="checkbox" name="' . esc_attr( $k ) . '[]" value="' . esc_attr( $val ) . '" ' . checked( 1, in_array( $val, (array) $data ), false ) . ' / >' . $option . '</label></p>' . "\n";
+								$field .= '<p><label for="' . esc_attr( $k . '-' . $val ) . '"><input id="' . esc_attr( $k . '-' . $val ) . '" type="checkbox" name="' . esc_attr( $k ) . '[]" value="' . esc_attr( $val ) . '" ' . checked( 1, in_array( $val, (array) $data ), false ) . ' />' . $option . '</label></p>' . "\n";
 							}
 						}
 						$html .= '<tr valign="top"><th scope="row"><label>' . $v['name'] . '</label></th><td>' . $field . "\n";
@@ -423,6 +423,17 @@ class HelpHub_Post_Types_Post_Type {
 							}
 						}
 						$field .= '</select>' . "\n";
+						$html .= '<tr valign="top"><th scope="row"><label for="' . esc_attr( $k ) . '">' . $v['name'] . '</label></th><td>' . $field . "\n";
+						if ( isset( $v['description'] ) ) {
+							$html .= '<p class="description">' . $v['description'] . '</p>' . "\n";
+						}
+						$html .= '</td></tr>' . "\n";
+						break;
+					case 'date':
+						if ( ! intval( $data ) ) {
+							$data = time();
+						}
+						$field = '<input name="' . esc_attr( $k ) . '" type="date" id="' . esc_attr( $k ) . '" class="helphub-meta-date" value="' . esc_attr( date_i18n( 'F d, Y', $data ) ) . '" />';
 						$html .= '<tr valign="top"><th scope="row"><label for="' . esc_attr( $k ) . '">' . $v['name'] . '</label></th><td>' . $field . "\n";
 						if ( isset( $v['description'] ) ) {
 							$html .= '<p class="description">' . $v['description'] . '</p>' . "\n";
@@ -468,7 +479,7 @@ class HelpHub_Post_Types_Post_Type {
 			return $post_id;
 		}
 
-		if ( isset( $_POST['post_type'] ) && 'page' == $_POST['post_type'] ) {
+		if ( isset( $_POST['post_type'] ) && 'page' === $_POST['post_type'] ) { /* @codingStandardsIgnoreLine */
 			if ( ! current_user_can( 'edit_page', $post_id ) ) {
 				return $post_id;
 			}
@@ -492,7 +503,7 @@ class HelpHub_Post_Types_Post_Type {
 					${$f} = isset( $_POST[ $f ] ) ? wp_kses_post( trim( $_POST[ $f ] ) ): ''; /* @codingStandardsIgnoreLine */
 					break;
 				case 'checkbox':
-					${$f} = isset( $_POST[ $f ] ) ? 'yes': 'no';
+					${$f} = isset( $_POST[ $f ] ) ? 'yes': 'no'; /* @codingStandardsIgnoreLine */
 					break;
 				case 'multicheck':
 					// Ensure checkbox is array and whitelist accepted values against options.
@@ -522,8 +533,10 @@ class HelpHub_Post_Types_Post_Type {
 		}
 
 		// Save the project gallery image IDs.
-		$attachment_ids = array_filter( explode( ',', sanitize_text_field( $_POST['helphub_image_gallery'] ) ) ); /* @codingStandardsIgnoreLine */
-		update_post_meta( $post_id, '_helphub_image_gallery', implode( ',', $attachment_ids ) );
+		if ( isset( $_POST['helphub_image_gallery'] ) ) : /* @codingStandardsIgnoreLine */
+			$attachment_ids = array_filter( explode( ',', sanitize_text_field( $_POST['helphub_image_gallery'] ) ) ); /* @codingStandardsIgnoreLine */
+			update_post_meta( $post_id, '_helphub_image_gallery', implode( ',', $attachment_ids ) );
+		endif;
 	} // End meta_box_save()
 
 	/**
