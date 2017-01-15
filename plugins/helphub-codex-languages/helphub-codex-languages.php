@@ -17,9 +17,9 @@
  * @author Akira Tachibana
  */
 
- if ( ! defined( 'ABSPATH' ) ) {
- 	exit; // Exit if accessed directly.
- }
+if ( ! defined( 'ABSPATH' ) ) {
+  exit; // Exit if accessed directly.
+}
 
 /**
  * Returns the main instance of HelpHub_Codex_Languages to prevent the need to
@@ -105,8 +105,7 @@ final class HelpHub_Codex_Languages {
 	 * so it have to be removed.
 	 *
 	 * @example     [languages en="Version 4.6" ja="version 4.6"]
-	 * @param       string $atts language indicator. Refer
-	 *              https://codex.wordpress.org/Multilingual_Codex#Language_Cross_Reference
+	 * @param       string $atts language indicator. Refer Multilingual_Codex.
 	 * @access  public
 	 * @since   1.0.0
 	 */
