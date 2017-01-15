@@ -53,7 +53,9 @@ class Cpte_Widget extends WP_Widget {
 			__( 'List Post by Category', 'custom-post-type-extended-widget' ),
 			array(
 				'classname'   => 'cpte_widget widget_recent_entries',
-				'description' => __( 'This will list post by ', 'custom-post-type-extended-widget' ),
+				'description' => __( 'This will list post by Category Name', 'custom-post-type-extended-widget' ),
+				'before_widget' => '<li id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</li>',
 			)
 		);
 	}
@@ -112,12 +114,13 @@ class Cpte_Widget extends WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
 
-		echo esc_html( $before_widget );
+		$before_widget = $args['before_widget'];
+		echo $before_widget; // WPCS: XSS OK.
 		$title     = apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base );
 		$category  = $instance['category'];
 		$number    = $instance['number'];
 		if ( ! empty( $title ) ) {
-			echo esc_html( $title );
+			echo $args['before_title'] . esc_html( $title ) . $args['after_title']; // WPCS: XSS OK.
 		}
 		$cat_recent_posts = new WP_Query(
 			array(
@@ -138,8 +141,8 @@ class Cpte_Widget extends WP_Widget {
 			esc_html_e( 'No posts on that category.', 'custom-post-type-extended-widget' );
 		}
 		wp_reset_postdata();
-
-		echo esc_html( $after_widget );
+		$after_widget = $args['after_widget'];
+		echo $after_widget; // WPCS: XSS OK.
 	}
 
 	/**
