@@ -17,7 +17,9 @@
  * @author Akira Tachibana
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+ if ( ! defined( 'ABSPATH' ) ) {
+ 	exit; // Exit if accessed directly.
+ }
 
 /**
  * Returns the main instance of HelpHub_Codex_Languages to prevent the need to
@@ -26,11 +28,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  * @since  1.0.0
  * @return object HelpHub_Codex_Languages
  */
-function HelpHub_Codex_Languages() {
+function helphub_codex_languages() {
 	return HelpHub_Codex_Languages::instance();
 } // End HelpHub_Codex_Languages()
 
-add_action( 'plugins_loaded', 'HelpHub_Codex_Languages' );
+add_action( 'plugins_loaded', 'helphub_codex_languages' );
 
 /**
  * Main HelpHub_Codex_Languages Class
@@ -93,7 +95,7 @@ final class HelpHub_Codex_Languages {
 
 		add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
 
-		add_shortcode( 'codex_languages', array ( $this, 'codex_languages_func' ) );
+		add_shortcode( 'codex_languages', array( $this, 'codex_languages_func' ) );
 	} // End __construct()
 
 	/**
@@ -103,7 +105,7 @@ final class HelpHub_Codex_Languages {
 	 * so it have to be removed.
 	 *
 	 * @example     [languages en="Version 4.6" ja="version 4.6"]
-	 * @param       language indicator. Refer
+	 * @param       string $atts language indicator. Refer
 	 *              https://codex.wordpress.org/Multilingual_Codex#Language_Cross_Reference
 	 * @access  public
 	 * @since   1.0.0
@@ -162,20 +164,21 @@ final class HelpHub_Codex_Languages {
 			array( 'Vietnamese', 'Tiếng Việt', 'vi_codex', 'https://codex.wordpress.org/vi:%1s' ),
 			array( 'Chinese', '中文(简体)', 'zhcn_codex', 'https://codex.wordpress.org/zh-cn:%1s' ),
 			array( 'Chinese (Taiwan)', '中文(繁體)', 'zhtw_codex', 'https://codex.wordpress.org/zh-tw:%1s' ),
-			array( 'Kannada', 'ಕನ್ನಡ', 'kn_codex', 'https://codex.wordpress.org/kn:%1s' ) );
+			array( 'Kannada', 'ಕನ್ನಡ', 'kn_codex', 'https://codex.wordpress.org/kn:%1s' ),
+		);
 		$shortcode_params = array();
-		foreach( $lang_table as $lang ) {
+		foreach ( $lang_table as $lang ) {
 			$shortcode_params[ $lang[2] ] = null;
 		}
 		$args = shortcode_atts( $shortcode_params, $atts );
 		$i = 0;
 		foreach ( $args as $key => $value ) {
-			if ( null != $value) {
-				$str .= sprintf( ' &bull; <a class="external text" href="' . $lang_table[$i][3] . '">' . $lang_table[$i][1] . '</a>', $value );
+			if ( null != $value ) {
+				$str .= sprintf( ' &bull; <a class="external text" href="' . $lang_table[ $i ][3] . '">' . $lang_table[ $i ][1] . '</a>', $value );
 			}
 			$i++;
 		}
-		$str .= "</p>";
+		$str .= '</p>';
 		return $str;
 	} // End codex_languages_func()
 
@@ -189,9 +192,10 @@ final class HelpHub_Codex_Languages {
 	 * @see HelpHub_Codex_Languages()
 	 * @return Main HelpHub_Codex_Languages instance
 	 */
-	public static function instance () {
-		if ( is_null( self::$_instance ) )
+	public static function instance() {
+		if ( is_null( self::$_instance ) ) {
 			self::$_instance = new self();
+		}
 		return self::$_instance;
 	} // End instance()
 
@@ -212,7 +216,7 @@ final class HelpHub_Codex_Languages {
 	 * @since 1.0.0
 	 */
 	public function __clone() {
-		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?' ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?' ), '1.0.0' );
 	} // End __clone()
 
 	/**
@@ -222,7 +226,7 @@ final class HelpHub_Codex_Languages {
 	 * @since 1.0.0
 	 */
 	public function __wakeup() {
-		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?' ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?' ), '1.0.0' );
 	} // End __wakeup()
 
 	/**
