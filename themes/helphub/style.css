@@ -1264,7 +1264,7 @@ h2.helphub-footerarea-title {
 }
 
 .single-post h1.entry-title {
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: HelveticaNeue-Light, Helvetica Neue Light, Helvetica Neue, Helvetica, Arial, sans-serif;
 	font-weight: 300;
 	font-size: 2.5em;
 }
@@ -1279,25 +1279,25 @@ h2.helphub-footerarea-title {
 }
 
 .table-of-contents ul {
-	margin-left: .2em;
+	margin-left: 0.2em;
 }
 
 h2.toc-heading {
-    margin-top: 2em;
+	margin-top: 2em;
 	font-size: 1.6em;
-    font-weight: 400;
+	font-weight: 400;
 }
 
 h3.toc-heading {
-    margin-top: 2em;
+	margin-top: 2em;
 	font-size: 1.4em;
-    font-weight: 400;
+	font-weight: 400;
 }
 
 h4.toc-heading {
-    margin-top: 2em;
+	margin-top: 2em;
 	font-size: 1.2em;
-    font-weight: 400;
+	font-weight: 400;
 }
 
 p.toc-jump {
