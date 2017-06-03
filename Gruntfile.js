@@ -11,7 +11,9 @@ module.exports = function( grunt ) {
 			'themes/helphub/js/*.js'
 		],
 
-		matchdep = require('matchdep');
+		matchdep = require('matchdep'),
+
+		stylelintConfig = require('stylelint-config-wordpress/index.js');
 
 	// Load tasks.
 	matchdep.filterDev('grunt-*').forEach( grunt.loadNpmTasks );
@@ -85,7 +87,7 @@ module.exports = function( grunt ) {
 		stylelint: {
 			css: {
 				options: {
-					configFile: '.stylelintrc.js',
+					config: stylelintConfig,
 					format: 'css'
 				},
 				expand: true,

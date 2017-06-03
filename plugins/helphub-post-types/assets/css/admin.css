@@ -1035,7 +1035,7 @@ a.ui-button:active,
 
 .ui-datepicker .ui-datepicker-title {
 	margin: 0 2.3em;
-	line-height: 1.8em;
+	line-height: 1.8;
 	text-align: center;
 }
 
