@@ -1,0 +1,204 @@
+0000.001 (0) Opened log file at time: Mon, 15 May 2017 11:02:43 +0000 on https://wp-helphub.com
+0000.004 (0) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 2.12.13.1 WP: 4.8-beta1-40668 PHP: 7.0.15-0ubuntu0.16.04.4 (Linux lordjon.com 4.9.7-x86_64-linode80 #2 SMP Thu Feb 2 15:43:55 EST 2017 x86_64) MySQL: 5.5.5 WPLANG: en_US Server: nginx/1.10.0 safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 4.6M | 4M) multisite: N openssl: OpenSSL 1.0.2g  1 Mar 2016 mcrypt: Y LANG:  ZipArchive::addFile: Y
+0000.006 (0) Free space on disk containing Updraft's temporary directory: 17033.9 MB
+0000.018 (0) Tasks: Backup files:  (schedule: weekly) Backup DB: 1 (schedule: daily)
+0000.022 (0) Processed schedules. Tasks now: Backup files:  Backup DB: 1
+0000.026 (0) Requesting semaphore lock (d) (apparently via scheduler: last_scheduled_action_called_at=1494755938, seconds_ago=90225)
+0000.040 (0) Set semaphore last lock (d) time to 2017-05-15 11:02:43
+0000.041 (0) Semaphore lock (d) complete
+0000.051 (0) Backup run: resumption=0, nonce=bdd6a8e373d5, begun at=1494846163 (0s ago), job type=backup
+0000.072 (0) Scheduling a resumption (1) after 300 seconds (1494846463) in case this run gets aborted
+0000.077 (0) This backup run is not intended for files - skipping
+0000.088 (0) Beginning creation of database dump (WordPress DB)
+0000.103 (0) Testing: /usr/bin/mysqldump
+0000.119 (0) Working binary mysqldump found: /usr/bin/mysqldump
+0000.147 (0) Table hh_options: Total expected rows (approximate): 331
+0000.199 (0) Table hh_options: Total rows added: 333 in 0.05 seconds
+0000.203 (0) Table hh_options: finishing file (backup_2017-05-15-1102_HelpHub_bdd6a8e373d5-db-table-hh_options.table.gz - 136.1 KB)
+0000.242 (0) Table hh_users: Total expected rows (approximate): 53
+0000.246 (0) Table hh_users: Total rows added: 53 in 0.00 seconds
+0000.248 (0) Table hh_users: finishing file (backup_2017-05-15-1102_HelpHub_bdd6a8e373d5-db-table-hh_users.table.gz - 4.3 KB)
+0000.265 (0) Table hh_usermeta: Total expected rows (approximate): 963
+0000.279 (0) Table hh_usermeta: Total rows added: 969 in 0.01 seconds
+0000.284 (0) Table hh_usermeta: finishing file (backup_2017-05-15-1102_HelpHub_bdd6a8e373d5-db-table-hh_usermeta.table.gz - 14 KB)
+0000.298 (0) Table hh_commentmeta: Total expected rows (approximate): 0
+0000.303 (0) Table hh_commentmeta: Total rows added: 0 in 0.00 seconds
+0000.305 (0) Table hh_commentmeta: finishing file (backup_2017-05-15-1102_HelpHub_bdd6a8e373d5-db-table-hh_commentmeta.table.gz - 0.4 KB)
+0000.337 (0) Table hh_comments: Total expected rows (approximate): 33
+0000.343 (0) Table hh_comments: Total rows added: 33 in 0.00 seconds
+0000.355 (0) Table hh_comments: finishing file (backup_2017-05-15-1102_HelpHub_bdd6a8e373d5-db-table-hh_comments.table.gz - 4.8 KB)
+0000.383 (0) Table hh_links: Total expected rows (approximate): 0
+0000.395 (0) Table hh_links: Total rows added: 0 in 0.00 seconds
+0000.398 (0) Table hh_links: finishing file (backup_2017-05-15-1102_HelpHub_bdd6a8e373d5-db-table-hh_links.table.gz - 0.4 KB)
+0000.423 (0) Table hh_postmeta: Total expected rows (approximate): 3034
+0000.470 (0) Table hh_postmeta: Total rows added: 2746 in 0.04 seconds
+0000.474 (0) Table hh_postmeta: finishing file (backup_2017-05-15-1102_HelpHub_bdd6a8e373d5-db-table-hh_postmeta.table.gz - 42.8 KB)
+0000.498 (0) Table hh_posts: Total expected rows (approximate): 2648
+0001.808 (0) Table hh_posts: Total rows added: 1973 in 1.31 seconds
+0001.811 (0) Table hh_posts: finishing file (backup_2017-05-15-1102_HelpHub_bdd6a8e373d5-db-table-hh_posts.table.gz - 3286.5 KB)
+0001.846 (0) Table hh_term_relationships: Total expected rows (approximate): 529
+0001.853 (0) Table hh_term_relationships: Total rows added: 529 in 0.00 seconds
+0001.856 (0) Table hh_term_relationships: finishing file (backup_2017-05-15-1102_HelpHub_bdd6a8e373d5-db-table-hh_term_relationships.table.gz - 1.8 KB)
+0001.872 (0) Table hh_term_taxonomy: Total expected rows (approximate): 71
+0001.876 (0) Table hh_term_taxonomy: Total rows added: 71 in 0.00 seconds
+0001.878 (0) Table hh_term_taxonomy: finishing file (backup_2017-05-15-1102_HelpHub_bdd6a8e373d5-db-table-hh_term_taxonomy.table.gz - 1.5 KB)
+0001.899 (0) Table hh_termmeta: Total expected rows (approximate): 0
+0001.914 (0) Table hh_termmeta: Total rows added: 0 in 0.00 seconds
+0001.918 (0) Table hh_termmeta: finishing file (backup_2017-05-15-1102_HelpHub_bdd6a8e373d5-db-table-hh_termmeta.table.gz - 0.4 KB)
+0001.951 (0) Table hh_terms: Total expected rows (approximate): 71
+0001.964 (0) Table hh_terms: Total rows added: 71 in 0.00 seconds
+0001.966 (0) Table hh_terms: finishing file (backup_2017-05-15-1102_HelpHub_bdd6a8e373d5-db-table-hh_terms.table.gz - 1.1 KB)
+0001.982 (0) Table hh_duplicator_packages: Total expected rows (approximate): 0
+0001.995 (0) Table hh_duplicator_packages: Total rows added: 0 in 0.00 seconds
+0002.003 (0) Table hh_duplicator_packages: finishing file (backup_2017-05-15-1102_HelpHub_bdd6a8e373d5-db-table-hh_duplicator_packages.table.gz - 0.4 KB)
+0002.021 (0) Table hh_wsal_metadata: Total expected rows (approximate): 34328
+0002.275 (0) Table hh_wsal_metadata: binary mysqldump finished (writes: 33) in 0.24 seconds
+0002.279 (0) Table hh_wsal_metadata: finishing file (backup_2017-05-15-1102_HelpHub_bdd6a8e373d5-db-table-hh_wsal_metadata.table.gz - 290.2 KB)
+0002.325 (0) Table hh_wsal_occurrences: Total expected rows (approximate): 5000
+0002.405 (0) Table hh_wsal_occurrences: Total rows added: 5000 in 0.08 seconds
+0002.408 (0) Table hh_wsal_occurrences: finishing file (backup_2017-05-15-1102_HelpHub_bdd6a8e373d5-db-table-hh_wsal_occurrences.table.gz - 56.4 KB)
+0002.424 (0) Table hh_wsal_options: Total expected rows (approximate): 7
+0002.434 (0) Table hh_wsal_options: Total rows added: 7 in 0.00 seconds
+0002.446 (0) Table hh_wsal_options: finishing file (backup_2017-05-15-1102_HelpHub_bdd6a8e373d5-db-table-hh_wsal_options.table.gz - 0.4 KB)
+0002.453 (0) backup_2017-05-15-1102_HelpHub_bdd6a8e373d5-db-table-hh_options.table.gz (1/16): adding to final database dump
+0002.501 (0) backup_2017-05-15-1102_HelpHub_bdd6a8e373d5-db-table-hh_users.table.gz (2/16): adding to final database dump
+0002.504 (0) backup_2017-05-15-1102_HelpHub_bdd6a8e373d5-db-table-hh_usermeta.table.gz (3/16): adding to final database dump
+0002.510 (0) backup_2017-05-15-1102_HelpHub_bdd6a8e373d5-db-table-hh_commentmeta.table.gz (4/16): adding to final database dump
+0002.513 (0) backup_2017-05-15-1102_HelpHub_bdd6a8e373d5-db-table-hh_comments.table.gz (5/16): adding to final database dump
+0002.530 (0) backup_2017-05-15-1102_HelpHub_bdd6a8e373d5-db-table-hh_links.table.gz (6/16): adding to final database dump
+0002.535 (0) backup_2017-05-15-1102_HelpHub_bdd6a8e373d5-db-table-hh_postmeta.table.gz (7/16): adding to final database dump
+0002.568 (0) backup_2017-05-15-1102_HelpHub_bdd6a8e373d5-db-table-hh_posts.table.gz (8/16): adding to final database dump
+0003.609 (0) backup_2017-05-15-1102_HelpHub_bdd6a8e373d5-db-table-hh_term_relationships.table.gz (9/16): adding to final database dump
+0003.612 (0) backup_2017-05-15-1102_HelpHub_bdd6a8e373d5-db-table-hh_term_taxonomy.table.gz (10/16): adding to final database dump
+0003.615 (0) backup_2017-05-15-1102_HelpHub_bdd6a8e373d5-db-table-hh_termmeta.table.gz (11/16): adding to final database dump
+0003.617 (0) backup_2017-05-15-1102_HelpHub_bdd6a8e373d5-db-table-hh_terms.table.gz (12/16): adding to final database dump
+0003.621 (0) backup_2017-05-15-1102_HelpHub_bdd6a8e373d5-db-table-hh_duplicator_packages.table.gz (13/16): adding to final database dump
+0003.624 (0) backup_2017-05-15-1102_HelpHub_bdd6a8e373d5-db-table-hh_wsal_metadata.table.gz (14/16): adding to final database dump
+0003.717 (0) backup_2017-05-15-1102_HelpHub_bdd6a8e373d5-db-table-hh_wsal_occurrences.table.gz (15/16): adding to final database dump
+0003.732 (0) backup_2017-05-15-1102_HelpHub_bdd6a8e373d5-db-table-hh_wsal_options.table.gz (16/16): adding to final database dump
+0003.738 (0) backup_2017-05-15-1102_HelpHub_bdd6a8e373d5-db.gz: finished writing out complete database file (3816 KB)
+0003.780 (0) Total database tables backed up: 16 (backup_2017-05-15-1102_HelpHub_bdd6a8e373d5-db.gz, size: 3933152, checksum (SHA1): eb69eefc321e034ee8ab9b08ca2e6a495026b68c)
+0003.830 (0) backup_2017-05-15-1102_HelpHub_bdd6a8e373d5-db.gz: db: This file has not yet been successfully uploaded: will queue
+0003.832 (0) Saving backup history. Total backup size: 3.8 MB
+0003.838 (0) Requesting upload of the files that have not yet been successfully uploaded (1)
+0003.863 (0) Cloud backup selection (1/1): dropbox (last)
+0003.865 (0) Beginning dispatch of backup to remote (dropbox)
+0003.867 (0) Dropbox: begin cloud upload
+0003.879 (0) Dropbox: access gained; setting chunk size to: 1024 KB
+0004.314 (0) Dropbox quota usage: normal=162383.6 MB, shared=6673 MB, total=1061632 MB, available=892575.5 MB
+0004.318 (0) Dropbox: Attempt to upload: backup_2017-05-15-1102_HelpHub_bdd6a8e373d5-db.gz to: WPHelphubStaging/backup_2017-05-15-1102_HelpHub_bdd6a8e373d5-db.gz
+0005.213 (0) Dropbox chunked upload: 26.7 % uploaded (AAAAAAABMFQqqf3iIZrLiQ, 1048576, 5120 KB)
+0010.653 (0) Dropbox chunked upload: 100 % uploaded (AAAAAAABMFQqqf3iIZrLiQ, 3933152, 5120 KB)
+0014.885 (0) Recording as successfully uploaded: backup_2017-05-15-1102_HelpHub_bdd6a8e373d5-db.gz (a294e5bb53b3f39cf91982e732b8da97)
+0014.926 (0) Deleting local file: backup_2017-05-15-1102_HelpHub_bdd6a8e373d5-db.gz: OK
+0014.929 (0) Dropbox: File upload success (backup_2017-05-15-1102_HelpHub_bdd6a8e373d5-db.gz): 3840 KB in 10s (362 KB/s)
+0014.935 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=5, retain_db=20
+0014.948 (0) Number of backup sets in history: 25; groups (db): 1
+0014.950 (0) Examining (for databases) backup set with group_id=0, nonce=bdd6a8e373d5, datestamp=1494846163 (May 15 2017 11:02:43)
+0014.953 (0) This backup set is the backup set just made, so will not be deleted.
+0014.955 (0) Examining (for databases) backup set with group_id=0, nonce=615b7463d004, datestamp=1494755938 (May 14 2017 09:58:58)
+0014.956 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0014.959 (0) Examining (for databases) backup set with group_id=0, nonce=5b0582269bf6, datestamp=1494678095 (May 13 2017 12:21:35)
+0014.962 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0014.963 (0) Examining (for databases) backup set with group_id=0, nonce=0d6684612255, datestamp=1494591009 (May 12 2017 12:10:09)
+0014.965 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0014.967 (0) Examining (for databases) backup set with group_id=0, nonce=15f99a0a5ace, datestamp=1494509781 (May 11 2017 13:36:21)
+0014.974 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0014.987 (0) Examining (for databases) backup set with group_id=0, nonce=fb8c6daffe3c, datestamp=1494409892 (May 10 2017 09:51:32)
+0014.990 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0014.995 (0) Examining (for databases) backup set with group_id=0, nonce=47b5cbfafd5c, datestamp=1494327823 (May 09 2017 11:03:43)
+0014.999 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0015.001 (0) Examining (for databases) backup set with group_id=0, nonce=bc13aa3c6f87, datestamp=1494327724 (May 09 2017 11:02:04)
+0015.007 (0) Examining (for databases) backup set with group_id=0, nonce=1cdb423b89e1, datestamp=1494239052 (May 08 2017 10:24:12)
+0015.021 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0015.023 (0) Examining (for databases) backup set with group_id=0, nonce=fcbb13515b60, datestamp=1494177072 (May 07 2017 17:11:12)
+0015.026 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0015.029 (0) Examining (for databases) backup set with group_id=0, nonce=c5c25dd5b8c1, datestamp=1494064316 (May 06 2017 09:51:56)
+0015.032 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0015.033 (0) Examining (for databases) backup set with group_id=0, nonce=951b8bba93f0, datestamp=1493981739 (May 05 2017 10:55:39)
+0015.035 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0015.037 (0) Examining (for databases) backup set with group_id=0, nonce=b6a0cfebd810, datestamp=1493893849 (May 04 2017 10:30:49)
+0015.046 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0015.055 (0) Examining (for databases) backup set with group_id=0, nonce=752409e7ad29, datestamp=1493804921 (May 03 2017 09:48:41)
+0015.059 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0015.060 (0) Examining (for databases) backup set with group_id=0, nonce=fde2cb4df74f, datestamp=1493718531 (May 02 2017 09:48:51)
+0015.077 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0015.080 (0) Examining (for databases) backup set with group_id=0, nonce=911080ecfae6, datestamp=1493633789 (May 01 2017 10:16:29)
+0015.087 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0015.090 (0) Examining (for databases) backup set with group_id=0, nonce=7ea5cae4e44f, datestamp=1493547377 (Apr 30 2017 10:16:17)
+0015.092 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0015.094 (0) Examining (for databases) backup set with group_id=0, nonce=b8bbb2b15012, datestamp=1493460201 (Apr 29 2017 10:03:21)
+0015.104 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0015.107 (0) Examining (for databases) backup set with group_id=0, nonce=91960ee556ec, datestamp=1493374957 (Apr 28 2017 10:22:37)
+0015.115 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0015.127 (0) Examining (for databases) backup set with group_id=0, nonce=00270da46608, datestamp=1493288565 (Apr 27 2017 10:22:45)
+0015.135 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0015.137 (0) Examining (for databases) backup set with group_id=0, nonce=4f62e364ef89, datestamp=1493202168 (Apr 26 2017 10:22:48)
+0015.141 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0015.163 (0) Examining (for databases) backup set with group_id=0, nonce=5fadb2648502, datestamp=1493115873 (Apr 25 2017 10:24:33)
+0015.178 (0) 1493115873: db: this set includes a database (backup_2017-04-25-1024_HelpHub_5fadb2648502-db.gz); db count is now 20
+0015.186 (0) 1493115873: db: over retain limit (20); will delete this database
+0015.198 (0) Delete file: backup_2017-04-25-1024_HelpHub_5fadb2648502-db.gz, service=dropbox
+0015.204 (0) Dropbox: request deletion: WPHelphubStaging/backup_2017-04-25-1024_HelpHub_5fadb2648502-db.gz
+0015.798 (0) Dropbox: delete succeeded
+0015.820 (0) This backup set is now empty; will remove from history
+0015.829 (0) Deleting log file (log.5fadb2648502.txt)
+0015.835 (0) Examining (for databases) backup set with group_id=0, nonce=30f4a253b417, datestamp=1493115779 (Apr 25 2017 10:22:59)
+0015.839 (0) Examining (for databases) backup set with group_id=0, nonce=6dd91512cbb0, datestamp=1492512529 (Apr 18 2017 10:48:49)
+0015.842 (0) Examining (for databases) backup set with group_id=0, nonce=5f404681ebe3, datestamp=1491908003 (Apr 11 2017 10:53:23)
+0015.846 (0) Number of backup sets in history: 24; groups (files): 1
+0015.877 (0) Examining (for files) backup set with nonce=bdd6a8e373d5, datestamp=1494846163 (May 15 2017 11:02:43)
+0015.889 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0015.891 (0) Examining (for files) backup set with nonce=615b7463d004, datestamp=1494755938 (May 14 2017 09:58:58)
+0015.893 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0015.899 (0) Examining (for files) backup set with nonce=5b0582269bf6, datestamp=1494678095 (May 13 2017 12:21:35)
+0015.902 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0015.915 (0) Examining (for files) backup set with nonce=0d6684612255, datestamp=1494591009 (May 12 2017 12:10:09)
+0015.919 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0015.925 (0) Examining (for files) backup set with nonce=15f99a0a5ace, datestamp=1494509781 (May 11 2017 13:36:21)
+0015.928 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0015.930 (0) Examining (for files) backup set with nonce=fb8c6daffe3c, datestamp=1494409892 (May 10 2017 09:51:32)
+0015.932 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0015.933 (0) Examining (for files) backup set with nonce=47b5cbfafd5c, datestamp=1494327823 (May 09 2017 11:03:43)
+0015.946 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0015.957 (0) Examining (for files) backup set with nonce=bc13aa3c6f87, datestamp=1494327724 (May 09 2017 11:02:04)
+0015.959 (0) This backup set remains non-empty (f=1/d=0); will retain in history
+0015.970 (0) Examining (for files) backup set with nonce=1cdb423b89e1, datestamp=1494239052 (May 08 2017 10:24:12)
+0015.973 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0015.975 (0) Examining (for files) backup set with nonce=fcbb13515b60, datestamp=1494177072 (May 07 2017 17:11:12)
+0015.977 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0015.979 (0) Examining (for files) backup set with nonce=c5c25dd5b8c1, datestamp=1494064316 (May 06 2017 09:51:56)
+0015.982 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0015.987 (0) Examining (for files) backup set with nonce=951b8bba93f0, datestamp=1493981739 (May 05 2017 10:55:39)
+0015.989 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0015.991 (0) Examining (for files) backup set with nonce=b6a0cfebd810, datestamp=1493893849 (May 04 2017 10:30:49)
+0015.992 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0015.993 (0) Examining (for files) backup set with nonce=752409e7ad29, datestamp=1493804921 (May 03 2017 09:48:41)
+0015.994 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0015.995 (0) Examining (for files) backup set with nonce=fde2cb4df74f, datestamp=1493718531 (May 02 2017 09:48:51)
+0015.997 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0016.007 (0) Examining (for files) backup set with nonce=911080ecfae6, datestamp=1493633789 (May 01 2017 10:16:29)
+0016.019 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0016.021 (0) Examining (for files) backup set with nonce=7ea5cae4e44f, datestamp=1493547377 (Apr 30 2017 10:16:17)
+0016.024 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0016.027 (0) Examining (for files) backup set with nonce=b8bbb2b15012, datestamp=1493460201 (Apr 29 2017 10:03:21)
+0016.030 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0016.034 (0) Examining (for files) backup set with nonce=91960ee556ec, datestamp=1493374957 (Apr 28 2017 10:22:37)
+0016.046 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0016.048 (0) Examining (for files) backup set with nonce=00270da46608, datestamp=1493288565 (Apr 27 2017 10:22:45)
+0016.050 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0016.051 (0) Examining (for files) backup set with nonce=4f62e364ef89, datestamp=1493202168 (Apr 26 2017 10:22:48)
+0016.053 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0016.056 (0) Examining (for files) backup set with nonce=30f4a253b417, datestamp=1493115779 (Apr 25 2017 10:22:59)
+0016.061 (0) This backup set remains non-empty (f=1/d=0); will retain in history
+0016.064 (0) Examining (for files) backup set with nonce=6dd91512cbb0, datestamp=1492512529 (Apr 18 2017 10:48:49)
+0016.066 (0) This backup set remains non-empty (f=1/d=0); will retain in history
+0016.067 (0) Examining (for files) backup set with nonce=5f404681ebe3, datestamp=1491908003 (Apr 11 2017 10:53:23)
+0016.069 (0) This backup set remains non-empty (f=1/d=0); will retain in history
+0016.080 (0) Retain: saving new backup history (sets now: 24) and finishing retain operation
+0016.107 (0) Resume backup (bdd6a8e373d5, 0): finish run
+0016.123 (0) Decremented the semaphore (d) by 1
+0016.126 (0) Semaphore (d) unlocked
+0016.128 (0) There were no errors in the uploads, so the 'resume' event (1) is being unscheduled
+0016.146 (0) No email will/can be sent - the user has not configured an email address.
+0016.149 (0) The backup apparently succeeded and is now complete

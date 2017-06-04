@@ -1,0 +1,344 @@
+0000.000 (0) Opened log file at time: Tue, 02 May 2017 09:48:51 +0000 on https://wp-helphub.com
+0000.003 (0) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 2.12.13.1 WP: 4.8-alpha-40564 PHP: 7.0.15-0ubuntu0.16.04.4 (Linux lordjon.com 4.9.7-x86_64-linode80 #2 SMP Thu Feb 2 15:43:55 EST 2017 x86_64) MySQL: 5.5.5 WPLANG: en_US Server: nginx/1.10.0 safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 4.4M | 4M) multisite: N openssl: OpenSSL 1.0.2g  1 Mar 2016 mcrypt: Y LANG:  ZipArchive::addFile: Y
+0000.015 (0) Free space on disk containing Updraft's temporary directory: 17049.2 MB
+0000.018 (0) Tasks: Backup files: 1 (schedule: weekly) Backup DB:  (schedule: daily)
+0000.022 (0) Processed schedules. Combining jobs from co-inciding events. Tasks now: Backup files: 1 Backup DB: 1
+0000.036 (0) Requesting semaphore lock (fd) (apparently via scheduler: last_scheduled_action_called_at=1490694416, seconds_ago=3024115)
+0000.045 (0) Set semaphore last lock (fd) time to 2017-05-02 09:48:51
+0000.053 (0) Semaphore lock (fd) complete
+0000.081 (0) Backup run: resumption=0, nonce=fde2cb4df74f, begun at=1493718531 (0s ago), job type=backup
+0000.095 (0) Scheduling a resumption (1) after 300 seconds (1493718831) in case this run gets aborted
+0000.100 (0) Checking if we have a zip executable available
+0000.104 (0) Creation of backups of directories: beginning
+0000.138 (0) Beginning creation of dump of plugins (split every: 400 MB)
+0000.192 (0) Total entities for the zip file: 509 directories, 2999 files (0 skipped as non-modified), 33.4 MB
+0000.205 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-plugins.zip.tmp: 100 files added (on-disk size: 0 KB)
+0000.218 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-plugins.zip.tmp: 200 files added (on-disk size: 0 KB)
+0000.232 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-plugins.zip.tmp: 300 files added (on-disk size: 0 KB)
+0000.245 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-plugins.zip.tmp: 400 files added (on-disk size: 0 KB)
+0000.257 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-plugins.zip.tmp: 500 files added (on-disk size: 0 KB)
+0000.260 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (4.3 MB, 2999 files batched, 501 (501) added so far); re-opening (prior size: 0 KB)
+0000.616 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-plugins.zip.tmp: 600 files added (on-disk size: 2097 KB)
+0000.634 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-plugins.zip.tmp: 700 files added (on-disk size: 2097 KB)
+0000.651 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-plugins.zip.tmp: 800 files added (on-disk size: 2097 KB)
+0000.666 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-plugins.zip.tmp: 900 files added (on-disk size: 2097 KB)
+0000.691 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-plugins.zip.tmp: 1000 files added (on-disk size: 2097 KB)
+0000.696 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (3.4 MB, 2999 files batched, 501 (1002) added so far); re-opening (prior size: 2097 KB)
+0000.989 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-plugins.zip.tmp: 1100 files added (on-disk size: 3303.7 KB)
+0001.005 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-plugins.zip.tmp: 1200 files added (on-disk size: 3303.7 KB)
+0001.021 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-plugins.zip.tmp: 1300 files added (on-disk size: 3303.7 KB)
+0001.040 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-plugins.zip.tmp: 1400 files added (on-disk size: 3303.7 KB)
+0001.064 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-plugins.zip.tmp: 1500 files added (on-disk size: 3303.7 KB)
+0001.068 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (9.1 MB, 2999 files batched, 501 (1503) added so far); re-opening (prior size: 3303.7 KB)
+0001.966 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-plugins.zip.tmp: 1600 files added (on-disk size: 6989.1 KB)
+0001.982 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-plugins.zip.tmp: 1700 files added (on-disk size: 6989.1 KB)
+0002.007 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-plugins.zip.tmp: 1800 files added (on-disk size: 6989.1 KB)
+0002.033 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-plugins.zip.tmp: 1900 files added (on-disk size: 6989.1 KB)
+0002.060 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-plugins.zip.tmp: 2000 files added (on-disk size: 6989.1 KB)
+0002.063 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (2.5 MB, 2999 files batched, 501 (2004) added so far); re-opening (prior size: 6989.1 KB)
+0002.334 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-plugins.zip.tmp: 2100 files added (on-disk size: 7984.9 KB)
+0002.353 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-plugins.zip.tmp: 2200 files added (on-disk size: 7984.9 KB)
+0002.375 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-plugins.zip.tmp: 2300 files added (on-disk size: 7984.9 KB)
+0002.403 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-plugins.zip.tmp: 2400 files added (on-disk size: 7984.9 KB)
+0002.426 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-plugins.zip.tmp: 2500 files added (on-disk size: 7984.9 KB)
+0002.430 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (2.9 MB, 2999 files batched, 501 (2505) added so far); re-opening (prior size: 7984.9 KB)
+0002.775 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-plugins.zip.tmp: 2600 files added (on-disk size: 8817.1 KB)
+0002.800 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-plugins.zip.tmp: 2700 files added (on-disk size: 8817.1 KB)
+0002.832 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-plugins.zip.tmp: 2800 files added (on-disk size: 8817.1 KB)
+0002.860 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-plugins.zip.tmp: 2900 files added (on-disk size: 8817.1 KB)
+0003.951 (0) Created plugins zip (0) - 11721.5 KB in 3.8 s (3077.6 KB/s) (SHA1 checksum: 30d94a112b5ceeb449a0f0ea7983a58f38315d54)
+0003.957 (0) Beginning creation of dump of themes (split every: 400 MB)
+0003.980 (0) Total entities for the zip file: 63 directories, 474 files (0 skipped as non-modified), 7.4 MB
+0003.988 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-themes.zip.tmp: 100 files added (on-disk size: 0 KB)
+0004.001 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-themes.zip.tmp: 200 files added (on-disk size: 0 KB)
+0004.012 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-themes.zip.tmp: 300 files added (on-disk size: 0 KB)
+0004.023 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-themes.zip.tmp: 400 files added (on-disk size: 0 KB)
+0004.259 (0) Created themes zip (0) - 6068.2 KB in 0.3 s (20311.6 KB/s) (SHA1 checksum: 16a0afe89cd347439f6a6774b089f706a474c130)
+0004.263 (0) Exclusion option setting (uploads): backup*,*backups,backwpup*,wp-clone
+0004.273 (0) Looking for candidates to back up in: /usr/share/nginx/html/helphub/public_html/wp-content/uploads
+0004.275 (0) finding files: wp-security-audit-log: adding to list (1)
+0004.276 (0) finding files: 2016: adding to list (2)
+0004.279 (0) finding files: 2017: adding to list (3)
+0004.281 (0) Beginning creation of dump of uploads (split every: 400 MB)
+0004.320 (0) Total entities for the zip file: 20 directories, 1083 files (0 skipped as non-modified), 63.6 MB
+0004.329 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-uploads.zip.tmp: 100 files added (on-disk size: 0 KB)
+0004.338 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-uploads.zip.tmp: 200 files added (on-disk size: 0 KB)
+0004.349 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-uploads.zip.tmp: 300 files added (on-disk size: 0 KB)
+0004.368 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-uploads.zip.tmp: 400 files added (on-disk size: 0 KB)
+0004.382 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-uploads.zip.tmp: 500 files added (on-disk size: 0 KB)
+0004.385 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (21.7 MB, 1083 files batched, 501 (501) added so far); re-opening (prior size: 0 KB)
+0004.530 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-uploads.zip.tmp: 600 files added (on-disk size: 22327.5 KB)
+0004.543 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-uploads.zip.tmp: 700 files added (on-disk size: 22327.5 KB)
+0004.556 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-uploads.zip.tmp: 800 files added (on-disk size: 22327.5 KB)
+0004.570 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-uploads.zip.tmp: 900 files added (on-disk size: 22327.5 KB)
+0004.575 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 25 MB added on this batch (25 MB, 1083 files batched, 405 (906) added so far); re-opening (prior size: 22327.5 KB)
+0004.782 (0) A useful amount of data was added after this amount of zip processing: 0.3 s (normalised: 0.3 s, rate: 73437.1 KB/s)
+0004.809 (0) Performance is good - will increase the amount of data we attempt to batch (time=0.34914302825928, normalised_time=0.34859761310191, max_time=-1, data points known=0, old_max_bytes=26214400, new_max_bytes=209715200)
+0004.855 (0) Zip: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-uploads.zip.tmp: 1000 files added (on-disk size: 48032.9 KB)
+0005.399 (0) Created uploads zip (0) - 65306 KB in 1.1 s (58472.5 KB/s) (SHA1 checksum: 87d92a1145db8c0e2c5750252d745d6133cf5d46)
+0005.412 (0) Beginning backup of other directories found in the content directory (index: 0)
+0005.415 (0) Exclusion option setting (others): upgrade,cache,updraft,backup*,*backups,mysql.sql,debug.log
+0005.416 (0) Looking for candidates to back up in: /usr/share/nginx/html/helphub/public_html/wp-content
+0005.421 (0) finding files: upgrade: skipping: excluded by options
+0005.423 (0) finding files: uploads: skipping: this is the uploads directory
+0005.425 (0) finding files: plugins: skipping: this is the plugins directory
+0005.436 (0) finding files: index.php: adding to list (1)
+0005.437 (0) finding files: themes: skipping: this is the themes directory
+0005.439 (0) finding files: updraft: skipping: this is the updraft directory
+0005.441 (0) finding files: debug.log: skipping: excluded by options
+0005.453 (0) Total entities for the zip file: 0 directories, 1 files (0 skipped as non-modified), 0 MB
+0005.489 (0) Created others zip (0) - 0.1 KB in 0 s (3.1 KB/s) (SHA1 checksum: 15f3ab63291197597ba599e7a6045ebca8ed71ea)
+0005.526 (0) Saving backup status to database (elements: 8)
+0005.554 (0) Beginning creation of database dump (WordPress DB)
+0005.558 (0) Testing: /usr/bin/mysqldump
+0005.571 (0) Working binary mysqldump found: /usr/bin/mysqldump
+0005.602 (0) Table hh_options: Total expected rows (approximate): 327
+0005.649 (0) Table hh_options: Total rows added: 330 in 0.04 seconds
+0005.652 (0) Table hh_options: finishing file (backup_2017-05-02-0948_HelpHub_fde2cb4df74f-db-table-hh_options.table.gz - 136.2 KB)
+0005.679 (0) Table hh_users: Total expected rows (approximate): 53
+0005.689 (0) Table hh_users: Total rows added: 53 in 0.00 seconds
+0005.691 (0) Table hh_users: finishing file (backup_2017-05-02-0948_HelpHub_fde2cb4df74f-db-table-hh_users.table.gz - 4.3 KB)
+0005.696 (0) Table hh_usermeta: Total expected rows (approximate): 963
+0005.716 (0) Table hh_usermeta: Total rows added: 969 in 0.01 seconds
+0005.722 (0) Table hh_usermeta: finishing file (backup_2017-05-02-0948_HelpHub_fde2cb4df74f-db-table-hh_usermeta.table.gz - 14 KB)
+0005.729 (0) Table hh_commentmeta: Total expected rows (approximate): 0
+0005.741 (0) Table hh_commentmeta: Total rows added: 0 in 0.00 seconds
+0005.743 (0) Table hh_commentmeta: finishing file (backup_2017-05-02-0948_HelpHub_fde2cb4df74f-db-table-hh_commentmeta.table.gz - 0.4 KB)
+0005.779 (0) Table hh_comments: Total expected rows (approximate): 33
+0005.783 (0) Table hh_comments: Total rows added: 33 in 0.00 seconds
+0005.795 (0) Table hh_comments: finishing file (backup_2017-05-02-0948_HelpHub_fde2cb4df74f-db-table-hh_comments.table.gz - 4.8 KB)
+0005.827 (0) Table hh_links: Total expected rows (approximate): 0
+0005.832 (0) Table hh_links: Total rows added: 0 in 0.00 seconds
+0005.835 (0) Table hh_links: finishing file (backup_2017-05-02-0948_HelpHub_fde2cb4df74f-db-table-hh_links.table.gz - 0.4 KB)
+0005.851 (0) Table hh_postmeta: Total expected rows (approximate): 3034
+0005.913 (0) Table hh_postmeta: Total rows added: 2746 in 0.05 seconds
+0005.916 (0) Table hh_postmeta: finishing file (backup_2017-05-02-0948_HelpHub_fde2cb4df74f-db-table-hh_postmeta.table.gz - 42.8 KB)
+0005.944 (0) Table hh_posts: Total expected rows (approximate): 2648
+0007.012 (0) Table hh_posts: Total rows added: 1973 in 1.07 seconds
+0007.015 (0) Table hh_posts: finishing file (backup_2017-05-02-0948_HelpHub_fde2cb4df74f-db-table-hh_posts.table.gz - 3286.5 KB)
+0007.021 (0) Table hh_term_relationships: Total expected rows (approximate): 529
+0007.035 (0) Table hh_term_relationships: Total rows added: 529 in 0.00 seconds
+0007.039 (0) Table hh_term_relationships: finishing file (backup_2017-05-02-0948_HelpHub_fde2cb4df74f-db-table-hh_term_relationships.table.gz - 1.8 KB)
+0007.054 (0) Table hh_term_taxonomy: Total expected rows (approximate): 71
+0007.060 (0) Table hh_term_taxonomy: Total rows added: 71 in 0.00 seconds
+0007.066 (0) Table hh_term_taxonomy: finishing file (backup_2017-05-02-0948_HelpHub_fde2cb4df74f-db-table-hh_term_taxonomy.table.gz - 1.5 KB)
+0007.102 (0) Table hh_termmeta: Total expected rows (approximate): 0
+0007.106 (0) Table hh_termmeta: Total rows added: 0 in 0.00 seconds
+0007.118 (0) Table hh_termmeta: finishing file (backup_2017-05-02-0948_HelpHub_fde2cb4df74f-db-table-hh_termmeta.table.gz - 0.4 KB)
+0007.143 (0) Table hh_terms: Total expected rows (approximate): 71
+0007.146 (0) Table hh_terms: Total rows added: 71 in 0.00 seconds
+0007.149 (0) Table hh_terms: finishing file (backup_2017-05-02-0948_HelpHub_fde2cb4df74f-db-table-hh_terms.table.gz - 1.1 KB)
+0007.165 (0) Table hh_duplicator_packages: Total expected rows (approximate): 0
+0007.168 (0) Table hh_duplicator_packages: Total rows added: 0 in 0.00 seconds
+0007.170 (0) Table hh_duplicator_packages: finishing file (backup_2017-05-02-0948_HelpHub_fde2cb4df74f-db-table-hh_duplicator_packages.table.gz - 0.4 KB)
+0007.184 (0) Table hh_wsal_metadata: Total expected rows (approximate): 34822
+0007.344 (0) Table hh_wsal_metadata: binary mysqldump finished (writes: 33) in 0.16 seconds
+0007.349 (0) Table hh_wsal_metadata: finishing file (backup_2017-05-02-0948_HelpHub_fde2cb4df74f-db-table-hh_wsal_metadata.table.gz - 292.8 KB)
+0007.382 (0) Table hh_wsal_occurrences: Total expected rows (approximate): 5000
+0007.452 (0) Table hh_wsal_occurrences: Total rows added: 5000 in 0.06 seconds
+0007.455 (0) Table hh_wsal_occurrences: finishing file (backup_2017-05-02-0948_HelpHub_fde2cb4df74f-db-table-hh_wsal_occurrences.table.gz - 56.3 KB)
+0007.483 (0) Table hh_wsal_options: Total expected rows (approximate): 7
+0007.488 (0) Table hh_wsal_options: Total rows added: 7 in 0.00 seconds
+0007.497 (0) Table hh_wsal_options: finishing file (backup_2017-05-02-0948_HelpHub_fde2cb4df74f-db-table-hh_wsal_options.table.gz - 0.4 KB)
+0007.505 (0) backup_2017-05-02-0948_HelpHub_fde2cb4df74f-db-table-hh_options.table.gz (1/16): adding to final database dump
+0007.546 (0) backup_2017-05-02-0948_HelpHub_fde2cb4df74f-db-table-hh_users.table.gz (2/16): adding to final database dump
+0007.549 (0) backup_2017-05-02-0948_HelpHub_fde2cb4df74f-db-table-hh_usermeta.table.gz (3/16): adding to final database dump
+0007.557 (0) backup_2017-05-02-0948_HelpHub_fde2cb4df74f-db-table-hh_commentmeta.table.gz (4/16): adding to final database dump
+0007.561 (0) backup_2017-05-02-0948_HelpHub_fde2cb4df74f-db-table-hh_comments.table.gz (5/16): adding to final database dump
+0007.565 (0) backup_2017-05-02-0948_HelpHub_fde2cb4df74f-db-table-hh_links.table.gz (6/16): adding to final database dump
+0007.569 (0) backup_2017-05-02-0948_HelpHub_fde2cb4df74f-db-table-hh_postmeta.table.gz (7/16): adding to final database dump
+0007.593 (0) backup_2017-05-02-0948_HelpHub_fde2cb4df74f-db-table-hh_posts.table.gz (8/16): adding to final database dump
+0008.555 (0) backup_2017-05-02-0948_HelpHub_fde2cb4df74f-db-table-hh_term_relationships.table.gz (9/16): adding to final database dump
+0008.576 (0) backup_2017-05-02-0948_HelpHub_fde2cb4df74f-db-table-hh_term_taxonomy.table.gz (10/16): adding to final database dump
+0008.600 (0) backup_2017-05-02-0948_HelpHub_fde2cb4df74f-db-table-hh_termmeta.table.gz (11/16): adding to final database dump
+0008.615 (0) backup_2017-05-02-0948_HelpHub_fde2cb4df74f-db-table-hh_terms.table.gz (12/16): adding to final database dump
+0008.638 (0) backup_2017-05-02-0948_HelpHub_fde2cb4df74f-db-table-hh_duplicator_packages.table.gz (13/16): adding to final database dump
+0008.650 (0) backup_2017-05-02-0948_HelpHub_fde2cb4df74f-db-table-hh_wsal_metadata.table.gz (14/16): adding to final database dump
+0008.762 (0) backup_2017-05-02-0948_HelpHub_fde2cb4df74f-db-table-hh_wsal_occurrences.table.gz (15/16): adding to final database dump
+0008.814 (0) backup_2017-05-02-0948_HelpHub_fde2cb4df74f-db-table-hh_wsal_options.table.gz (16/16): adding to final database dump
+0008.817 (0) backup_2017-05-02-0948_HelpHub_fde2cb4df74f-db.gz: finished writing out complete database file (3816 KB)
+0008.851 (0) Total database tables backed up: 16 (backup_2017-05-02-0948_HelpHub_fde2cb4df74f-db.gz, size: 3935644, checksum (SHA1): e1dbe873de785eb1e9a511098b3a45b202a4bb7b)
+0008.885 (0) backup_2017-05-02-0948_HelpHub_fde2cb4df74f-plugins.zip: plugins: This file has not yet been successfully uploaded: will queue
+0008.888 (0) backup_2017-05-02-0948_HelpHub_fde2cb4df74f-themes.zip: themes: This file has not yet been successfully uploaded: will queue
+0008.889 (0) backup_2017-05-02-0948_HelpHub_fde2cb4df74f-uploads.zip: uploads: This file has not yet been successfully uploaded: will queue
+0008.891 (0) backup_2017-05-02-0948_HelpHub_fde2cb4df74f-others.zip: others: This file has not yet been successfully uploaded: will queue
+0008.892 (0) backup_2017-05-02-0948_HelpHub_fde2cb4df74f-db.gz: db: This file has not yet been successfully uploaded: will queue
+0008.896 (0) Saving backup history. Total backup size: 84.9 MB
+0008.912 (0) Requesting upload of the files that have not yet been successfully uploaded (5)
+0008.928 (0) Cloud backup selection (1/1): dropbox (last)
+0008.931 (0) Beginning dispatch of backup to remote (dropbox)
+0008.932 (0) Dropbox: begin cloud upload
+0008.933 (0) Dropbox: access gained; setting chunk size to: 1024 KB
+0011.416 (0) Dropbox quota usage: normal=188605.3 MB, shared=6670.2 MB, total=1061632 MB, available=866356.5 MB
+0011.420 (0) Dropbox: Attempt to upload: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-plugins.zip to: WPHelphubStaging/backup_2017-05-02-0948_HelpHub_fde2cb4df74f-plugins.zip
+0013.923 (0) Dropbox chunked upload: 8.7 % uploaded (AAAAAAABLvHPeg5YPR3P0A, 1048576, 3072 KB)
+0018.734 (0) Dropbox chunked upload: 34.9 % uploaded (AAAAAAABLvHPeg5YPR3P0A, 4194304, 5632 KB)
+0021.861 (0) Dropbox chunked upload: 83 % uploaded (AAAAAAABLvHPeg5YPR3P0A, 9961472, 10240 KB)
+0027.357 (0) Dropbox chunked upload: 100 % uploaded (AAAAAAABLvHPeg5YPR3P0A, 12002822, 10240 KB)
+0031.784 (0) Recording as successfully uploaded: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-plugins.zip (3e3b7e802ef3d56658786a4003816fec)
+0031.813 (0) Deleting local file: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-plugins.zip: OK
+0031.816 (0) Dropbox: File upload success (backup_2017-05-02-0948_HelpHub_fde2cb4df74f-plugins.zip): 11721 KB in 20s (574 KB/s)
+0032.265 (0) Dropbox quota usage: normal=188616.8 MB, shared=6670.2 MB, total=1061632 MB, available=866345.1 MB
+0032.268 (0) Dropbox: Attempt to upload: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-themes.zip to: WPHelphubStaging/backup_2017-05-02-0948_HelpHub_fde2cb4df74f-themes.zip
+0036.939 (0) Dropbox chunked upload: 100 % uploaded (AAAAAAABLvME08BLQNRvuQ, 6213820, 10240 KB)
+0040.383 (0) Recording as successfully uploaded: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-themes.zip (606434e8792d7088af5178fbbdfeed2d)
+0040.399 (0) Deleting local file: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-themes.zip: OK
+0040.402 (0) Dropbox: File upload success (backup_2017-05-02-0948_HelpHub_fde2cb4df74f-themes.zip): 6068 KB in 8s (746 KB/s)
+0040.854 (0) Dropbox quota usage: normal=188622.7 MB, shared=6670.2 MB, total=1061632 MB, available=866339.1 MB
+0040.863 (0) Dropbox: Attempt to upload: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-uploads.zip to: WPHelphubStaging/backup_2017-05-02-0948_HelpHub_fde2cb4df74f-uploads.zip
+0046.046 (0) Dropbox chunked upload: 15.7 % uploaded (AAAAAAABLvRRlo1NmFTOXA, 10485760, 10240 KB)
+0053.411 (0) Dropbox chunked upload: 31.4 % uploaded (AAAAAAABLvRRlo1NmFTOXA, 20971520, 10240 KB)
+0057.828 (0) Dropbox chunked upload: 47 % uploaded (AAAAAAABLvRRlo1NmFTOXA, 31457280, 10240 KB)
+0066.005 (0) Dropbox chunked upload: 62.7 % uploaded (AAAAAAABLvRRlo1NmFTOXA, 41943040, 10240 KB)
+0072.832 (0) Dropbox chunked upload: 78.4 % uploaded (AAAAAAABLvRRlo1NmFTOXA, 52428800, 10240 KB)
+0080.448 (0) Dropbox chunked upload: 94.1 % uploaded (AAAAAAABLvRRlo1NmFTOXA, 62914560, 10240 KB)
+0082.741 (0) Dropbox chunked upload: 100 % uploaded (AAAAAAABLvRRlo1NmFTOXA, 66873335, 10240 KB)
+0086.704 (0) Recording as successfully uploaded: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-uploads.zip (dee6fc7bdf052e690f6e731a357da237)
+0086.749 (0) Deleting local file: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-uploads.zip: OK
+0086.753 (0) Dropbox: File upload success (backup_2017-05-02-0948_HelpHub_fde2cb4df74f-uploads.zip): 65305 KB in 45s (1423 KB/s)
+0087.145 (0) Dropbox quota usage: normal=188686.5 MB, shared=6670.2 MB, total=1061632 MB, available=866275.4 MB
+0087.148 (0) Dropbox: Attempt to upload: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-others.zip to: WPHelphubStaging/backup_2017-05-02-0948_HelpHub_fde2cb4df74f-others.zip
+0087.665 (0) Dropbox chunked upload: 100 % uploaded (AAAAAAABLvWKtzeXwyQK0Q, 144, 10240 KB)
+0089.189 (0) Recording as successfully uploaded: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-others.zip (c67b416a05d896e2de43c4300655e9c9)
+0089.206 (0) Deleting local file: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-others.zip: OK
+0089.208 (0) Dropbox: File upload success (backup_2017-05-02-0948_HelpHub_fde2cb4df74f-others.zip): 0 KB in 2s (0 KB/s)
+0089.543 (0) Dropbox quota usage: normal=188686.5 MB, shared=6670.2 MB, total=1061632 MB, available=866275.4 MB
+0089.546 (0) Dropbox: Attempt to upload: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-db.gz to: WPHelphubStaging/backup_2017-05-02-0948_HelpHub_fde2cb4df74f-db.gz
+0093.194 (0) Dropbox chunked upload: 100 % uploaded (AAAAAAABLvaEd98eYgwoeA, 3935644, 10240 KB)
+0098.687 (0) Recording as successfully uploaded: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-db.gz (357ce66ea85ced7c0f6de4f0c3baf8dc)
+0098.725 (0) Deleting local file: backup_2017-05-02-0948_HelpHub_fde2cb4df74f-db.gz: OK
+0098.736 (0) Dropbox: File upload success (backup_2017-05-02-0948_HelpHub_fde2cb4df74f-db.gz): 3843 KB in 9s (418 KB/s)
+0098.752 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=5, retain_db=20
+0098.765 (0) Number of backup sets in history: 26; groups (db): 1
+0098.767 (0) Examining (for databases) backup set with group_id=0, nonce=fde2cb4df74f, datestamp=1493718531 (May 02 2017 09:48:51)
+0098.770 (0) This backup set is the backup set just made, so will not be deleted.
+0098.789 (0) Examining (for databases) backup set with group_id=0, nonce=911080ecfae6, datestamp=1493633789 (May 01 2017 10:16:29)
+0098.813 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0098.838 (0) Examining (for databases) backup set with group_id=0, nonce=7ea5cae4e44f, datestamp=1493547377 (Apr 30 2017 10:16:17)
+0098.856 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0098.877 (0) Examining (for databases) backup set with group_id=0, nonce=b8bbb2b15012, datestamp=1493460201 (Apr 29 2017 10:03:21)
+0098.895 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0098.913 (0) Examining (for databases) backup set with group_id=0, nonce=91960ee556ec, datestamp=1493374957 (Apr 28 2017 10:22:37)
+0098.933 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0098.950 (0) Examining (for databases) backup set with group_id=0, nonce=00270da46608, datestamp=1493288565 (Apr 27 2017 10:22:45)
+0098.964 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0098.985 (0) Examining (for databases) backup set with group_id=0, nonce=4f62e364ef89, datestamp=1493202168 (Apr 26 2017 10:22:48)
+0099.002 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0099.025 (0) Examining (for databases) backup set with group_id=0, nonce=5fadb2648502, datestamp=1493115873 (Apr 25 2017 10:24:33)
+0099.046 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0099.065 (0) Examining (for databases) backup set with group_id=0, nonce=30f4a253b417, datestamp=1493115779 (Apr 25 2017 10:22:59)
+0099.076 (0) Examining (for databases) backup set with group_id=0, nonce=ead00324806f, datestamp=1493028190 (Apr 24 2017 10:03:10)
+0099.095 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0099.110 (0) Examining (for databases) backup set with group_id=0, nonce=0c28760d4dae, datestamp=1492941797 (Apr 23 2017 10:03:17)
+0099.122 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0099.130 (0) Examining (for databases) backup set with group_id=0, nonce=07d9cb7cb1b5, datestamp=1492855407 (Apr 22 2017 10:03:27)
+0099.142 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0099.156 (0) Examining (for databases) backup set with group_id=0, nonce=2aad5b5a5a72, datestamp=1492771707 (Apr 21 2017 10:48:27)
+0099.168 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0099.179 (0) Examining (for databases) backup set with group_id=0, nonce=e75d47f97765, datestamp=1492685314 (Apr 20 2017 10:48:34)
+0099.190 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0099.202 (0) Examining (for databases) backup set with group_id=0, nonce=af37368c5a95, datestamp=1492597516 (Apr 19 2017 10:25:16)
+0099.214 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0099.226 (0) Examining (for databases) backup set with group_id=0, nonce=544bb2c9103c, datestamp=1492512622 (Apr 18 2017 10:50:22)
+0099.236 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0099.252 (0) Examining (for databases) backup set with group_id=0, nonce=6dd91512cbb0, datestamp=1492512529 (Apr 18 2017 10:48:49)
+0099.262 (0) Examining (for databases) backup set with group_id=0, nonce=89a35956b643, datestamp=1492423697 (Apr 17 2017 10:08:17)
+0099.284 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0099.299 (0) Examining (for databases) backup set with group_id=0, nonce=f632ca46079d, datestamp=1492337305 (Apr 16 2017 10:08:25)
+0099.318 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0099.325 (0) Examining (for databases) backup set with group_id=0, nonce=567e98d60be1, datestamp=1492250912 (Apr 15 2017 10:08:32)
+0099.330 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0099.333 (0) Examining (for databases) backup set with group_id=0, nonce=261fa95777a7, datestamp=1492167467 (Apr 14 2017 10:57:47)
+0099.337 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0099.341 (0) Examining (for databases) backup set with group_id=0, nonce=cd93e31d6ffe, datestamp=1492076809 (Apr 13 2017 09:46:49)
+0099.343 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0099.358 (0) Examining (for databases) backup set with group_id=0, nonce=3ded4cd8e26b, datestamp=1491990200 (Apr 12 2017 09:43:20)
+0099.360 (0) 1491990200: db: this set includes a database (backup_2017-04-12-0943_HelpHub_3ded4cd8e26b-db.gz); db count is now 20
+0099.363 (0) 1491990200: db: over retain limit (20); will delete this database
+0099.366 (0) Delete file: backup_2017-04-12-0943_HelpHub_3ded4cd8e26b-db.gz, service=dropbox
+0099.378 (0) Dropbox: request deletion: WPHelphubStaging/backup_2017-04-12-0943_HelpHub_3ded4cd8e26b-db.gz
+0100.586 (0) Dropbox: delete succeeded
+0100.598 (0) This backup set is now empty; will remove from history
+0100.600 (0) Deleting log file (log.3ded4cd8e26b.txt)
+0100.602 (0) Examining (for databases) backup set with group_id=0, nonce=5f404681ebe3, datestamp=1491908003 (Apr 11 2017 10:53:23)
+0100.603 (0) Examining (for databases) backup set with group_id=0, nonce=5ca9e9e5751d, datestamp=1491843688 (Apr 10 2017 17:01:28)
+0100.606 (0) Examining (for databases) backup set with group_id=0, nonce=35bd8c2b744e, datestamp=1490694416 (Mar 28 2017 09:46:56)
+0100.608 (0) Number of backup sets in history: 25; groups (files): 1
+0100.609 (0) Examining (for files) backup set with nonce=fde2cb4df74f, datestamp=1493718531 (May 02 2017 09:48:51)
+0100.612 (0) This backup set is the backup set just made, so will not be deleted.
+0100.613 (0) This backup set is the backup set just made, so will not be deleted.
+0100.613 (0) This backup set is the backup set just made, so will not be deleted.
+0100.613 (0) This backup set is the backup set just made, so will not be deleted.
+0100.614 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0100.615 (0) Examining (for files) backup set with nonce=911080ecfae6, datestamp=1493633789 (May 01 2017 10:16:29)
+0100.617 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0100.622 (0) Examining (for files) backup set with nonce=7ea5cae4e44f, datestamp=1493547377 (Apr 30 2017 10:16:17)
+0100.627 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0100.639 (0) Examining (for files) backup set with nonce=b8bbb2b15012, datestamp=1493460201 (Apr 29 2017 10:03:21)
+0100.642 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0100.644 (0) Examining (for files) backup set with nonce=91960ee556ec, datestamp=1493374957 (Apr 28 2017 10:22:37)
+0100.645 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0100.647 (0) Examining (for files) backup set with nonce=00270da46608, datestamp=1493288565 (Apr 27 2017 10:22:45)
+0100.648 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0100.649 (0) Examining (for files) backup set with nonce=4f62e364ef89, datestamp=1493202168 (Apr 26 2017 10:22:48)
+0100.651 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0100.652 (0) Examining (for files) backup set with nonce=5fadb2648502, datestamp=1493115873 (Apr 25 2017 10:24:33)
+0100.653 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0100.661 (0) Examining (for files) backup set with nonce=30f4a253b417, datestamp=1493115779 (Apr 25 2017 10:22:59)
+0100.682 (0) This backup set remains non-empty (f=1/d=0); will retain in history
+0100.684 (0) Examining (for files) backup set with nonce=ead00324806f, datestamp=1493028190 (Apr 24 2017 10:03:10)
+0100.686 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0100.688 (0) Examining (for files) backup set with nonce=0c28760d4dae, datestamp=1492941797 (Apr 23 2017 10:03:17)
+0100.690 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0100.693 (0) Examining (for files) backup set with nonce=07d9cb7cb1b5, datestamp=1492855407 (Apr 22 2017 10:03:27)
+0100.699 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0100.706 (0) Examining (for files) backup set with nonce=2aad5b5a5a72, datestamp=1492771707 (Apr 21 2017 10:48:27)
+0100.709 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0100.712 (0) Examining (for files) backup set with nonce=e75d47f97765, datestamp=1492685314 (Apr 20 2017 10:48:34)
+0100.730 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0100.733 (0) Examining (for files) backup set with nonce=af37368c5a95, datestamp=1492597516 (Apr 19 2017 10:25:16)
+0100.737 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0100.750 (0) Examining (for files) backup set with nonce=544bb2c9103c, datestamp=1492512622 (Apr 18 2017 10:50:22)
+0100.754 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0100.758 (0) Examining (for files) backup set with nonce=6dd91512cbb0, datestamp=1492512529 (Apr 18 2017 10:48:49)
+0100.761 (0) This backup set remains non-empty (f=1/d=0); will retain in history
+0100.763 (0) Examining (for files) backup set with nonce=89a35956b643, datestamp=1492423697 (Apr 17 2017 10:08:17)
+0100.771 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0100.773 (0) Examining (for files) backup set with nonce=f632ca46079d, datestamp=1492337305 (Apr 16 2017 10:08:25)
+0100.776 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0100.778 (0) Examining (for files) backup set with nonce=567e98d60be1, datestamp=1492250912 (Apr 15 2017 10:08:32)
+0100.779 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0100.781 (0) Examining (for files) backup set with nonce=261fa95777a7, datestamp=1492167467 (Apr 14 2017 10:57:47)
+0100.782 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0100.785 (0) Examining (for files) backup set with nonce=cd93e31d6ffe, datestamp=1492076809 (Apr 13 2017 09:46:49)
+0100.786 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0100.787 (0) Examining (for files) backup set with nonce=5f404681ebe3, datestamp=1491908003 (Apr 11 2017 10:53:23)
+0100.788 (0) This backup set remains non-empty (f=1/d=0); will retain in history
+0100.789 (0) Examining (for files) backup set with nonce=5ca9e9e5751d, datestamp=1491843688 (Apr 10 2017 17:01:28)
+0100.791 (0) This backup set remains non-empty (f=1/d=0); will retain in history
+0100.792 (0) Examining (for files) backup set with nonce=35bd8c2b744e, datestamp=1490694416 (Mar 28 2017 09:46:56)
+0100.799 (0) plugins: over retain limit (5); will delete this file entity
+0100.802 (0) themes: over retain limit (5); will delete this file entity
+0100.804 (0) uploads: over retain limit (5); will delete this file entity
+0100.806 (0) others: over retain limit (5); will delete this file entity
+0100.817 (0) Delete file: backup_2017-03-28-0946_HelpHub_35bd8c2b744e-plugins.zip, service=dropbox
+0100.819 (0) Delete file: backup_2017-03-28-0946_HelpHub_35bd8c2b744e-themes.zip, service=dropbox
+0100.822 (0) Delete file: backup_2017-03-28-0946_HelpHub_35bd8c2b744e-uploads.zip, service=dropbox
+0100.825 (0) Delete file: backup_2017-03-28-0946_HelpHub_35bd8c2b744e-others.zip, service=dropbox
+0100.830 (0) Dropbox: request deletion: WPHelphubStaging/backup_2017-03-28-0946_HelpHub_35bd8c2b744e-plugins.zip
+0101.438 (0) Dropbox: delete succeeded
+0101.441 (0) Dropbox: request deletion: WPHelphubStaging/backup_2017-03-28-0946_HelpHub_35bd8c2b744e-themes.zip
+0101.995 (0) Dropbox: delete succeeded
+0102.000 (0) Dropbox: request deletion: WPHelphubStaging/backup_2017-03-28-0946_HelpHub_35bd8c2b744e-uploads.zip
+0102.649 (0) Dropbox: delete succeeded
+0102.663 (0) Dropbox: request deletion: WPHelphubStaging/backup_2017-03-28-0946_HelpHub_35bd8c2b744e-others.zip
+0103.280 (0) Dropbox: delete succeeded
+0103.286 (0) This backup set is now empty; will remove from history
+0103.296 (0) Deleting log file (log.35bd8c2b744e.txt)
+0103.308 (0) Retain: saving new backup history (sets now: 24) and finishing retain operation
+0103.333 (0) Resume backup (fde2cb4df74f, 0): finish run
+0103.353 (0) Decremented the semaphore (fd) by 1
+0103.357 (0) Semaphore (fd) unlocked
+0103.360 (0) There were no errors in the uploads, so the 'resume' event (1) is being unscheduled
+0103.384 (0) No email will/can be sent - the user has not configured an email address.
+0103.386 (0) The backup apparently succeeded and is now complete

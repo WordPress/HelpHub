@@ -1,0 +1,1474 @@
+/* General things used by many things */
+
+	/* Widths and sizing */
+		.max-width-600 {
+			max-width: 600px;
+		}
+
+		.width-900 {
+			width: 900px;
+		}
+		
+		.width-80 {
+			width: 80%;
+		}
+
+	/* End widths and sizing */
+
+	/* Font styling */
+		.no-decoration {
+			text-decoration: none;
+		}
+		
+		.bold {
+			font-weight: bold;
+		}
+	/* End font styling */
+	
+	/* Alignment */
+		.center-align-td {
+			text-align: center;
+		}
+	/* End of Alignment */
+	
+	/* Padding */		
+		.remove-padding {
+			padding: 0 !important;
+		}
+	/* End of padding */
+
+	.updraft-text-center {
+		text-align: center;
+	}
+	
+	.autobackup {
+		padding: 6px;
+		margin: 8px 0px;
+	}
+
+	ul .disc { 
+		list-style: disc inside; 
+	}
+
+	.dashicons-log-fix {
+		display: inherit;
+	}
+	
+	/* Input boxes */
+
+		input {
+			border-radius: 4px;
+			line-height: 1.42;
+			border: 1px solid #ccc;
+			height: 27px;
+			padding: 2px 6px;
+			color: #555;
+		}
+
+		input[type="text"] {
+			font-size: 14px;
+		}
+
+		input[type="number"] {
+			height: 31px;
+		}
+
+		select {
+			border-radius: 4px;
+		}
+
+	/* End input boxes */
+	
+
+/* Main Buttons */
+	.main-dashboard-buttons {    
+		border-width: 4px;
+		border-radius: 12px;
+		letter-spacing: 0px;
+		font-size: 17px;
+		font-weight: bold;
+		padding-left: 0.7em;
+		padding-right: 2em;
+		padding: 0.3em 1em;
+		line-height: 1.7em;
+		background: transparent;
+		position: relative;
+		border: 2px solid;
+		transition: all 0.2s;
+		vertical-align: baseline;
+		box-sizing: border-box;
+		text-align: center;
+		line-height: 1.3em;
+		margin-left: .3em;
+		text-transform: none;
+		line-height: 1;
+		text-decoration: none;
+	}
+
+	.button-restore {
+		border-color: RGB(98, 158, 192);
+		color: RGB(98, 158, 192);
+	}
+	
+	.dashboard-main-sizing {
+		border-width: 4px;
+		width: 190px;
+		line-height: 1.7em;
+	}
+
+	.button-restore:hover, .button-migrate:hover, .button-backup:hover,
+		.button-view-log:hover, .button-mass-selectors:hover, 
+			.button-delete:hover, .button-entity-backup:hover, .udp-button-primary:hover {
+		border-color: #df6926;
+		color: #df6926;
+	}
+
+	.button-migrate {
+		color: rgb(238, 169, 32);
+		border-color: rgb(238, 169, 32);
+	}
+
+	.button-backup {
+		border-color: #84CA1B;
+		color: #84CA1B;
+	}
+	
+	.existing-backups-buttons {
+		font-size: 11px;
+		line-height: 1.4em;
+		border-width: 3px;
+	}
+	
+	.existing-backups-restore-buttons {
+		font-size: 11px;
+		line-height: 1.4em;
+		border-width: 3px;
+	}
+	
+	.button-delete {
+		color: #E23900;
+		border-color: #E23900;
+		font-size: 14px;
+		line-height: 1.4em;
+		border-width: 2px;
+		margin-right: 10px;
+	}
+	
+	.button-view-log, .button-mass-selectors {
+		color: darkgrey;
+		border-color: darkgrey;
+		font-size: 14px;
+		line-height: 1.4em;
+		border-width: 2px;
+		margin-top: -1px;
+	}
+	
+	.button-view-log {
+		width: 120px;
+	}
+	
+	.button-existing-restore {
+		font-size: 14px;
+		line-height: 1.4em;
+		border-width: 2px;
+		width: 110px;
+	}
+	
+	.main-restore {
+		margin-right: 3%;
+		margin-left: 3%;
+	}
+	
+	.button-entity-backup {
+		color: #555555;
+		border-color: #555555;
+		font-size: 11px;
+		line-height: 1.4em;
+		border-width: 2px;
+		margin-right: 5px;
+	}
+	
+	.button-select-all {
+		width: 122px;
+	}
+	
+	.button-deselect {
+		width: 92px;
+	}
+	
+	#ud_massactions > .display-flex > .mass-selectors-margins {
+		margin-right: -4px;		
+	}
+	
+	.udp-button-primary {
+		border-width: 4px;
+		color: #0073AA;
+		border-color: #0073AA;
+		font-size: 14px;
+		height: 40px;
+	}
+	
+	#ud_massactions .button-delete {
+		margin-right: 0px;
+	}
+	
+	/* End Main Buttons */
+
+/* End of common elements */
+
+.udp-logo-70 {
+	width: 70px;
+	height: 70px;
+	float: left;
+	padding-right: 25px;
+}
+
+h3 .thank-you {
+	margin-top: 0px;
+}
+
+.ws_advert {
+	max-width: 800px;
+	font-size:140%;
+	line-height: 140%;
+	padding:14px;
+	clear:left;
+}
+
+a .udp-logo {
+	border: 0px;
+	float: right; 
+	height: 150px;
+	width: 150px;
+	margin: 20px 15px 15px 35px;
+}
+
+.dismiss-dash-notice {
+	float: right;
+	position: relative;
+	top: -20px;
+}
+
+#updraft_report_cell .updraft_reportbox {
+	padding:8px;
+	margin: 8px 0;
+	border: 1px dotted;
+	clear:left;
+	float:left;
+}
+
+#updraft_report_cell button.updraft_reportbox_delete {
+	font-size: 50%;
+	float:right;
+	padding:0 3px;
+	position: relative;
+	top: -4px;
+	left: 4px;
+}
+
+#updraft-navtab-settings-content .updraft-test-button {
+	font-size:18px !important;
+}
+
+#updraft_report_cell .updraft_report_checkbox {
+	margin-top: 4px;
+}
+
+#updraft_report_cell  .updraft_report_email {
+	width: 300px;
+}
+
+#updraft_report_cell .updraft_report_another_p {
+	clear:left;
+}
+
+/* Taken straight from admin.php */
+
+	#updraft-navtab-settings-content table.form-table p {
+		max-width: 700px;
+	}
+
+	#updraft-navtab-backups-content .updraft_existing_backups .updraft_existing_backups_row.backuprowselected {
+		background-color: #ccc;
+	}
+
+	.updraft_settings_sectionheading { 
+		display: none;
+	}
+
+	.updraft-backupentitybutton-disabled {
+		background-color: transparent;
+		border: none;
+		color: #0074a2;
+		text-decoration: underline;
+		cursor: pointer;
+		clear: none;
+		float: left;
+	}
+	.updraft-backupentitybutton {
+		margin-left: 8px;
+	}
+	.updraft-bigbutton {
+		padding: 2px 0px !important;
+		margin-right: 14px !important;
+		font-size:22px !important;
+		min-height: 32px;
+		min-width: 180px;
+	}
+
+	.updraft_debugrow th {
+		float: right;
+		text-align: right;
+		font-weight: bold;
+		padding-right: 8px;
+		min-width: 140px;
+	}
+
+	.updraft_debugrow td {
+		min-width: 300px;
+		vertical-align: bottom;
+	}
+	.updraftplus-morefiles-row-delete {
+		cursor: pointer;
+		color: red;
+		font-size: 100%;
+		font-weight: bold;
+		border: 0px;
+		border-radius: 3px;
+		padding: 2px;
+		margin: 0 6px;
+	}
+	.updraftplus-morefiles-row-delete:hover {
+		cursor: pointer;
+		color: white;
+		background: red;
+	}
+
+	#updraft-wrap .form-table th {
+		width: 230px;
+	}
+	.updraftplus-remove {
+		background-color: #c00000;
+		border: 1px solid #c00000;
+		height: 22px;
+		padding: 4px 3px 0;
+		margin-right: 6px;
+	}
+	.updraft-viewlogdiv form {
+		margin: 0;
+		padding: 0;
+	}
+	.updraft-viewlogdiv {
+		background-color: #ffffff;
+		color: #000000;
+		border: 1px solid #000000;
+		height: 26px;
+		padding: 0px;
+		margin: 0 4px 0 0;
+		border-radius: 3px;
+		float: left;
+	}
+	.updraft-viewlogdiv input, .updraft-viewlogdiv a {
+		border: none;
+		background-color: transparent;
+		color: #000;
+		margin:0px;
+		padding: 3px 4px;
+		font-size: 16px;
+		line-height: 26px;
+	}
+	.updraft-viewlogdiv:hover {
+		background-color: #000000;
+		color: #ffffff;
+		border: 1px solid #ffffff;
+		cursor: pointer;
+	}
+	.updraft-viewlogdiv input:hover, .updraft-viewlogdiv a:hover {
+		color: #ffffff;
+		cursor: pointer;
+	}
+	.updraftplus-remove a {
+		color: white;
+		padding: 4px 4px 0px;
+	}
+	.updraftplus-remove:hover {
+		background-color: white;
+		border: 1px solid #c00000;
+	}
+	.updraftplus-remove a:hover {
+		color: #c00000;
+	}
+	.drag-drop #drag-drop-area2 {
+		border: 4px dashed #ddd;
+		height: 200px;
+	}
+	#drag-drop-area2 .drag-drop-inside {
+		margin: 36px auto 0;
+		width: 350px;
+	}
+	#filelist, #filelist2  {
+		width: 100%;
+	}
+	#filelist .file, #filelist2 .file, .ud_downloadstatus .file, #ud_downloadstatus2 .file {
+		padding: 5px;
+		background: #ececec;
+		border: solid 1px #ccc;
+		margin: 4px 0;
+	}
+
+	ul.updraft_premium_description_list {
+		list-style: disc inside;
+	}
+	ul.updraft_premium_description_list li {
+		display: inline;
+	}
+	ul.updraft_premium_description_list li::after {
+		content: " | ";
+	}
+	ul.updraft_premium_description_list li.last::after {
+		content: "";
+	}
+	.updraft_feature_cell{
+		background-color: #F7D9C9 !important;
+		padding: 5px 10px 5px 10px;
+	}
+	.updraft_feat_table, .updraft_feat_th, .updraft_feat_table td{
+		border: 1px solid black;
+		border-collapse: collapse;
+		font-size: 120%;
+		background-color: white;
+	}
+	.updraft_tick_cell{
+		text-align: center;
+	}
+	.updraft_tick_cell img{
+		margin: 4px 0;
+		height: 24px;
+	}
+
+	#filelist .fileprogress, #filelist2 .fileprogress, .ud_downloadstatus .dlfileprogress, #ud_downloadstatus2 .dlfileprogress {
+		width: 0%;
+		background: #f6a828;
+		height: 5px;
+	}
+	.ud_downloadstatus .raw, #ud_downloadstatus2 .raw {
+		margin-top: 8px;
+		clear:left;
+	}
+	.ud_downloadstatus .file, #ud_downloadstatus2 .file {
+		margin-top: 8px;
+	}
+	tr.updraftplusmethod h3 {
+		margin: 0px;
+	}
+	#updraft_retain_db_rules .updraft_retain_rules_delete, #updraft_retain_files_rules .updraft_retain_rules_delete {
+		cursor: pointer;
+		color: red;
+		font-size: 120%;
+		font-weight: bold;
+		border: 0px;
+		border-radius: 3px;
+		padding: 2px;
+		margin: 0 6px;
+	}
+	#updraft_retain_db_rules .updraft_retain_rules_delete:hover, #updraft_retain_files_rules .updraft_retain_rules_delete:hover {
+		cursor: pointer;
+		color: white;
+		background: red;
+	}
+
+	#updraft_backup_started {
+		max-width: 800px;
+		font-size: 140%;
+		line-height: 140%;
+		padding: 14px;
+		clear:left;
+	}
+
+/* End stuff already in admin.php */
+	
+#plupload-upload-ui2 { 
+	width: 80%;
+}
+
+.backup-restored {
+	padding: 8px; 
+}
+
+.backup-restored span { 
+	font-size: 120% 
+}
+
+.word-shell-advert {
+	max-width: 800px; 
+	font-size: 140%; 
+	line-height: 140%; 
+	padding: 14px;
+}
+
+.memory-limit { 
+	padding:8px; 
+}
+
+.updraft_list_errors {
+	padding: 8px;
+}
+
+/*.nav-tab {
+	border-radius: 20px 20px 0 0;
+	border-color: grey;
+	border-width: 2px;
+	margin-top: 34px;
+}
+
+.nav-tab:hover {
+	border-bottom: 0;
+}
+
+.nav-tab-active, .nav-tab-active:active {
+	color: #df6926;
+	border-color: #D3D3D3;
+	border-width: 1px;
+	border-bottom: 0;
+}
+
+.nav-tab-active:focus {
+	color: #df6926;
+}*/
+
+.nav-tab-wrapper {
+	margin: 14px 0px;
+}
+
+#updraft-poplog-content {
+	white-space: pre-wrap;
+}
+
+.next-backup {
+	border: 0px;
+	padding: 0px;
+	margin: 0 10px 0 0;
+}
+
+.not-scheduled {
+	vertical-align: top !important;
+	margin: 0px !important; 
+	padding: 0px !important;
+}
+
+.next-backup .updraft_scheduled  {
+	/* width: 124px;*/
+	margin: 0px; 
+	padding: 2px 4px 2px 0px;
+}
+
+#next-backup-table-inner td {
+	vertical-align: top;
+}
+
+.next-backup .updraft_all-files {
+	color: blue; 
+	margin: 0px; 
+	padding: 2px 0px 0px;
+}	
+
+.multisite-advert-width {
+	width: 800px;
+}
+
+.updraft_settings_sectionheading {
+	margin-top: 6px;
+}
+
+.premium-upgrade-prompt {
+	font-size: 115%;
+}
+
+.updraft_feat_table {
+	margin-top: 30px;
+}
+
+.show_admin_restore_in_progress_notice {
+	padding: 8px;
+}
+
+.show_admin_restore_in_progress_notice .unfinished-restoration {
+	font-size: 120%;
+}
+
+input #backupnow_includefiles_moreoptions {
+	margin: 4px 16px 6px; 
+	border: 1px dotted; 
+	padding: 6px 10px;
+}
+
+.form-table #updraft_activejobsrow .minimum-height{
+	min-height: 100px;
+}
+
+#updraft_lastlogmessagerow .last-message {
+	padding-top: 20px;
+	display: block;
+}
+
+.updraft_simplepie {
+	vertical-align: top;
+}
+
+.download-backups {
+	margin-top: 8px;
+}
+
+.download-backups .updraft_download_button {
+	margin-right: 6px;
+	margin-top: 4px;
+}
+
+.download-backups .choose-components-button {
+	font-size: 16px;
+}
+
+.download-backups .ud-whitespace-warning {
+	background-color: pink;
+	padding: 8px;
+	margin: 4px;
+	border: 1px dotted;
+}
+
+.download-backups .ul {
+	list-style: none inside;
+	max-width: 800px;
+	margin-top: 6px;
+	margin-bottom: 12px;
+}
+
+#updraft-plupload-modal {
+	width: 75%; 
+	margin: 16px;
+	margin-left: 100px;
+}
+
+.download-backups .upload {
+	max-width: 610px;
+}
+
+.download-backups #plupload-upload-ui {
+	width: 70%;
+}
+
+.ud_downloadstatus {
+	padding: 10px;
+	background: #f1f1f1;
+}
+
+#ud_massactions {
+	padding: 14px; 
+	position: fixed; 
+	right: 25%; 
+	top: 25%; 
+	border: 2px solid; 
+	border-radius: 4px; 
+	background: rgb(241, 241, 241);
+	float: right;
+}
+
+#ud_massactions .updraftplus-remove {
+	clear: left; 
+	font-size: 16px; 
+	text-align: center; 
+	border-radius: 4px; 
+	margin-top: 4px;
+}
+
+#ud_massactions .updraftplus-remove a {
+	text-decoration: none;
+}
+
+#ud_massactions .updraft-viewlogdiv {
+	font-size: 16px; 
+	text-align:center; 
+	border-radius: 4px; 
+	margin-top: 4px;
+}
+
+#ud_massactions .updraft-viewlogdiv a {
+	text-decoration: none; 
+	position: relative; 
+	top: 3px;
+}
+
+#ud_massactions .updraft-viewlogdiv a {
+	text-decoration: none; 
+	position: relative; 
+	top: 3px;
+}
+
+#updraft-navtab-backups-content .updraft_existing_backups {
+	margin-bottom: 12px;
+}
+
+#updraft-message-modal-innards {
+	padding: 4px;
+}
+
+#updraft_delete_form p {
+	margin-top: 3px; 
+	padding-top: 0;
+}
+
+#updraft_restore_form .cannot-restore {
+	margin: 8px 0;
+}
+
+#updraft_restorer_dboptions {
+	padding: 12px; 
+	margin: 8px 0 4px; 
+	border: dashed 1px;
+}
+
+#updraft_restorer_dboptions h4 {
+	margin: 0px 0px 6px; 
+	padding:0px;
+}
+
+.updraft_debugrow th {
+	vertical-align: top; 
+	padding-top: 6px;
+}
+
+.expertmode p {
+	font-size: 125%;
+}
+
+.expertmode .call-wp-action {
+	width: 300px; 
+	height: 22px;
+}
+
+.updraftplus-lock-advert {
+	clear: left;
+	max-width: 600px;
+}
+
+.uncompressed-data {
+	clear: left;
+	max-width: 600px;
+}
+
+.immediate-run {
+	clear: left; 
+	padding-top: 20px;
+	max-width: 600px;
+	margin:0;
+}
+
+.debug-table {
+	border: none;
+}
+
+.delete-old-directories {
+	padding: 8px;
+	padding-bottom: 12px;
+}
+
+.active-jobs {
+	min-width: 480px;
+	min-height: 48px;
+	text-align: center;
+	margin-top: 4px;
+	padding: 8px;
+	border: 1px solid;
+	float: left;
+	clear: left;
+}
+
+.job-id {
+	min-width: 480px; 
+	margin-top: 4px; 
+	padding: 8px; 
+	border: 1px solid;
+	clear: left;
+	float: left;
+}
+
+.next-resumption {
+	font-weight: bold;
+}
+
+.updraft_percentage {
+	z-index:-1; 
+	position: absolute; 
+	left: 0px; 
+	top: 0px; 
+	text-align: center; 
+	background-color: #f6a828; 
+}
+
+.curstage {
+	border-radius: 4px; 
+	margin-top: 8px; 
+	padding-top: 4px;
+	border: 1px solid #aaa; 
+	width: 100%; 
+	height: 22px; 
+	position: relative; 
+	text-align: center; 
+	font-style: italic;
+}
+
+.retain-files {
+	width: 48px;
+}
+
+.backup-interval-description tr td div {
+	max-width: 670px;
+}
+
+#updraft-manualdecrypt-modal {
+	width: 85%; 
+	margin: 6px;
+	margin-left: 100px;
+}
+
+.directory-permissions {
+	font-size: 110%;
+	font-weight: bold;
+}
+
+.wordshell-advert {
+	margin: 10px 0; 
+	padding: 10px; 
+	font-size: 140%; 
+	background-color: lightYellow; 
+	border-color: #E6DB55; 
+	border: 1px solid; 
+	border-radius: 4px;
+}
+
+.double-warning {
+	border:1px solid; 
+	padding: 6px;
+}
+
+.raw-backup-info {
+	font-style: italic;
+	font-weight: bold;
+	font-size: 120%;
+}
+
+.updraft_existingbackup_date {
+	width: 22%;
+	max-width: 140px;
+}
+
+.existing-backups-table {
+	margin-top: 20px; 
+	margin-left: 20px;
+	width: 80%;
+}
+
+.tr-bottom-4 {
+	margin-bottom: 4px;
+}
+
+.form-table .backup-date {
+	width: 172px;
+	padding: 0;
+	padding-left: 15px;
+}
+
+.form-table .backup-data {
+	width: 426px;
+	padding: 0;
+	padding-left: 15px;
+}
+
+.form-table .updraft_backup_actions {
+	width: 272px;
+	padding: 0 0 10px 15px;
+}
+
+.existing-date {    
+	-webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box;   
+    box-sizing: border-box;         
+	max-width: 140px;
+	width: 25%;
+}
+
+.line-break-tr {
+	height: 2px; 
+	padding: 1px; 
+	margin: 0px;
+}
+
+.line-break-td {
+	margin: 0; 
+	padding: 0;
+}
+
+.td-line-color {
+	height: 2px; 
+	background-color: #888888;
+}
+
+.raw-backup {
+	max-width: 140px;
+}
+
+.existing-backups-actions {
+	padding: 1px; 
+	margin:0px;
+}
+
+.existing-backups-border {
+	height: 2px; 
+	padding:  1px; 
+	margin: 0px;
+}
+
+.existing-backups-border > td {
+	margin: 0; 
+	padding: 0;
+}
+
+.existing-backups-border > div {
+	height: 2px; 
+	background-color: #aaaaaa;
+}
+
+.updraft_existing_backup_date {
+	max-width: 140px;
+}
+
+.restore-button {
+	margin-right: 6px;
+	float: left;
+	clear: none;
+}
+
+.updraftplus-remove {
+	font-size: 16px; 
+	text-align: center; 
+	border-radius: 4px;
+}
+
+.before-restore-button {
+	padding: 1px;
+	margin: 0px;
+}
+
+.table-separator-tr {
+	height: 2px;
+	padding: 1px;
+	margin: 0px;
+}
+
+.table-separator-td {
+	margin: 0px;
+	padding: 0px;
+}
+
+.end-of-table-div {
+	height: 2px;
+	background-color: #aaaaaa;
+}
+
+.last-backup-job {
+	padding-top: 3% !important; 
+}
+
+.line-height-03 {
+	line-height: 0.3 !important;
+}
+
+.line-height-13 {
+	line-height: 1.3 !important;
+}
+
+.line-height-23 {
+	line-height: 2.3 !important;
+}
+
+#updraft_diskspaceused {
+	color: #df6926;
+}
+
+.updraft_premium_description_list {
+	text-align: left;
+}
+
+#updraft_delete_old_dirs_pagediv {
+	padding-bottom: 10px;
+}
+
+/*#updraft_lastlogmessagerow > td, #updraft_last_backup > td {
+	padding: 0;
+}*/
+
+.job-id {
+	margin: 0 auto;
+	width: 20%;
+}
+
+.updraft_all-files {
+	color: #df6926;
+}
+
+/* Time + scheduling add-on*/
+.fix-time {
+	width: 70px;
+}
+
+.retain-files {
+	width: 70px;
+}
+
+.number-input {
+	min-width: 50px;
+	max-width: 70px;
+}
+
+.additional-rule-width {
+	min-width: 60px;
+	max-width: 70px;
+}
+
+/* Add-ons */
+/* Want to fix the WordPress icons so that they fit inline with the text, and don't push everything out of place. */
+
+.dashicons {
+	line-height: inherit;
+	font-size: inherit;
+}
+
+.addon-logo-150 {
+	margin-left: 30px;
+	margin-top: 33px;
+	height: 125px;
+	width: 150px;
+}
+
+.margin-bottom-50 {
+	margin-bottom: 50px;
+}
+
+.premium-container {
+	width: 80%;
+}
+
+/* Main Header */
+
+.main-header {
+	background-color: #df6926;
+	height: 200px;
+	width: 100%;
+}
+
+.button-add-to-cart {
+	color: white;
+	border-color: white;
+	float: none;
+	margin-right: 17px;
+}
+
+.button-add-to-cart:hover, .button-add-to-cart:focus, .button-add-to-cart:active {
+	border-color: #A0A5AA;
+	color: #A0A5AA;
+}
+
+.addon-title {
+	margin-top: 25px;
+}
+
+.addon-text {
+	margin-top: 75px;
+}
+
+.image-main-div {
+	width: 25%;
+	float: left;
+}
+
+.text-main-div {
+	width: 60%;
+	float: left;
+	text-align: center;
+	color: white;
+	margin-top: 16px;
+}
+
+.text-main-div-title {
+	font-weight: bold !important;
+	color: white;
+	text-align: center;
+}
+
+.text-main-div-paragraph {
+	color: white;
+}
+
+/* End main header */
+
+/* Vault icons */
+
+.updraftplus-vault-cta {
+	width: 100%;
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+.updraftplus-vault-cta h1 {
+	font-weight: bold;
+}
+
+.updraftvault-buy {
+	width: 225px;
+	height: 225px;
+	border: 2px solid #777777;
+	display: inline-table;
+	margin: 0 auto;
+	margin-right: 50px;
+	position: relative;
+}
+
+.updraftplus-vault-cta > .vault-options > .center-vault {
+	width: 275px;
+	height: 275px;
+}
+
+.updraftplus-vault-cta > .vault-options > .center-vault > a {
+	right: 21%;
+	font-size: 16px;
+	border-width: 4px !important;
+}
+
+
+.updraftplus-vault-cta > .vault-options > .center-vault > p {
+	font-size: 16px;
+}
+
+.updraftvault-buy .button-purchase {
+	right: 24%;
+	margin-left: 0;
+	line-height: 1.7em;
+}
+
+.updraftvault-buy hr {
+	height: 2px;
+	background-color: #777777;
+	margin-top: 18px;
+}
+
+.right {
+	margin-right: 0px;
+}
+
+.updraftvault-buy .addon-logo-100 {
+	height: 100px;
+	width: 125px;
+	margin-top: 7px;
+}
+
+.updraftvault-buy .addon-logo-large {
+	margin-top: 7px;
+}
+
+.updraftvault-buy .button-buy-vault {
+	font-size: 12px;
+	color: #df6926;
+	border-color: #df6926;
+	border-width: 2px !important; 
+	position: absolute;
+	right: 29%;
+	bottom: 2%;
+}
+
+.premium-addon-div .button-purchase {
+	line-height: 1.7em;
+}
+
+.updraftvault-buy .button-buy-vault:hover {
+	border-color: darkgrey;
+	color: darkgrey;
+}
+
+/* End Vault icons */
+
+/* Premium addons */
+
+.premium-addons {
+	margin-top: 80px;
+	width: 100%;
+	margin: 0 auto;
+	display: table;
+}
+
+.addon-list {
+	/* margin-left: 32px; */
+	display: table;
+	text-align: center;
+}
+
+.premium-addons h1 {
+	text-align: center;
+	font-weight: bold;
+}
+
+.premium-addons p {
+	text-align: center;
+}
+
+.premium-addons .premium-addon-div {
+	width: 200px;
+	height: 250px;
+	border: 2px solid #777777;
+	display: inline-table;
+	margin: 0 auto;
+	margin-right: 25px;
+	margin-top: 25px;
+	text-align: center;
+	position: relative;
+}
+
+.premium-addons .premium-addon-div p {
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+.premium-addons .premium-addon-div img {
+	width: auto;
+	height: 50px;
+	margin-top: 7px;
+}
+
+.premium-addons .premium-addon-div .hr-alignment {
+	margin-top: 44px;
+}
+
+.premium-addons .premium-addon-div .dropbox-logo {
+	height: 39px;
+	width: 150px;
+}
+
+.premium-addons .premium-addon-div .azure-logo, .premium-addons .premium-addon-div .onedrive-logo {
+	width: 75%;
+	height: 24px;
+}
+.button-purchase {
+	font-size: 12px;
+	color: #df6926;
+	border-color: #df6926;
+	border-width: 2px !important; 
+	position: absolute;
+	right: 25%;
+	bottom: 2%;
+}
+
+.button-purchase:hover {
+	color: darkgrey;
+	border-color: darkgrey;
+}
+
+.premium-addons .premium-addon-div hr {
+	height: 2px;
+	background-color: #777777;
+	margin-top: 18px;
+}
+
+.premium-addon-div p {
+	font-style: italic;
+}
+
+.addon-list > .premium-addon-div > .onedrive-fix, 
+.addon-list > .premium-addon-div > .azure-logo {
+	margin-top: 33px;
+}
+
+.addon-list > .premium-addon-div > .dropbox-fix {
+	margin-top: 18px;
+}
+
+/* End premium addons */
+
+
+/* Forgotton something  (that is the name of the div rather than a mental note!) */
+
+.premium-forgotton-something {
+	margin-top: 5%;
+}
+
+.premium-forgotton-something h1 {
+	text-align: center;
+	font-weight: bold;
+}
+
+.premium-forgotton-something p {
+	text-align: center;
+	font-weight: normal;
+}
+
+.premium-forgotton-something .button-faq {
+	color: #df6926;
+	border-color: #df6926;
+	margin: 0 auto;
+	display: table;
+}
+
+.premium-forgotton-something .button-faq:hover {
+	color: #777777;
+	border-color: #777777;
+}
+
+/* End of forgotton something */
+
+.updraftplusmethod.updraftvault #vaultlogo { padding-left: 40px; }
+
+.updraftplusmethod.updraftvault .vault_primary_option {
+	float: left;
+	width:50%;
+	text-align:center;
+	padding-bottom:20px;
+}
+
+.updraftplusmethod.updraftvault .vault_primary_option div {
+	clear:right;
+	padding-top: 20px;
+}
+
+.updraftplusmethod.updraftvault .clear-left {
+	clear: left;
+}
+
+.updraftplusmethod.updraftvault .padding-top-20px {	padding-top: 20px; }
+
+.updraftplusmethod.updraftvault .padding-top-14px {	padding-top: 14px; }
+
+.updraftplusmethod.updraftvault #updraftvault_settings_default .button-primary, .updraftplusmethod.updraftvault #updraftvault_settings_showoptions .button-primary {
+	font-size: 18px !important;
+	padding-bottom: 20px;
+}
+
+.updraftplusmethod.updraftvault #updraftvault_showoptions, .updraftplusmethod.updraftvault #updraftvault_connect {
+	margin-top:8px;
+}
+
+.updraftplusmethod.updraftvault #updraftvault_settings_connect input {
+	margin-right:10px;
+}
+
+.updraftplusmethod.updraftvault #updraftvault_email { width: 280px; }
+.updraftplusmethod.updraftvault #updraftvault_pass { width: 200px; }
+
+.updraftplusmethod.updraftvault #vault-is-connected { margin: 0; padding: 0; }
+
+.updraftplusmethod.updraftvault #updraftvault_settings_default p {
+	clear:left;
+}
+
+.updraftplusmethod.updraftvault .vault-purchase-option {
+	float: left;
+	width:33%;
+	text-align:center;
+	padding-top: 20px;
+}
+
+.updraftplusmethod.updraftvault .vault-purchase-option-size {
+	font-size: 200%;
+	font-weight:bold;
+}
+
+.updraftplusmethod.updraftvault .vault-purchase-option-link {
+	clear:both;
+	font-size: 150%
+}
+
+.updraftplusmethod.updraftvault .vault-purchase-option-or {
+	clear: both;
+	font-size: 115%;
+	font-style: italic;
+}
+
+/* Automation Backup Advert by B */
+.autobackup-image {
+/* 	display: inline-block; */
+/*	min-width: 10%;
+	max-width:25%;*/
+/*	float: left;*/
+	clear: left;
+	float: left;
+	width: 110px;
+	height: 110px;
+}
+
+.autobackup-description {
+	width: 100%;
+}
+
+.advert-description {
+	float: left;
+	clear: right;
+	padding: 4px 10px 8px;
+	width: 70%;
+	clear:right;
+	vertical-align: top;
+}
+
+.advert-btn {
+	display: inline-block;
+	min-width:10%;
+	vertical-align: top;
+	margin-bottom: 8px;
+}
+
+.advert-btn:first-of-type {
+	margin-top: 25px;
+}
+
+.advert-btn a {
+	display: block;
+	cursor: pointer;
+}
+
+a.btn-get-started {
+	background: #fff;
+	border: 2px solid #df6926;
+	border-radius: 4px;
+	color: #df6926;
+	display: inline-block;
+	margin-left: 10px !important;
+	margin-bottom: 7px !important;
+	font-size: 18px !important;
+	line-height: 20px;
+	min-height: 28px;
+	padding: 11px 10px 5px;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+.circle-dblarrow {
+	border: 1px solid #df6926;
+    border-radius: 100%;
+    display: inline-block;
+	font-size: 17px;
+	line-height: 17px;
+    margin-left: 5px;
+	width: 20px;
+    height: 20px;
+	text-align: center;
+}
+
+@media screen and (max-width: 782px)  {
+	
+/*	.advert-description {
+		min-width: 75%;
+		margin-bottom: 5px;
+	}
+
+	.advert-btn {
+		margin-top: 15px;
+		margin-left:86px;
+		min-width: 100%;
+	}*/
+}
+/* End Automation Backup Advert by B */
