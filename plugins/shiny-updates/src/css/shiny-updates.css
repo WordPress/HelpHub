@@ -1,0 +1,99 @@
+.update-core-php .wrap > h2,
+.update-core-php .wrap > p,
+.update-core-php .wrap > .core-updates,
+.update-core-php .wrap > [name=upgrade-translations],
+.update-core-php .wrap > [name=upgrade-plugins],
+.update-core-php .wrap > [name=upgrade-themes] {
+	display: none;
+}
+
+.update-core-php .wrap > h1 + p {
+	display: block;
+}
+
+.wordpress-updates-table {
+	margin-bottom: 50px;
+}
+
+.wordpress-updates-table .tablenav {
+	margin: 6px 0 8px;
+}
+
+.wordpress-updates-table .tablenav .actions {
+	padding: 2px 0;
+	display: block;
+}
+
+.wordpress-updates-table .tablenav .button {
+	margin-bottom: 2px;
+	margin-right: 12px;
+}
+
+.wordpress-updates-table .tablenav .displaying-num {
+	display: inline-block;
+	margin: 5px 7px 0 0;
+	position: static;
+}
+
+.wordpress-updates-table .wp-list-table {
+	border-collapse: collapse;
+}
+
+.wordpress-updates-table .wp-list-table tr {
+	border-bottom: 1px solid #e5e5e5;
+}
+
+.wordpress-updates-table .wp-list-table .manage-column.column-title {
+	padding-left: 115px;
+	width: 80%;
+}
+
+.wordpress-updates-table .wp-list-table .manage-column.column-action form {
+	margin: 0;
+}
+
+.wordpress-updates-table .wp-list-table .dashicons-translation {
+	width: 64px;
+	height: 64px;
+	font-size: 64px;
+}
+
+.wordpress-updates-table .wp-list-table .updates-table-screenshot {
+	padding: 7px 15px 0 5px;
+	width: 85px;
+}
+
+.wordpress-updates-table .wp-list-table .column-title p {
+	margin-left: 105px;
+}
+
+.wordpress-updates-table .wp-list-table .column-action {
+	text-align: right;
+}
+
+.wordpress-reinstall-card {
+	max-width: 100%;
+}
+
+.wordpress-reinstall-card h2 {
+	margin-top: 1em;
+}
+
+.wordpress-updates-table [data-type="core"] .updates-table-screenshot {
+	text-align: center;
+}
+
+.wordpress-updates-table [data-type="core"] .updates-table-screenshot img {
+	width: 64px;
+	height: 64px;
+}
+
+.wordpress-updates-table [data-type="translations"] .updates-table-screenshot {
+	text-align: center;
+}
+
+@media screen and (min-width: 782px) {
+	.wp-list-table.updates .column-action {
+		text-align: right;
+	}
+}

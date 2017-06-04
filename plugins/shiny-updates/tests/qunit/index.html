@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>Shiny Updates Qunit Test Suite</title>
+</head>
+<body>
+<div id="qunit"></div>
+<div id="qunit-fixture">
+	<script src="fixtures/wp-updates-settings.js"></script>
+	<script src="fixtures/shiny-updates.js"></script>
+</div>
+
+<!-- Required HTML for tests -->
+<script id="tmpl-wp-updates-admin-notice" type="text/html">
+	<div <# if ( data.id ) { #>id="{{ data.id }}"<# } #> class="notice {{ data.className }}"><p>{{{ data.message }}}</p></div>
+</script>
+<div style="display:none;">
+	<li id="wp-admin-bar-updates">
+		<a class="ab-item" href="wp-admin/update-core.php" title="2 Plugin Updates">
+			<span class="ab-icon"></span>
+			<span class="ab-label">2</span>
+			<span class="screen-reader-text">2 Plugin Updates</span>
+		</a>
+	</li>
+	<li class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-plugins" id="menu-plugins">
+		<a href="plugins.php" class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-plugins" aria-haspopup="true">
+			<div class="wp-menu-arrow"><div></div></div>
+			<div class="wp-menu-image dashicons-before dashicons-admin-plugins"><br></div>
+			<div class="wp-menu-name">Plugins
+				<span class="update-plugins count-2">
+					<span class="plugin-count">2</span>
+				</span>
+			</div>
+		</a>
+		<ul class="wp-submenu wp-submenu-wrap">
+			<li class="wp-submenu-head" aria-hidden="true">Plugins
+				<span class="update-plugins count-2">
+					<span class="plugin-count">2</span>
+				</span>
+			</li>
+			<li class="wp-first-item">
+				<a href="plugins.php" class="wp-first-item">Installed Plugins</a></li><li><a href="plugin-install.php">Add New</a>
+			</li><li>
+				<a href="plugin-editor.php">Editor</a>
+			</li>
+		</ul>
+	</li>
+</div>
+
+<!-- Dependencies -->
+<script src="../../../../wp-includes/js/jquery/jquery.js"></script>
+<script src="../../../../wp-includes/js/jquery/ui/core.js"></script>
+<script src="../../../../wp-includes/js/underscore.js"></script>
+<script src="../../../../wp-includes/js/backbone.js"></script>
+<script src="../../../../wp-includes/js/wp-backbone.js"></script>
+<script src="../../../../wp-includes/js/wp-util.js"></script>
+<script src="../../../../wp-includes/js/wp-a11y.js"></script>
+<script src="../../../../wp-admin/js/updates.js"></script>
+
+<!-- QUnit -->
+<link rel="stylesheet" href="vendor/qunit-1.20.0.css">
+<script src="vendor/qunit-1.20.0.js"></script>
+<script src="vendor/sinon.js"></script>
+<script src="vendor/sinon-qunit.js"></script>
+
+<!-- Tested files -->
+<script src="../src/js/shiny-updates.js"></script>
+
+<!-- Unit tests -->
+<script src="tests.js"></script>
+</body>
+</html>
