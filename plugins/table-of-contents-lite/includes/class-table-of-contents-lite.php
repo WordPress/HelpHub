@@ -280,7 +280,8 @@ class Table_Of_Contents_Lite {
 				$first = false;
 			}
 			$a11y_text      = sprintf( '<span class="screen-reader-text">%s</span>', $item[2] );
-			$anchor         = sprintf( '<a href="#%1$s" class="anchor">%2$s</a>', $id, $a11y_text );
+			$hash           = __( '<span aria-hidden="true">&#35;</span>' );
+			$anchor         = sprintf( '<a href="#%1$s" class="anchor">%2$s %3$s</a>', $id, $hash, $a11y_text );
 			$replacement   .= sprintf( '<%1$s class="toc-heading" id="%2$s" tabindex="-1">%3$s %4$s</%1$s>', $tag, $id, $item[2], $anchor );
 			$replacements[] = $replacement;
 		}

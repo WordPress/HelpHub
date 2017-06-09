@@ -1304,3 +1304,7 @@ p.toc-jump {
 	float: right;
 	font-size: 1em;
 }
+
+.single-post .toc-heading a {
+	font-weight: bold;
+}
