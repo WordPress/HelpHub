@@ -1,0 +1,10 @@
+{
+	"autoload": {
+		"classmap": [ "vendor/symfony/event-dispatcher/" ]
+	},
+	"require": {
+		"eher/oauth": "^1.0",
+		"rackspace/php-opencloud": "1.12.2",
+		"aws/aws-sdk-php": "2.8.*"
+    }
+}

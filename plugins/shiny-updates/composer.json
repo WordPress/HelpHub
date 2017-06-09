@@ -1,0 +1,19 @@
+{
+  "name":        "obenland/shiny-updates",
+  "description": "A smoother experience for managing plugins and themes.",
+  "version":     "3.0.0",
+  "type":        "wordpress-plugin",
+  "license":     "GPL-2.0+",
+  "require":     {
+    "composer/installers": "~1.0"
+  },
+  "require-dev": {
+    "phpmd/phpmd":              "*",
+    "wp-coding-standards/wpcs": "*",
+    "sebastian/phpcpd":         "*"
+  },
+  "scripts":     {
+    "post-install-cmd": "\"vendor/bin/phpcs\" --config-set installed_paths vendor/wp-coding-standards/wpcs",
+    "post-update-cmd":  "\"vendor/bin/phpcs\" --config-set installed_paths vendor/wp-coding-standards/wpcs"
+  }
+}

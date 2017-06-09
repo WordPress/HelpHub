@@ -279,7 +279,8 @@ button,
 input,
 select,
 textarea {
-	color: #404040;
+	/*color: #404040;*/
+	color: #555555;
 	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 16px;
 	font-size: 1rem;
@@ -403,7 +404,10 @@ q:before,
 q:after {
 	content: "";
 }
-
+p {
+	font-size: 14px;
+    margin: 1.2em 0 !important;
+}
 blockquote,
 q {
 	quotes: "" "";
@@ -432,7 +436,7 @@ ol {
 li > ul,
 li > ol {
 	margin-bottom: 0;
-	margin-left: 1.5em;
+	margin-left: 1.2em;
 }
 
 dt {
@@ -888,7 +892,7 @@ a:active {
 }
 
 .entry-content ul {
-	margin-left: 2em;
+	/*margin-left: 2em;*/
 }
 
 /*--------------------------------------------------------------
@@ -1253,54 +1257,159 @@ h2.helphub-footerarea-title {
 /*--------------------------------------------------------------
 ## Table of Contents
 --------------------------------------------------------------*/
-
-.table-of-contents {
-	background-color: #f5f5f5;
-	float: right;
-	max-width: 35%;
-	border-top: 5px solid #d0d0d0;
-	padding-top: 2%;
-	padding-bottom: 2%;
-}
-
-.single-post h1.entry-title {
-	font-family: HelveticaNeue-Light, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-weight: 300;
-	font-size: 2.5em;
-}
-
-.table-of-contents li {
-	list-style: none;
-	padding-left: 5%;
-	padding-right: 3%;
-	padding-bottom: 2%;
-	font-weight: 900;
-	line-height: 1.2em;
-}
-
-.table-of-contents ul {
-	margin-left: 0.2em;
-}
-
-h2.toc-heading {
-	margin-top: 2em;
-	font-size: 1.6em;
+.content-area h1,
+.content-area h2,
+.content-area h3,
+.content-area h4 {
+    margin: 0.4em 0 1.1em 0;
 	font-weight: 400;
+	border-bottom: 0 none;
+	padding: 0;
+}
+h2.toc-heading {
+	font-size: 26px;
+	line-height:39px;
 }
 
 h3.toc-heading {
-	margin-top: 2em;
-	font-size: 1.4em;
-	font-weight: 400;
+	font-size: 21px;
+	line-height: 31px;
 }
 
 h4.toc-heading {
-	margin-top: 2em;
 	font-size: 1.2em;
+}
+
+.single-post .toc-heading {
+	display: block;
+	clear: left;
+	color: #555555;
 	font-weight: 400;
+}
+.single-post .toc-heading a {
+	font-weight: bold;
+	color: #4ca6cf;
+}
+
+.archive div.table-of-contents,
+.single-post div.table-of-contents {
+	float: right;
+	width: 250px;
+	background: #f7f7f7;
+	border: 1px solid #eee;
+	margin: 0 0 15px 15px;
+	z-index: 1;
+	position: relative;
+	color: #555d66;
+}
+
+.single-post div.table-of-contents {
+	background-color: #fff;
+	box-shadow: 0 0 8px rgba(0,0,0,0.1);
+	border-radius: 3px;
+}
+
+@media (min-width: 971px) {
+	.archive div.table-of-contents,
+	.single-post div.table-of-contents {
+		margin: -15px -30px 15px 15px;
+	}
+}
+
+.archive div.table-of-contents h2,
+.single-post div.table-of-contents h2,
+.archive div.table-of-contents h3,
+.single-post div.table-of-contents h3 {
+	margin: 0;
+	padding: 7px 12px;
+	font-size: 17px;
+	line-height:25px;
+	color: #32373c;
+	text-transform: uppercase;
+	border-bottom: 1px solid #eee;
+}
+
+.archive ul.items,
+.single-post ul.items {
+	margin: 0;
+	list-style-type: none;
+	padding: 1rem;
+	font-size: 14px;
+}
+
+.archive ul.items li,
+.single-post ul.items li {
+	padding: 4px;
+}
+
+.archive ul.items li ul li,
+.archive ul.items li ul li ul li,
+.single-post ul.items li ul li,
+.single-post ul.items li ul li ul li {
+	padding-bottom: 0;
+}
+
+.archive ul.items li a,
+.single-post ul.items li a {
+	text-decoration: none;
+	color: #3498db;
+}
+
+.archive ul.items li a:hover,
+.single-post ul.items li a:hover {
+	color: #0073aa;
+	text-decoration: underline;
+}
+
+/* Highlight current heading and adjust scroll position for fixed toolbar */
+.toc-heading:target {
+	position: relative;
+	padding-top: 50px;
+	margin-top: -50px;
+}
+
+/* Remove negative margin because there is no jump link before these headlines */
+.entry-content h2.toc-heading:first-of-type:target,
+.entry-content h3.toc-heading:first-of-type:target,
+h2.toc-heading + h3.toc-heading:target {
+	margin-top: 0;
+}
+
+.toc-heading:target:before {
+	content: '';
+	position: absolute;
+	left: -10px;
+	top: 50px;
+	border-left: 5px solid #0073aa;
+	height: 50%;
+	height: calc(100% - 50px);
 }
 
 p.toc-jump {
+	position: relative;
+	height: 50px;
+	text-align:right;
+	font-size: 12px;
+}
+
+p.toc-jump:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+p.toc-jump a {
+	z-index: 1;
+}
+
+
+/*p.toc-jump {
 	float: right;
 	font-size: 1em;
+}*/
+@media (max-width: 480px) {
+	.archive div.table-of-contents,
+	.single-post div.table-of-contents {
+		display: none;
+	}
 }

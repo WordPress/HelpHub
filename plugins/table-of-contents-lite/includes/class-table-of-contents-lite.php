@@ -222,22 +222,24 @@ class Table_Of_Contents_Lite {
 
 		if ( $items ) {
 			$contents_header = sprintf( 'h%s', $items[0][2] );
-			$toc = sprintf( '%s<div class="table-of-contents">', $toc );
+			$toc .= '<div class="table-of-contents">';
+			$toc .= '<h2>' . __( 'Topics' ) . '</h2>';
+			$toc .= '<ul class="items">';
 			$last_item = false;
 			foreach ( $items as $item ) {
 				if ( $last_item ) {
 					if ( $last_item < $item[2] ) {
-						$toc = sprintf( '%s<ul>', $toc );
+						$toc .= '<ul>';
 					} elseif ( $last_item > $item[2] ) {
-						$toc = sprintf( '%s</ul></li>', $toc );
+						$toc .= '</ul></li>';
 					} else {
-						$toc = sprintf( '%s</li>', $toc );
+						$toc .= '</li>';
 					}
 				}
 				$last_item = $item[2];
 				$toc .= sprintf( '<li><a href="#%1s">%2s</a>', sanitize_title_with_dashes( $item[3] ), $item[3] );
 			}
-			$toc = sprintf( '%s</ul></div>', $toc );
+			$toc .= '</ul></div>';
 		}
 		return $toc . $content;
 	}
@@ -280,7 +282,8 @@ class Table_Of_Contents_Lite {
 				$first = false;
 			}
 			$a11y_text      = sprintf( '<span class="screen-reader-text">%s</span>', $item[2] );
-			$anchor         = sprintf( '<a href="#%1$s" class="anchor">%2$s</a>', $id, $a11y_text );
+			$hash           = __( '<span aria-hidden="true">&#35;</span>' );
+			$anchor         = sprintf( '<a href="#%1$s" class="anchor">%2$s %3$s</a>', $id, $hash, $a11y_text );
 			$replacement   .= sprintf( '<%1$s class="toc-heading" id="%2$s" tabindex="-1">%3$s %4$s</%1$s>', $tag, $id, $item[2], $anchor );
 			$replacements[] = $replacement;
 		}
