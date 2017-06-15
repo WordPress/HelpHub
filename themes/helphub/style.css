@@ -900,17 +900,87 @@ a:active {
 }
 
 .single-post .single-post-sidebar {
-	background-color: #d8d8d8;
+	background-color: #fafafa;
 	float: left;
 	width: 30%;
-	padding: 1em;
 	box-sizing: border-box;
 	position: relative;
 }
 
-.single-post-sidebar .sidebar-content {
-	position: fixed;
+.single-post .single-post-sidebar, .single-post .single-post-sidebar * {
+	box-sizing: border-box;
 }
+
+.single-post-sidebar .sidebar-content {
+	padding-top: 4rem;
+}
+
+.sidebar-content .widget {
+	margin: 0 0 4rem;
+}
+
+.single-post-sidebar .widget-title {
+	font-size: 16px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	background-color: transparent;
+	padding: 1rem 12px;
+	margin-bottom: 0;
+	color: inherit;
+	font-weight: 400;
+}
+
+.single-post-sidebar ul {
+	list-style: none;
+}
+
+.single-post-sidebar ul li {
+	border-top: 1px solid #ededed;
+}
+
+.single-post-sidebar ul ul {
+	margin-left: 12px;
+	border-left: 1px solid #ededed;
+}
+
+.single-post-sidebar ul li a {
+	display: block;
+	width: 100%;
+	padding: 8px 40px 8px 8px;
+	text-decoration: none;
+	font-size: 0.84rem;
+}
+
+.single-post-sidebar ul li .expandable {
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: stretch;
+	position: relative;
+}
+
+.single-post-sidebar ul li .dashicons {
+	position: absolute;
+	right: 0;
+	cursor: pointer;
+	padding: 8px;
+	display: inline-block;
+	width: auto;
+	top: 0;
+	height: 100%;
+	color: #0073aa;
+	background-color: #fafafa;
+	border-left: 1px solid #ededed;
+}
+
+.menu-table-of-contents-container > ul > li:last-child {
+	border-bottom: 1px solid #ededed;
+}
+
+.single-post-sidebar ul a:hover, .single-post-sidebar ul .dashicons:hover {
+	color: #fff;
+	background-color: #0073aa;
+}
+
 
 /*--------------------------------------------------------------
 ## Comments
