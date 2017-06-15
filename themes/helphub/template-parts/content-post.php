@@ -15,7 +15,7 @@
 			<h2 class="widget-title">Chapters</h2>
 			<div class="menu-table-of-contents-container">
 				<ul>
-					<li class="page_item page-item-5905 page_item_has_children current_page_ancestor current_page_parent current-menu-ancestor current-menu-parent menu-item menu-item-has-children open"><div class="expandable"><span class="dashicons dashicons-arrow-down-alt2"></span><a href="https://make.wordpress.org/docs/handbook/about-the-docs-team/">About the docs team</a></div>
+					<li class="page_item page-item-5905 page_item_has_children current_page_ancestor current_page_parent current-menu-ancestor current-menu-parent menu-item menu-item-has-children"><div class="expandable"><span class="dashicons dashicons-arrow-down-alt2"></span><a href="https://make.wordpress.org/docs/handbook/about-the-docs-team/">About the docs team</a></div>
 						<ul class="children" style="display: none;">
 							<li class="page_item page-item-5922 current_page_item current-menu-item menu-item"><a href="https://make.wordpress.org/docs/handbook/about-the-docs-team/current-docs-projects/">Current Docs Projects</a></li>
 							<li class="page_item page-item-5924 page_item_has_children menu-item menu-item-has-children"><a href="https://make.wordpress.org/docs/handbook/about-the-docs-team/get-involved/">Get Involved</a>
@@ -51,14 +51,14 @@
 						</ul>
 					</li>
 					<li class="page_item page-item-6916 page_item_has_children menu-item menu-item-has-children"><div class="expandable"><span class="dashicons dashicons-arrow-down-alt2"></span><a href="https://make.wordpress.org/docs/handbook/helphub/">HelpHub</a></div>
-						<ul class="children">
+						<ul class="children" style="display: none;">
 							<li class="page_item page-item-7141 menu-item"><a href="https://make.wordpress.org/docs/handbook/helphub/getting-started-with-helphub/">Getting Started with HelpHub</a></li>
 							<li class="page_item page-item-7136 menu-item"><a href="https://make.wordpress.org/docs/handbook/helphub/helphub-development/">HelpHub Development</a></li>
 							<li class="page_item page-item-7133 menu-item"><a href="https://make.wordpress.org/docs/handbook/helphub/migrating-articles/">Migrating Articles</a></li>
 						</ul>
 					</li>
 					<li class="page_item page-item-5945 page_item_has_children menu-item menu-item-has-children"><div class="expandable"><span class="dashicons dashicons-arrow-down-alt2"></span><a href="https://make.wordpress.org/docs/handbook/core/">Intro to Core for Documentarians</a></div>
-						<ul class="children">
+						<ul class="children" style="display: none;">
 							<li class="page_item page-item-4338 page_item_has_children menu-item menu-item-has-children"><a href="https://make.wordpress.org/docs/handbook/core/admin-help/">Admin Help</a>
 								<ul class="children default-open">
 									<li class="page_item page-item-4983 menu-item"><a href="https://make.wordpress.org/docs/handbook/core/admin-help/previous-user-test/">Previous User Test</a></li>
@@ -82,7 +82,7 @@
 						</ul>
 					</li>
 					<li class="page_item page-item-161 page_item_has_children menu-item menu-item-has-children"><div class="expandable"><span class="dashicons dashicons-arrow-down-alt2"></span><a href="https://make.wordpress.org/docs/handbook/references/">References</a></div>
-						<ul class="children">
+						<ul class="children" style="display: none;">
 							<li class="page_item page-item-163 menu-item"><a href="https://make.wordpress.org/docs/handbook/references/writing-tips/">Writing Tips</a></li>
 						</ul>
 					</li>
@@ -90,7 +90,7 @@
 					<li class="page_item page-item-1454 menu-item"><a href="https://make.wordpress.org/docs/handbook/templates/">Templates</a></li>
 					<li class="page_item page-item-147 menu-item"><a href="https://make.wordpress.org/docs/handbook/tools/">Tools</a></li>
 					<li class="page_item page-item-151 page_item_has_children menu-item menu-item-has-children"><div class="expandable"><span class="dashicons dashicons-arrow-down-alt2"></span><a href="https://make.wordpress.org/docs/handbook/tutorials-and-guides/">Tutorials and Guides</a></div>
-						<ul class="children">
+						<ul class="children" style="display: none;">
 							<li class="page_item page-item-153 page_item_has_children menu-item menu-item-has-children"><a href="https://make.wordpress.org/docs/handbook/tutorials-and-guides/the-codex/">The Codex</a>
 								<ul class="children default-open">
 									<li class="page_item page-item-155 menu-item"><a href="https://make.wordpress.org/docs/handbook/tutorials-and-guides/the-codex/creating-a-new-document/">Creating a New Document</a></li>

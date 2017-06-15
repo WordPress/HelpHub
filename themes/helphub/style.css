@@ -976,11 +976,24 @@ a:active {
 	border-bottom: 1px solid #ededed;
 }
 
-.single-post-sidebar ul a:hover, .single-post-sidebar ul .dashicons:hover {
+.single-post-sidebar ul a:hover,
+.single-post-sidebar ul .dashicons:hover {
 	color: #fff;
 	background-color: #0073aa;
 }
 
+.single-post-sidebar .open .dashicons {
+	transform: rotate(180deg);
+	border-right: 1px solid #ededed;
+	border-left: none;
+	padding-top: 10px;
+}
+
+.single-post-sidebar .open .dashicons,
+.single-post-sidebar .open .dashicons:hover {
+	background-color: #fff;
+	color: #0073aa;
+}
 
 /*--------------------------------------------------------------
 ## Comments
