@@ -292,7 +292,7 @@ h4,
 h5,
 h6 {
 	clear: both;
-	line-height: 100%;
+	line-height: 1;
 }
 
 body.single-post h1,
@@ -1043,7 +1043,7 @@ object {
 
 h1.site-main-title {
 	font-size: 5em;
-	line-height: 2em;
+	line-height: 2;
 	text-align: center;
 	color: #073763;
 	font-weight: 900;
@@ -1078,7 +1078,7 @@ h1.site-main-title {
 	background: #073763;
 	color: #fff;
 	font-size: 2em;
-	line-height: 2em;
+	line-height: 2;
 }
 
 .main-search-area {
@@ -1103,7 +1103,7 @@ h3.main-widget-box-title {
 .main-widget-box ul {
 	list-style: none;
 	font-size: 1.2em;
-	line-height: 1.4em;
+	line-height: 1.4;
 }
 
 .main-widget-box.col-3 {
@@ -1275,7 +1275,7 @@ h2.helphub-footerarea-title {
 	padding-right: 3%;
 	padding-bottom: 2%;
 	font-weight: 900;
-	line-height: 1.2em;
+	line-height: 1.2;
 }
 
 .table-of-contents ul {

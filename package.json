@@ -11,10 +11,10 @@
     "grunt-contrib-jshint": "~1.1.0",
     "grunt-jscs": "~3.0.1",
     "grunt-jsvalidate": "~0.2.2",
-    "grunt-stylelint": "~0.6.0",
+    "grunt-stylelint": "~0.8.0",
     "matchdep": "~1.0.1",
-    "stylelint": "~7.7.0",
-    "stylelint-config-wordpress": "~9.1.1"
+    "stylelint": "~7.10.1",
+    "stylelint-config-wordpress": "~11.0.0"
   },
   "engines": {
     "node": ">=4.2.1"
