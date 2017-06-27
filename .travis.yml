@@ -45,7 +45,7 @@ before_script:
   # Install phpunuit test suite
   - bash bin/install-wp-tests.sh wordpress_test root '' localhost $WP_VERSION
   # Install CodeSniffer for WordPress Coding Standards checks.
-  - mkdir php-codesniffer && curl -L https://github.com/squizlabs/PHP_CodeSniffer/archive/master.tar.gz | tar xz --strip-components=1 -C php-codesniffer
+  - mkdir php-codesniffer && curl -L https://github.com/squizlabs/PHP_CodeSniffer/archive/2.9.1.tar.gz  | tar xz --strip-components=1 -C php-codesniffer
   # Install WordPress Coding Standards.
   - mkdir wordpress-coding-standards && curl -L https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/archive/master.tar.gz | tar xz --strip-components=1 -C wordpress-coding-standards
   # Hop into CodeSniffer directory.
