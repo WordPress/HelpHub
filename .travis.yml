@@ -80,7 +80,7 @@ script:
   # Setup NodeJS version using NVM
   - node --version
   - npm --version
-  - nvm install 4
+  - nvm install 6
   - npm --version
   - node --version
   # Install NPM modules
