@@ -144,7 +144,9 @@ class HelpHub_Post_Types_Post_Type {
 			'show_ui' => true,
 			'show_in_menu' => true,
 			'query_var' => true,
-			'rewrite' => array( 'slug' => $single_slug ),
+			'rewrite' => array(
+				'slug' => $single_slug,
+			),
 			'capability_type' => 'post',
 			'has_archive' => $archive_slug,
 			'hierarchical' => false,
@@ -204,11 +206,14 @@ class HelpHub_Post_Types_Post_Type {
 	 * @return array $defaults
 	 */
 	public function register_custom_column_headings( $defaults ) {
-		$new_columns = array( 'image' => __( 'Image', 'helphub' ) );
+		$new_columns = array(
+			'image' => __( 'Image', 'helphub' ),
+		);
 
 		$last_item = array();
 
-		if ( isset( $defaults['date'] ) ) { unset( $defaults['date'] ); }
+		if ( isset( $defaults['date'] ) ) {
+unset( $defaults['date'] ); }
 
 		if ( count( $defaults ) > 2 ) {
 			$last_item = array_slice( $defaults, -1 );
@@ -246,7 +251,7 @@ class HelpHub_Post_Types_Post_Type {
 			3 => __( 'Custom field deleted.', 'helphub' ),
 			4 => sprintf( __( '%s updated.', 'helphub' ), $this->singular ),
 			/* translators: %s: date and time of the revision */
-			5 => isset( $_GET['revision'] ) ? sprintf( __( '%1$s restored to revision from %2$s', 'helphub' ), $this->singular, wp_post_revision_title( (int) $_GET['revision'], false ) ): false,
+			5 => isset( $_GET['revision'] ) ? sprintf( __( '%1$s restored to revision from %2$s', 'helphub' ), $this->singular, wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
 			6 => sprintf( __( '%1$s published. %3$sView %2$s%4$s', 'helphub' ), $this->singular, strtolower( $this->singular ), '<a href="' . esc_url( $permalink ) . '">', '</a>' ),
 			7 => sprintf( __( '%s saved.', 'helphub' ), $this->singular ),
 			8 => sprintf( __( '%1$s submitted. %2$sPreview %3$s%4$s', 'helphub' ), $this->singular, strtolower( $this->singular ), '<a target="_blank" href="' . esc_url( add_query_arg( 'preview', 'true', $permalink ) ) . '">', '</a>' ),
@@ -352,7 +357,10 @@ class HelpHub_Post_Types_Post_Type {
 						break;
 					case 'editor':
 						ob_start();
-						wp_editor( $data, $k, array( 'media_buttons' => false, 'textarea_rows' => 10 ) );
+						wp_editor( $data, $k, array(
+							'media_buttons' => false,
+							'textarea_rows' => 10,
+						) );
 						$field = ob_get_contents();
 						ob_end_clean();
 						$html .= '<tr valign="top"><th scope="row"><label for="' . esc_attr( $k ) . '">' . $v['name'] . '</label></th><td>' . $field . "\n";
@@ -702,7 +710,8 @@ class HelpHub_Post_Types_Post_Type {
 	 * @since  1.0.0
 	 */
 	public function ensure_post_thumbnails_support() {
-		if ( ! current_theme_supports( 'post-thumbnails' ) ) { add_theme_support( 'post-thumbnails' ); }
+		if ( ! current_theme_supports( 'post-thumbnails' ) ) {
+add_theme_support( 'post-thumbnails' ); }
 	} // End ensure_post_thumbnails_support()
 
 	/**

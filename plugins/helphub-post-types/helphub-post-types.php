@@ -38,18 +38,18 @@ add_action( 'plugins_loaded', 'helphub_post_types' );
  * Main HelpHub_Post_Types Class
  *
  * @class HelpHub_Post_Types
- * @version	1.0.0
+ * @version 1.0.0
  * @since 1.0.0
- * @package	HelpHub_Post_Types
+ * @package HelpHub_Post_Types
  * @author Jon Ang
  */
 final class HelpHub_Post_Types {
 	/**
 	 * HelpHub_Post_Types The single instance of HelpHub_Post_Types.
 	 *
-	 * @var 	object
+	 * @var     object
 	 * @access  private
-	 * @since 	1.0.0
+	 * @since   1.0.0
 	 */
 	private static $_instance = null;
 
@@ -156,8 +156,12 @@ final class HelpHub_Post_Types {
 		require_once( 'classes/class-helphub-post-types-taxonomy.php' );
 
 		// Register an example post type. To register other post types, duplicate this line.
-		$this->post_types['post'] = new HelpHub_Post_Types_Post_Type( 'post', __( 'Post', 'helphub' ), __( 'Posts', 'helphub' ), array( 'menu_icon' => 'dashicons-post' ) );
-		$this->post_types['helphub_version'] = new HelpHub_Post_Types_Post_Type( 'helphub_version', __( 'WordPress Version', 'helphub' ), __( 'WordPress Versions', 'helphub' ), array( 'menu_icon' => 'dashicons-wordpress' ) );
+		$this->post_types['post'] = new HelpHub_Post_Types_Post_Type( 'post', __( 'Post', 'helphub' ), __( 'Posts', 'helphub' ), array(
+			'menu_icon' => 'dashicons-post',
+		) );
+		$this->post_types['helphub_version'] = new HelpHub_Post_Types_Post_Type( 'helphub_version', __( 'WordPress Version', 'helphub' ), __( 'WordPress Versions', 'helphub' ), array(
+			'menu_icon' => 'dashicons-wordpress',
+		) );
 
 		/* Post Types - End */
 
@@ -222,16 +226,16 @@ final class HelpHub_Post_Types {
 		endif;
 		wp_localize_script( 'helphub-post-types-admin', 'helphub_admin',
 			array(
-				'default_title' 	=> __( 'Upload', 'helphub' ),
-				'default_button' 	=> __( 'Select this', 'helphub' ),
+				'default_title'     => __( 'Upload', 'helphub' ),
+				'default_button'    => __( 'Select this', 'helphub' ),
 			)
 		);
 
 		wp_localize_script( 'helphub-post-types-gallery', 'helphub_gallery',
 			array(
-				'gallery_title' 	=> __( 'Add Images to Product Gallery', 'helphub' ),
-				'gallery_button' 	=> __( 'Add to gallery', 'helphub' ),
-				'delete_image'		=> __( 'Delete image', 'helphub' ),
+				'gallery_title'     => __( 'Add Images to Product Gallery', 'helphub' ),
+				'gallery_button'    => __( 'Add to gallery', 'helphub' ),
+				'delete_image'      => __( 'Delete image', 'helphub' ),
 			)
 		);
 
