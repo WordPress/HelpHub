@@ -20,12 +20,15 @@ get_header(); ?>
 				<div class="helphub-home-searcharea">
 					<?php
 						if ( is_active_sidebar( 'homewidgetsearch-1' ) ) {
-							get_template_part( 'template-parts/widget', 'homesearch' );
+						get_template_part( 'template-parts/widget', 'homesearch' );
 						}
 					?>
 				</div>
 				<div class="helphub-contentarea">
-					<?php while ( have_posts() ) : the_post(); // start the loop. ?>
+					<?php
+					while ( have_posts() ) :
+the_post(); // start the loop.
+?>
 						<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 							<div class="entry-content">
 								<?php
@@ -52,15 +55,15 @@ get_header(); ?>
 						</article><!-- #post-## -->
 						<?php
 							if ( comments_open() || get_comments_number() ) :
-								comments_template();
+							comments_template();
 							endif;
 						?>
-					<?php endwhile; // End of the loop. ?>
+					<?php endwhile; // End of the loop.                            ?>
 				</div>
 				<!-- #search placeholder only, will be changed later on when search engine code is ready END-->
 				<?php
 					if ( is_active_sidebar( 'homewidgetrow-1' ) ) {
-						get_template_part( 'template-parts/widget', 'homewidgets' );
+					get_template_part( 'template-parts/widget', 'homewidgets' );
 					}
 				?>
 			</div>

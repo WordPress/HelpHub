@@ -98,7 +98,7 @@ class Helphub_Post_Type_Test extends WP_UnitTestCase {
 				'default' => '',
 				'section' => 'info',
 				'label' => 'this is as label for textarea',
-			)
+			),
 		);
 		$html = $this->meta_box_content_render( $fields );
 		$this->assertContains( '<textarea name="textarea-field" id="textarea-field" class="large-text"></textarea>', $html );
@@ -120,7 +120,7 @@ class Helphub_Post_Type_Test extends WP_UnitTestCase {
 				'default' => '',
 				'section' => 'info',
 				'label' => 'this is as label for editor',
-			)
+			),
 		);
 		$html = $this->meta_box_content_render( $fields );
 		$this->assertContains( '<div id="wp-editor-field-wrap" class="wp-core-ui wp-editor-wrap html-active"><div id="wp-editor-field-editor-container" class="wp-editor-container"><div id="qt_editor-field_toolbar" class="quicktags-toolbar"></div><textarea class="wp-editor-area" rows="10" cols="40" name="editor-field" id="editor-field"></textarea></div>', $html );
@@ -142,7 +142,7 @@ class Helphub_Post_Type_Test extends WP_UnitTestCase {
 				'default' => '',
 				'section' => 'info',
 				'label' => 'this is as label for upload',
-			)
+			),
 		);
 		$html = $this->meta_box_content_render( $fields );
 		$this->assertContains( '<input name="upload-field" type="file" id="upload-field" class="regular-text helphub-upload-field" /><button id="upload-field" class="helphub-upload button">this is as label for upload</button>', $html );
@@ -164,7 +164,7 @@ class Helphub_Post_Type_Test extends WP_UnitTestCase {
 					'miya' => 'cool',
 					'jon' => 'very cool',
 				),
-			)
+			),
 		);
 		$html = $this->meta_box_content_render( $fields );
 		$this->assertContains( '<p><label for="radio-field-miya"><input id="radio-field-miya" type="radio" name="radio-field" value="miya"  />cool</label></p>', $html );
@@ -192,7 +192,7 @@ class Helphub_Post_Type_Test extends WP_UnitTestCase {
 					'miya' => 'cool',
 					'jon' => 'very cool',
 				),
-			)
+			),
 		);
 		$html = $this->meta_box_content_render( $fields );
 		$this->assertContains( '<p><label for="multicheck-field-miya"><input id="multicheck-field-miya" type="checkbox" name="multicheck-field[]" value="miya"  />cool</label></p>', $html );
@@ -220,7 +220,7 @@ class Helphub_Post_Type_Test extends WP_UnitTestCase {
 					'miya' => 'cool',
 					'jon' => 'very cool',
 				),
-			)
+			),
 		);
 		$html = $this->meta_box_content_render( $fields );
 		$this->assertContains( '<select name="select-field" id="select-field" ><option value="miya" >cool</option><option value="jon" >very cool</option></select>', $html );
@@ -242,7 +242,7 @@ class Helphub_Post_Type_Test extends WP_UnitTestCase {
 				'default' => '',
 				'section' => 'info',
 				'label' => 'this is as label for date',
-			)
+			),
 		);
 		$html = $this->meta_box_content_render( $fields );
 		$this->assertContains( '<input name="date-field" type="date" id="date-field" class="helphub-meta-date" value="' . esc_attr( date_i18n( 'F d, Y', time() ) ) . '" />', $html );
@@ -263,7 +263,9 @@ class Helphub_Post_Type_Test extends WP_UnitTestCase {
 			'post',
 			__( 'Post', 'helphub' ),
 			__( 'Posts', 'helphub' ),
-			array( 'menu_icon' => 'dashicons-post' )
+			array(
+				'menu_icon' => 'dashicons-post',
+			)
 		);
 
 		ob_start();
