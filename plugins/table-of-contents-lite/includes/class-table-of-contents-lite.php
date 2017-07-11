@@ -26,81 +26,81 @@ class Table_Of_Contents_Lite {
 	/**
 	 * The single instance of Table_Of_Contents_Lite.
 	 *
-	 * @var 	object
-	 * @access  private
-	 * @since 	1.0.0
+	 * @var object
+	 * @access private
+	 * @since 1.0.0
 	 */
 	private static $_instance = null;
 
 	/**
 	 * Settings class object
 	 *
-	 * @var     object
-	 * @access  public
-	 * @since   1.0.0
+	 * @var object
+	 * @access public
+	 * @since 1.0.0
 	 */
 	public $settings = null;
 
 	/**
 	 * The version number.
 	 *
-	 * @var     string
-	 * @access  public
-	 * @since   1.0.0
+	 * @var string
+	 * @access public
+	 * @since 1.0.0
 	 */
 	public $_version;
 
 	/**
 	 * The token.
 	 *
-	 * @var     string
-	 * @access  public
-	 * @since   1.0.0
+	 * @var string
+	 * @access public
+	 * @since 1.0.0
 	 */
 	public $_token;
 
 	/**
 	 * The main plugin file.
 	 *
-	 * @var     string
-	 * @access  public
-	 * @since   1.0.0
+	 * @var string
+	 * @access public
+	 * @since 1.0.0
 	 */
 	public $file;
 
 	/**
 	 * The main plugin directory.
 	 *
-	 * @var     string
-	 * @access  public
-	 * @since   1.0.0
+	 * @var string
+	 * @access public
+	 * @since 1.0.0
 	 */
 	public $dir;
 
 	/**
 	 * The plugin assets directory.
 	 *
-	 * @var     string
-	 * @access  public
-	 * @since   1.0.0
+	 * @var string
+	 * @access public
+	 * @since 1.0.0
 	 */
 	public $assets_dir;
 
 	/**
 	 * The plugin assets URL.
 	 *
-	 * @var     string
-	 * @access  public
-	 * @since   1.0.0
+	 * @var string
+	 * @access public
+	 * @since 1.0.0
 	 */
 	public $assets_url;
 
 	/**
 	 * Suffix for Javascripts.
 	 *
-	 * @var     string
-	 * @access  public
-	 * @since   1.0.0
+	 * @var string
+	 * @access public
+	 * @since 1.0.0
 	 */
 	public $script_suffix;
 
@@ -108,10 +108,10 @@ class Table_Of_Contents_Lite {
 	 * Constructor function.
 	 *
 	 * @access public
-	 * @param	string $file filename of the plugin.
-	 * @param	string $version version number of plugin.
-	 * @since   1.0.0
-	 * @return  void
+	 * @param string $file filename of the plugin.
+	 * @param string $version version number of plugin.
+	 * @since 1.0.0
+	 * @return void
 	 */
 	public function __construct( $file = '', $version = '1.0.0' ) {
 		$this->_version = $version;
@@ -135,8 +135,8 @@ class Table_Of_Contents_Lite {
 	/**
 	 * Load plugin initialization
 	 *
-	 * @access  public
-	 * @since   1.0.0
+	 * @access public
+	 * @since 1.0.0
 	 * @return  void
 	 */
 	public function plugin_init() {
@@ -149,10 +149,10 @@ class Table_Of_Contents_Lite {
 	 *
 	 * @since 1.0.0
 	 * @static
-	 * @param	string $file filename of the plugin.
-	 * @param	string $version version number of plugin.
-	 * @see	Table_Of_Contents_Lite()
-	 * @return	Main Table_Of_Contents_Lite instance
+	 * @param string $file filename of the plugin.
+	 * @param string $version version number of plugin.
+	 * @see Table_Of_Contents_Lite()
+	 * @return  Main Table_Of_Contents_Lite instance
 	 */
 	public static function instance( $file = '', $version = '1.0.0' ) {
 		if ( is_null( self::$_instance ) ) {
@@ -182,8 +182,8 @@ class Table_Of_Contents_Lite {
 	/**
 	 * Installation. Runs on activation.
 	 *
-	 * @access  public
-	 * @since   1.0.0
+	 * @access public
+	 * @since 1.0.0
 	 * @return  void
 	 */
 	public function install() {
@@ -193,8 +193,8 @@ class Table_Of_Contents_Lite {
 	/**
 	 * Log the plugin version number.
 	 *
-	 * @access  public
-	 * @since   1.0.0
+	 * @access public
+	 * @since 1.0.0
 	 * @return  void
 	 */
 	private function _log_version_number() {
@@ -204,8 +204,8 @@ class Table_Of_Contents_Lite {
 	/**
 	 * Main function that adds the TOC to the regular content of each post.
 	 *
-	 * @param	longtext $content contains the post content.
-	 * @return	longtext generatod TOC based from the h tags in the $content plus the $content at the end.
+	 * @param longtext $content contains the post content.
+	 * @return  longtext generatod TOC based from the h tags in the $content plus the $content at the end.
 	 */
 	public function add_toc( $content ) {
 
@@ -245,9 +245,9 @@ class Table_Of_Contents_Lite {
 	/**
 	 * Filters all header tags in the current content.
 	 *
-	 * @param	string $tag header tags to be included, default h1-h4.
-	 * @param	string $content	content to be filtered.
-	 * @return	array $matches all filtered header tags.
+	 * @param string $tag header tags to be included, default h1-h4.
+	 * @param string $content content to be filtered.
+	 * @return  array $matches all filtered header tags.
 	 */
 	public function get_tags_in_content( $tag, $content = '' ) {
 		if ( empty( $content ) ) {
@@ -262,7 +262,7 @@ class Table_Of_Contents_Lite {
 	 *
 	 * @param string   $tag    depending on the tag, it will place the TOC link deeper in the ul - li tag.
 	 * @param longtext $content    content to be filtered.
-	 * @return array $content	returns the content with the partial TOC on top.
+	 * @return array $content   returns the content with the partial TOC on top.
 	 */
 	public function add_ids_and_jumpto_links( $tag, $content ) {
 		$items = $this->get_tags_in_content( $tag, $content );
