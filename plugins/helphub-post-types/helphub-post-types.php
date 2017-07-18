@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Returns the main instance of HelpHub_Post_Types to prevent the need to use globals.
  *
- * @since  1.0.0
+ * @since 1.0.0
  * @return object HelpHub_Post_Types
  */
 function helphub_post_types() {
@@ -38,54 +38,54 @@ add_action( 'plugins_loaded', 'helphub_post_types' );
  * Main HelpHub_Post_Types Class
  *
  * @class HelpHub_Post_Types
- * @version	1.0.0
+ * @version 1.0.0
  * @since 1.0.0
- * @package	HelpHub_Post_Types
+ * @package HelpHub_Post_Types
  * @author Jon Ang
  */
 final class HelpHub_Post_Types {
 	/**
 	 * HelpHub_Post_Types The single instance of HelpHub_Post_Types.
 	 *
-	 * @var 	object
-	 * @access  private
-	 * @since 	1.0.0
+	 * @var object
+	 * @access private
+	 * @since 1.0.0
 	 */
 	private static $_instance = null;
 
 	/**
 	 * The token.
 	 *
-	 * @var     string
-	 * @access  public
-	 * @since   1.0.0
+	 * @var string
+	 * @access public
+	 * @since 1.0.0
 	 */
 	public $token;
 
 	/**
 	 * The version number.
 	 *
-	 * @var     string
-	 * @access  public
-	 * @since   1.0.0
+	 * @var string
+	 * @access public
+	 * @since 1.0.0
 	 */
 	public $version;
 
 	/**
 	 * The plugin directory URL.
 	 *
-	 * @var     string
-	 * @access  public
-	 * @since   1.0.0
+	 * @var string
+	 * @access public
+	 * @since 1.0.0
 	 */
 	public $plugin_url;
 
 	/**
 	 * The plugin directory path.
 	 *
-	 * @var     string
-	 * @access  public
-	 * @since   1.0.0
+	 * @var string
+	 * @access public
+	 * @since 1.0.0
 	 */
 	public $plugin_path;
 
@@ -94,18 +94,18 @@ final class HelpHub_Post_Types {
 	/**
 	 * The admin object.
 	 *
-	 * @var     object
-	 * @access  public
-	 * @since   1.0.0
+	 * @var object
+	 * @access public
+	 * @since 1.0.0
 	 */
 	public $admin;
 
 	/**
 	 * The settings object.
 	 *
-	 * @var     object
-	 * @access  public
-	 * @since   1.0.0
+	 * @var object
+	 * @access public
+	 * @since 1.0.0
 	 */
 	public $settings;
 
@@ -116,9 +116,9 @@ final class HelpHub_Post_Types {
 	/**
 	 * The post types we're registering.
 	 *
-	 * @var     array
-	 * @access  public
-	 * @since   1.0.0
+	 * @var array
+	 * @access public
+	 * @since 1.0.0
 	 */
 	public $post_types = array();
 
@@ -129,9 +129,9 @@ final class HelpHub_Post_Types {
 	/**
 	 * The taxonomies we're registering.
 	 *
-	 * @var     array
-	 * @access  public
-	 * @since   1.0.0
+	 * @var array
+	 * @access public
+	 * @since 1.0.0
 	 */
 	public $taxonomies = array();
 
@@ -141,8 +141,8 @@ final class HelpHub_Post_Types {
 	/**
 	 * Constructor function.
 	 *
-	 * @access  public
-	 * @since   1.0.0
+	 * @access public
+	 * @since 1.0.0
 	 */
 	public function __construct() {
 		$this->token        = 'helphub';
@@ -151,13 +151,20 @@ final class HelpHub_Post_Types {
 		$this->version      = '1.0.0';
 
 		/* Post Types - Start */
-
 		require_once( 'classes/class-helphub-post-types-post-type.php' );
 		require_once( 'classes/class-helphub-post-types-taxonomy.php' );
 
 		// Register an example post type. To register other post types, duplicate this line.
-		$this->post_types['post'] = new HelpHub_Post_Types_Post_Type( 'post', __( 'Post', 'helphub' ), __( 'Posts', 'helphub' ), array( 'menu_icon' => 'dashicons-post' ) );
-		$this->post_types['helphub_version'] = new HelpHub_Post_Types_Post_Type( 'helphub_version', __( 'WordPress Version', 'helphub' ), __( 'WordPress Versions', 'helphub' ), array( 'menu_icon' => 'dashicons-wordpress' ) );
+		$this->post_types['post'] = new HelpHub_Post_Types_Post_Type(
+			'post', __( 'Post', 'helphub' ), __( 'Posts', 'helphub' ), array(
+				'menu_icon' => 'dashicons-post',
+			)
+		);
+		$this->post_types['helphub_version'] = new HelpHub_Post_Types_Post_Type(
+			'helphub_version', __( 'WordPress Version', 'helphub' ), __( 'WordPress Versions', 'helphub' ), array(
+				'menu_icon' => 'dashicons-wordpress',
+			)
+		);
 
 		/* Post Types - End */
 
@@ -193,8 +200,8 @@ final class HelpHub_Post_Types {
 	/**
 	 * Load the localisation file.
 	 *
-	 * @access  public
-	 * @since   1.0.0
+	 * @access public
+	 * @since 1.0.0
 	 */
 	public function load_plugin_textdomain() {
 		load_plugin_textdomain( 'helphub', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
@@ -204,8 +211,8 @@ final class HelpHub_Post_Types {
 	 * Enqueue post type admin Styles.
 	 *
 	 * @access public
-	 * @since   1.0.0
-	 * @return   void
+	 * @since 1.0.0
+	 * @return void
 	 */
 	public function enqueue_admin_styles() {
 		global $pagenow;
@@ -220,18 +227,20 @@ final class HelpHub_Post_Types {
 				wp_enqueue_style( 'jquery-ui-datepicker' );
 			endif;
 		endif;
-		wp_localize_script( 'helphub-post-types-admin', 'helphub_admin',
+		wp_localize_script(
+			'helphub-post-types-admin', 'helphub_admin',
 			array(
-				'default_title' 	=> __( 'Upload', 'helphub' ),
-				'default_button' 	=> __( 'Select this', 'helphub' ),
+				'default_title'     => __( 'Upload', 'helphub' ),
+				'default_button'    => __( 'Select this', 'helphub' ),
 			)
 		);
 
-		wp_localize_script( 'helphub-post-types-gallery', 'helphub_gallery',
+		wp_localize_script(
+			'helphub-post-types-gallery', 'helphub_gallery',
 			array(
-				'gallery_title' 	=> __( 'Add Images to Product Gallery', 'helphub' ),
-				'gallery_button' 	=> __( 'Add to gallery', 'helphub' ),
-				'delete_image'		=> __( 'Delete image', 'helphub' ),
+				'gallery_title'     => __( 'Add Images to Product Gallery', 'helphub' ),
+				'gallery_button'    => __( 'Add to gallery', 'helphub' ),
+				'delete_image'      => __( 'Delete image', 'helphub' ),
 			)
 		);
 
@@ -260,8 +269,8 @@ final class HelpHub_Post_Types {
 	/**
 	 * Installation. Runs on activation.
 	 *
-	 * @access  public
-	 * @since   1.0.0
+	 * @access public
+	 * @since 1.0.0
 	 */
 	public function install() {
 		$this->_log_version_number();
@@ -270,8 +279,8 @@ final class HelpHub_Post_Types {
 	/**
 	 * Log the plugin version number.
 	 *
-	 * @access  private
-	 * @since   1.0.0
+	 * @access private
+	 * @since 1.0.0
 	 */
 	private function _log_version_number() {
 		// Log the version number.

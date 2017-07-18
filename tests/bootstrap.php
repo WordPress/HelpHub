@@ -22,15 +22,23 @@ function _manually_load_theme_and_plugin() {
 
 	register_theme_directory( dirname( $theme_dir ) );
 
-	add_filter( 'pre_option_template', function() use ( $current_theme ) {
-		return $current_theme;
-	} );
-	add_filter( 'pre_option_stylesheet', function() use ( $current_theme ) {
-		return $current_theme;
-	} );
-	add_filter( 'template_directory', function() use ( $theme_dir ) {
-		return $theme_dir;
-	} );
+	add_filter(
+		'pre_option_template', function() use ( $current_theme ) {
+			return $current_theme;
+		}
+	);
+
+	add_filter(
+		'pre_option_stylesheet', function() use ( $current_theme ) {
+			return $current_theme;
+		}
+	);
+
+	add_filter(
+		'template_directory', function() use ( $theme_dir ) {
+			return $theme_dir;
+		}
+	);
 
 	require dirname( dirname( __FILE__ ) ) . '/plugins/helphub-post-types/helphub-post-types.php';
 	require dirname( dirname( __FILE__ ) ) . '/plugins/helphub-read-time/helphub-read-time.php';
