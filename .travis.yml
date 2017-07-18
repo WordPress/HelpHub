@@ -17,6 +17,9 @@ php:
 # @link https://docs.travis-ci.com/user/ci-environment/
 sudo: false
 
+# Tell Travis CI which distro to use
+dist: trusty
+ 
 # Travis CI environment matrix
 env:
   matrix:
