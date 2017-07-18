@@ -381,6 +381,13 @@ article h3 {
 	font-size: 2em;
 }
 
+#masthead div.site-title {
+	font-size: 2rem;
+	color: #fff;
+	font-family: "Open Sans", sans-serif;
+	font-weight: 200;
+}
+
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
@@ -843,10 +850,6 @@ a:active {
 	display: block;
 }
 
-.hentry {
-	margin: 0 0 1.5em;
-}
-
 .byline,
 .updated:not(.published) {
 	display: none;
@@ -857,23 +860,9 @@ a:active {
 	display: inline;
 }
 
-.page-content,
-.entry-content,
-.entry-summary {
-	margin: 1.5em 0 0;
-}
-
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
-}
-
-.single-post article.post {
-	float: left;
-	width: 70%;
-	padding: 2em;
-	box-sizing: border-box;
-	position: relative;
 }
 
 .article-container {
@@ -1038,7 +1027,6 @@ object {
 	max-width: 932px;
 	margin: 0 auto;
 	clear: both;
-	overflow: hidden;
 }
 
 h1.site-main-title {

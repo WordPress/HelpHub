@@ -12,28 +12,38 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="profile" href="http://gmpg.org/xfn/11">
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-<?php wp_head(); ?>
+	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
-<div id="page" class="site">
+<body <?php body_class( array( 'single-handbook', 'make-docs' ) ); ?>>
+<div id="page" class="">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'helphub' ); ?></a>
 
+
+	<div class="wporg-header">
+		<?php require WPORGPATH . 'header.php';	?>
+	</div><!-- .site-branding -->
+
 	<header id="masthead" class="site-header" role="banner">
-		<div class="wporg-header">
-			<?php require WPORGPATH . 'header.php';	?>
-		</div><!-- .site-branding -->
-		<div class="wrapper">
-			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'helphub' ); ?></button>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-			</nav><!-- #site-navigation -->
+		<div class="site-branding">
+			<div class="site-title">
+				<?php echo esc_html( get_bloginfo( 'name' ) ); ?>
+			</div>
 		</div>
+		<nav id="site-navigation" class="navigation-main clear" role="navigation">
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'helphub' ); ?></button>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
-	<div class="wrapper">
-		<div id="content" class="site-content">
+	<div id="page" class="hfeed site">
+		<div id="main" class="site-main clear">
+			<div id="secondary" class="widget-area" role="complementary">
+				<div id="secondary-content">
+					<?php get_sidebar(); ?>
+				</div>
+			</div>
