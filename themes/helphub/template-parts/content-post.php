@@ -9,11 +9,7 @@
  */
 
 ?>
-<aside class="single-post-sidebar">
-	Test
-</aside>
-
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( array( 'handbook' ) ); ?>>
 
 
 	<div class="entry-content">
