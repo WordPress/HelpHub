@@ -18,6 +18,7 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 		<?php
+		get_search_form();
 		if ( have_posts() ) :
 
 			if ( is_home() && ! is_front_page() ) : ?>
