@@ -32,7 +32,7 @@
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
 			<div class="site-title">
-				HelpHub
+				<?php echo esc_html( get_bloginfo( 'name' ) ); ?>
 			</div>
 		</div>
 		<nav id="site-navigation" class="navigation-main clear" role="navigation">
