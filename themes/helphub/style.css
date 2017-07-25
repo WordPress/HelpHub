@@ -1245,7 +1245,6 @@ h2.helphub-footerarea-title {
 /*--------------------------------------------------------------
 ## Table of Contents
 --------------------------------------------------------------*/
-<<<<<<< HEAD
 
 .table-of-contents {
 	background-color: #f5f5f5;
@@ -1296,7 +1295,7 @@ h4.toc-heading {
 p.toc-jump {
 	float: right;
 	font-size: 1em;
-=======
+}
 .content-area h1,
 .content-area h2,
 .content-area h3,
@@ -1447,5 +1446,4 @@ p.toc-jump a {
 	.single-post div.table-of-contents {
 		display: none;
 	}
->>>>>>> 0196853fff6c60d798525f1566d94e95df40b6c7
 }
