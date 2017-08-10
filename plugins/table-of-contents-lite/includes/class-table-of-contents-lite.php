@@ -142,6 +142,13 @@ class Table_Of_Contents_Lite {
 	public function plugin_init() {
 		$plugin_text_domain = 'table-of-contents-lite';
 		load_plugin_textdomain( $plugin_text_domain, false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+	}
+	/**
+	 * Load style
+	 */
+	public function enqueue_scripts() {
+		wp_enqueue_style( 'table-of-contents', TABLE_OF_CONTENTS_URL . 'assets/css/style.css', array(), '1.0' );
 	}
 
 	/**
