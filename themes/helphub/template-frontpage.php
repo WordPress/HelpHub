@@ -14,18 +14,21 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main">
 			<div class="main-search-area">
 				<h1 class="site-main-title"><?php the_title(); ?></h1>
 				<div class="helphub-home-searcharea">
 					<?php
-						if ( is_active_sidebar( 'homewidgetsearch-1' ) ) {
-							get_template_part( 'template-parts/widget', 'homesearch' );
-						}
+					if ( is_active_sidebar( 'homewidgetsearch-1' ) ) {
+						get_template_part( 'template-parts/widget', 'homesearch' );
+					}
 					?>
 				</div>
 				<div class="helphub-contentarea">
-					<?php while ( have_posts() ) : the_post(); // start the loop. ?>
+					<?php
+					while ( have_posts() ) : /* start the loop. */
+						the_post();
+						?>
 						<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 							<div class="entry-content">
 								<?php
@@ -51,17 +54,17 @@ get_header(); ?>
 							</footer><!-- .entry-footer -->
 						</article><!-- #post-## -->
 						<?php
-							if ( comments_open() || get_comments_number() ) :
-								comments_template();
-							endif;
+						if ( comments_open() || get_comments_number() ) :
+							comments_template();
+						endif;
 						?>
-					<?php endwhile; // End of the loop. ?>
+					<?php endwhile; /* End of the loop. */ ?>
 				</div>
 				<!-- #search placeholder only, will be changed later on when search engine code is ready END-->
 				<?php
-					if ( is_active_sidebar( 'homewidgetrow-1' ) ) {
-						get_template_part( 'template-parts/widget', 'homewidgets' );
-					}
+				if ( is_active_sidebar( 'homewidgetrow-1' ) ) {
+					get_template_part( 'template-parts/widget', 'homewidgets' );
+				}
 				?>
 			</div>
 		</main><!-- #main -->

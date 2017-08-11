@@ -7,7 +7,7 @@
  * @package HelpHub
  */
 
-if ( ( ! is_active_sidebar( 'sidebar-1' ) ) ||  is_front_page() ) {
+if ( ( ! is_active_sidebar( 'sidebar-1' ) ) || is_front_page() ) {
 	return;
 }
 ?>

@@ -11,7 +11,9 @@
  * @package  Helphub Readtime
  */
 
-defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
+if ( ! defined( 'ABSPATH' ) ) {
+	die( 'No script kiddies please!' );
+}
 
 // Adds the read time hook when saving a post.
 add_action( 'save_post', 'hh_calculate_and_update_post_read_time', 10, 3 );
@@ -54,7 +56,7 @@ function hh_calculate_and_update_post_read_time( $post_id, $post, $update ) {
 	$calculate_for_posts = apply_filters( 'read_time_types', array( 'post' ) );
 
 	// If the post type is not found then return.
-	if ( ! in_array( $post->post_type, $calculate_for_posts ) ) {
+	if ( ! in_array( $post->post_type, $calculate_for_posts, true ) ) {
 		return;
 	}
 
@@ -91,7 +93,8 @@ function hh_calculate_and_update_post_read_time( $post_id, $post, $update ) {
 	preg_match_all( '/(img|src)\=(\"|\')[^\"\'\>]+/i', $post->post_content, $media );
 
 	// Adjust read time given the number of images.
-	if ( $image_count = count( $media[0] ) ) {
+	$image_count = count( $media[0] );
+	if ( $image_count ) {
 		$readtime = ( $image_count * 12 - $image_count + $readtime );
 	}
 
@@ -110,7 +113,7 @@ function hh_calculate_and_update_post_read_time( $post_id, $post, $update ) {
  */
 function hh_get_readtime( $post_id ) {
 
-	if ( 0 == $post_id || ! is_numeric( $post_id ) ) {
+	if ( 0 === $post_id || ! is_numeric( $post_id ) ) {
 		global $post;
 		$post_id = $post->ID;
 	}
@@ -124,7 +127,6 @@ function hh_get_readtime( $post_id ) {
 		$read_time = get_post_meta( $post_id, '_read_time', true );
 	}
 
-	/* echo $read_time; */
 	return $read_time;
 }
 
@@ -166,6 +168,7 @@ function hh_get_the_read_time( $post_id = null ) {
 	// Convert reading time to minutes.
 	$reading_time = (int) $read_time < 60 ? '1' : (string) round( $read_time / 60 );
 
+	/* translators: %s: Read time in minutes. */
 	return sprintf( _n( 'Reading Time: %s Minute', 'Reading Time: %s Minutes', $reading_time, 'helphub' ), $reading_time );
 }
 

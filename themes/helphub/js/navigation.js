@@ -1,11 +1,11 @@
 /**
- * navigation.js
+ * File navigation.js
  *
  * Handles toggling the navigation menu for small screens and enables tab
  * support for dropdown menus.
  */
 ( function() {
-	var container, button, menu, links, subMenus;
+	var container, button, menu, links, subMenus, i, len;
 
 	container = document.getElementById( 'site-navigation' );
 	if ( ! container ) {
@@ -46,13 +46,17 @@
 	links    = menu.getElementsByTagName( 'a' );
 	subMenus = menu.getElementsByTagName( 'ul' );
 
+	len = subMenus.length;
+
 	// Set menu items with submenus to aria-haspopup="true".
-	for ( var i = 0, len = subMenus.length; i < len; i++ ) {
+	for ( i = 0; i < len; i++ ) {
 		subMenus[i].parentNode.setAttribute( 'aria-haspopup', 'true' );
 	}
 
+	len = links.length;
+
 	// Each time a menu link is focused or blurred, toggle focus.
-	for ( i = 0, len = links.length; i < len; i++ ) {
+	for ( i = 0; i < len; i++ ) {
 		links[i].addEventListener( 'focus', toggleFocus, true );
 		links[i].addEventListener( 'blur', toggleFocus, true );
 	}

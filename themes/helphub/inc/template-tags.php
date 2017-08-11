@@ -8,73 +8,76 @@
  */
 
 if ( ! function_exists( 'helphub_posted_on' ) ) :
-/**
- * Prints HTML with meta information for the current post-date/time and author.
- */
-function helphub_posted_on() {
-	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+	/**
+	 * Prints HTML with meta information for the current post-date/time and author.
+	 */
+	function helphub_posted_on() {
+		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+		}
+
+		$time_string = sprintf( $time_string,
+			esc_attr( get_the_date( 'c' ) ),
+			esc_html( get_the_date() ),
+			esc_attr( get_the_modified_date( 'c' ) ),
+			esc_html( get_the_modified_date() )
+		);
+
+		$posted_on = sprintf(
+			/* translators: %s: The post date. */
+			esc_html_x( 'Posted on %s', 'post date', 'helphub' ),
+			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+		);
+
+		$byline = sprintf(
+			/* translators: %s: A linked post author name. */
+			esc_html_x( 'by %s', 'post author', 'helphub' ),
+			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+		);
+
+		echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
 	}
-
-	$time_string = sprintf( $time_string,
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
-		esc_attr( get_the_modified_date( 'c' ) ),
-		esc_html( get_the_modified_date() )
-	);
-
-	$posted_on = sprintf(
-		esc_html_x( 'Posted on %s', 'post date', 'helphub' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-	);
-
-	$byline = sprintf(
-		esc_html_x( 'by %s', 'post author', 'helphub' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-	);
-
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
-
-}
 endif;
 
 if ( ! function_exists( 'helphub_entry_footer' ) ) :
-/**
- * Prints HTML with meta information for the categories, tags and comments.
- */
-function helphub_entry_footer() {
-	// Hide category and tag text for pages.
-	if ( 'post' === get_post_type() ) {
-		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( esc_html__( ', ', 'helphub' ) );
-		if ( $categories_list && helphub_categorized_blog() ) {
-			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'helphub' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+	/**
+	 * Prints HTML with meta information for the categories, tags and comments.
+	 */
+	function helphub_entry_footer() {
+		// Hide category and tag text for pages.
+		if ( 'post' === get_post_type() ) {
+			/* translators: used between list items, there is a space after the comma */
+			$categories_list = get_the_category_list( esc_html__( ', ', 'helphub' ) );
+			if ( $categories_list && helphub_categorized_blog() ) {
+				/* translators: %1$s: A list of categories. */
+				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'helphub' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+			}
+
+			/* translators: used between list items, there is a space after the comma */
+			$tags_list = get_the_tag_list( '', esc_html__( ', ', 'helphub' ) );
+			if ( $tags_list ) {
+				/* translators: %1$s: A list of tags. */
+				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'helphub' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			}
 		}
 
-		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'helphub' ) );
-		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'helphub' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+			echo '<span class="comments-link">';
+			comments_popup_link( esc_html__( 'Leave a comment', 'helphub' ), esc_html__( '1 Comment', 'helphub' ), esc_html__( '% Comments', 'helphub' ) );
+			echo '</span>';
 		}
-	}
 
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
-		comments_popup_link( esc_html__( 'Leave a comment', 'helphub' ), esc_html__( '1 Comment', 'helphub' ), esc_html__( '% Comments', 'helphub' ) );
-		echo '</span>';
+		edit_post_link(
+			sprintf(
+				/* translators: %s: Name of current post */
+				esc_html__( 'Edit %s', 'helphub' ),
+				the_title( '<span class="screen-reader-text">"', '"</span>', false )
+			),
+			'<span class="edit-link">',
+			'</span>'
+		);
 	}
-
-	edit_post_link(
-		sprintf(
-			/* translators: %s: Name of current post */
-			esc_html__( 'Edit %s', 'helphub' ),
-			the_title( '<span class="screen-reader-text">"', '"</span>', false )
-		),
-		'<span class="edit-link">',
-		'</span>'
-	);
-}
 endif;
 
 /**
@@ -83,7 +86,9 @@ endif;
  * @return bool
  */
 function helphub_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'helphub_categories' ) ) ) {
+	$all_the_cool_cats = get_transient( 'helphub_categories' );
+
+	if ( false === $all_the_cool_cats ) {
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories( array(
 			'fields'     => 'ids',
@@ -117,5 +122,6 @@ function helphub_category_transient_flusher() {
 	// Like, beat it. Dig?
 	delete_transient( 'helphub_categories' );
 }
+
 add_action( 'edit_category', 'helphub_category_transient_flusher' );
-add_action( 'save_post',     'helphub_category_transient_flusher' );
+add_action( 'save_post', 'helphub_category_transient_flusher' );
