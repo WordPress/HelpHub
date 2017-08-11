@@ -145,7 +145,7 @@ class Helphub_Post_Type_Test extends WP_UnitTestCase {
 			)
 		);
 		$html = $this->meta_box_content_render( $fields );
-		$this->assertContains( '<input name="upload-field" type="file" id="upload-field" class="regular-text helphub-upload-field" /><button id="upload-field" class="helphub-upload button">this is as label for upload</button>', $html );
+		$this->assertContains( '<input name="upload-field" type="file" id="upload-field" class="regular-text helphub-upload-field" /><button id="upload-field" class="helphub-upload button" >this is as label for upload</button>', $html );
 	}
 
 	/**
