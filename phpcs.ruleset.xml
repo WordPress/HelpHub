@@ -12,7 +12,4 @@
     <file>.</file>
 
     <exclude-pattern>plugins/syntaxhighlighter/*</exclude-pattern>
-
-    <config name="installed_paths" value="wordpress-coding-standards"/>
-
 </ruleset>
