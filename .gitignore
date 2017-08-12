@@ -8,3 +8,5 @@
 /upgrade/
 /uploads/
 node_modules/
+wordpress-coding-standards
+php-codesniffer
