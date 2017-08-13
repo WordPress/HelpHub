@@ -84,10 +84,10 @@ class HelpHub_Post_Types_Taxonomy {
 		$this->singular = esc_html( $singular );
 		$this->plural = esc_html( $plural );
 
-		if ( '' == $this->singular ) {
+		if ( '' === $this->singular ) {
 			$this->singular = __( 'Category', 'helphub' );
 		}
-		if ( '' == $this->plural ) {
+		if ( '' === $this->plural ) {
 			$this->plural = __( 'Categories', 'helphub' );
 		}
 
@@ -131,12 +131,19 @@ class HelpHub_Post_Types_Taxonomy {
 			'name'                => sprintf( _x( '%s', 'taxonomy general name', 'helphub' ), $this->plural ), /* @codingStandardsIgnoreLine */
 			'singular_name'       => sprintf( _x( '%s', 'taxonomy singular name', 'helphub' ), $this->singular ), /* @codingStandardsIgnoreLine */
 			'search_items'        => sprintf( __( 'Search %s', 'helphub' ), $this->plural ),
+			/* translators: %s: Plural name of the post type. */
 			'all_items'           => sprintf( __( 'All %s', 'helphub' ), $this->plural ),
+			/* translators: %s: Post type name. */
 			'parent_item'         => sprintf( __( 'Parent %s', 'helphub' ), $this->singular ),
+			/* translators: %s: Post type name. */
 			'parent_item_colon'   => sprintf( __( 'Parent %s:', 'helphub' ), $this->singular ),
+			/* translators: %s: Post type name. */
 			'edit_item'           => sprintf( __( 'Edit %s', 'helphub' ), $this->singular ),
+			/* translators: %s: Post type name. */
 			'update_item'         => sprintf( __( 'Update %s', 'helphub' ), $this->singular ),
+			/* translators: %s: Post type name. */
 			'add_new_item'        => sprintf( __( 'Add New %s', 'helphub' ), $this->singular ),
+			/* translators: %s: Post type name. */
 			'new_item_name'       => sprintf( __( 'New %s Name', 'helphub' ), $this->singular ),
 			'menu_name'           => $this->plural,
 		);

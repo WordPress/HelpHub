@@ -1,105 +1,103 @@
-/**
- * Created by User on 29/12/2015.
- */
-jQuery(document).ready(function($){
+/* globals HelphubGallery */
+jQuery( document ).ready( function( $ ) {
+
 	// Uploading files
-	var helphub_gallery_frame;
-	var $gallery_container  = $( '#helphub_images_container')
-	var $image_gallery_ids  = $( '#helphub_image_gallery' );
-	var $gallery_images     = $gallery_container.find( 'ul.product_images' );
-	var $gallery_ul         = $gallery_container.find( 'ul li.image' );
+	var HelphubGalleryFrame;
+	var $GalleryContainer  = $( '#helphub_images_container' );
+	var $ImageGalleryIds  = $( '#helphub_image_gallery' );
+	var $GalleryImages     = $GalleryContainer.find( 'ul.product_images' );
+	var $GalleryUl         = $GalleryContainer.find( 'ul li.image' );
 
 	jQuery( '.add_helphub_images' ).on( 'click', 'a', function( event ) {
 
-		var attachment_ids  = $image_gallery_ids.val();
+		var AttachmentIds  = $ImageGalleryIds.val();
 
 		event.preventDefault();
-		//event.stopPropagation();
-		//event.stopImmediatePropagation();
 
 		// If the media frame already exists, reopen it.
-		if ( helphub_gallery_frame ) {
-			helphub_gallery_frame.open();
+		if ( HelphubGalleryFrame ) {
+			HelphubGalleryFrame.open();
 			return;
 		}
 
 		// Create the media frame.
-		helphub_gallery_frame = wp.media.frames.downloadable_file = wp.media({
+		HelphubGalleryFrame = wp.media.frames.downloadable_file = wp.media({
+
 			// Set the title of the modal.
-			title: helphub_helphub_gallery.gallery_title,
+			title: HelphubGallery.gallery_title,
 			button: {
-				text: helphub_helphub_gallery.gallery_button,
+				text: HelphubGallery.gallery_button
 			},
 			multiple: true
 		});
 
 		// When an image is selected, run a callback.
-		helphub_gallery_frame.on( 'select', function() {
+		HelphubGalleryFrame.on( 'select', function() {
 
-			var selection = helphub_gallery_frame.state().get( 'selection' );
+			var selection = HelphubGalleryFrame.state().get( 'selection' );
 
 			selection.map( function( attachment ) {
 
 				attachment = attachment.toJSON();
 
 				if ( attachment.id ) {
-					attachment_ids = attachment_ids ? attachment_ids + "," + attachment.id : attachment.id;
+					AttachmentIds = AttachmentIds ? AttachmentIds + ',' + attachment.id : attachment.id;
 
-					$gallery_images.append('\
-							<li class="image" data-attachment_id="' + attachment.id + '">\
-								<img src="' + attachment.sizes.thumbnail.url + '" />\
-									<ul class="actions">\
-										<li><a href="#" class="delete" title="'+ helphub_helphub_gallery.delete_image +'">&times;</a></li>\
-									</ul>\
-								</li>');
+					$GalleryImages.append( '<li class="image" data-attachment_id="' + attachment.id + '">' +
+								'<img src="' + attachment.sizes.thumbnail.url + '" />' +
+									'<ul class="actions">' +
+										'<li><a href="#" class="delete" title="' + HelphubGallery.delete_image + '">&times;</a></li>' +
+									'</ul>' +
+								'</li>' );
 				}
 
 			} );
 
-			$image_gallery_ids.val( attachment_ids );
+			$ImageGalleryIds.val( AttachmentIds );
 		});
 
 		// Finally, open the modal.
-		helphub_gallery_frame.open();
+		HelphubGalleryFrame.open();
 	});
 
 	// Image ordering
-	$gallery_images.sortable({
+	$GalleryImages.sortable({
 		items: 'li.image',
 		cursor: 'move',
-		scrollSensitivity:40,
+		scrollSensitivity: 40,
 		forcePlaceholderSize: true,
 		forceHelperSize: false,
 		helper: 'clone',
 		opacity: 0.65,
 		placeholder: 'helphub-metabox-sortable-placeholder',
-		start:function(event,ui){
-			ui.item.css( 'background-color','#f6f6f6' );
+		start: function( event, ui ) {
+			ui.item.css( 'background-color', '#f6f6f6' );
 		},
-		stop:function(event,ui){
+		stop: function( event, ui ) {
 			ui.item.removeAttr( 'style' );
 		},
-		update: function(event, ui) {
-			var attachment_ids = '';
-			$gallery_container.find( 'ul li.image' ).css( 'cursor','default' ).each(function() {
-				var attachment_id = jQuery(this).attr( 'data-attachment_id' );
-				attachment_ids = attachment_ids + attachment_id + ',';
+		update: function() {
+			var AttachmentIds = '';
+			$GalleryContainer.find( 'ul li.image' ).css( 'cursor', 'default' ).each( function() {
+				var AttachmentId = jQuery( this ).attr( 'data-attachment_id' );
+				AttachmentIds = AttachmentIds + AttachmentId + ',';
 			});
-			$image_gallery_ids.val( attachment_ids );
+			$ImageGalleryIds.val( AttachmentIds );
 		}
 	});
+
 	// Remove images
-	$gallery_container.on( 'click', 'a.delete', function() {
-		$(this).closest( 'li.image' ).remove();
+	$GalleryContainer.on( 'click', 'a.delete', function() {
+        var AttachmentIds = '';
 
-		var attachment_ids = '';
+		$( this ).closest( 'li.image' ).remove();
 
-		$gallery_ul.css( 'cursor','default' ).each(function() {
-			var attachment_id = jQuery(this).attr( 'data-attachment_id' );
-			attachment_ids = attachment_ids + attachment_id + ',';
+		$GalleryUl.css( 'cursor', 'default' ).each( function() {
+			var AttachmentId = jQuery( this ).attr( 'data-attachment_id' );
+			AttachmentIds = AttachmentIds + AttachmentId + ',';
 		});
 
-		$image_gallery_ids.val( attachment_ids );
+		$ImageGalleryIds.val( AttachmentIds );
 
 		return false;
 	} );

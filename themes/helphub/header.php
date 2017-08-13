@@ -26,7 +26,7 @@
 
 
 	<div class="wporg-header">
-		<?php require WPORGPATH . 'header.php';	?>
+		<?php require WPORGPATH . 'header.php'; ?>
 	</div><!-- .site-branding -->
 
 	<header id="masthead" class="site-header" role="banner">
@@ -37,7 +37,12 @@
 		</div>
 		<nav id="site-navigation" class="navigation-main clear" role="navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'helphub' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+			<?php
+			wp_nav_menu( array(
+				'theme_location' => 'primary',
+				'menu_id' => 'primary-menu',
+			) );
+			?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 	<div id="page" class="hfeed site">

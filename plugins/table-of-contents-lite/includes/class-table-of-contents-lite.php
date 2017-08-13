@@ -15,20 +15,20 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * Functionalities needed to generate the table of contents.
  *
- * @package WordPress
+ * @package    WordPress
  * @subpackage HelpHub_Post_Types
- * @category Plugin
- * @author Carl Alberto
- * @since 1.0.0
+ * @category   Plugin
+ * @author     Carl Alberto
+ * @since      1.0.0
  */
 class Table_Of_Contents_Lite {
 
 	/**
 	 * The single instance of Table_Of_Contents_Lite.
 	 *
-	 * @var 	object
-	 * @access  private
-	 * @since 	1.0.0
+	 * @var    object
+	 * @access private
+	 * @since  1.0.0
 	 */
 	private static $_instance = null;
 
@@ -108,18 +108,20 @@ class Table_Of_Contents_Lite {
 	 * Constructor function.
 	 *
 	 * @access public
-	 * @param	string $file filename of the plugin.
-	 * @param	string $version version number of plugin.
+	 *
+	 * @param    string $file filename of the plugin.
+	 * @param    string $version version number of plugin.
+	 *
 	 * @since   1.0.0
 	 * @return  void
 	 */
 	public function __construct( $file = '', $version = '1.0.0' ) {
 		$this->_version = $version;
-		$this->_token = 'table_of_contents_lite';
+		$this->_token   = 'table_of_contents_lite';
 
 		// Load plugin environment variables.
-		$this->file = $file;
-		$this->dir = dirname( $this->file );
+		$this->file       = $file;
+		$this->dir        = dirname( $this->file );
 		$this->assets_dir = trailingslashit( $this->dir ) . 'assets';
 		$this->assets_url = esc_url( trailingslashit( plugins_url( '/assets/', $this->file ) ) );
 
@@ -156,15 +158,18 @@ class Table_Of_Contents_Lite {
 	 *
 	 * @since 1.0.0
 	 * @static
-	 * @param	string $file filename of the plugin.
-	 * @param	string $version version number of plugin.
-	 * @see	Table_Of_Contents_Lite()
-	 * @return	Main Table_Of_Contents_Lite instance
+	 *
+	 * @param    string $file filename of the plugin.
+	 * @param    string $version version number of plugin.
+	 *
+	 * @see    Table_Of_Contents_Lite()
+	 * @return    Main Table_Of_Contents_Lite instance
 	 */
 	public static function instance( $file = '', $version = '1.0.0' ) {
 		if ( is_null( self::$_instance ) ) {
 			self::$_instance = new self( $file, $version );
 		}
+
 		return self::$_instance;
 	} // End instance ()
 
@@ -211,8 +216,9 @@ class Table_Of_Contents_Lite {
 	/**
 	 * Main function that adds the TOC to the regular content of each post.
 	 *
-	 * @param	longtext $content contains the post content.
-	 * @return	longtext generatod TOC based from the h tags in the $content plus the $content at the end.
+	 * @param    longtext $content contains the post content.
+	 *
+	 * @return    longtext generatod TOC based from the h tags in the $content plus the $content at the end.
 	 */
 	public function add_toc( $content ) {
 
@@ -223,7 +229,7 @@ class Table_Of_Contents_Lite {
 			return $content;
 		}
 
-		for ( $i = 1; $i <= 4; $i++ ) {
+		for ( $i = 1; $i <= 4; $i ++ ) {
 			$content = $this->add_ids_and_jumpto_links( "h$i", $content );
 		}
 
@@ -244,45 +250,49 @@ class Table_Of_Contents_Lite {
 					}
 				}
 				$last_item = $item[2];
-				$toc .= sprintf( '<li><a href="#%1s">%2s</a>', sanitize_title_with_dashes( $item[3] ), $item[3] );
+				$toc       .= sprintf( '<li><a href="#%1s">%2s</a>', sanitize_title_with_dashes( $item[3] ), $item[3] );
 			}
 			$toc .= '</ul></div>';
 		}
+
 		return $toc . $content;
 	}
 
 	/**
 	 * Filters all header tags in the current content.
 	 *
-	 * @param	string $tag header tags to be included, default h1-h4.
-	 * @param	string $content	content to be filtered.
-	 * @return	array $matches all filtered header tags.
+	 * @param    string $tag header tags to be included, default h1-h4.
+	 * @param    string $content content to be filtered.
+	 *
+	 * @return    array $matches all filtered header tags.
 	 */
 	public function get_tags_in_content( $tag, $content = '' ) {
 		if ( empty( $content ) ) {
 			$content = get_the_content();
 		}
 		preg_match_all( "/(<{$tag}>)(.*)(<\/{$tag}>)/", $content, $matches, PREG_SET_ORDER );
+
 		return $matches;
 	}
 
 	/**
 	 * Appends the filtered header tags on the start fo the $content.
 	 *
-	 * @param string   $tag    depending on the tag, it will place the TOC link deeper in the ul - li tag.
-	 * @param longtext $content    content to be filtered.
-	 * @return array $content	returns the content with the partial TOC on top.
+	 * @param string $tag depending on the tag, it will place the TOC link deeper in the ul - li tag.
+	 * @param longtext $content content to be filtered.
+	 *
+	 * @return array $content    returns the content with the partial TOC on top.
 	 */
 	public function add_ids_and_jumpto_links( $tag, $content ) {
-		$items = $this->get_tags_in_content( $tag, $content );
-		$first = true;
-		$matches = array();
+		$items        = $this->get_tags_in_content( $tag, $content );
+		$first        = true;
+		$matches      = array();
 		$replacements = array();
 
 		foreach ( $items as $item ) {
 			$replacement = '';
-			$matches[] = $item[0];
-			$id = sanitize_title_with_dashes( $item[2] );
+			$matches[]   = $item[0];
+			$id          = sanitize_title_with_dashes( $item[2] );
 			if ( ! $first ) {
 				$replacement .= '<p class="toc-jump"><a href="#top">' . __( 'Top &uarr;', 'table-of-contents-lite' ) . '</a></p>';
 			} else {
