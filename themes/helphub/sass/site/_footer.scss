@@ -1,0 +1,132 @@
+footer {
+	font-family: sans-serif;
+
+	a {
+		text-decoration: none;
+		color: #4ca6cf;
+
+		&:visited {
+			color: #21759b;
+		}
+	}
+
+	ul {
+
+		li {
+			list-style: none;
+			font-size: 14px;
+		}
+	}
+}
+
+.helphub-footerarea,
+#wporg-footer {
+	clear: both;
+	overflow: auto;
+	margin: 0 auto;
+	padding: 22px 14px 65px;
+	border-top: 1px solid #dfdfdf;
+	background-color: #f7f7f7;
+
+	.wrapper {
+		max-width: 932px;
+		margin: 0 auto;
+		clear: both;
+		overflow: hidden;
+	}
+}
+
+#wporg-footer {
+
+	ul {
+		float: left;
+		overflow: auto;
+		width: 130px;
+		margin-left: 24px;
+		margin-bottom: 20px;
+		padding-left: 0;
+	}
+
+	h6 {
+		clear: both;
+		float: none;
+		text-align: center;
+		margin-top: 35px;
+		font-size: 16px;
+		letter-spacing: 0.3em;
+		text-transform: uppercase;
+		color: #ccc;
+
+		&.cip-image {
+			background: url(//s.w.org/style/images/codeispoetry.png?1) center center no-repeat;
+			background-size: 190px 15px;
+			width: 190px;
+			height: 15px;
+			text-indent: -9999px;
+		}
+	}
+}
+
+.helphub-footerarea,
+.helphub-footerarea1,
+.helphub-footerarea2 {
+	background-color: #073763;
+	color: #fff;
+}
+
+.helphub-footerarea {
+
+	h2 {
+		text-align: center;
+		margin: 0;
+
+		&.widget-title {
+			text-align: left;
+		}
+	}
+
+	h3 {
+		margin: 0;
+		font-size: 24px;
+		color: #fff;
+	}
+
+	.helphub-footerarea1,
+	.helphub-footerarea2 {
+		width: 42%;
+		float: left;
+
+		@media (max-width: 768px) {
+			width: 100%;
+			text-align: center;
+			margin-top: 4%;
+		}
+	}
+
+	.wrapper {
+		padding-bottom: 2%;
+	}
+}
+
+.helphub-footerarea1,
+.helphub-footerarea2 {
+	padding: 0 2% 0 4%;
+}
+
+h2 {
+
+	&.helphub-footerarea-title {
+		margin: 4% 2%;
+		font-size: 32px;
+	}
+}
+
+.helphub-footerarea1 {
+	border-right: 3px solid #000;
+}
+
+.helphub-footerarea-body {
+	font-size: 14px;
+	min-height: 80px;
+	margin-top: 18px;
+}
