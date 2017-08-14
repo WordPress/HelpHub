@@ -62,15 +62,6 @@ if ( ! function_exists( 'helphub_entry_footer' ) ) :
 			}
 		}
 
-		// We don't want comments at this point
-		/*
-		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-			echo '<span class="comments-link">';
-			comments_popup_link( esc_html__( 'Leave a comment', 'helphub' ), esc_html__( '1 Comment', 'helphub' ), esc_html__( '% Comments', 'helphub' ) );
-			echo '</span>';
-		}
-		*/
-
 		edit_post_link(
 			sprintf(
 				/* translators: %s: Name of current post */
