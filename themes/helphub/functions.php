@@ -178,6 +178,24 @@ function helphub_wrap_the_read_time() {
 	endif;
 }
 
+add_filter( 'wp_nav_menu_items', 'helphub_append_searchform_to_menu', 10, 2 );
+/**
+ * Append search form to 'primary' menu.
+ * This function is attached to 'wp_nav_menu_items'
+ * filter hook.
+ *
+ * @param string $items  Menu markup
+ * @param obj $args      Menu object
+ */
+function helphub_append_searchform_to_menu ( $items, $args ) {
+	if ( 'primary' === $args->theme_location ) {
+		$items .= '<li class="menu-item menu-item-search">';
+		$items .= get_search_form( false );
+		$items .= '</li>';
+	}
+	return $items;
+}
+
 /**
  * Implement the Custom Header feature.
  */
