@@ -2,18 +2,23 @@
 /* global module */
 module.exports = function( grunt ) {
 	var HH_CSS = [
-			'plugins/helphub-post-types/assets/css/*.css',
-			'themes/helphub/**/*.css'
+			'plugins/helphub-*/assets/css/*.css'
+		],
+
+		HH_SCSS = [
+			'plugins/**/*.scss',
+			'themes/helphub/**/*.scss'
 		],
 
 		HH_JS = [
-			'plugins/helphub-post-types/assets/js/*.js',
+			'plugins/helphub-*/**/*.js',
 			'themes/helphub/js/*.js'
 		],
 
 		matchdep = require('matchdep'),
 
-		stylelintConfig = require('stylelint-config-wordpress/index.js');
+		stylelintConfig = require('stylelint-config-wordpress/index.js'),
+		scssStylelintConfig = require('stylelint-config-wordpress/scss.js');
 
 	// Load tasks.
 	matchdep.filterDev('grunt-*').forEach( grunt.loadNpmTasks );
@@ -44,8 +49,7 @@ module.exports = function( grunt ) {
 			},
 			files: {
 				src: [
-					'plugins/helphub-post-types/**/*.php',
-					'plugins/helphub-read-time/**/*.php',
+					'plugins/helphub-*/**/*.php',
 					'themes/helphub/**/*.php'
 				],
 				expand: true
@@ -87,11 +91,19 @@ module.exports = function( grunt ) {
 		stylelint: {
 			css: {
 				options: {
-					config: stylelintConfig,
-					format: 'css'
+					config: stylelintConfig
 				},
 				expand: true,
 				src: HH_CSS
+			},
+
+			scss: {
+				options: {
+					config: scssStylelintConfig,
+					syntax: 'scss'
+				},
+				expand: true,
+				src: HH_SCSS
 			}
 		}
 	});
