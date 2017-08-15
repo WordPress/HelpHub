@@ -15,7 +15,7 @@
 		margin: 0 auto;
 		max-width: 100%;
 		padding: 8px;
-		padding: .5rem;
+		padding: 0.5rem;
 		width: 363.797px;
 		width: 22.7373675443rem;
 	}
@@ -40,7 +40,7 @@
 			box-shadow: 0 1px 0 #006799;
 			color: #fff;
 			text-decoration: none;
-			text-shadow: 0 -1px 1px #006799,1px 0 1px #006799,0 1px 1px #006799,-1px 0 1px #006799;
+			text-shadow: 0 -1px 1px #006799, 1px 0 1px #006799, 0 1px 1px #006799, -1px 0 1px #006799;
 		}
 
 		&:active {
@@ -70,7 +70,7 @@
 			font-size: 1rem;
 
 			.site-header & {
-				line-height:24px;
+				line-height: 24px;
 			}
 		}
 
@@ -88,7 +88,7 @@
 			display: block;
 			height: 45px;
 			padding: 8px 16px;
-			padding: .5rem 1rem;
+			padding: 0.5rem 1rem;
 			position: absolute;
 			right: 0;
 			text-shadow: none;

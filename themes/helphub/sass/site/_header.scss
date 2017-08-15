@@ -7,7 +7,7 @@
 			&:before {
 				-webkit-font-smoothing: antialiased;
 				display: inline-block;
-				font: normal 28px/1 'dashicons';
+				font: 400 28px/1 "dashicons";
 				vertical-align: top;
 				width: 36px;
 			}
@@ -33,28 +33,33 @@
 }
 
 @media screen and (min-width: 48em) {
+
 	.site-header:not(.home) {
 
 		.search-form {
 
 			.search-field {
-				font-size:.64rem;
+				font-size: 0.64rem;
 				width: 7rem;
 
-				&+.button-search {
-					display: inline-block;
-					margin-bottom: 0;
-				}
+			}
+
+			.search-field + .button-search {
+				display: inline-block;
+				margin-bottom: 0;
 			}
 		}
 	}
 }
 
 @media screen and (min-width: 60em) {
+
 	.site-header:not(.home) {
+
 		.search-form {
+
 			.search-field {
-				width:10rem;
+				width: 10rem;
 			}
 		}
 	}

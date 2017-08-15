@@ -70,6 +70,7 @@
 	.current-menu-ancestor > a {
 	}
 }
+
 /**
  * It seems we need to force overriding
  * colors forced from wp4.css
@@ -83,7 +84,7 @@
 			li {
 
 				a {
-					color: rgba(255,255,255,.8);
+					color: rgba(255, 255, 255, 0.8);
 					display: block;
 					font-size: 14px;
 					line-height: 22px;

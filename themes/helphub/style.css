@@ -439,7 +439,7 @@ textarea {
     margin: 0 auto;
     max-width: 100%;
     padding: 8px;
-    padding: .5rem;
+    padding: 0.5rem;
     width: 363.797px;
     width: 22.7373675443rem; }
   .search-form .button-search {
@@ -459,7 +459,7 @@ textarea {
       box-shadow: 0 1px 0 #006799;
       color: #fff;
       text-decoration: none;
-      text-shadow: 0 -1px 1px #006799,1px 0 1px #006799,0 1px 1px #006799,-1px 0 1px #006799; }
+      text-shadow: 0 -1px 1px #006799, 1px 0 1px #006799, 0 1px 1px #006799, -1px 0 1px #006799; }
     .search-form .button-search:active {
       background: #006799;
       border-right: 1px solid #006799;
@@ -490,7 +490,7 @@ textarea {
       display: block;
       height: 45px;
       padding: 8px 16px;
-      padding: .5rem 1rem;
+      padding: 0.5rem 1rem;
       position: absolute;
       right: 0;
       text-shadow: none;
@@ -1104,7 +1104,7 @@ h2.helphub-footerarea-title {
 .site-header .site-title a:before {
   -webkit-font-smoothing: antialiased;
   display: inline-block;
-  font: normal 28px/1 'dashicons';
+  font: 400 28px/1 "dashicons";
   vertical-align: top;
   width: 36px; }
 
@@ -1123,12 +1123,14 @@ h2.helphub-footerarea-title {
 
 @media screen and (min-width: 48em) {
   .site-header:not(.home) .search-form .search-field {
-    font-size: .64rem;
+    font-size: 0.64rem;
     width: 7rem; }
-    .site-header:not(.home) .search-form .search-field + .button-search {
-      display: inline-block;
-      margin-bottom: 0; } }
+  .site-header:not(.home) .search-form .search-field + .button-search {
+    display: inline-block;
+    margin-bottom: 0; } }
 
 @media screen and (min-width: 60em) {
   .site-header:not(.home) .search-form .search-field {
-    width: 10rem; } }
+    width: 10rem;
+  }
+}
