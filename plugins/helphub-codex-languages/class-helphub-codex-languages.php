@@ -38,18 +38,18 @@ add_action( 'plugins_loaded', 'helphub_codex_languages' );
  * Main HelpHub_Codex_Languages Class
  *
  * @class HelpHub_Codex_Languages
- * @version	1.0.0
- * @since 1.0.0
- * @package	HelpHub_Codex_Languages
- * @author Akira Tachibana
+ * @version 1.0.0
+ * @since   1.0.0
+ * @package HelpHub_Codex_Languages
+ * @author  Akira Tachibana
  */
 final class HelpHub_Codex_Languages {
 	/**
 	 * HelpHub_Codex_Languages The single instance of HelpHub_Codex_Languages.
 	 *
-	 * @var 	object
+	 * @var     object
 	 * @access  private
-	 * @since 	1.0.0
+	 * @since   1.0.0
 	 */
 	private static $_instance = null;
 
@@ -87,9 +87,9 @@ final class HelpHub_Codex_Languages {
 	 * @since   1.0.0
 	 */
 	public function __construct() {
-		$this->token 			= 'helphub';
+		$this->token      = 'helphub';
 		$this->plugin_url = plugin_dir_url( __FILE__ );
-		$this->version 		= '1.0.0';
+		$this->version    = '1.0.0';
 
 		register_activation_hook( __FILE__, array( $this, 'install' ) );
 
