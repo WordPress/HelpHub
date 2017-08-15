@@ -5,10 +5,10 @@ module.exports = function( grunt ) {
 			'plugins/helphub-*/assets/css/*.css'
 		],
 
-        HH_SCSS = [
-            'plugins/**/*.scss',
-            'themes/helphub/**/*.scss'
-        ],
+		HH_SCSS = [
+			'plugins/**/*.scss',
+			'themes/helphub/**/*.scss'
+		],
 
 		HH_JS = [
 			'plugins/helphub-*/**/*.js',
@@ -98,14 +98,14 @@ module.exports = function( grunt ) {
 				src: HH_CSS
 			},
 
-            scss: {
-                options: {
-                    config: scssStylelintConfig,
-                    format: 'scss'
-                },
-                expand: true,
-                src: HH_SCSS
-            }
+			scss: {
+				options: {
+					config: scssStylelintConfig,
+					format: 'scss'
+				},
+				expand: true,
+				src: HH_SCSS
+			}
 		}
 	});
 
