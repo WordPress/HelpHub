@@ -53,11 +53,6 @@ get_header(); ?>
 								?>
 							</footer><!-- .entry-footer -->
 						</article><!-- #post-## -->
-						<?php
-						if ( comments_open() || get_comments_number() ) :
-							comments_template();
-						endif;
-						?>
 					<?php endwhile; /* End of the loop. */ ?>
 				</div>
 				<!-- #search placeholder only, will be changed later on when search engine code is ready END-->
