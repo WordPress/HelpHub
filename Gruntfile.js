@@ -91,8 +91,7 @@ module.exports = function( grunt ) {
 		stylelint: {
 			css: {
 				options: {
-					config: stylelintConfig,
-					format: 'css'
+					config: stylelintConfig
 				},
 				expand: true,
 				src: HH_CSS
@@ -101,7 +100,7 @@ module.exports = function( grunt ) {
 			scss: {
 				options: {
 					config: scssStylelintConfig,
-					format: 'scss'
+					syntax: 'scss'
 				},
 				expand: true,
 				src: HH_SCSS
