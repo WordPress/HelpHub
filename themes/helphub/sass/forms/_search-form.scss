@@ -1,0 +1,98 @@
+.search-form {
+	font-size: 0;
+	margin-bottom: 32px;
+	margin-bottom: 2rem;
+	max-width: 100%;
+	position: relative;
+
+	.search-field {
+		-webkit-appearance: none;
+		border: none;
+		border-radius: 0;
+		box-shadow: none;
+		display: block;
+		font-size: 16px;
+		margin: 0 auto;
+		max-width: 100%;
+		padding: 8px;
+		padding: .5rem;
+		width: 363.797px;
+		width: 22.7373675443rem;
+	}
+
+	.button-search {
+		border-top: none;
+		border-left: none;
+		-webkit-border-radius: 0 2px 2px 0;
+		border-radius: 0 2px 2px 0;
+		font-size: 16px;
+		font-size: 1rem;
+		position: relative;
+		right: auto;
+		top: auto;
+		vertical-align: top;
+		padding: 0 14px;
+
+
+		&.button-primary {
+			background: #0085ba;
+			border-color: #0073aa #006799 #006799;
+			box-shadow: 0 1px 0 #006799;
+			color: #fff;
+			text-decoration: none;
+			text-shadow: 0 -1px 1px #006799,1px 0 1px #006799,0 1px 1px #006799,-1px 0 1px #006799;
+		}
+
+		&:active {
+			background: #006799;
+			border-right: 1px solid #006799;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+
+			.site-header.home &,
+			.site-main & {
+				background: transparent;
+				border: none;
+				transform: none;
+			}
+		}
+
+		&:focus {
+
+			.site-header.home &,
+			.site-main & {
+				box-shadow: 0 0 2px 1px #33b3db;
+			}
+		}
+
+		.dashicons {
+			font-size: 16px;
+			font-size: 1rem;
+
+			.site-header & {
+				line-height:24px;
+			}
+		}
+
+		.site-header & {
+			height: 28px;
+		}
+
+		.site-header.home &,
+		.site-main & {
+			background: transparent;
+			border: none;
+			border-radius: 0;
+			box-shadow: none;
+			color: #32373c;
+			display: block;
+			height: 45px;
+			padding: 8px 16px;
+			padding: .5rem 1rem;
+			position: absolute;
+			right: 0;
+			text-shadow: none;
+			top: 0;
+		}
+	}
+}
