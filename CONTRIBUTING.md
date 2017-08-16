@@ -1,4 +1,4 @@
-#Contributing to the Docs Team (HelpHub)
+# Contributing to the Docs Team (HelpHub)
 
 ### Ways to Contribute
 
