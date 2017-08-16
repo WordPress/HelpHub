@@ -144,6 +144,13 @@ class Table_Of_Contents_Lite {
 	public function plugin_init() {
 		$plugin_text_domain = 'table-of-contents-lite';
 		load_plugin_textdomain( $plugin_text_domain, false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+	}
+	/**
+	 * Load style
+	 */
+	public function enqueue_scripts() {
+		wp_enqueue_style( 'table-of-contents', TABLE_OF_CONTENTS_URL . 'assets/css/style.css', array(), '1.0' );
 	}
 
 	/**
@@ -228,22 +235,24 @@ class Table_Of_Contents_Lite {
 
 		if ( $items ) {
 			$contents_header = sprintf( 'h%s', $items[0][2] );
-			$toc             = sprintf( '%s<div class="table-of-contents">', $toc );
-			$last_item       = false;
+			$toc .= '<div class="table-of-contents">';
+			$toc .= '<h2>' . __( 'Topics' ) . '</h2>';
+			$toc .= '<ul class="items">';
+			$last_item = false;
 			foreach ( $items as $item ) {
 				if ( $last_item ) {
 					if ( $last_item < $item[2] ) {
-						$toc = sprintf( '%s<ul>', $toc );
+						$toc .= '<ul>';
 					} elseif ( $last_item > $item[2] ) {
-						$toc = sprintf( '%s</ul></li>', $toc );
+						$toc .= '</ul></li>';
 					} else {
-						$toc = sprintf( '%s</li>', $toc );
+						$toc .= '</li>';
 					}
 				}
 				$last_item = $item[2];
 				$toc       .= sprintf( '<li><a href="#%1s">%2s</a>', sanitize_title_with_dashes( $item[3] ), $item[3] );
 			}
-			$toc = sprintf( '%s</ul></div>', $toc );
+			$toc .= '</ul></div>';
 		}
 
 		return $toc . $content;
@@ -290,8 +299,9 @@ class Table_Of_Contents_Lite {
 				$first = false;
 			}
 			$a11y_text      = sprintf( '<span class="screen-reader-text">%s</span>', $item[2] );
-			$anchor         = sprintf( '<a href="#%1$s" class="anchor">%2$s</a>', $id, $a11y_text );
-			$replacement    .= sprintf( '<%1$s class="toc-heading" id="%2$s" tabindex="-1">%3$s %4$s</%1$s>', $tag, $id, $item[2], $anchor );
+			$hash           = __( '<span aria-hidden="true">&#35;</span>' );
+			$anchor         = sprintf( '<a href="#%1$s" class="anchor">%2$s %3$s</a>', $id, $hash, $a11y_text );
+			$replacement   .= sprintf( '<%1$s class="toc-heading" id="%2$s" tabindex="-1">%3$s %4$s</%1$s>', $tag, $id, $item[2], $anchor );
 			$replacements[] = $replacement;
 		}
 

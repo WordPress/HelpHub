@@ -1,0 +1,108 @@
+.content-area h1,
+.content-area h2,
+.content-area h3,
+.content-area h4 {
+    margin: 0.4em 0 1.1em 0;
+	font-weight: 400;
+	border-bottom: 0 none;
+	padding: 0;
+}
+h2.toc-heading {
+	font-size: 26px;
+	line-height:39px;
+}
+
+h3.toc-heading {
+	font-size: 21px;
+	line-height: 31px;
+}
+
+h4.toc-heading {
+	font-size: 1.2em;
+}
+.toc-heading {
+	clear: left;
+}
+.table-of-contents {
+	padding: 0;
+	max-width: 250px;
+}
+.post-type-archive-handbook div.table-of-contents h2,
+.single-handbook div.table-of-contents h2,
+.post-type-archive-handbook div.table-of-contents h3,
+.single-handbook div.table-of-contents h3 {
+	font-weight:400;
+	/**
+	 * originally font-size is 1.3em defined in wporg-breathe theme,
+	 * which is correctly 17px but in HelpHub style this inheritance is wrong
+	 * and 1.3em becomes 21px so we'll define font-size and line-height here
+	 * until issue is fixed in theme itself.
+	 */
+	font-size: 17px;
+	line-height:25px;
+}
+/**
+ * Same thing with font-size and line-height as above
+ */
+.table-of-contents .items {
+	font-size: 14px;
+	line-height: 22px;
+}
+
+.table-of-contents .items li {
+	font-size: inherit;
+	line-height: inherit;
+}
+/**
+ * This should be inherited from p2-breathe
+ */
+.table-of-contents .items li a,
+.table-of-contents .items li a:hover,
+.table-of-contents .items li a:visited {
+	color: #3498db;
+}
+/**
+ * This should be inherited from p2-breathe
+ */
+.table-of-contents .items li ul {
+	list-style: disc;
+    margin-left: 16px;
+}
+.table-of-contents .items li ul li {
+	list-style: disc;
+}
+/* Highlight current heading and adjust scroll position for fixed toolbar */
+.toc-heading:target {
+	position: relative;
+	padding-top: 50px;
+	margin-top: -50px;
+}
+/* Remove negative margin because there is no jump link before these headlines */
+.entry-content h2.toc-heading:first-of-type:target,
+.entry-content h3.toc-heading:first-of-type:target,
+h2.toc-heading + h3.toc-heading:target {
+	margin-top: 0;
+}
+.toc-heading:target:before {
+	content: '';
+	position: absolute;
+	left: -10px;
+	top: 50px;
+	border-left: 5px solid #0073aa;
+	height: 50%;
+	height: calc(100% - 50px);
+}
+p.toc-jump {
+	position: relative;
+	height: 50px;
+	text-align:right;
+	font-size: 12px;
+}
+p.toc-jump:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+p.toc-jump {
+	z-index: 1;
+}

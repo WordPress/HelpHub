@@ -20,6 +20,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+define( 'TABLE_OF_CONTENTS_URL', plugin_dir_url( __FILE__ ) );
 
 // Load plugin class files.
 require_once( 'includes/class-table-of-contents-lite.php' );
