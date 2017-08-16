@@ -35,7 +35,7 @@
 				width: 200px;
 			}
 
-			:hover > a,
+			&:hover > a,
 			.focus > a {
 			}
 
@@ -68,6 +68,54 @@
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
+	}
+}
+
+/**
+ * It seems we need to force overriding
+ * colors forced from wp4.css
+ */
+#masthead {
+
+	#site-navigation {
+
+		ul {
+
+			li {
+
+				a {
+					color: rgba(255, 255, 255, 0.8);
+					display: block;
+					font-size: 14px;
+					line-height: 22px;
+					text-decoration: none;
+				}
+
+				a.active,
+				a:hover {
+					color: #fff;
+					text-decoration: none;
+					border-bottom: 1px solid;
+
+					&:after {
+						display: none;
+					}
+				}
+
+				&.current-menu-item {
+
+					> a {
+						color: #fff;
+						text-decoration: none;
+						border-bottom: 1px solid;
+
+						&:after {
+							display: none;
+						}
+					}
+				}
+			}
+		}
 	}
 }
 
