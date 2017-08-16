@@ -21,8 +21,11 @@ Take a look at the HelpHub site located at [wp-helphub.com](https://wp-helphub.c
 
 1. Install WordPress locally.
 2. Empty out the `wp-content` folder and clone this repo into it.
-3. Add this line `define( 'WPORGPATH', 'https://wordpress.org/' ); ` to your site's `wp-config.php` file.
-4. Make sure your `php.ini` file includes these lines below as `On`.
+3. Activate the HelpHub Theme from within `/wp-admin`.
+4. Activate the necessary plugins from within `/wp-admin`; *HelpHub Post Types*, •HelpHub Read Time*, *SyntaxHighlighter Evolved*, and *Table of Contents Lite*.
+5. Under `Settings -> Permalinks` in the `/wp-admin`, change to "Post Name" option, and save changes.
+6. Add this line `define( 'WPORGPATH', 'https://wordpress.org/' ); ` to your site's `wp-config.php` file.
+7. Make sure your `php.ini` file includes these lines below as `On`.
 ```
 allow_url_fopen = On
 allow_url_include = On
