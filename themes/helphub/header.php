@@ -32,7 +32,7 @@
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
 			<div class="site-title">
-				<?php echo esc_html( get_bloginfo( 'name' ) ); ?>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a>
 			</div>
 		</div>
 		<nav id="site-navigation" class="navigation-main clear" role="navigation">

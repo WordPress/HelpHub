@@ -1,0 +1,31 @@
+{
+  "name": "HelpHub",
+  "title": "HelpHub",
+  "version": "0.1.0",
+  "description": "The WordPress user documentation portal.",
+  "keywords": [
+    "community",
+    "helphub",
+    "support",
+    "wordpress"
+  ],
+  "license": "GPL-2.0+",
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kenshino/HelpHub"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-sass": "^2.1.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-livereload": "^3.8.1"
+  },
+  "dependencies": {
+    "gulp-livereload": "^3.8.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0"
+  }
+}

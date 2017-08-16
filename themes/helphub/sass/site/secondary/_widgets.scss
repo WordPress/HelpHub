@@ -1,0 +1,49 @@
+.widget {
+	margin: 0 0 1.5em;
+
+	/* Make sure select elements fit in widgets. */
+	select {
+		max-width: 100%;
+	}
+}
+
+.helphub-homewidget-row1,
+.helphub-homewidget-row2 {
+	clear: both;
+	display: block;
+
+	section {
+		width: 30%;
+		float: left;
+		padding: 1%;
+	}
+
+	.homewidget-inner {
+		padding: 6%;
+		background: #999;
+		border: 3px solid #394045;
+		border-radius: 8px;
+		color: #195394;
+		min-height: 180px;
+
+		div,
+		li {
+			color: #195394;
+			font-size: 16px;
+
+			a {
+				color: inherit;
+			}
+		}
+
+		ul {
+			list-style: none;
+		}
+
+		.widget-title {
+			color: #fff;
+			margin: 0 0 4%;
+			font-size: 24px;
+		}
+	}
+}
