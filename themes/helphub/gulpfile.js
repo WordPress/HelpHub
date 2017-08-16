@@ -2,17 +2,39 @@
 "use strict";
 
 var gulp         = require( "gulp" );
-var concat       = require( "gulp-concat" );
-var sass         = require( "gulp-sass" );
-var sourcemaps   = require( "gulp-sourcemaps" );
+var plumber      = require( "gulp-plumber" );
 var autoprefixer = require( "gulp-autoprefixer" );
+var sass         = require( "gulp-sass" );
+var livereload   = require( "gulp-livereload" );
+global.notify    = require( "gulp-notify" );
 
 gulp.task( 'css', function() {
-    return gulp.src( 'sass/style.scss' )
-        .pipe( sourcemaps.init() )
-        .pipe( sass().on( 'error', sass.logError ) )
-        .pipe( sourcemaps.write() )
-        .pipe( autoprefixer() )
-        .pipe( concat( 'style.css' ) )
-        .pipe( gulp.dest( '.' ) );
+	return gulp.src( 'sass/style.scss' )
+		.pipe( plumber({
+			errorHandler: notify.onError({
+				title: 'SCSS',
+				message: function( err ) {
+					return 'Error: ' + err.message;
+				}
+			})
+		}))
+		.pipe( autoprefixer({
+			browsers: ['last 5 versions', 'ie >= 9']
+		}))
+		.pipe( sass({
+			outputStyle: 'nested'
+		}))
+		.pipe( gulp.dest('.'))
+		.pipe( livereload() );
+});
+
+/**
+ * Watcher
+ *
+ * Watch for any changes in our src files and run
+ * appropriate task
+ */
+gulp.task( 'watch', function() {
+	livereload.listen();
+	gulp.watch( 'sass/**/*.scss', ['css'] );
 });
