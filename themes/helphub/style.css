@@ -445,6 +445,7 @@ textarea {
   .search-form .button-search {
     border-top: none;
     border-left: none;
+    -webkit-border-radius: 0 2px 2px 0;
     border-radius: 0 2px 2px 0;
     font-size: 16px;
     font-size: 1rem;
@@ -463,13 +464,13 @@ textarea {
     .search-form .button-search:active {
       background: #006799;
       border-right: 1px solid #006799;
+      -webkit-box-shadow: none;
       box-shadow: none; }
       .site-header.home .search-form .button-search:active,
       .site-main .search-form .button-search:active {
         background: transparent;
         border: none;
-        -webkit-transform: none;
-                transform: none; }
+        transform: none; }
     .site-header.home .search-form .button-search:focus,
     .site-main .search-form .button-search:focus {
       box-shadow: 0 0 2px 1px #33b3db; }
@@ -593,7 +594,8 @@ a {
 .posts-navigation, .site-main
 .post-navigation {
   margin: 0 0 1.5em;
-  overflow: hidden; }
+  overflow: hidden;
+  clear: both; }
 
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
@@ -776,8 +778,6 @@ p.toc-jump {
 # Content
 --------------------------------------------------------------*/
 .main-content {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex; }
 
 /*--------------------------------------------------------------
@@ -803,7 +803,6 @@ p.toc-jump {
 
 .single-post article.post {
   float: left;
-  width: 70%;
   padding: 2em;
   box-sizing: border-box;
   position: relative; }
@@ -837,6 +836,12 @@ p.toc-jump {
 /*--------------------------------------------------------------
 ## Front page
 --------------------------------------------------------------*/
+.home #primary {
+  padding: 4rem; }
+
+.home .content-area {
+  width: 100%; }
+
 #main {
   max-width: 932px;
   margin: 0 auto;
@@ -1113,6 +1118,7 @@ h2.helphub-footerarea-title {
   margin: 0; }
   .site-header .search-form .search-field {
     border: 0;
+    -webkit-border-radius: 2px 0 0 2px;
     border-radius: 2px 0 0 2px;
     display: inline-block;
     font-size: 16px;
@@ -1132,4 +1138,3 @@ h2.helphub-footerarea-title {
 @media screen and (min-width: 60em) {
   .site-header:not(.home) .search-form .search-field {
     width: 10rem; } }
-

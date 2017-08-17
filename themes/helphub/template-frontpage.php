@@ -14,7 +14,6 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
 			<div class="main-search-area">
 				<h1 class="site-main-title"><?php the_title(); ?></h1>
 				<div class="helphub-home-searcharea">
@@ -62,7 +61,6 @@ get_header(); ?>
 				}
 				?>
 			</div>
-		</main><!-- #main -->
 	</div><!-- #primary -->
 
 <?php get_footer(); ?>
