@@ -5,12 +5,12 @@ table {
 	width: 100%;
 	table-layout: fixed;
 	word-wrap: break-word; /* old IE */
- 	overflow-wrap: break-word; /* modern synonym for word-wrap */
- 	word-break: keep-all; /* affects some Asian languages */
+	overflow-wrap: break-word; /* modern synonym for word-wrap */
+	word-break: keep-all; /* affects some Asian languages */
 }
 
 thead {
-  background-color: #eee;
+	background-color: #eee;
 }
 
 td,
@@ -21,10 +21,11 @@ th {
 }
 
 tr:nth-child(even) {
-	background-color: rgba(0,0,0, 0.025)
+	background-color: rgba(0, 0, 0, 0.025);
 }
 
 @media screen and (max-width: 699px) {
+
 	table {
 		display: block;  /* instead of table */
 		overflow-x: auto;
