@@ -1,4 +1,5 @@
-/*! Based on normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
+/*! Based on 
+    normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 html {
 	font-family: sans-serif;
 	font-size: 100%;
@@ -66,8 +67,9 @@ abbr[title] {
 
 b,
 strong {
-  font-weight: inherit; /*  Prevent the duplicate application of `bolder` by the next rule in Safari 6. */
+	font-weight: inherit; /*  Prevent the duplicate application of `bolder` by the next rule in Safari 6. */
 }
+
 b,
 strong {
 	font-weight: bolder;
@@ -174,12 +176,13 @@ button::-moz-focus-inner,
 	border-style: none;
 	padding: 0;
 }
- /* Restore the focus styles unset by the previous rule. */
+
+/* Restore the focus styles unset by the previous rule. */
 button:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
 [type="submit"]:-moz-focusring {
-  outline: 1px dotted ButtonText;
+	outline: 1px dotted ButtonText;
 }
 
 fieldset {
@@ -189,9 +192,9 @@ fieldset {
 legend {
 	box-sizing: border-box;
 	color: inherit;
-	display: table; 
-	max-width: 100%; 
-	padding: 0; 
+	display: table;
+	max-width: 100%;
+	padding: 0;
 	white-space: normal;
 }
 
@@ -246,7 +249,7 @@ summary {
 canvas {
 	display: inline-block;
 }
-	
+
 template {
 	display: none;
 }
