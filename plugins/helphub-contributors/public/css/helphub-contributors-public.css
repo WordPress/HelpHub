@@ -1,0 +1,68 @@
+/**
+ * Styles for frontend part of plugin.
+ */
+.contirbutors-list-wrap {
+	display: block;
+	margin: 40px 0;
+}
+
+.contirbutors-list-wrap h5 {
+	font-size: 22px;
+	font-weight: 400;
+	margin-bottom: 1em;
+}
+
+.contirbutors-list-wrap ul.contirbutors-list {
+	width: 100%;
+	position: relative;
+	list-style: none;
+	margin-left: 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	flex-flow: row wrap;
+}
+
+.contirbutors-list-wrap li {
+	flex-grow: 1;
+    box-sizing: border-box;
+    max-width: 32%;
+	box-shadow: 0 0 8px rgba(0,0,0,0.1);
+	border-radius: 3px;
+	margin-bottom: 11px;
+	margin-right: 2%;
+}
+
+.contirbutors-list-wrap li:nth-child(3n+3) {
+	margin-right: 0;
+}
+
+.contirbutors-list-wrap a {
+	padding: 15px 8px 15px 12px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.contirbutors-list-wrap img {
+	border-radius: 50%;
+	max-width: 34px;
+	max-height: 34px;
+	margin-right: 12px;
+}
+
+.contirbutors-list-wrap p {
+	font-size: 13px;
+	line-height: 1.4;
+	padding: 2px 0;
+}
+
+.contirbutors-list-wrap span {
+	display: block;
+	color: #404040;
+}
+
+.contirbutors-list-wrap .contributor-not-found p {
+	padding: 15px;
+}
