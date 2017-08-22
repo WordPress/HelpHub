@@ -71,10 +71,10 @@ class Helphub_Contributors_Admin {
 	 */
 	public function admin_enqueue_scripts() {
 		// Styles.
-		wp_enqueue_style( 'selectWoo', plugin_dir_url( __FILE__ ) . 'css/selectWoo.min.css', array(), '1.0.0' );
+		wp_enqueue_style( 'select2', plugin_dir_url( __FILE__ ) . 'css/select2.min.css', array(), '1.0.0' );
 		wp_enqueue_style( $this->helphub_contributors, plugin_dir_url( __FILE__ ) . 'css/helphub-contributors-admin.css', array(), $this->version );
 		// Scripts.
-		wp_enqueue_script( 'selectWoo', plugin_dir_url( __FILE__ ) . 'js/selectWoo.min.js', array( 'jquery' ), '1.0.0', true );
+		wp_enqueue_script( 'select2', plugin_dir_url( __FILE__ ) . 'js/select2.min.js', array( 'jquery' ), '1.0.0', true );
 		wp_enqueue_script( $this->helphub_contributors, plugin_dir_url( __FILE__ ) . 'js/helphub-contributors-admin.js', array( 'jquery' ), $this->version, false );
 	}
 

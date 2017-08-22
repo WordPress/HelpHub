@@ -1,0 +1,29 @@
+{
+  "name": "HelpHub-Contributors",
+  "title": "HelpHub-Contributors",
+  "version": "1.0.0",
+  "description": "WordPress plugin for tracking contributors.",
+  "keywords": [
+    "community",
+    "helphub",
+    "contributors",
+    "wordpress"
+  ],
+  "license": "GPL-2.0+",
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zzap/HelpHub-Contributors"
+  },
+  "devDependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^2.1.0",
+    "merge-stream": "^1.0.1",
+    "select2": "^4.0.3"
+  }
+}
