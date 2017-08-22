@@ -1,0 +1,20 @@
+# OS junk and project's build
+node_modules
+.directory
+.DS_Store
+Desktop.ini
+.Trash-*
+
+# third party assets
+
+## styles, ignore all except from plugin's file
+admin/css/*
+!admin/css/helphub-contributors-admin.css
+public/css/*
+!public/css/helphub-contributors-public.css
+
+## scripts, ignore all except from plugin's file
+admin/js/*
+!admin/js/helphub-contributors-admin.js
+public/js/*
+!public/js/helphub-contributors-public.js

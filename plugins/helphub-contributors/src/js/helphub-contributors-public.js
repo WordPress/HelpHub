@@ -1,13 +1,13 @@
-/*jslint node: true */
+/**
+ * Custom javascript code for frontend
+ * part of plugin.
+ */
+
 'use strict';
 
 var $ = window.jQuery;
 
 // ON DOCUMENT READY
 $(document).ready(function() {
-
-	$( '#helphub-contributors' ).select2({
-		tags: true
-	});
 
 }); // end of document ready
