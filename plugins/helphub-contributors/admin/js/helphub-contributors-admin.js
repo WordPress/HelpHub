@@ -1,8 +1,4 @@
-/**
- * Custom javascript code for admin
- * part of plugin.
- */
-
+/*jslint node: true */
 'use strict';
 
 var $ = window.jQuery;
@@ -10,7 +6,7 @@ var $ = window.jQuery;
 // ON DOCUMENT READY
 $(document).ready(function() {
 
-	$( "#helphub-contributors" ).selectWoo({
+	$( '#helphub-contributors' ).selectWoo({
 		tags: true
 	});
 
