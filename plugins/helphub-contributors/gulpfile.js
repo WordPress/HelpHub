@@ -1,14 +1,14 @@
 /*jslint node: true */
-"use strict";
+'use strict';
 
-var gulp         = require( "gulp" );
-var del          = require( "del" );
-var plumber      = require( "gulp-plumber" );
-var autoprefixer = require( "gulp-autoprefixer" );
-var sass         = require( "gulp-sass" );
-var livereload   = require( "gulp-livereload" );
-var merge        = require( "merge-stream" );
-global.notify    = require( "gulp-notify" );
+var gulp         = require( 'gulp' );
+var del          = require( 'del' );
+var plumber      = require( 'gulp-plumber' );
+var autoprefixer = require( 'gulp-autoprefixer' );
+var sass         = require( 'gulp-sass' );
+var livereload   = require( 'gulp-livereload' );
+var merge        = require( 'merge-stream' );
+global.notify    = require( 'gulp-notify' );
 
 /**
  * CSS build tasks
