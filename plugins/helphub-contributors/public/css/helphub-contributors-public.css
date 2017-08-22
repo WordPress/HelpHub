@@ -1,68 +1,84 @@
 /**
  * Styles for frontend part of plugin.
  */
-.contirbutors-list-wrap {
+.contributors-list-wrap {
 	display: block;
 	margin: 40px 0;
 }
 
-.contirbutors-list-wrap h5 {
+.contributors-list-wrap h5 {
 	font-size: 22px;
 	font-weight: 400;
 	margin-bottom: 1em;
 }
 
-.contirbutors-list-wrap ul.contirbutors-list {
-	width: 100%;
+.contributors-list-wrap .contributors-list {
 	position: relative;
-	list-style: none;
-	margin-left: 0;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: flex-start;
-	flex-flow: row wrap;
+	display: block;
 }
 
-.contirbutors-list-wrap li {
-	flex-grow: 1;
-    box-sizing: border-box;
-    max-width: 32%;
+.contributors-list > div {
+	display: inline-block;
+	width: 100%;
 	box-shadow: 0 0 8px rgba(0,0,0,0.1);
 	border-radius: 3px;
-	margin-bottom: 11px;
-	margin-right: 2%;
+	margin-bottom: 20px;
+	vertical-align: middle;
 }
 
-.contirbutors-list-wrap li:nth-child(3n+3) {
-	margin-right: 0;
+@media (min-width: 690px) {
+
+	.contributors-list > div {
+		width: 70%;
+	}
 }
 
-.contirbutors-list-wrap a {
-	padding: 15px 8px 15px 12px;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: flex-start;
-	align-items: center;
+@media (min-width: 768px) {
+
+	.contributors-list > div {
+		width: 48%;
+	}
+
+	.contributors-list > div:nth-child(2n+2) {
+		float: right;
+	}
 }
 
-.contirbutors-list-wrap img {
-	border-radius: 50%;
-	max-width: 34px;
-	max-height: 34px;
-	margin-right: 12px;
+.contributors-list-wrap a {
+	display: block;
+	padding: 15px;
 }
 
-.contirbutors-list-wrap p {
+.contributors-list-wrap p,
+.contributors-list-wrap img {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.contributors-list-wrap p {
 	font-size: 13px;
 	line-height: 1.4;
-	padding: 2px 0;
 }
 
-.contirbutors-list-wrap span {
+.contributors-list-wrap span {
 	display: block;
+}
+
+.contributors-list-wrap img {
+	border-radius: 50%;
+	margin-right: 15px;
+}
+
+.contributors-list-wrap .name {
 	color: #404040;
 }
 
-.contirbutors-list-wrap .contributor-not-found p {
+.contributors-list-wrap .contributor-not-found {
+	min-height: 70px;
+}
+
+.contributors-list-wrap .contributor-not-found p {
 	padding: 15px;
+	display: block;
+	text-align: center;
 }

@@ -80,7 +80,7 @@ class HelpHub_Contributors_Public {
 
 			if ( is_array( $contributors ) && ! empty( $contributors ) ) :
 
-				$contributors_list_items = '';
+				$contributors_items = '';
 
 				foreach ( $contributors as $contributor ) :
 					// Get user object.
@@ -106,8 +106,8 @@ class HelpHub_Contributors_Public {
 
 						$contributor_url      = 'https://profiles.wordpress.org/' . $data['user_nicename'];
 						$contributor_gravatar = '<img src="' . esc_url( get_avatar_url( $data['user_email'], array( 'size' => 40 ) ) ) . '" />';
-						$contributor_name     = '<span>' . esc_html( $data['display_name'] ) . '</span>';
-						$contributor_username = '&#64;' . esc_html( $data['user_nicename'] );
+						$contributor_name     = '<span class="name">' . esc_html( $data['display_name'] ) . '</span>';
+						$contributor_username = '<span>&#64;' . esc_html( $data['user_nicename'] ) . '</span>';
 
 						/**
 						 * Filters contributor text.
@@ -134,33 +134,33 @@ class HelpHub_Contributors_Public {
 						 */
 						$contributor_link = apply_filters( 'helphub_contributors_contributor_link', $contributor_link, $contributor_url, $contributor_gravatar, $contributor_text );
 
-						$contributor_list_item = '<li>' . $contributor_link . '</li>';
+						$contributor_item = '<div class="contributor">' . $contributor_link . '</div>';
 
 						/**
-						 * Filters contributor list item.
+						 * Filters contributor item.
 						 *
 						 * @since 1.0.0
 						 *
-						 * @param string $contributor_list_item  Contributor list item markup.
+						 * @param string $contributor_item  Contributor list item markup.
 						 */
-						$contributor_list_item = apply_filters( 'helphub_contributors_contributor_item', $contributor_list_item );
+						$contributor_item = apply_filters( 'helphub_contributors_contributor_item', $contributor_item );
 
-						$contributors_list_items .= $contributor_list_item;
+						$contributors_items .= $contributor_item;
 
 					else :
 
 						// Display message if no user is found with provided username.
-						$contributors_list_items .= '<li class="contributor-not-found"><p>' . sprintf( __( '%s is not a valid username.', $this->helphub_contributors ), '<strong>' . $contributor . '</strong>' ) . '</p></li>';
+						$contributors_items .= '<div class="contributor contributor-not-found"><p>' . sprintf( __( '%s is not a valid username.', $this->helphub_contributors ), '<strong>' . $contributor . '</strong>' ) . '</p></div>';
 
 					endif; // is_object( $contributor_object )
 
 				endforeach; // $contributors as $contributor
 
 				$contributors_heading = '<h5>' . esc_html__( 'Contributors', $this->helphub_contributors ) . '</h5>';
-				$contributors_list    = '<ul class="contirbutors-list">' . $contributors_list_items . '</ul>';
+				$contributors_list    = '<div class="contributors-list">' . $contributors_items . '</div>';
 
 				// Build the markup
-				$contributors_markup = '<div class="contirbutors-list-wrap">' . $contributors_heading . $contributors_list . '</div>';
+				$contributors_markup = '<div class="contributors-list-wrap">' . $contributors_heading . $contributors_list . '</div>';
 
 				/**
 				 * Filters contributors markup.
@@ -170,9 +170,9 @@ class HelpHub_Contributors_Public {
 				 * @param string $contributors_markup      Contributors markup.
 				 * @param string $contributors_heading     Contributors heading.
 				 * @param string $contributors_list        Contributors list markup.
-				 * @param string $contributors_list_items  Contributors list items markup, without '<ul>'.
+				 * @param string $contributors_items  Contributors list items markup, without '<ul>'.
 				 */
-				$contributors_markup = apply_filters( 'helphub_contributors', $contributors_markup, $contributors_heading, $contributors_list, $contributors_list_items );
+				$contributors_markup = apply_filters( 'helphub_contributors', $contributors_markup, $contributors_heading, $contributors_list, $contributors_items );
 
 			endif; // is_array( $contributors ) && ! empty( $contributors )
 
