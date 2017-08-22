@@ -57,9 +57,9 @@ Once you have local install of HelpHub up and running, you can contribute with p
 
 - [npm](https://www.npmjs.com/get-npm)
 - [gulp](https://gulpjs.com/)
-- [SASS](http://sass-lang.com/)
+- [Sass](http://sass-lang.com/)
 
-HelpHub theme uses [SASS](http://sass-lang.com/) for applying styles as it provides possibility for breaking one large `style.css` file into smaller partials and, therefore, reduce possible GIT conflicts caused with multiple modifications of the same file in different branches. Maintenance is, also, greatly improved. Once modified, SASS (`.scss`) files need to be compiled into `style.css`. Compiler of our choice is [gulp](https://gulpjs.com/). To be able to run gulp you need [npm](https://www.npmjs.com/get-npm). We will assume that you already have npm.
+HelpHub theme uses [Sass](http://sass-lang.com/) for applying styles as it provides possibility for breaking one large `style.css` file into smaller partials and, therefore, reduce possible GIT conflicts caused with multiple modifications of the same file in different branches. Maintenance is, also, greatly improved. Once modified, Sass (`.scss`) files need to be compiled into `style.css`. Compiler of our choice is [gulp](https://gulpjs.com/). To be able to run gulp you need [npm](https://www.npmjs.com/get-npm). We will assume that you already have npm.
 
 In terminal navigate to theme folder. First we need to install dependencies from `package.json` file:
 ```
@@ -82,13 +82,13 @@ gulp watch
 
 This task tells compiler to watch all changes created in `.scss` files and rebuild new `style.css` every time you save the file.
 
-While you can use regular CSS syntax in `.scss` files (as long as Travis tests are passed), we would like to encourage you to [learn](http://sass-lang.com/guide) and use SASS as much as possible. It's good for you and for project.
+While you can use regular CSS syntax in `.scss` files (as long as Travis tests are passed), we would like to encourage you to [learn](http://sass-lang.com/guide) and use Sass as much as possible. It's good for you and for project.
 
 ### Propose design suggestions and improvements
 
-Join our discussions in the [#docs](https://wordpress.slack.com/messages/docs/) slack channel on:
+Join our discussions in the [#docs](https://wordpress.slack.com/messages/docs/) [slack](https://make.wordpress.org/chat/) channel on:
 
 - **Thuesdays from 15:00 - 16:00 UTC** - content, design and development discussion,
 - **Thursdays from 17:00 - 17:30 UTC** - bug scrubs,
 
-or submit your ideas on our Github repo here: https://github.com/Kenshino/HelpHub/issues.
+or submit your ideas on our Github repo [here](https://github.com/Kenshino/HelpHub/issues).
