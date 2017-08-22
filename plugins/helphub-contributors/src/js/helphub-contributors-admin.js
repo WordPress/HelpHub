@@ -2,8 +2,6 @@
 jQuery( document ).ready( function( $ ) {
 	'use strict';
 
-	var $ = window.jQuery;
-
 	// ON DOCUMENT READY
 	$(document).ready(function() {
 

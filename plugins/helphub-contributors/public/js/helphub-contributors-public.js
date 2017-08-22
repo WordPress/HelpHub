@@ -2,12 +2,11 @@
  * Custom javascript code for frontend
  * part of plugin.
  */
+jQuery( document ).ready( function( $ ) {
+	'use strict';
 
-'use strict';
+	// ON DOCUMENT READY
+	$(document).ready(function() {
 
-var $ = window.jQuery;
-
-// ON DOCUMENT READY
-$(document).ready(function() {
-
-}); // end of document ready
+	}); // end of document ready
+});
