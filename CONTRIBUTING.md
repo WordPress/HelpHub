@@ -88,7 +88,7 @@ While you can use regular CSS syntax in `.scss` files (as long as Travis tests a
 
 Join our discussions in the [#docs](https://wordpress.slack.com/messages/docs/) [slack](https://make.wordpress.org/chat/) channel on:
 
-- **Thuesdays from 15:00 - 16:00 UTC** - content, design and development discussion,
+- **Tuesdays from 15:00 - 16:00 UTC** - content, design and development discussion,
 - **Thursdays from 17:00 - 17:30 UTC** - bug scrubs,
 
 or submit your ideas on our Github repo [here](https://github.com/Kenshino/HelpHub/issues).
