@@ -47,7 +47,7 @@ hr {
 }
 
 pre {
-	font-family: monospace, monospace;
+	font-family: monospace, monospace; /* stylelint-disable-line font-family-no-duplicate-names */
 	font-size: 1em;
 	overflow: auto;
 }
@@ -78,7 +78,7 @@ strong {
 code,
 kbd,
 samp {
-	font-family: monospace, monospace;
+	font-family: monospace, monospace; /* stylelint-disable-line font-family-no-duplicate-names */
 	font-size: 1em;
 }
 
