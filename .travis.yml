@@ -19,7 +19,6 @@ sudo: false
 
 # Tell Travis CI which distro to use
 dist: trusty
- 
 # Travis CI environment matrix
 env:
   matrix:
@@ -90,6 +89,6 @@ script:
   - npm install
   - npm install -g grunt-cli
   # Run CSS, JS, & PHP Grunt tasks (Temporarily using --force so all tasks run)
-  - grunt
+  - grunt travis
   # PHPUnit
   - cd .. && phpunit
