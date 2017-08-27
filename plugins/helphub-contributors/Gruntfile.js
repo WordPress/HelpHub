@@ -95,6 +95,19 @@ module.exports = function( grunt ) {
 				files: HH_SCSS,
 				tasks: [ 'sass:helphub', 'postcss:helphub' ]
 			}
+		},
+		copy: {
+			main: {
+				files: [
+
+					// includes files within path and its sub-directories
+					{
+						expand: true,
+						src: ['node_modules/select2/dist/**'],
+						dest: 'admin/assets/'
+					}
+				]
+			}
 		}
 	});
 
