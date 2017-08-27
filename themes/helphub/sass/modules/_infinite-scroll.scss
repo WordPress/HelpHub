@@ -1,6 +1,8 @@
-/* Globally hidden elements when Infinite Scroll is supported and in use. */
-.infinite-scroll .posts-navigation, /* Older / Newer Posts Navigation (always hidden) */
-.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
+/* Globally hidden elements when Infinite Scroll is supported and in use.
+  Older / Newer Posts Navigation (always hidden)
+  Theme Footer (when set to scrolling) */
+.infinite-scroll .posts-navigation,
+.infinite-scroll.neverending .site-footer {
 	display: none;
 }
 
