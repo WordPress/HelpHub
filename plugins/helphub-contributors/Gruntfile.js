@@ -9,18 +9,18 @@ module.exports = function( grunt ) {
 			'src/sass/helphub-contributors-public.scss'
 		],
 
-		autoprefixer = require('autoprefixer'),
+		autoprefixer = require( 'autoprefixer' ),
 
-		matchdep = require('matchdep'),
+		matchdep = require( 'matchdep' ),
 
-		stylelintConfig = require('stylelint-config-wordpress/index.js'),
-		scssStylelintConfig = require('stylelint-config-wordpress/scss.js');
+		stylelintConfig = require( 'stylelint-config-wordpress/index.js' ),
+		scssStylelintConfig = require( 'stylelint-config-wordpress/scss.js' );
 
 	// Load tasks.
-	matchdep.filterDev('grunt-*').forEach( grunt.loadNpmTasks );
+	matchdep.filterDev( 'grunt-*' ).forEach( grunt.loadNpmTasks );
 
 	// Project configuration.
-	grunt.initConfig({
+	grunt.initConfig( {
 		pkg: grunt.file.readJSON( 'package.json' ),
 		checkDependencies: {
 			options: {
@@ -32,7 +32,7 @@ module.exports = function( grunt ) {
 			options: {
 				map: false,
 				processors: [
-					autoprefixer({
+					autoprefixer( {
 						browsers: [
 							'> 1%',
 							'ie >= 11',
@@ -46,7 +46,7 @@ module.exports = function( grunt ) {
 							'last 2 Opera versions'
 						],
 						cascade: false
-					})
+					} )
 				],
 				failOnError: false
 			},
@@ -99,8 +99,6 @@ module.exports = function( grunt ) {
 		copy: {
 			main: {
 				files: [
-
-					// includes files within path and its sub-directories
 					{
 						expand: true,
 						src: ['node_modules/select2/dist/**'],

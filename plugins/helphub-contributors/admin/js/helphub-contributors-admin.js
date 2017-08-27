@@ -3,11 +3,11 @@ jQuery( document ).ready( function( $ ) {
 	'use strict';
 
 	// ON DOCUMENT READY
-	$(document).ready(function() {
+	$( document ).ready( function() {
 
-		$( '#helphub-contributors' ).select2({
+		$( '#helphub-contributors' ).select2( {
 			tags: true
-		});
+		} );
 
-	}); // end of document ready
-});
+	} ); // end of document ready
+} );
