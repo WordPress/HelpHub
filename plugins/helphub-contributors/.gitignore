@@ -6,11 +6,4 @@ Desktop.ini
 .Trash-*
 
 # third party assets
-
-## styles
-!admin/css/
-public/css/*
-!public/css/helphub-contributors-public.css
-
-## scripts
-!admin/js/
+admin/assets/
