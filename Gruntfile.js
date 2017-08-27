@@ -148,6 +148,15 @@ module.exports = function( grunt ) {
 				expand: true,
 				src: HH_SCSS
 			}
+		},
+		watch: {
+			config: {
+				files: 'Gruntfile.js'
+			},
+			sass: {
+				files: HH_SCSS,
+				tasks: [ 'sass:helphub', 'postcss:helphub' ]
+			}
 		}
 	});
 
