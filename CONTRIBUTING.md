@@ -51,36 +51,42 @@ Included in this repo is the file `helphub.wordpress.2017-06-15.xml`. Import thi
 
 Once you have local install of HelpHub up and running, you can contribute with pull requests either from your own fork or after you've added as a contributor directly in this repository. We are using [Travis CL](https://travis-ci.org/) for tests on every pull request. You can, also, run these tests localy before pushing your code (more on this later). Development covers work on both, theme and plugins and requires following [best practices](https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/) and [WordPress Coding Standards](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards).
 
-#### HelpHub Theme
+#### HelpHub
 
 **Requirements:**
 
 - [npm](https://www.npmjs.com/get-npm)
-- [gulp](https://gulpjs.com/)
+- [Grunt](https://gruntjs.com/)
 - [Sass](http://sass-lang.com/)
 
-HelpHub theme uses [Sass](http://sass-lang.com/) for applying styles as it provides possibility for breaking one large `style.css` file into smaller partials and, therefore, reduce possible GIT conflicts caused with multiple modifications of the same file in different branches. Maintenance is, also, greatly improved. Once modified, Sass (`.scss`) files need to be compiled into `style.css`. Compiler of our choice is [gulp](https://gulpjs.com/). To be able to run gulp you need [npm](https://www.npmjs.com/get-npm). We will assume that you already have npm.
+HelpHub uses a task runner called [Grunt](https://gruntjs.com/). Grunt contains automated tasks for the project (which can be anything - building svg sprites, minifying css and js files etc). We are using to verify and check the integrity of the CSS, JavaScript, and Sass files within this repository along with compiling the themes Sass files into CSS.
 
-In terminal navigate to theme folder. First we need to install dependencies from `package.json` file:
+To be able to run Grunt you need [npm](https://www.npmjs.com/get-npm). We will assume that you already have npm.
+
+
+First we need to install dependencies from `package.json` file:
 ```
 npm install
 ```
 
-After this command has run in your terminal you'll have another folder in the theme root, `node_modules`. This folder is ignored in `.gitignore` and contains all the tools we need for running gulp tasks, defined in `gulpfile.js`. This file contains automated tasks for the project (which can be anything - building svg sprites, minifying css and js files etc). We are using it for two tasks: `css` and `watch`.
+After this command has run in your terminal you'll have another folder in the root, `node_modules`. This folder is ignored in `.gitignore` and contains all the tools we need for running Grunt tasks, defined in `Gruntfile.js`.
 
-`css` task compiles all `.scss` files into `style.css`. This means that every time you run this task `style.css` will be overridden with new code from `.scss` files, located in `sass` folder. Hence, instead modifying `style.css` directly, all CSS changes are to be added into appropriate `.scss` partial after which you should run compiler in order to see your changes. Compiling is done with running following command in terminal:
 
-```
-gulp css
-```
+The HelpHub theme uses [Sass](http://sass-lang.com/) for applying styles as it provides possibility for breaking one large `style.css` file into smaller partials and, therefore, reduce possible Git conflicts caused with multiple modifications of the same file in different branches. Maintenance is, also, greatly improved. Once modified, Sass (`.scss`) files need to be compiled into `style.css`.
 
-If, however, you are adding a lot of CSS changes, instead of running a lot of `css` tasks, you can run `watch` task, like so:
+The Grunt `sass` task compiles all `.scss` files into `style.css`. This means that every time you run this task `style.css` will be overridden with new code from `.scss` files, located in the themes `sass` folder. Hence, instead modifying `style.css` directly, all CSS changes for the HelpHub theme are to be added into appropriate `.scss` partial after which you should run compiler in order to see your changes. Compiling is done with running following command in terminal:
 
 ```
-gulp watch
+grunt sass
 ```
 
-This task tells compiler to watch all changes created in `.scss` files and rebuild new `style.css` every time you save the file.
+If, however, you are adding a lot of CSS changes, instead of running a lot of `sass` tasks, you can run `watch` task, like so:
+
+```
+grunt watch
+```
+
+This task tells compiler to watch all changes created in `.scss` files and rebuild a new `style.css` every time you save the file.
 
 While you can use regular CSS syntax in `.scss` files (as long as Travis tests are passed), we would like to encourage you to [learn](http://sass-lang.com/guide) and use Sass as much as possible. It's good for you and for project.
 
