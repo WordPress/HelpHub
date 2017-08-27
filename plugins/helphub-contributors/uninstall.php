@@ -9,3 +9,7 @@
 if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	exit;
 }
+/**
+ * Delete all plugin data on plugin uninstall
+ */
+delete_post_meta_by_key( 'helphub_contributors' );
