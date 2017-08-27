@@ -58,8 +58,6 @@ class HelpHub_Contributors_Public {
 	public function public_enqueue_scripts() {
 		// Styles.
 		wp_enqueue_style( $this->helphub_contributors, plugin_dir_url( __FILE__ ) . 'css/helphub-contributors-public.css', array(), $this->version );
-		// Scripts.
-		wp_enqueue_script( $this->helphub_contributors, plugin_dir_url( __FILE__ ) . 'js/helphub-contributors-public.js', array( 'jquery' ), $this->version, true );
 	}
 
 	/**
@@ -150,13 +148,13 @@ class HelpHub_Contributors_Public {
 					else :
 
 						// Display message if no user is found with provided username.
-						$contributors_items .= '<div class="contributor contributor-not-found"><p>' . sprintf( __( '%s is not a valid username.', 'helphub_contributors' ), '<strong>' . $contributor . '</strong>' ) . '</p></div>';
+						$contributors_items .= '<div class="contributor contributor-not-found"><p>' . sprintf( __( '%s is not a valid username.', 'helphub' ), '<strong>' . $contributor . '</strong>' ) . '</p></div>';
 
 					endif; // is_object( $contributor_object )
 
 				endforeach; // $contributors as $contributor
 
-				$contributors_heading = '<h5>' . esc_html__( 'Contributors', 'helphub_contributors' ) . '</h5>';
+				$contributors_heading = '<h5>' . esc_html__( 'Contributors', 'helphub' ) . '</h5>';
 				$contributors_list    = '<div class="contributors-list">' . $contributors_items . '</div>';
 
 				// Build the markup
