@@ -168,6 +168,8 @@ module.exports = function( grunt ) {
 		'checkDependencies',
 		'csstest',
 		'jstest',
-		'phptest'
+		'phptest',
+		'sass',
+		'postcss'
 	] );
 };
