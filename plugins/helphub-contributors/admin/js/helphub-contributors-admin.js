@@ -9,5 +9,5 @@ jQuery( document ).ready( function( $ ) {
 			tags: true
 		} );
 
-	} ); // end of document ready
+	} );
 } );
