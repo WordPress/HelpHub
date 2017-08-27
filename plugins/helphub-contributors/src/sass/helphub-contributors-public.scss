@@ -27,18 +27,19 @@
 }
 
 @media (min-width: 690px) {
-
+	/* stylelint-disable-line rule-empty-line-before */
 	.contributors-list > div {
 		width: 70%;
 	}
 }
 
 @media (min-width: 768px) {
-
+	/* stylelint-disable-line rule-empty-line-before */
 	.contributors-list > div {
 		width: 48%;
 	}
 
+	/* stylelint-disable-line rule-empty-line-before */
 	.contributors-list > div:nth-child(2n+2) {
 		float: right;
 	}

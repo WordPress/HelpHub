@@ -7,14 +7,10 @@ Desktop.ini
 
 # third party assets
 
-## styles, ignore all except from plugin's file
-admin/css/*
-!admin/css/helphub-contributors-admin.css
+## styles
+!admin/css/
 public/css/*
 !public/css/helphub-contributors-public.css
 
-## scripts, ignore all except from plugin's file
-admin/js/*
-!admin/js/helphub-contributors-admin.js
-public/js/*
-!public/js/helphub-contributors-public.js
+## scripts
+!admin/js/

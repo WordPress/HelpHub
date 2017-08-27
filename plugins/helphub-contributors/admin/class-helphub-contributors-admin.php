@@ -72,7 +72,6 @@ class Helphub_Contributors_Admin {
 	public function admin_enqueue_scripts() {
 		// Styles.
 		wp_enqueue_style( 'select2', plugin_dir_url( __FILE__ ) . 'css/select2.min.css', array(), '1.0.0' );
-		wp_enqueue_style( $this->helphub_contributors, plugin_dir_url( __FILE__ ) . 'css/helphub-contributors-admin.css', array(), $this->version );
 		// Scripts.
 		wp_enqueue_script( 'select2', plugin_dir_url( __FILE__ ) . 'js/select2.min.js', array( 'jquery' ), '1.0.0', true );
 		wp_enqueue_script( $this->helphub_contributors, plugin_dir_url( __FILE__ ) . 'js/helphub-contributors-admin.js', array( 'jquery' ), $this->version, false );
@@ -98,14 +97,14 @@ class Helphub_Contributors_Admin {
 		$contributors = get_post_meta( $post->ID, 'helphub_contributors' ); ?>
 
 		<div class="misc-pub-section helphub-contributors">
-			<label><?php esc_html_e( 'Contributors', 'helphub_contributors' ); ?>
+			<label><?php esc_html_e( 'Contributors', 'helphub' ); ?>
 				<select id="helphub-contributors" class="widefat" multiple name="helphub_contributors[]">
 					<?php foreach ( $contributors[0] as $contributor ) : ?>
 						<option value="<?php echo esc_attr( $contributor ); ?>" selected="selected"><?php echo esc_html( $contributor ); ?></option>
 					<?php endforeach; ?>
 				</select><!-- #helphub-contributors -->
 			</label>
-			<p class="description"><?php esc_html_e( 'Type wp.org username for contributor', 'helphub_contributors' ); ?></p>
+			<p class="description"><?php esc_html_e( 'Type wp.org username for contributor', 'helphub' ); ?></p>
 		</div><!-- misc-pub-section helphub-contributors -->
 		<?php
 	}
@@ -147,7 +146,7 @@ class Helphub_Contributors_Admin {
 	 * @param array $columns Array of columns
 	 */
 	public function add_column( $columns ) {
-		$columns['helphub_contributors'] = esc_html__( 'Contributors', 'helphub_contributors' );
+		$columns['helphub_contributors'] = esc_html__( 'Contributors', 'helphub' );
 		return $columns;
 	}
 
@@ -174,9 +173,9 @@ class Helphub_Contributors_Admin {
 				$contributor_link = '<a href="https://profiles.wordpress.org/' . esc_html( $contributor ) . '">@' . esc_html( $contributor ) . '</a>';
 
 				if ( end( $contributors ) == $contributor ) {
-					$contributor_link .= esc_html__( '.', 'helphub_contributors' );
+					$contributor_link .= esc_html__( '.', 'helphub' );
 				} else {
-					$contributor_link .= esc_html__( ', ', 'helphub_contributors' );
+					$contributor_link .= esc_html__( ', ', 'helphub' );
 				}
 
 				echo $contributor_link;

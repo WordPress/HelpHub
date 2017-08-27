@@ -1,29 +1,40 @@
 {
-  "name": "HelpHub-Contributors",
-  "title": "HelpHub-Contributors",
-  "version": "1.0.0",
-  "description": "WordPress plugin for tracking contributors.",
+  "bugs": {
+    "url": "https://github.com/zzap/HelpHub-Contributors/issues"
+  },
+  "description": "WordPress plugin for tracking contributors to wordpress.org Documenation team's HelpHub project.",
+  "devDependencies": {
+    "autoprefixer": "^7.1.2",
+    "grunt": "~1.0.1",
+    "grunt-check-dependencies": "~1.0.0",
+    "grunt-checktextdomain": "~1.0.1",
+    "grunt-contrib-jshint": "~1.1.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-jscs": "~3.0.1",
+    "grunt-jsvalidate": "~0.2.2",
+    "grunt-postcss": "^0.8.0",
+    "grunt-sass": "^2.0.0",
+    "grunt-stylelint": "~0.9.0",
+    "matchdep": "~2.0.0",
+    "stylelint": "~8.0.0",
+    "stylelint-config-wordpress": "~12.0.0",
+    "stylelint-scss": "^2.0.1"
+  },
+  "engines": {
+    "node": ">=6.9.1"
+  },
   "keywords": [
     "community",
     "helphub",
-    "contributors",
+    "support",
     "wordpress"
   ],
+  "homepage": "https://github.com/zzap/HelpHub-Contributors",
   "license": "GPL-2.0+",
-  "main": "gulpfile.js",
+  "name": "HelpHub-Contributors",
   "repository": {
     "type": "git",
     "url": "https://github.com/zzap/HelpHub-Contributors"
   },
-  "devDependencies": {
-    "del": "^2.2.2",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-livereload": "^3.8.1",
-    "gulp-notify": "^2.2.0",
-    "gulp-plumber": "^1.1.0",
-    "gulp-sass": "^2.1.0",
-    "merge-stream": "^1.0.1",
-    "select2": "^4.0.3"
-  }
+  "version": "1.0.0"
 }
