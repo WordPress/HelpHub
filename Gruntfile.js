@@ -125,6 +125,8 @@ module.exports = function( grunt ) {
 				dest: 'themes/helphub/',
 				src: [ 'style.scss' ],
 				options: {
+					indentType: 'tab',
+					indentWidth: 1,
 					outputStyle: 'expanded'
 				}
 			}
