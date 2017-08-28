@@ -114,7 +114,7 @@ module.exports = function( grunt ) {
 			},
 			helphub: {
 				expand: true,
-				src: 'themes/helphub/sass/style.css'
+				src: 'themes/helphub/style.css'
 			}
 		},
 		sass: {

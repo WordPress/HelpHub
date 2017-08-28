@@ -113,6 +113,7 @@ a {
 abbr[title] {
 	border-bottom: none;
 	text-decoration: underline;
+	-webkit-text-decoration: underline dotted;
 	text-decoration: underline dotted;
 }
 
@@ -569,7 +570,6 @@ textarea {
 .search-form .button-search {
 	border-top: none;
 	border-left: none;
-	-webkit-border-radius: 0 2px 2px 0;
 	border-radius: 0 2px 2px 0;
 	font-size: 16px;
 	font-size: 1rem;
@@ -592,7 +592,6 @@ textarea {
 .search-form .button-search:active {
 	background: #006799;
 	border-right: 1px solid #006799;
-	-webkit-box-shadow: none;
 	box-shadow: none;
 }
 
@@ -600,6 +599,7 @@ textarea {
 .site-main .search-form .button-search:active {
 	background: transparent;
 	border: none;
+	-webkit-transform: none;
 	transform: none;
 }
 
@@ -992,6 +992,7 @@ p.toc-jump {
 # Content
 --------------------------------------------------------------*/
 .main-content {
+	display: -webkit-box;
 	display: flex;
 }
 
@@ -1426,7 +1427,6 @@ h2.helphub-footerarea-title {
 
 .site-header .search-form .search-field {
 	border: 0;
-	-webkit-border-radius: 2px 0 0 2px;
 	border-radius: 2px 0 0 2px;
 	display: inline-block;
 	font-size: 16px;
