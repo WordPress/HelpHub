@@ -30,6 +30,9 @@ env:
 cache:
   directories:
     - node_modules
+    - vendor
+    - $HOME/.composer/cache
+
 before_install:
   - npm prune
   - npm update
