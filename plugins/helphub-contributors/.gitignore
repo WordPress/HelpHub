@@ -7,3 +7,6 @@ Desktop.ini
 
 # third party assets
 admin/assets/
+
+# generated assets
+public/css/helphub-contributors-public.css
