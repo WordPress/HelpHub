@@ -13,7 +13,7 @@ if ( ( ! is_active_sidebar( 'sidebar-1' ) ) || is_front_page() ) {
 ?>
 
 <aside id="secondary" class="widget-area" role="complementary">
-	<?php
-		dynamic_sidebar( 'sidebar-1' );
-	?>
+	<div id="secondary-content">
+		<?php dynamic_sidebar( 'sidebar-1' ); ?>
+	</div>
 </aside><!-- #secondary -->

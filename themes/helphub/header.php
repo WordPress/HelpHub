@@ -47,8 +47,4 @@
 	</header><!-- #masthead -->
 	<div id="page" class="hfeed site">
 		<div id="main" class="site-main clear">
-			<div id="secondary" class="widget-area" role="complementary">
-				<div id="secondary-content">
-					<?php get_sidebar(); ?>
-				</div>
-			</div>
+			<?php get_sidebar(); ?>
