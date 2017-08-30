@@ -48,12 +48,7 @@ before_script:
       echo "xdebug.ini does not exist"
     fi
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
-  - |
-    if [[ ${TRAVIS_PHP_VERSION:0:2} == "7." ]]; then
-      composer global require "phpunit/phpunit=5.7.*"
-    elif [[ ${TRAVIS_PHP_VERSION:0:3} != "5.2" ]]; then
-      composer global require "phpunit/phpunit=4.8.*"
-    fi
+  - composer global require --dev phpunit/phpunit ^6
   - which phpunit
   - phpunit --version
   # Install phpunuit test suite
