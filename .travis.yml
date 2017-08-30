@@ -28,6 +28,7 @@ env:
 # Setup NPM modules for Travis CI cache maintanence.
 cache:
   directories:
+    - $HOME/.npm
     - node_modules
     - vendor
     - $HOME/.composer/cache
