@@ -15,6 +15,8 @@ module.exports = function( grunt ) {
 			'themes/helphub/js/*.js'
 		],
 
+		autoprefixer = require('autoprefixer'),
+
 		matchdep = require('matchdep'),
 
 		stylelintConfig = require('stylelint-config-wordpress/index.js'),
@@ -88,6 +90,47 @@ module.exports = function( grunt ) {
 				src: HH_JS
 			}
 		},
+		postcss: {
+			options: {
+				map: false,
+				processors: [
+					autoprefixer({
+						browsers: [
+							'> 1%',
+							'ie >= 11',
+							'last 1 Android versions',
+							'last 1 ChromeAndroid versions',
+							'last 2 Chrome versions',
+							'last 2 Firefox versions',
+							'last 2 Safari versions',
+							'last 2 iOS versions',
+							'last 2 Edge versions',
+							'last 2 Opera versions'
+						],
+						cascade: false
+					})
+				],
+				failOnError: false
+			},
+			helphub: {
+				expand: true,
+				src: 'themes/helphub/style.css'
+			}
+		},
+		sass: {
+			helphub: {
+				expand: true,
+				ext: '.css',
+				cwd: 'themes/helphub/sass/',
+				dest: 'themes/helphub/',
+				src: [ 'style.scss' ],
+				options: {
+					indentType: 'tab',
+					indentWidth: 1,
+					outputStyle: 'expanded'
+				}
+			}
+		},
 		stylelint: {
 			css: {
 				options: {
@@ -104,6 +147,15 @@ module.exports = function( grunt ) {
 				},
 				expand: true,
 				src: HH_SCSS
+			}
+		},
+		watch: {
+			config: {
+				files: 'Gruntfile.js'
+			},
+			sass: {
+				files: HH_SCSS,
+				tasks: [ 'sass:helphub', 'postcss:helphub' ]
 			}
 		}
 	});
@@ -125,6 +177,8 @@ module.exports = function( grunt ) {
 		'checkDependencies',
 		'csstest',
 		'jstest',
-		'phptest'
+		'phptest',
+		'sass',
+		'postcss'
 	] );
 };
