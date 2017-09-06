@@ -324,10 +324,10 @@ input,
 select,
 optgroup,
 textarea {
-	color: #404040;
+	color: #555;
 	font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-	font-size: 16px;
-	font-size: 1rem;
+	font-size: 14.08px;
+	font-size: 0.88rem;
 }
 
 h1,
@@ -351,7 +351,7 @@ body p {
 }
 
 p {
-	margin-bottom: 1.5em;
+	margin: 1.2em 0;
 }
 
 dfn,
@@ -883,50 +883,6 @@ a:hover, a:active {
 }
 
 /*--------------------------------------------------------------
-# Table of Contents
---------------------------------------------------------------*/
-.table-of-contents {
-	background-color: #f5f5f5;
-	float: right;
-	max-width: 35%;
-	border-top: 5px solid #d0d0d0;
-	padding-top: 2%;
-	padding-bottom: 2%;
-}
-
-.table-of-contents ul {
-	margin-left: 0.2em;
-}
-
-.table-of-contents li {
-	list-style: none;
-	padding-left: 5%;
-	padding-right: 3%;
-	padding-bottom: 2%;
-	font-weight: 900;
-	line-height: 1.2;
-}
-
-.single-post h1.entry-title {
-	font-family: HelveticaNeue-Light, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-weight: 300;
-	font-size: 2.5em;
-}
-
-h2.toc-heading,
-h3.toc-heading,
-h4.toc-heading {
-	margin-top: 2em;
-	font-size: 1.2em;
-	font-weight: 400;
-}
-
-p.toc-jump {
-	float: right;
-	font-size: 1em;
-}
-
-/*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
 .widget {
@@ -1022,22 +978,19 @@ p.toc-jump {
 	margin: 0 0 1.5em;
 }
 
+.single-post h1.entry-title {
+	font-size: 29px;
+	line-height: 31px;
+}
+
 .single-post article.post {
 	float: left;
-	padding: 2em;
 	box-sizing: border-box;
 	position: relative;
 }
 
 .article-container {
 	position: relative;
-}
-
-.entry-header {
-	border-bottom: 2px solid #000;
-	margin-bottom: 2em;
-	padding-bottom: 0.5em;
-	text-align: center;
 }
 
 .entry-content ul {
