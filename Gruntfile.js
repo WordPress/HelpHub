@@ -2,7 +2,8 @@
 /* global module */
 module.exports = function( grunt ) {
 	var HH_CSS = [
-			'plugins/helphub-*/assets/css/*.css'
+			'plugins/helphub-*/assets/css/*.css',
+			'plugins/helphub-contributors/public/css/helphub-contributors-public.css'
 		],
 
 		HH_SCSS = [
@@ -115,6 +116,10 @@ module.exports = function( grunt ) {
 			helphub: {
 				expand: true,
 				src: 'themes/helphub/style.css'
+			},
+			contributors: {
+				expand: true,
+				src: 'plugins/helphub-contributors/public/css/helphub-contributors-public.css'
 			}
 		},
 		sass: {
@@ -124,6 +129,18 @@ module.exports = function( grunt ) {
 				cwd: 'themes/helphub/sass/',
 				dest: 'themes/helphub/',
 				src: [ 'style.scss' ],
+				options: {
+					indentType: 'tab',
+					indentWidth: 1,
+					outputStyle: 'expanded'
+				}
+			},
+			contributors: {
+				expand: true,
+				ext: '.css',
+				cwd: 'plugins/helphub-contributors/src/sass/',
+				dest: 'plugins/helphub-contributors/public/css/',
+				src: [ 'helphub-contributors-public.scss' ],
 				options: {
 					indentType: 'tab',
 					indentWidth: 1,
@@ -149,13 +166,24 @@ module.exports = function( grunt ) {
 				src: HH_SCSS
 			}
 		},
+		copy: {
+			main: {
+				files: [
+					{
+						expand: true,
+						src: ['node_modules/select2/dist/**'],
+						dest: 'plugins/helphub-contributors/admin/assets/'
+					}
+				]
+			}
+		},
 		watch: {
 			config: {
 				files: 'Gruntfile.js'
 			},
 			sass: {
 				files: HH_SCSS,
-				tasks: [ 'sass:helphub', 'postcss:helphub' ]
+				tasks: [ 'sass', 'postcss:helphub', 'postcss:contributors' ]
 			}
 		}
 	});
@@ -175,6 +203,7 @@ module.exports = function( grunt ) {
 	// Default task.
 	grunt.registerTask( 'default', [
 		'checkDependencies',
+		'copy',
 		'csstest',
 		'jstest',
 		'phptest',
