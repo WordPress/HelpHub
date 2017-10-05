@@ -167,17 +167,6 @@ function helphub_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'helphub_scripts' );
 
-/**
- * Echoes read time if the plugin exists
- * Makes templates cleaner by wrapping it again and
- * other theme areas can use it without re-checking if function exists
- */
-function helphub_wrap_the_read_time() {
-	if ( function_exists( 'hh_the_read_time' ) ) :
-		hh_the_read_time();
-	endif;
-}
-
 add_filter( 'wp_nav_menu_items', 'helphub_append_searchform_to_menu', 10, 2 );
 /**
  * Append search form to 'primary' menu.
