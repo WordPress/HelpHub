@@ -40,9 +40,6 @@
 						'</span>'
 					);
 				?>
-				<span class="read-time">
-					<?php helphub_wrap_the_read_time(); ?>
-				</span>
 			</footer><!-- .entry-footer -->
 		</div><!-- .o2-post -->
 
