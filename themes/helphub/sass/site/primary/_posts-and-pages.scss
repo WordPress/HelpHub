@@ -23,11 +23,18 @@
 
 .single-post {
 
+	h1 {
+
+		&.entry-title {
+			font-size: 29px;
+			line-height: 31px;
+		}
+	}
+
 	article {
 
 		&.post {
 			float: left;
-			padding: 2em;
 			box-sizing: border-box;
 			position: relative;
 		}
@@ -36,13 +43,6 @@
 
 .article-container {
 	position: relative;
-}
-
-.entry-header {
-	border-bottom: 2px solid #000;
-	margin-bottom: 2em;
-	padding-bottom: 0.5em;
-	text-align: center;
 }
 
 .entry-content {
