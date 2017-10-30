@@ -32,7 +32,7 @@ require_once( 'includes/class-table-of-contents-lite.php' );
  * @return object Table_Of_Contents_Lite
  */
 function table_of_contents_lite() {
-	$instance = Table_Of_Contents_Lite::instance( __FILE__ , '1.0.0' );
+	$instance = Table_Of_Contents_Lite::instance( __FILE__, '1.0.0' );
 	return $instance;
 }
 
