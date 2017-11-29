@@ -24,17 +24,28 @@ Take a look at the HelpHub site located at [wp-helphub.com](https://wp-helphub.c
 **How to use this repo on your local computer**
 
 1. Install WordPress locally.
-2. Empty out the `wp-content` folder and clone this repo into it.
-3. Compile theme's `.scss` files into `style.css` [see below](#helphub-theme)
-4. Activate the HelpHub Theme from within `/wp-admin`.
-5. Activate the necessary plugins from within `/wp-admin`; *HelpHub Post Types*, •HelpHub Read Time*, *SyntaxHighlighter Evolved*, and *Table of Contents Lite*.
-6. Under `Settings -> Permalinks` in the `/wp-admin`, change to "Post Name" option, and save changes.
-7. Add this line `define( 'WPORGPATH', 'https://wordpress.org/' ); ` to your site's `wp-config.php` file.
-8. Make sure your `php.ini` file includes these lines below as `On`.
+2. Rename `wp-content` folder. Later, you will need current Theme files.
+3. Clone this repo as `wp-content`. <br />
+```
+$ git clone https://github.com/Kenshino/HelpHub.git wp-content
+``` 
+4. Copy back your current Theme files from renamed folder in above Step 2.
+5. Compile theme's `.scss` files into `style.css` [see below](#helphub-theme)
+6. Activate the HelpHub Theme from within `/wp-admin`.
+7. Activate the necessary plugins from within `/wp-admin`; *HelpHub Post Types*, •HelpHub Read Time*, *SyntaxHighlighter Evolved*, and *Table of Contents Lite*.
+8. Under `Settings -> Permalinks` in the `/wp-admin`, change to "Post Name" option, and save changes.
+9. Add this line `define( 'WPORGPATH', 'https://wordpress.org/' ); ` to your site's `wp-config.php` file.
+10. Make sure your `php.ini` file includes these lines below as `On`.
 
 ```
 allow_url_fopen = On
 allow_url_include = On
+```
+Hint: If you are using VVV, follow below steps to locate `php.ini`.
+```
+$ cd <your-path-to-VVV>/vagrant-local
+$ vagrant ssh
+$ cd /etc/php/7.0/fpm
 ```
 
 **Import database**
