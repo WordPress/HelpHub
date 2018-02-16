@@ -14,7 +14,7 @@ Generates a rough read time estimate for a post.
 
 == Usage ==
 
-Display read time for a single post in the loop. 
+Display read time for a single post in the loop.
 `<?php hh_the_read_time(); ?>`
 
 Display the read time for a post outside the loop.
@@ -28,7 +28,7 @@ Adjusting Words Per Minute Average can be filtered using
 
 Pre tag content holds a bit more weight than normal words. The weight of the word count in pre tags is twice than normal (2 x Word Count).
 The weight can be modified by using the filter `read_time_offset_weight` which is set to 1 by default since the offset word count is added to the final word count total.
-Increasing `read_time_offset_weight` will increase the weight of the pre tag word count. 
+Increasing `read_time_offset_weight` will increase the weight of the pre tag word count.
 
 Final Word Count + ( Offset Word Count * Offset Weight )
 

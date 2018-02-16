@@ -31,7 +31,7 @@ module.exports = function( grunt ) {
 		pkg: grunt.file.readJSON( 'package.json' ),
 		checktextdomain: {
 			options: {
-				text_domain: 'helphub',
+				text_domain: 'wporg-forums',
 				correct_domain: false,
 				keywords: [
 					'__:1,2d',
@@ -115,7 +115,7 @@ module.exports = function( grunt ) {
 			},
 			helphub: {
 				expand: true,
-				src: 'themes/helphub/style.css'
+				src: 'themes/wporg-support/style.css'
 			},
 			contributors: {
 				expand: true,
@@ -126,8 +126,8 @@ module.exports = function( grunt ) {
 			helphub: {
 				expand: true,
 				ext: '.css',
-				cwd: 'themes/helphub/sass/',
-				dest: 'themes/helphub/',
+				cwd: 'themes/wporg-support/sass/',
+				dest: 'themes/wporg-support/',
 				src: [ 'style.scss' ],
 				options: {
 					indentType: 'tab',
