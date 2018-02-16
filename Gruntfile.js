@@ -53,6 +53,7 @@ module.exports = function( grunt ) {
 			files: {
 				src: [
 					'plugins/support-helphub/**/*.php',
+					'!plugins/support-helphub/inc/syntaxhighlighter/**/*.php',
 					'themes/helphub/**/*.php'
 				],
 				expand: true

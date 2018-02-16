@@ -179,7 +179,7 @@ class Table_Of_Contents_Lite {
 	 * @since 1.0.0
 	 */
 	public function __clone() {
-		_doing_it_wrong( __FUNCTION__, esc_html_e( 'Cheatin&#8217; huh?' ) );
+		_doing_it_wrong( __FUNCTION__, esc_html_e( 'Cheatin&#8217; huh?', 'wporg-forums' ) );
 	} // End __clone ()
 
 	/**
@@ -188,7 +188,7 @@ class Table_Of_Contents_Lite {
 	 * @since 1.0.0
 	 */
 	public function __wakeup() {
-		_doing_it_wrong( __FUNCTION__, esc_html_e( 'Cheatin&#8217; huh?' ) );
+		_doing_it_wrong( __FUNCTION__, esc_html_e( 'Cheatin&#8217; huh?', 'wporg-forums' ) );
 	} // End __wakeup ()
 
 	/**
@@ -236,7 +236,7 @@ class Table_Of_Contents_Lite {
 		if ( $items ) {
 			$contents_header = sprintf( 'h%s', $items[0][2] );
 			$toc .= '<div class="table-of-contents">';
-			$toc .= '<h2>' . __( 'Topics' ) . '</h2>';
+			$toc .= '<h2>' . __( 'Topics', 'wporg-forums' ) . '</h2>';
 			$toc .= '<ul class="items">';
 			$last_item = false;
 			foreach ( $items as $item ) {
@@ -294,12 +294,12 @@ class Table_Of_Contents_Lite {
 			$matches[]   = $item[0];
 			$id          = sanitize_title_with_dashes( $item[2] );
 			if ( ! $first ) {
-				$replacement .= '<p class="toc-jump"><a href="#top">' . __( 'Top &uarr;', 'table-of-contents-lite' ) . '</a></p>';
+				$replacement .= '<p class="toc-jump"><a href="#top">' . __( 'Top &uarr;', 'table-of-contents-lite', 'wporg-forums' ) . '</a></p>';
 			} else {
 				$first = false;
 			}
 			$a11y_text      = sprintf( '<span class="screen-reader-text">%s</span>', $item[2] );
-			$hash           = __( '<span aria-hidden="true">&#35;</span>' );
+			$hash           = __( '<span aria-hidden="true">&#35;</span>', 'wporg-forums' );
 			$anchor         = sprintf( '<a href="#%1$s" class="anchor">%2$s %3$s</a>', $id, $hash, $a11y_text );
 			$replacement   .= sprintf( '<%1$s class="toc-heading" id="%2$s" tabindex="-1">%3$s %4$s</%1$s>', $tag, $id, $item[2], $anchor );
 			$replacements[] = $replacement;
