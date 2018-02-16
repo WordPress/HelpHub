@@ -294,7 +294,7 @@ class Table_Of_Contents_Lite {
 			$matches[]   = $item[0];
 			$id          = sanitize_title_with_dashes( $item[2] );
 			if ( ! $first ) {
-				$replacement .= '<p class="toc-jump"><a href="#top">' . __( 'Top &uarr;', 'table-of-contents-lite', 'wporg-forums' ) . '</a></p>';
+				$replacement .= '<p class="toc-jump"><a href="#top">' . __( 'Top &uarr;', 'wporg-forums' ) . '</a></p>';
 			} else {
 				$first = false;
 			}
