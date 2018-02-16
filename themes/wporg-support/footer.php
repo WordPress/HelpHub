@@ -8,4 +8,5 @@
 
 </div><!-- #content -->
 
-<?php require WPORGPATH . 'footer.php';
+<?php
+require WPORGPATH . 'footer.php';

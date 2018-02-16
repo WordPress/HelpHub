@@ -48,7 +48,7 @@ wporg_get_global_header();
 								foreach ( $menu_items as $path => $text ) :
 									$class = '';
 									$url = parse_url( $path );
-									if ( ! empty( $url['host' ] ) ) {
+									if ( ! empty( $url['host'] ) ) {
 										$url = esc_url( $path );
 									} else {
 										$class = false !== strpos( $_SERVER['REQUEST_URI'], $url['path'] ) ? 'class="active" ' : '';

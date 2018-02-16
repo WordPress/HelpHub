@@ -4,7 +4,10 @@
 
 	<li class="bbp-body">
 
-		<?php while ( bbp_search_results() ) : bbp_the_search_result(); ?>
+		<?php
+		while ( bbp_search_results() ) :
+			bbp_the_search_result();
+		?>
 
 			<?php if ( 'topic' === get_post_type() ) : ?>
 
@@ -22,4 +25,5 @@
 
 </ul><!-- #bbp-search-results -->
 
-<?php do_action( 'bbp_template_after_search_results_loop' ); ?>
+<?php
+do_action( 'bbp_template_after_search_results_loop' ); ?>

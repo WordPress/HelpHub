@@ -37,7 +37,13 @@
 						<fieldset class="bbp-form">
 							<legend><?php _e( 'Destination', 'wporg-forums' ); ?></legend>
 							<div>
-								<?php if ( bbp_has_topics( array( 'show_stickies' => false, 'post_parent' => bbp_get_topic_forum_id( bbp_get_topic_id() ), 'post__not_in' => array( bbp_get_topic_id() ) ) ) ) : ?>
+								<?php
+								if ( bbp_has_topics( array(
+									'show_stickies' => false,
+									'post_parent'   => bbp_get_topic_forum_id( bbp_get_topic_id() ),
+									'post__not_in'  => array( bbp_get_topic_id() ),
+								) ) ) :
+								?>
 
 									<label for="bbp_destination_topic"><?php _e( 'Merge with this topic:', 'wporg-forums' ); ?></label>
 
@@ -51,7 +57,7 @@
 											'orderby'     => 'date',
 											'order'       => 'DESC',
 											'exclude'     => bbp_get_topic_id(),
-											'select_id'   => 'bbp_destination_topic'
+											'select_id'   => 'bbp_destination_topic',
 										) );
 									?>
 

@@ -11,7 +11,8 @@ do_action( 'bbp_template_before_user_profile' ); ?>
 
 <div id="bbp-user-profile" class="bbp-user-profile">
 	<h2 class="entry-title"><?php esc_html_e( 'Profile', 'wporg-forums' ); ?></h2>
-	<div class="bbp-user-section"><?php
+	<div class="bbp-user-section">
+		<?php
 		if ( current_user_can( 'moderate' ) && class_exists( 'WordPressdotorg\Forums\User_Moderation\Plugin' ) ) {
 			$displayed_user_id = bbp_get_displayed_user_id();
 			$plugin_instance   = WordPressdotorg\Forums\User_Moderation\Plugin::get_instance();
@@ -56,14 +57,17 @@ do_action( 'bbp_template_before_user_profile' ); ?>
 
 		<?php if ( current_user_can( 'moderate' ) ) : ?>
 
-			<p class="bbp-user-email"><?php
+			<p class="bbp-user-email">
+				<?php
 				/* translators: %s: user's email address */
 				printf( esc_html__( 'Email: %s', 'wporg-forums' ), bbp_get_displayed_user_field( 'user_email' ) );
-			?></p>
+				?>
+			</p>
 
 		<?php endif; ?>
 
-		<p class="bbp-user-wporg-profile"><?php
+		<p class="bbp-user-wporg-profile">
+			<?php
 			$user_nicename  = bbp_get_displayed_user_field( 'user_nicename' );
 			$slack_username = wporg_support_get_slack_username();
 
@@ -74,7 +78,7 @@ do_action( 'bbp_template_before_user_profile' ); ?>
 					'@' . $slack_username,
 					'https://make.wordpress.org/chat/'
 				);
-			} elseif( $slack_username ) {
+			} elseif ( $slack_username ) {
 				/* translators: 1: WordPress.org and Slack username, 2: URL for information about Slack */
 				printf( __( '%1$s on WordPress.org and <a href="%2$s">Slack</a>', 'wporg-forums' ),
 					wporg_support_get_wporg_profile_link(),
@@ -86,53 +90,75 @@ do_action( 'bbp_template_before_user_profile' ); ?>
 					wporg_support_get_wporg_profile_link()
 				);
 			}
-		?></p>
+			?>
+		</p>
 
-		<?php if ( $custom_title = get_user_option( 'title', bbp_get_displayed_user_id() ) ) : ?>
+		<?php
+		$custom_title = get_user_option( 'title', bbp_get_displayed_user_id() );
+		if ( $custom_title ) :
+			?>
 	
-			<p class="bbp-user-custom-title"><?php
+			<p class="bbp-user-custom-title">
+				<?php
 				/* translators: %s: user's custom title */
 				printf( esc_html__( 'Title: %s', 'wporg-forums' ), esc_html( $custom_title ) );
-			?></p>
+				?>
+			</p>
 	
 		<?php endif; ?>
 
-		<p class="bbp-user-forum-role"><?php
+		<p class="bbp-user-forum-role">
+			<?php
 			/* translators: %s: user's forum role */
 			printf( esc_html__( 'Forum Role: %s', 'wporg-forums' ), bbp_get_user_display_role() );
-		?></p>
+			?>
+		</p>
 
-		<?php if ( is_user_logged_in() && $website = bbp_get_displayed_user_field( 'user_url' ) ) : ?>
+		<?php
+		$website = bbp_get_displayed_user_field( 'user_url' );
+		if ( is_user_logged_in() && $website ) :
+			?>
 	
-			<p class="bbp-user-website"><?php
-			/* translators: %s: link to user's website */ 
-			printf( esc_html__( 'Website: %s', 'wporg-forums' ), sprintf( '<a href="%s">%s</a>', esc_url( $website ), esc_html( $website ) ) );
-			?></p>
+			<p class="bbp-user-website">
+				<?php
+				/* translators: %s: link to user's website */
+				printf( esc_html__( 'Website: %s', 'wporg-forums' ), sprintf( '<a href="%s">%s</a>', esc_url( $website ), esc_html( $website ) ) );
+				?>
+			</p>
 	
 		<?php endif; ?>
 
-		<p class="bbp-user-member-since"><?php
+		<p class="bbp-user-member-since">
+			<?php
 			/* translators: %s: user's registration date */
 			printf( esc_html__( 'Member Since: %s', 'wporg-forums' ), wporg_support_get_user_registered_date() );
-		?></p>
+			?>
+		</p>
 
-		<p class="bbp-user-topic-count"><?php
+		<p class="bbp-user-topic-count">
+			<?php
 			/* translators: %s: number of user's topics */
 			printf( esc_html__( 'Topics Started: %s', 'wporg-forums' ), number_format_i18n( wporg_support_get_user_topics_count() ) );
-		?></p>
+			?>
+		</p>
 
-		<p class="bbp-user-reply-count"><?php
+		<p class="bbp-user-reply-count">
+			<?php
 			/* translators: %s: number of user's replies */
 			printf( esc_html__( 'Replies Created: %s', 'wporg-forums' ), number_format_i18n( bbp_get_user_reply_count_raw() ) );
-		?></p>
+			?>
+		</p>
 
 		<?php if ( defined( 'WPORG_SUPPORT_FORUMS_BLOGID' ) && WPORG_SUPPORT_FORUMS_BLOGID == get_current_blog_id() ) : ?>
-			<p class="bbp-user-review-count"><?php
+			<p class="bbp-user-review-count">
+				<?php
 				/* translators: %s: number of user's reviews */
 				printf( esc_html__( 'Reviews Written: %s', 'wporg-forums' ), number_format_i18n( wporg_support_get_user_reviews_count() ) );
-			?></p>
+				?>
+			</p>
 		<?php endif; ?>
 	</div>
 </div><!-- #bbp-author-topics-started -->
 
-<?php do_action( 'bbp_template_after_user_profile' );
+<?php
+do_action( 'bbp_template_after_user_profile' );

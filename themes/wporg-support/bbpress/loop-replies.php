@@ -4,7 +4,10 @@
 
 	<li class="bbp-body">
 
-		<?php while ( bbp_replies() ) : bbp_the_reply(); ?>
+		<?php
+		while ( bbp_replies() ) :
+			bbp_the_reply();
+		?>
 
 			<?php bbp_get_template_part( 'loop', 'single-reply' ); ?>
 

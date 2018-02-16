@@ -5,12 +5,16 @@
  * @package WPBBP
  */
 
-get_header(); ?>
+get_header();
+?>
 
 <main id="main" class="site-main" role="main">
 	
 	<div class="entry-content">
-		<?php while ( have_posts() ) : the_post(); ?>
+		<?php
+		while ( have_posts() ) :
+			the_post();
+		?>
 
 			<?php the_content(); ?>
 
@@ -20,4 +24,5 @@ get_header(); ?>
 	<?php get_sidebar(); ?>
 </main>
 
-<?php get_footer();
+<?php
+get_footer();

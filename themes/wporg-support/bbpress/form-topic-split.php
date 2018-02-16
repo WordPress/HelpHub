@@ -42,7 +42,13 @@
 								<input type="text" id="bbp_topic_split_destination_title" value="<?php echo esc_attr( sprintf( __( 'Split: %s', 'wporg-forums' ), bbp_get_topic_title() ) ); ?>" size="35" name="bbp_topic_split_destination_title" />
 							</div>
 
-							<?php if ( bbp_has_topics( array( 'show_stickies' => false, 'post_parent' => bbp_get_topic_forum_id( bbp_get_topic_id() ), 'post__not_in' => array( bbp_get_topic_id() ) ) ) ) : ?>
+							<?php
+							if ( bbp_has_topics( array(
+								'show_stickies' => false,
+								'post_parent'   => bbp_get_topic_forum_id( bbp_get_topic_id() ),
+								'post__not_in'  => array( bbp_get_topic_id() ),
+							) ) ) :
+							?>
 
 								<div>
 									<input name="bbp_topic_split_option" id="bbp_topic_split_option_existing" type="radio" value="existing" />
@@ -57,7 +63,7 @@
 											'numberposts' => 100,
 											'orderby'     => 'date',
 											'exclude'     => bbp_get_topic_id(),
-											'select_id'   => 'bbp_destination_topic'
+											'select_id'   => 'bbp_destination_topic',
 										) );
 									?>
 

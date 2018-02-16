@@ -29,11 +29,25 @@ if ( bbp_is_single_view() || bbp_is_search_results() || bbp_is_single_user_repli
 
 		<?php do_action( 'bbp_theme_before_reply_author_details' ); ?>
 
-		<?php bbp_reply_author_link( array( 'sep' => '', 'show_role' => false, 'size' => 100 ) ); ?>
+		<?php
+		bbp_reply_author_link( array(
+			'sep'       => '',
+			'show_role' => false,
+			'size'      => 100,
+		) );
+		?>
 
-		<?php bbp_user_nicename( bbp_get_reply_author_id(), array( 'before' => '<p class="bbp-user-nicename">(@', 'after' => ')</p>' ) ); ?>
+		<?php
+		bbp_user_nicename( bbp_get_reply_author_id(), array(
+			'before' => '<p class="bbp-user-nicename">(@',
+			'after'  => ')</p>',
+		) );
+		?>
 
-		<?php if ( $title = get_user_option( 'title', bbp_get_reply_author_id() ) ) : ?>
+		<?php
+		$title = get_user_option( 'title', bbp_get_reply_author_id() );
+		if ( $title ) :
+			?>
 
 			<p class="bbp-author-title"><?php echo esc_html( $title ); ?></p>
 

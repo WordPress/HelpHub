@@ -4,12 +4,14 @@
 
 		<div class="my-account">
 			<ul>
-				<li><?php
+				<li>
+					<?php
 					/* translators: %s: user's display name */
 					printf( __( 'Howdy, %s', 'wporg-forums' ),
 						'<a href="' . esc_url( bbp_get_user_profile_url( bbp_get_current_user_id() ) ) . '">' . bbp_get_current_user_name() . '</a>'
 					);
-				?></li>
+					?>
+				</li>
 				<li><a href="<?php echo esc_url( wp_logout_url() ); ?>"><?php _e( 'Log Out', 'wporg-forums' ); ?></a></li>
 			</ul>
 		</div>
@@ -28,7 +30,10 @@
 					<?php if ( bbp_current_user_can_access_create_topic_form() ) : ?>
 						<li class="create-topic"><a href="#new-post"><?php _e( 'Create Topic', 'wporg-forums' ); ?></a></li>
 					<?php endif; ?>
-					<?php if ( is_user_logged_in() && $forum_subscription_link = bbp_get_forum_subscription_link() ) : ?>
+					<?php
+					$forum_subscription_link = bbp_get_forum_subscription_link();
+					if ( is_user_logged_in() && $forum_subscription_link ) :
+					?>
 						<li class="forum-subscribe"><?php echo $forum_subscription_link; ?></li>
 					<?php endif; ?>
 				</ul>
@@ -49,23 +54,27 @@
 			</div>
 
 			<div>
-				<?php bbp_topic_tag_list( 0, array(
+				<?php
+				bbp_topic_tag_list( 0, array(
 					'before' => '<h4>' . __( 'Topic Tags', 'wporg-forums' ) . '</h4><ul class="topic-tags"><li>',
 					'after'  => '</li></ul>',
 					'sep'    => '</li><li>',
-				) ); ?>
+				) );
+				?>
 			</div>
 
 			<?php if ( current_user_can( 'moderate', bbp_get_topic_id() ) || wporg_support_current_user_can_stick( bbp_get_topic_id() ) ) : ?>
 
 				<div>
-					<?php bbp_topic_admin_links( array (
+					<?php
+					bbp_topic_admin_links( array(
 						'id'     => bbp_get_topic_id(),
 						'before' => '<h4>' . __( 'Topic Admin', 'wporg-forums' ) . '</h4><ul class="topic-admin-links"><li>',
 						'after'  => '</li></ul>',
 						'sep'    => '</li><li>',
-						'links'  => array()
-					) ); ?>
+						'links'  => array(),
+					) );
+					?>
 				</div>
 
 			<?php endif; ?>
@@ -73,13 +82,13 @@
 		<?php elseif ( is_tax( 'topic-tag' ) ) : ?>
 
 			<?php
-				$term_subscription = '';
-				if ( function_exists( 'WordPressdotorg\Forums\Term_Subscription\get_subscription_link' ) ) {
-					$term_subscription = WordPressdotorg\Forums\Term_Subscription\get_subscription_link( get_queried_object()->term_id );
-				}
-				if ( $term_subscription ) {
-					echo '<div>' . $term_subscription . "</div>\n";
-				}
+			$term_subscription = '';
+			if ( function_exists( 'WordPressdotorg\Forums\Term_Subscription\get_subscription_link' ) ) {
+				$term_subscription = WordPressdotorg\Forums\Term_Subscription\get_subscription_link( get_queried_object()->term_id );
+			}
+			if ( $term_subscription ) {
+				echo '<div>' . $term_subscription . "</div>\n";
+			}
 			?>
 
 		<?php endif; ?>
@@ -90,11 +99,12 @@
 				<h4><?php _e( 'Views', 'wporg-forums' ); ?></h4>
 				<ul class="topic-views">
 
-					<?php foreach ( bbp_get_views() as $view => $args ) :
+					<?php
+					foreach ( bbp_get_views() as $view => $args ) :
 						if ( in_array( $view, wporg_support_get_compat_views() ) ) {
 							continue;
 						}
-						?>
+					?>
 
 						<li><a class="bbp-view-title" href="<?php bbp_view_url( $view ); ?>"><?php bbp_view_title( $view ); ?></a></li>
 
@@ -114,14 +124,6 @@
 					<li><a class="feed" href="<?php bbp_topics_url(); ?>feed/"><?php _e( 'All Recent Topics', 'wporg-forums' ); ?></a></li>
 				</ul>
 			</div>
-<?php /* Temporarily disable this until https://core.trac.wordpress.org/ticket/41796#comment:8 can be fixed
-
-			<div>
-				<h4><?php _e( 'Tags', 'wporg-forums' ); ?></h4>
-				<?php wp_tag_cloud( array( 'smallest' => 14, 'largest' => 24, 'number' => 22, 'taxonomy' => bbp_get_topic_tag_tax_id() ) ); ?>
-			</div>
-
- */ ?>
 		<?php endif; ?>
 
 	<?php endif; ?>
