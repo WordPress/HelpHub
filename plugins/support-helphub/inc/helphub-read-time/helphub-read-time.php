@@ -169,7 +169,7 @@ function hh_get_the_read_time( $post_id = null ) {
 	$reading_time = (int) $read_time < 60 ? '1' : (string) round( $read_time / 60 );
 
 	/* translators: %s: Read time in minutes. */
-	return sprintf( _n( 'Reading Time: %s Minute', 'Reading Time: %s Minutes', $reading_time, 'helphub' ), $reading_time );
+	return sprintf( _n( 'Reading Time: %s Minute', 'Reading Time: %s Minutes', $reading_time, 'wporg-forums' ), $reading_time );
 }
 
 /**

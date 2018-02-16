@@ -148,13 +148,13 @@ class HelpHub_Contributors_Public {
 					else :
 
 						// Display message if no user is found with provided username.
-						$contributors_items .= '<div class="contributor contributor-not-found"><p>' . sprintf( __( '%s is not a valid username.', 'helphub' ), '<strong>' . $contributor . '</strong>' ) . '</p></div>';
+						$contributors_items .= '<div class="contributor contributor-not-found"><p>' . sprintf( __( '%s is not a valid username.', 'wporg-forums' ), '<strong>' . $contributor . '</strong>' ) . '</p></div>';
 
 					endif; // is_object( $contributor_object )
 
 				endforeach; // $contributors as $contributor
 
-				$contributors_heading = '<h5>' . esc_html__( 'Contributors', 'helphub' ) . '</h5>';
+				$contributors_heading = '<h5>' . esc_html__( 'Contributors', 'wporg-forums' ) . '</h5>';
 				$contributors_list    = '<div class="contributors-list">' . $contributors_items . '</div>';
 
 				// Build the markup

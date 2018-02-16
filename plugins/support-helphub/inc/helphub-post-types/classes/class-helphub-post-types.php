@@ -127,19 +127,19 @@ final class HelpHub_Post_Types {
 		require_once( dirname( __FILE__ ) . '/class-helphub-post-types-taxonomy.php' );
 
 		// Register an example post type. To register other post types, duplicate this line.
-		$this->post_types['post']            = new HelpHub_Post_Types_Post_Type( 'post', __( 'Post', 'helphub' ), __( 'Posts', 'helphub' ), array(
+		$this->post_types['post']            = new HelpHub_Post_Types_Post_Type( 'post', __( 'Post', 'wporg-forums' ), __( 'Posts', 'wporg-forums' ), array(
 			'menu_icon' => 'dashicons-post',
 		) );
-		$this->post_types['helphub_version'] = new HelpHub_Post_Types_Post_Type( 'helphub_version', __( 'WordPress Version', 'helphub' ), __( 'WordPress Versions', 'helphub' ), array(
+		$this->post_types['helphub_version'] = new HelpHub_Post_Types_Post_Type( 'helphub_version', __( 'WordPress Version', 'wporg-forums' ), __( 'WordPress Versions', 'wporg-forums' ), array(
 			'menu_icon' => 'dashicons-wordpress',
 		) );
 
 		/* Post Types - End */
 
 		// Register an example taxonomy. To register more taxonomies, duplicate this line.
-		$this->taxonomies['helphub_persona']       = new HelpHub_Post_Types_Taxonomy( 'post', 'helphub_persona', __( 'Persona', 'helphub' ), __( 'Personas', 'helphub' ) );
-		$this->taxonomies['helphub_experience']    = new HelpHub_Post_Types_Taxonomy( 'post', 'helphub_experience', __( 'Experience', 'helphub' ), __( 'Experiences', 'helphub' ) );
-		$this->taxonomies['helphub_major_release'] = new HelpHub_Post_Types_Taxonomy( 'helphub_version', 'helphub_major_release', __( 'Major Release', 'helphub' ), __( 'Major Releases', 'helphub' ) );
+		$this->taxonomies['helphub_persona']       = new HelpHub_Post_Types_Taxonomy( 'post', 'helphub_persona', __( 'Persona', 'wporg-forums' ), __( 'Personas', 'wporg-forums' ) );
+		$this->taxonomies['helphub_experience']    = new HelpHub_Post_Types_Taxonomy( 'post', 'helphub_experience', __( 'Experience', 'wporg-forums' ), __( 'Experiences', 'wporg-forums' ) );
+		$this->taxonomies['helphub_major_release'] = new HelpHub_Post_Types_Taxonomy( 'helphub_version', 'helphub_major_release', __( 'Major Release', 'wporg-forums' ), __( 'Major Releases', 'wporg-forums' ) );
 
 		register_activation_hook( __FILE__, array( $this, 'install' ) );
 
@@ -173,7 +173,7 @@ final class HelpHub_Post_Types {
 	 * @since   1.0.0
 	 */
 	public function load_plugin_textdomain() {
-		load_plugin_textdomain( 'helphub', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+		load_plugin_textdomain( 'wporg-forums', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 	} // End load_plugin_textdomain()
 
 	/**
@@ -198,16 +198,16 @@ final class HelpHub_Post_Types {
 		endif;
 		wp_localize_script( 'helphub-post-types-admin', 'HelphubAdmin',
 			array(
-				'default_title'  => __( 'Upload', 'helphub' ),
-				'default_button' => __( 'Select this', 'helphub' ),
+				'default_title'  => __( 'Upload', 'wporg-forums' ),
+				'default_button' => __( 'Select this', 'wporg-forums' ),
 			)
 		);
 
 		wp_localize_script( 'helphub-post-types-gallery', 'HelphubGallery',
 			array(
-				'gallery_title'  => __( 'Add Images to Product Gallery', 'helphub' ),
-				'gallery_button' => __( 'Add to gallery', 'helphub' ),
-				'delete_image'   => __( 'Delete image', 'helphub' ),
+				'gallery_title'  => __( 'Add Images to Product Gallery', 'wporg-forums' ),
+				'gallery_button' => __( 'Add to gallery', 'wporg-forums' ),
+				'delete_image'   => __( 'Delete image', 'wporg-forums' ),
 			)
 		);
 
@@ -220,7 +220,7 @@ final class HelpHub_Post_Types {
 	 * @since 1.0.0
 	 */
 	public function __clone() {
-		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'helphub' ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'wporg-forums' ), '1.0.0' );
 	} // End __clone()
 
 	/**
@@ -230,7 +230,7 @@ final class HelpHub_Post_Types {
 	 * @since 1.0.0
 	 */
 	public function __wakeup() {
-		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'helphub' ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'wporg-forums' ), '1.0.0' );
 	} // End __wakeup()
 
 	/**

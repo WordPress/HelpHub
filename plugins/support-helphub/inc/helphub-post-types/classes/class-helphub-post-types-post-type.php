@@ -124,23 +124,23 @@ class HelpHub_Post_Types_Post_Type {
 		$labels = array(
 			'name'               => $this->plural,
 			'singular_name'      => $this->singular,
-			'add_new'            => _x( 'Add New', 'add new helphub post', 'helphub' ),
+			'add_new'            => _x( 'Add New', 'add new helphub post', 'wporg-forums' ),
 			/* translators: %s: Post type name. */
-			'add_new_item'       => sprintf( __( 'Add New %s', 'helphub' ), $this->singular ),
+			'add_new_item'       => sprintf( __( 'Add New %s', 'wporg-forums' ), $this->singular ),
 			/* translators: %s: Post type name. */
-			'edit_item'          => sprintf( __( 'Edit %s', 'helphub' ), $this->singular ),
+			'edit_item'          => sprintf( __( 'Edit %s', 'wporg-forums' ), $this->singular ),
 			/* translators: %s: Post type name. */
-			'new_item'           => sprintf( __( 'New %s', 'helphub' ), $this->singular ),
+			'new_item'           => sprintf( __( 'New %s', 'wporg-forums' ), $this->singular ),
 			/* translators: %s: Plural post type name. */
-			'all_items'          => sprintf( __( 'All %s', 'helphub' ), $this->plural ),
+			'all_items'          => sprintf( __( 'All %s', 'wporg-forums' ), $this->plural ),
 			/* translators: %s: Post type name. */
-			'view_item'          => sprintf( __( 'View %s', 'helphub' ), $this->singular ),
+			'view_item'          => sprintf( __( 'View %s', 'wporg-forums' ), $this->singular ),
 			/* translators: %s: Plural post type name. */
-			'search_items'       => sprintf( __( 'Search %a', 'helphub' ), $this->plural ),
+			'search_items'       => sprintf( __( 'Search %a', 'wporg-forums' ), $this->plural ),
 			/* translators: %s: Plural post type name. */
-			'not_found'          => sprintf( __( 'No %s Found', 'helphub' ), $this->plural ),
+			'not_found'          => sprintf( __( 'No %s Found', 'wporg-forums' ), $this->plural ),
 			/* translators: %s: Plural post type name. */
-			'not_found_in_trash' => sprintf( __( 'No %s Found In Trash', 'helphub' ), $this->plural ),
+			'not_found_in_trash' => sprintf( __( 'No %s Found In Trash', 'wporg-forums' ), $this->plural ),
 			'parent_item_colon'  => '',
 			'menu_name'          => $this->plural,
 		);
@@ -220,7 +220,7 @@ class HelpHub_Post_Types_Post_Type {
 	 */
 	public function register_custom_column_headings( $defaults ) {
 		$new_columns = array(
-			'image' => __( 'Image', 'helphub' ),
+			'image' => __( 'Image', 'wporg-forums' ),
 		);
 
 		$last_item = array();
@@ -264,24 +264,24 @@ class HelpHub_Post_Types_Post_Type {
 			0  => '',
 			// Unused. Messages start at index 1.
 			/* translators: %1$s: Post link tag. %2$s: Close post link tag. %3$s: Post type name. %4$s: Lowercase post type name. */
-			1  => sprintf( __( '%3$s updated. %1$sView %4$s%2$s', 'helphub' ), '<a href="' . esc_url( $permalink ) . '">', '</a>', $this->singular, strtolower( $this->singular ) ),
-			2  => __( 'Custom field updated.', 'helphub' ),
-			3  => __( 'Custom field deleted.', 'helphub' ),
+			1  => sprintf( __( '%3$s updated. %1$sView %4$s%2$s', 'wporg-forums' ), '<a href="' . esc_url( $permalink ) . '">', '</a>', $this->singular, strtolower( $this->singular ) ),
+			2  => __( 'Custom field updated.', 'wporg-forums' ),
+			3  => __( 'Custom field deleted.', 'wporg-forums' ),
 			/* translators: %s: Post type name. */
-			4  => sprintf( __( '%s updated.', 'helphub' ), $this->singular ),
+			4  => sprintf( __( '%s updated.', 'wporg-forums' ), $this->singular ),
 			/* translators: %s: date and time of the revision */
-			5  => isset( $_GET['revision'] ) ? sprintf( __( '%1$s restored to revision from %2$s', 'helphub' ), $this->singular, wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+			5  => isset( $_GET['revision'] ) ? sprintf( __( '%1$s restored to revision from %2$s', 'wporg-forums' ), $this->singular, wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
 			// WPCS: CSRF ok; input var ok.
 			/* translators: %1$s Post type name. %2$s: Lowercase post type name. %3$s: Post link tag. %4$s: Close post link tag. */
-			6  => sprintf( __( '%1$s published. %3$sView %2$s%4$s', 'helphub' ), $this->singular, strtolower( $this->singular ), '<a href="' . esc_url( $permalink ) . '">', '</a>' ),
+			6  => sprintf( __( '%1$s published. %3$sView %2$s%4$s', 'wporg-forums' ), $this->singular, strtolower( $this->singular ), '<a href="' . esc_url( $permalink ) . '">', '</a>' ),
 			/* translators: %s: Post type name. */
-			7  => sprintf( __( '%s saved.', 'helphub' ), $this->singular ),
+			7  => sprintf( __( '%s saved.', 'wporg-forums' ), $this->singular ),
 			/* translators: %1$s: Post type name. %2$s: Lowercase post type name. %3$s: Post link tag. %4$s: Close post link tag. */
-			8  => sprintf( __( '%1$s submitted. %2$sPreview %3$s%4$s', 'helphub' ), $this->singular, strtolower( $this->singular ), '<a target="_blank" href="' . esc_url( add_query_arg( 'preview', 'true', $permalink ) ) . '">', '</a>' ),
+			8  => sprintf( __( '%1$s submitted. %2$sPreview %3$s%4$s', 'wporg-forums' ), $this->singular, strtolower( $this->singular ), '<a target="_blank" href="' . esc_url( add_query_arg( 'preview', 'true', $permalink ) ) . '">', '</a>' ),
 			/* translators: %1$s: Post type name. %2$s: Lowercase post type name. */
-			9  => sprintf( __( '%1$s scheduled for: %1$s. %2$sPreview %2$s%3$s', 'helphub' ), $this->singular, strtolower( $this->singular ), '<strong>' . date_i18n( __( 'M j, Y @ G:i', 'helphub' ), strtotime( $post->post_date ) ) . '</strong>', '<a target="_blank" href="' . esc_url( $permalink ) . '">', '</a>' ),
+			9  => sprintf( __( '%1$s scheduled for: %1$s. %2$sPreview %2$s%3$s', 'wporg-forums' ), $this->singular, strtolower( $this->singular ), '<strong>' . date_i18n( __( 'M j, Y @ G:i', 'wporg-forums' ), strtotime( $post->post_date ) ) . '</strong>', '<a target="_blank" href="' . esc_url( $permalink ) . '">', '</a>' ),
 			/* translators: %1$s: Post type name. %2$s: Lowercase post type name. %3$s: Close post link tag. %4$s: Close post link tag. */
-			10 => sprintf( __( '%1$s draft updated. %3$sPreview %2$s%4$s', 'helphub' ), $this->singular, strtolower( $this->singular ), '<a target="_blank" href="' . esc_url( add_query_arg( 'preview', 'true', $permalink ) ) . '">', '</a>' ),
+			10 => sprintf( __( '%1$s draft updated. %3$sPreview %2$s%4$s', 'wporg-forums' ), $this->singular, strtolower( $this->singular ), '<a target="_blank" href="' . esc_url( add_query_arg( 'preview', 'true', $permalink ) ) . '">', '</a>' ),
 		);
 
 		return $messages;
@@ -297,12 +297,12 @@ class HelpHub_Post_Types_Post_Type {
 	 */
 	public function meta_box_setup() {
 		if ( 'post' === $this->post_type ) {
-			add_meta_box( $this->post_type . '-display', __( 'Display Settings', 'helphub' ), array(
+			add_meta_box( $this->post_type . '-display', __( 'Display Settings', 'wporg-forums' ), array(
 				$this,
 				'meta_box_content',
 			), $this->post_type, 'normal', 'high' );
 		} elseif ( 'helphub_version' === $this->post_type ) {
-			add_meta_box( $this->post_type . '-version-meta', __( 'Display Settings', 'helphub' ), array(
+			add_meta_box( $this->post_type . '-version-meta', __( 'Display Settings', 'wporg-forums' ), array(
 				$this,
 				'meta_box_version_content',
 			), $this->post_type, 'normal', 'high' );
@@ -603,7 +603,7 @@ class HelpHub_Post_Types_Post_Type {
 	public function enter_title_here( $title ) {
 		if ( get_post_type() === $this->post_type ) {
 			if ( 'post' === get_post_type() ) {
-				$title = __( 'Enter the article title here', 'helphub' );
+				$title = __( 'Enter the article title here', 'wporg-forums' );
 			}
 		}
 
@@ -643,16 +643,16 @@ class HelpHub_Post_Types_Post_Type {
 		$fields = array();
 
 		$fields['read_time'] = array(
-			'name'        => __( 'Article Read Time', 'helphub' ),
-			'description' => __( 'Leave this empty, calculation is automatic', 'helphub' ),
+			'name'        => __( 'Article Read Time', 'wporg-forums' ),
+			'description' => __( 'Leave this empty, calculation is automatic', 'wporg-forums' ),
 			'type'        => 'text',
 			'default'     => '',
 			'section'     => 'info',
 		);
 
 		$fields['custom_read_time'] = array(
-			'name'        => __( 'Custom Read Time', 'helphub' ),
-			'description' => __( 'Only fill up this field if the automated calculation is incorrect', 'helphub' ),
+			'name'        => __( 'Custom Read Time', 'wporg-forums' ),
+			'description' => __( 'Only fill up this field if the automated calculation is incorrect', 'wporg-forums' ),
 			'type'        => 'text',
 			'default'     => '',
 			'section'     => 'info',
@@ -672,16 +672,16 @@ class HelpHub_Post_Types_Post_Type {
 		$fields = array();
 
 		$fields['version_date'] = array(
-			'name'        => __( 'Date Released', 'helphub' ),
-			'description' => __( 'Date this WordPress Version was released', 'helphub' ),
+			'name'        => __( 'Date Released', 'wporg-forums' ),
+			'description' => __( 'Date this WordPress Version was released', 'wporg-forums' ),
 			'type'        => 'date',
 			'default'     => '',
 			'section'     => 'info',
 		);
 
 		$fields['musician_codename'] = array(
-			'name'        => __( 'Musician', 'helphub' ),
-			'description' => __( 'The Jazz Musician this release was named after', 'helphub' ),
+			'name'        => __( 'Musician', 'wporg-forums' ),
+			'description' => __( 'The Jazz Musician this release was named after', 'wporg-forums' ),
 			'type'        => 'text',
 			'default'     => '',
 			'section'     => 'info',
