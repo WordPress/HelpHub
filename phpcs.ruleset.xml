@@ -11,5 +11,5 @@
 
     <file>.</file>
 
-    <exclude-pattern>plugins/syntaxhighlighter/*</exclude-pattern>
+    <exclude-pattern>plugins/support-helphub/inc/syntaxhighlighter/*</exclude-pattern>
 </ruleset>

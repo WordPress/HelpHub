@@ -52,7 +52,7 @@ module.exports = function( grunt ) {
 			},
 			files: {
 				src: [
-					'plugins/helphub-*/**/*.php',
+					'plugins/support-helphub/**/*.php',
 					'themes/helphub/**/*.php'
 				],
 				expand: true
@@ -119,7 +119,7 @@ module.exports = function( grunt ) {
 			},
 			contributors: {
 				expand: true,
-				src: 'plugins/helphub-contributors/public/css/helphub-contributors-public.css'
+				src: 'plugins/support-helphub/inc/helphub-contributors/public/css/helphub-contributors-public.css'
 			}
 		},
 		sass: {
@@ -138,8 +138,8 @@ module.exports = function( grunt ) {
 			contributors: {
 				expand: true,
 				ext: '.css',
-				cwd: 'plugins/helphub-contributors/src/sass/',
-				dest: 'plugins/helphub-contributors/public/css/',
+				cwd: 'plugins/support-helphub/inc/helphub-contributors/src/sass/',
+				dest: 'plugins/support-helphub/inc/helphub-contributors/public/css/',
 				src: [ 'helphub-contributors-public.scss' ],
 				options: {
 					indentType: 'tab',
@@ -172,7 +172,7 @@ module.exports = function( grunt ) {
 					{
 						expand: true,
 						src: ['node_modules/select2/dist/**'],
-						dest: 'plugins/helphub-contributors/admin/assets/'
+						dest: 'plugins/support-helphub/inc/helphub-contributors/admin/assets/'
 					}
 				]
 			}
