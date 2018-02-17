@@ -4,9 +4,6 @@ html {
 
 body {
 	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
-	word-wrap: break-word; /* old IE */
-	overflow-wrap: break-word; /* modern synonym for word-wrap */
-	word-break: keep-all; /* affects some Asian languages */
 }
 
 blockquote,
