@@ -50,7 +50,7 @@
 
 			<?php
 			if ( ! bb_base_topic_search_query( false ) ) :
-				bp_get_template_part( 'form', 'topic' );
+				bbp_get_template_part( 'form', 'topic' );
 			endif;
 			?>
 
