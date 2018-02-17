@@ -11,11 +11,7 @@ You can get involved in development (or any other aspect of the project) by atte
 
 ## How to use this repo
 
-To use this repo, simply create a new WordPress site on your local machine (using whatever development environment suits you), then empty out the `wp-content` folder and clone this repo into it. You will also need to add the following line to your site's `wp-config.php` file:
-
-```
-define( 'WPORGPATH', 'https://wordpress.org/' );
-```
+To use this repo, simply create a new WordPress site on your local machine (using whatever development environment suits you), then empty out the `wp-content` folder and clone this repo into it.
 
 ## Workflow
 
@@ -35,7 +31,7 @@ Any fixes that do not qualify as new features are to done in individual branches
 
 As this is a WordPress community project, all development must have a strong committment to accessibility and responsive design. We will also be following the [WordPress coding standards](https://codex.wordpress.org/WordPress_Coding_Standards) throughout the project.
 
-Given that we will ultimately need to localise the whole site for different languages, please use `helphub` as the text domain for all text strings.
+Given that we will ultimately need to localise the whole site for different languages, please use `wporg-forums` as the text domain for all text strings.
 
 A database export is available here - https://github.com/Kenshino/HelpHub/blob/master/helphub.wordpress.2017-06-15.xml
 
