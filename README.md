@@ -22,7 +22,7 @@ define( 'WPORGPATH', 'https://wordpress.org/' );
 Anyone is welcome to fork the repo and send pull requests, but the project collaborators (listed below) have push access directly to the repo. **All pull requests will be be reviewed by at least one collaborator with commit access and the PR must pass tests. Collaborators will be responsible for merging their own pull requests once the reviews has been approved. Major feature development will require a review from the project lead, minor ones do not.**
 
 We use ZenHub for project management, see https://github.com/Kenshino/HelpHub/issues/79 for help on using it
-
+ 
 ### Feature development
 
 All features are to be built in individual branches named `feature-abc` (where `abc` is a brief descriptor of the feature) and submitted via pull request to the `master` branch. For best results, features should be separated into their own plugins, but the project lead will evaluate this for each pull request depending on the requirements and scope of the feature.
@@ -51,15 +51,10 @@ The following people are active developers on the project and are all listed as 
 
 | Name               	| GitHub username   	| Slack username 	|
 |--------------------	|-------------------	|----------------	|
-| Hugh Lashbrooke    	| hlashbrooke       	| hlashbrooke    	|
-| Sara Cope          	| saracope          	| sarassassin    	|
-| Justin Greer       	| justingreerbbi    	| justingreerbbi 	|
-| Nicole Arnold      	| NicoleA           	| nlarnold1      	|
-| Jon Ang           	| kenshino          	| kenshino       	|
-| Stephanie Green    	| greensteph        	| greensteph     	|
-| Jonathan Bossenger 	| jonathanbossenger 	| jon_bossenger  	|
-| Jay Hoffmann       	| JasonHoffmann     	| jayhoffmann    	|
-| Carl Alberto        | carl-alberto        | carlalberto     |
-| Marius Jensen       | clorith             | clorith         |
-| Jude Rosario        | JudeRosario         | lumberhack      |
-| Stephen Edgar       | ntwb                | netweb          |
+| Jon Ang           	| @kenshino          	| kenshino       	|
+| Carl Alberto          | @carl-alberto         | carlalberto       |
+| Marius Jensen         | @clorith              | clorith           |
+| Jude Rosario          | @JudeRosario          | lumberhack        |
+| Milana Cap            | @zzap                 | zzap              |
+| Akira Tachibana       | @atachibana           | atachibana        |
+| Stephen Edgar         | @ntwb                 | netweb            |
