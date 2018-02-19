@@ -17,7 +17,7 @@ To use this repo, simply create a new WordPress site on your local machine (usin
 define( 'WPORGPATH', 'https://wordpress.org/' );
 ```
 
-You can get more information about running the Helphub code base locally via reading the [contributing document](https://github.com/Kenshino/HelpHub/blob/update-read-me/CONTRIBUTING.md)
+You can get more information about running the HelpHub code base locally via reading the [contributing document](https://github.com/Kenshino/HelpHub/blob/update-read-me/CONTRIBUTING.md)
 ## Workflow
 
 Anyone is welcome to fork the repo and send pull requests, but the project collaborators (listed below) have push access directly to the repo. **All pull requests will be be reviewed by at least one collaborator with commit access and the PR must pass tests. Collaborators will be responsible for merging their own pull requests once the reviews has been approved. Major feature development will require a review from the project lead, minor ones do not.**
