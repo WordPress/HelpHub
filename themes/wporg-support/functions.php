@@ -5,6 +5,12 @@
  * @package WPBBP
  */
 
+/**
+ * Ensure the `WPORGPATH` constant exists and points to a the correct directory.
+ */
+if ( ! defined( 'WPORGPATH' ) ) {
+	define( 'WPORGPATH', dirname( __FILE__ ) . '/../wporg/inc/' );
+}
 
 /**
  * Use the ‘Lead Topic’ uses the single topic part
