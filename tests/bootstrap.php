@@ -32,8 +32,7 @@ function _manually_load_theme_and_plugin() {
 		return $theme_dir;
 	} );
 
-	require dirname( dirname( __FILE__ ) ) . '/plugins/helphub-post-types/helphub-post-types.php';
-	require dirname( dirname( __FILE__ ) ) . '/plugins/helphub-read-time/helphub-read-time.php';
+	require dirname( dirname( __FILE__ ) ) . '/plugins/support-helphub/support-helphub.php';
 }
 tests_add_filter( 'muplugins_loaded', '_manually_load_theme_and_plugin' );
 
