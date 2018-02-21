@@ -26,6 +26,14 @@ add_filter( 'bbp_show_lead_topic', '__return_true' );
  */
 function wporg_support_scripts() {
 
+	/*
+	 * TODO: Remove this enqueue before going live.
+	 *
+	 * It's injected because we need `wp4` to get the same visuals as meta, the code
+	 * on meta that handles this appears to not be open sourced yet, and we need it for now.
+	 */
+	wp_enqueue_style( 'wp4', '//s.w.org/style/wp4.css?73' );
+
 	wp_enqueue_style( 'forum-wp4-style', get_stylesheet_uri(), [], '20180220' );
 	wp_style_add_data( 'forum-wp4-style', 'rtl', 'replace' );
 
