@@ -27,7 +27,7 @@ class HelpHub_Post_Types_Taxonomy {
 	 *
 	 * @access  private
 	 * @since   1.3.0
-	 * @var     string
+	 * @var     array
 	 */
 	private $post_type;
 
@@ -72,13 +72,13 @@ class HelpHub_Post_Types_Taxonomy {
 	 *
 	 * @access  public
 	 * @since   1.3.0
-	 * @param   string $post_type The post type key.
+	 * @param   array $post_type The post type key.
 	 * @param   string $token     The taxonomy key.
 	 * @param   string $singular  Singular name.
 	 * @param   string $plural    Plural name.
 	 * @param   array  $args      Array of argument overrides.
 	 */
-	public function __construct( $post_type = 'thing', $token = 'thing-category', $singular = '', $plural = '', $args = array() ) {
+	public function __construct( $post_type = array(), $token = 'thing-category', $singular = '', $plural = '', $args = array() ) {
 		$this->post_type = $post_type;
 		$this->token = esc_attr( $token );
 		$this->singular = esc_html( $singular );
@@ -157,6 +157,6 @@ class HelpHub_Post_Types_Taxonomy {
 	 * @return  void
 	 */
 	public function register() {
-		register_taxonomy( esc_attr( $this->token ), esc_attr( $this->post_type ), (array) $this->args );
+		register_taxonomy( esc_attr( $this->token ), (array) $this->post_type, (array) $this->args );
 	} // End register()
 } // End Class

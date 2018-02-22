@@ -126,19 +126,21 @@ final class HelpHub_Post_Types {
 		require_once( dirname( __FILE__ ) . '/class-helphub-post-types-post-type.php' );
 		require_once( dirname( __FILE__ ) . '/class-helphub-post-types-taxonomy.php' );
 
-		// Register an example post type. To register other post types, duplicate this line.
-		$this->post_types['post']            = new HelpHub_Post_Types_Post_Type( 'post', __( 'Post', 'wporg-forums' ), __( 'Posts', 'wporg-forums' ), array(
-			'menu_icon' => 'dashicons-post',
-		) );
-		$this->post_types['helphub_version'] = new HelpHub_Post_Types_Post_Type( 'helphub_version', __( 'WordPress Version', 'wporg-forums' ), __( 'WordPress Versions', 'wporg-forums' ), array(
-			'menu_icon' => 'dashicons-wordpress',
-		) );
+        $this->post_types['post']               = new HelpHub_Post_Types_Post_Type( 'post', __( 'Post', 'wporg-forums' ), __( 'Posts', 'wporg-forums' ), array(
+            'menu_icon' => 'dashicons-post',
+        ) );
+        $this->post_types['helphub_article']    = new HelpHub_Post_Types_Post_Type( 'helphub_article', __( 'Article', 'wporg-forums' ), __( 'Articles', 'wporg-forums' ), array(
+            'menu_icon' => 'dashicons-page',
+        ) );
+        $this->post_types['helphub_version']    = new HelpHub_Post_Types_Post_Type( 'helphub_version', __( 'WordPress Version', 'wporg-forums' ), __( 'WordPress Versions', 'wporg-forums' ), array(
+            'menu_icon' => 'dashicons-wordpress',
+        ) );
 
 		/* Post Types - End */
 
 		// Register an example taxonomy. To register more taxonomies, duplicate this line.
-		$this->taxonomies['helphub_persona']       = new HelpHub_Post_Types_Taxonomy( 'post', 'helphub_persona', __( 'Persona', 'wporg-forums' ), __( 'Personas', 'wporg-forums' ) );
-		$this->taxonomies['helphub_experience']    = new HelpHub_Post_Types_Taxonomy( 'post', 'helphub_experience', __( 'Experience', 'wporg-forums' ), __( 'Experiences', 'wporg-forums' ) );
+		$this->taxonomies['helphub_persona']       = new HelpHub_Post_Types_Taxonomy( array( 'post', 'helphub_article' ), 'helphub_persona', __( 'Persona', 'wporg-forums' ), __( 'Personas', 'wporg-forums' ) );
+		$this->taxonomies['helphub_experience']    = new HelpHub_Post_Types_Taxonomy( array( 'post', 'helphub_article' ), 'helphub_experience', __( 'Experience', 'wporg-forums' ), __( 'Experiences', 'wporg-forums' ) );
 		$this->taxonomies['helphub_major_release'] = new HelpHub_Post_Types_Taxonomy( 'helphub_version', 'helphub_major_release', __( 'Major Release', 'wporg-forums' ), __( 'Major Releases', 'wporg-forums' ) );
 
 		register_activation_hook( __FILE__, array( $this, 'install' ) );
