@@ -20,7 +20,7 @@ namespace WordPressdotorg\Forums;
 		$placeholder = _x( 'Search this forum', 'placeholder', 'wporg-forums' );
 		$project     = wporg_support_get_compat_object();
 	} else {
-		$placeholder = _x( 'Search forums', 'placeholder', 'wporg-forums' );
+		$placeholder = _x( 'Search support resources', 'placeholder', 'wporg-forums' );
 		$project     = null;
 	}
 	?>

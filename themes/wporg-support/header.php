@@ -19,6 +19,10 @@ $menu_items = array(
 );
 
 wporg_get_global_header();
+
+if ( stristr( WPORGPATH, 'http' ) ) {
+	do_action( 'wp_head' );
+}
 ?>
 
 <div id="page" class="site">

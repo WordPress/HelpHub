@@ -3275,9 +3275,10 @@ section {
 
 @media (min-width: 48em) {
 	.three-up > div {
-		float: right;
+		display: inline-block;
+		vertical-align: top;
 		width: 30%;
-		margin-left: 5%;
+		margin-left: 4.5%;
 		font-size: 0.8rem;
 	}
 	.three-up > div:nth-child(3n) {
@@ -3319,7 +3320,7 @@ section {
 	.three-up.bbp-forums > div {
 		height: 200px;
 		border-bottom: none;
-		margin: 2rem 0 0 5%;
+		margin: 2rem 0 0 4.5%;
 	}
 	.three-up.bbp-forums > div:nth-child(3n) {
 		margin-left: 0;
@@ -3908,16 +3909,19 @@ select {
 /*--------------------------------------------------------------
 # Homepage
 --------------------------------------------------------------*/
+.forum-archive.wporg-support .info-box,
 .home.wporg-support .info-box {
 	text-align: center;
 	max-width: 20rem;
 	margin: 0 auto 4rem;
 }
 
+.forum-archive.wporg-support .info-box h3,
 .home.wporg-support .info-box h3 {
 	margin-top: 1rem;
 }
 
+.forum-archive.wporg-support .info-box .dashicons,
 .home.wporg-support .info-box .dashicons {
 	font-size: 5.9604644775rem;
 	opacity: 0.4;
@@ -3926,56 +3930,72 @@ select {
 }
 
 @media (min-width: 48em) {
+	.forum-archive.wporg-support .info-box,
 	.home.wporg-support .info-box {
 		max-width: 100%;
 		margin: 0;
 	}
 }
 
+.forum-archive.wporg-support #bbpress-forums .bbp-forums,
+.home.wporg-support #bbpress-forums .bbp-forums {
+	border: none;
+}
+
+.forum-archive.wporg-support #bbpress-forums div.odd,
 .home.wporg-support #bbpress-forums div.odd {
 	background: transparent;
 }
 
+.forum-archive.wporg-support .col-8,
 .home.wporg-support .col-8 {
 	margin-right: 0;
 }
 
+.forum-archive.wporg-support ul#views,
 .home.wporg-support ul#views {
 	text-align: center;
 	font-size: 0.8rem;
 	margin: 0;
 }
 
+.forum-archive.wporg-support .helpful-links > div:last-child,
 .home.wporg-support .helpful-links > div:last-child {
 	font-size: 0.8rem;
 }
 
 @media (min-width: 48em) {
+	.forum-archive.wporg-support .helpful-links > div,
 	.home.wporg-support .helpful-links > div {
 		width: 65%;
 		float: right;
 		margin-left: 5%;
 	}
+	.forum-archive.wporg-support .helpful-links > div:last-child,
 	.home.wporg-support .helpful-links > div:last-child {
 		width: 30%;
 		margin-left: 0;
 	}
 }
 
+.forum-archive.wporg-support .themes-plugins,
 .home.wporg-support .themes-plugins {
 	margin: 0 0 4rem;
 	border-bottom: 1px solid #eee;
 }
 
+.forum-archive.wporg-support .themes-plugins p,
 .home.wporg-support .themes-plugins p {
 	font-size: 1rem;
 	color: #666666;
 }
 
+.forum-archive.wporg-support .themes-plugins p a:hover > .dashicons,
 .home.wporg-support .themes-plugins p a:hover > .dashicons {
 	text-decoration: none;
 }
 
+.forum-archive.wporg-support .themes-plugins h3,
 .home.wporg-support .themes-plugins h3 {
 	font-size: 1.4rem;
 	margin-bottom: 0;
@@ -3983,11 +4003,13 @@ select {
 }
 
 @media (min-width: 48em) {
+	.forum-archive.wporg-support .themes-plugins,
 	.home.wporg-support .themes-plugins {
 		width: 65%;
 		margin: 3rem 0 4rem;
 		border-bottom: none;
 	}
+	.forum-archive.wporg-support .themes-plugins p,
 	.home.wporg-support .themes-plugins p {
 		font-size: 0.8rem;
 	}
@@ -4215,6 +4237,18 @@ div.bbp-breadcrumb p {
 	.bbp-view .review-ratings .col-3, .bbp-view .review-ratings .col-5 {
 		width: 100%;
 	}
+}
+
+/*--------------------------------------------------------------
+# HelpHub Specific
+--------------------------------------------------------------*/
+.three-up.helphub-front-page p,
+.three-up.helphub-front-page ul {
+	text-align: right;
+}
+
+.three-up.helphub-front-page > div {
+	margin-bottom: 5rem;
 }
 
 /*--------------------------------------------------------------

@@ -1,0 +1,15 @@
+.three-up {
+
+	&.helphub-front-page {
+
+		p,
+		ul {
+			text-align: left;
+		}
+
+		> div {
+
+			margin-bottom: 5rem;
+		}
+	}
+}
