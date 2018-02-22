@@ -11,9 +11,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-require_once( dirname( __FILE__ ) . '/includes/class-support_helphub_front_page_blocks_widget.php' );
+require_once( dirname( __FILE__ ) . '/includes/class-support-helphub-front-page-blocks-widget.php' );
 
 function helphub_register_front_page_blocks_widget() {
-	register_widget( 'Support_HelpHub_Front_Page_blocks_Widget' );
+	register_widget( 'Support_HelpHub_Front_Page_Blocks_Widget' );
 }
 add_action( 'widgets_init', 'helphub_register_front_page_blocks_widget' );

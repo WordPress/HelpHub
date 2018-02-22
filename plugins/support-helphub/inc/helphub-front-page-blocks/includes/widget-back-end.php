@@ -36,7 +36,7 @@
 		<?php
 		$nav_menus = wp_get_nav_menus();
 
-		foreach( $nav_menus as $nav_menu ) {
+		foreach ( $nav_menus as $nav_menu ) {
 			printf(
 				'<option value="%s" %s>%s</option>',
 				esc_attr( $nav_menu->term_id ),

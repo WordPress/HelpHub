@@ -9,7 +9,7 @@
 /**
  * Class Support_HelpHub_Front_Page_blocks_Widget
  */
-class Support_HelpHub_Front_Page_blocks_Widget extends WP_Widget {
+class Support_HelpHub_Front_Page_Blocks_Widget extends WP_Widget {
 	public function __construct() {
 		$widget_options = array(
 			'classname'   => 'helphub-front-page-block',
