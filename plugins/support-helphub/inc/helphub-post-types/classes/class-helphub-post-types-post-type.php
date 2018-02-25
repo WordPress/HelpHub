@@ -149,21 +149,24 @@ class HelpHub_Post_Types_Post_Type {
 		$archive_slug = apply_filters( 'helphub_archive_slug', sanitize_title_with_dashes( $this->plural ) );
 
 		$defaults = array(
-			'labels'             => $labels,
-			'public'             => true,
-			'publicly_queryable' => true,
-			'show_ui'            => true,
-			'show_in_menu'       => true,
-			'query_var'          => true,
-			'rewrite'            => array(
+			'labels'                => $labels,
+			'public'                => true,
+			'publicly_queryable'    => true,
+			'show_ui'               => true,
+			'show_in_menu'          => true,
+			'query_var'             => true,
+			'rewrite'               => array(
 				'slug' => $single_slug,
 			),
-			'capability_type'    => 'post',
-			'has_archive'        => $archive_slug,
-			'hierarchical'       => false,
-			'supports'           => array( 'title', 'editor', 'excerpt', 'thumbnail', 'page-attributes', 'revisions' ),
-			'menu_position'      => 5,
-			'menu_icon'          => 'dashicons-smiley',
+			'capability_type'       => 'post',
+			'has_archive'           => $archive_slug,
+			'hierarchical'          => false,
+			'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail', 'page-attributes', 'revisions' ),
+			'menu_position'         => 5,
+			'menu_icon'             => 'dashicons-smiley',
+            'show_in_rest'          => true,
+            'rest_base'             => $archive_slug,
+            'rest_controller_class' => 'WP_REST_Posts_Controller',
 		);
 
 		$args = wp_parse_args( $this->args, $defaults );
