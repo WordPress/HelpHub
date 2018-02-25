@@ -48,10 +48,11 @@ The following people are active developers on the project and are all listed as 
 
 | Name               	| GitHub username   	| Slack username 	|
 |--------------------	|-------------------	|----------------	|
-| Jon Ang           	| @kenshino          	| kenshino       	|
+| Jon Ang           				| @kenshino          	| kenshino       	|
 | Carl Alberto          | @carl-alberto         | carlalberto       |
 | Marius Jensen         | @clorith              | clorith           |
 | Jude Rosario          | @JudeRosario          | lumberhack        |
 | Milana Cap            | @zzap                 | zzap              |
 | Akira Tachibana       | @atachibana           | atachibana        |
 | Stephen Edgar         | @ntwb                 | netweb            |
+| Mark Uraine         		| @mapk                 | mapk            |
