@@ -16,9 +16,10 @@ section {
 	
 	@media (min-width: $ms-breakpoint) {
 		> div {
-			float:left;
+			display: inline-block;
+			vertical-align: top;
 			width:30%;
-			margin-right:5%;
+			margin-right:4.5%;
 			font-size:ms(-2);
 			&:nth-child(3n) {
 				margin-right:0;
@@ -61,7 +62,7 @@ section {
 			@media (min-width: $ms-breakpoint) {
 				height: 200px;
 				border-bottom: none;
-				margin: 2rem 5% 0 0;
+				margin: 2rem 4.5% 0 0;
 
 				&:nth-child(3n) {
 					margin-right:0;
@@ -667,6 +668,7 @@ select {
 # Homepage
 --------------------------------------------------------------*/
 
+.forum-archive.wporg-support,
 .home.wporg-support {
 
 	.info-box {
@@ -691,8 +693,14 @@ select {
 		}
 	}
 
-	#bbpress-forums div.odd {
-		background: transparent;
+	#bbpress-forums {
+		.bbp-forums {
+			border: none;
+		}
+
+		div.odd {
+			background: transparent;
+		}
 	}
 
 	.col-8 {

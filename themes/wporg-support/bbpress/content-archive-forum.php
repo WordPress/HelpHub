@@ -1,4 +1,4 @@
-<?php if ( ! is_front_page() ) : ?>
+<?php if ( ! is_front_page() && ! is_archive( 'forum' ) ) : ?>
 
 	<?php bbp_breadcrumb(); ?>
 
@@ -10,7 +10,7 @@
 
 	<?php if ( bbp_has_forums() ) : ?>
 
-		<?php if ( is_front_page() ) : ?>
+		<?php if ( is_front_page() || is_archive( 'forum' ) ) : ?>
 			<?php bbp_get_template_part( 'loop', 'forums-homepage' ); ?>
 		<?php else : ?>
 			<?php bbp_get_template_part( 'loop', 'forums' ); ?>
