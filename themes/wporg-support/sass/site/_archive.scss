@@ -1,0 +1,37 @@
+body.archive {
+
+	#main {
+
+		article {
+
+			&:before {
+
+				display: block;
+				width: 100%;
+				height: 1px;
+				background-color: #e2dddd;
+				content: '';
+				margin-top: 20px;
+			}
+
+			&:first-of-type {
+
+				&:before {
+
+					display: none;
+				}
+			}
+
+			.entry-title {
+
+				margin-top: 20px;
+			}
+		}
+
+		.archive-pagination {
+
+			margin-top: 20px;
+			text-align: center;
+		}
+	}
+}

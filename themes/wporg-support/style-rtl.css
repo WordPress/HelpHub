@@ -3260,6 +3260,31 @@ body, #pagebody {
 }
 
 /*--------------------------------------------------------------
+# Archives
+--------------------------------------------------------------*/
+body.archive #main article:before {
+	display: block;
+	width: 100%;
+	height: 1px;
+	background-color: #e2dddd;
+	content: '';
+	margin-top: 20px;
+}
+
+body.archive #main article:first-of-type:before {
+	display: none;
+}
+
+body.archive #main article .entry-title {
+	margin-top: 20px;
+}
+
+body.archive #main .archive-pagination {
+	margin-top: 20px;
+	text-align: center;
+}
+
+/*--------------------------------------------------------------
 # bbPress Specific 
 --------------------------------------------------------------*/
 /* bbPress specific styles */
