@@ -19,3 +19,4 @@ require_once( dirname( __FILE__ ) . '/inc/helphub-post-types/helphub-post-types.
 require_once( dirname( __FILE__ ) . '/inc/helphub-read-time/helphub-read-time.php' );
 require_once( dirname( __FILE__ ) . '/inc/syntaxhighlighter/syntaxhighlighter.php' );
 require_once( dirname( __FILE__ ) . '/inc/table-of-contents-lite/table-of-contents-lite.php' );
+require_once( dirname( __FILE__ ) . '/inc/helphub-front-page-blocks/helphub-front-page-blocks.php' );
