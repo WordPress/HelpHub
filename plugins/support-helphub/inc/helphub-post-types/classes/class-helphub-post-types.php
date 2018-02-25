@@ -130,10 +130,10 @@ final class HelpHub_Post_Types {
 			'menu_icon' => 'dashicons-post',
 		) );
 		$this->post_types['helphub_article']    = new HelpHub_Post_Types_Post_Type( 'helphub_article', __( 'Article', 'wporg-forums' ), __( 'Articles', 'wporg-forums' ), array(
-			'menu_icon' => 'dashicons-page',
+			'menu_icon' => 'dashicons-media-document',
 		) );
 		$this->post_types['helphub_version']    = new HelpHub_Post_Types_Post_Type( 'helphub_version', __( 'WordPress Version', 'wporg-forums' ), __( 'WordPress Versions', 'wporg-forums' ), array(
-			'menu_icon' => 'dashicons-media-document',
+			'menu_icon' => 'dashicons-wordpress',
 		) );
 
 		/* Post Types - End */
