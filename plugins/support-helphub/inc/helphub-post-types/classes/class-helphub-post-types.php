@@ -133,7 +133,7 @@ final class HelpHub_Post_Types {
 			'menu_icon' => 'dashicons-page',
 		) );
 		$this->post_types['helphub_version']    = new HelpHub_Post_Types_Post_Type( 'helphub_version', __( 'WordPress Version', 'wporg-forums' ), __( 'WordPress Versions', 'wporg-forums' ), array(
-			'menu_icon' => 'dashicons-wordpress',
+			'menu_icon' => 'dashicons-media-document',
 		) );
 
 		/* Post Types - End */
