@@ -164,9 +164,9 @@ class HelpHub_Post_Types_Post_Type {
 			'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail', 'page-attributes', 'revisions' ),
 			'menu_position'         => 5,
 			'menu_icon'             => 'dashicons-smiley',
-            		'show_in_rest'          => true,
-            		'rest_base'             => $archive_slug,
-            		'rest_controller_class' => 'WP_REST_Posts_Controller',
+            		'show_in_rest'		=> true,
+            		'rest_base'		=> $archive_slug,
+            		'rest_controller_class'	=> 'WP_REST_Posts_Controller',
 		);
 
 		$args = wp_parse_args( $this->args, $defaults );
