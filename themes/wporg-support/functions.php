@@ -32,6 +32,7 @@ function wporg_support_scripts() {
 	 * It's injected because we need `wp4` to get the same visuals as meta, the code
 	 * on meta that handles this appears to not be open sourced yet, and we need it for now.
 	 */
+	wp_enqueue_style( 'dashicons', '//s.w.org/wp-includes/css/dashicons.css?20160504' );
 	wp_enqueue_style( 'wp4', '//s.w.org/style/wp4.css?73' );
 	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600&subset=latin,cyrillic-ext,greek-ext,greek,vietnamese,latin-ext,cyrillic' );
 
