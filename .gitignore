@@ -13,6 +13,6 @@ php-codesniffer
 plugins/wordpress-importer/
 
 # Contibutors plugin
-plugins/helphub-contributors/admin/assets/
-plugins/helphub-contributors/public/css/helphub-contributors-public.css
+plugins/support-helphub/inc/helphub-contributors/admin/assets/
+plugins/support-helphub/inc/helphub-contributors/public/css/
 package-lock.json
