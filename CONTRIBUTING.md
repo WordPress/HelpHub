@@ -35,8 +35,7 @@ $ git clone https://github.com/Kenshino/HelpHub.git wp-content
 7. Activate the **Support HelpHub** plugin from within `/wp-admin`.
 8. Install and activate the bbPress plugin.
 9. Under `Settings -> Permalinks` in the `/wp-admin`, change to "Post Name" option, and save changes.
-10. Add this line `define( 'WPORGPATH', 'https://wordpress.org/' ); ` to your site's `wp-config.php` file.
-11. Make sure your `php.ini` file includes these lines below as `On`.
+10. Make sure your `php.ini` file includes these lines below as `On`.
 
 ```
 allow_url_fopen = On
