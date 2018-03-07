@@ -1,6 +1,6 @@
 # Contributing to the Docs Team (HelpHub)
 
-### Ways to Contribute
+## Ways to Contribute
 
 1. [Write documentation](#write-documentation)
 2. [Find bugs and create issues](#find-bugs-and-create-issues)
@@ -11,17 +11,17 @@
 
 ----------
 
-### Write documentation
+## Write documentation
 There are always teams that need help with writing documentation. The Docs Team can help connect you to the people who need the help. Join our discussions in the [#docs](https://make.wordpress.org/docs/tag/docs/) slack channel on **Thursdays from 17:00 - 18:00 UTC** and offer your help.
 
-### Find bugs and create issues
+## Find bugs and create issues
 Take a look at the HelpHub site located at [wp-helphub.com](https://wp-helphub.com/). If you see any bugs or issues, please create an issue on our GitHub repo here: https://github.com/Kenshino/HelpHub/issues.
 
-### Help code and fix issues
+## Help code and fix issues
 
-#### Local Install
+### Local Install
 
-**How to use this repo on your local computer**
+#### How to use this repo on your local computer
 
 1. Install WordPress locally.
 2. Rename `wp-content` folder. Later, you will need current Theme files.
@@ -48,7 +48,7 @@ $ vagrant ssh
 $ cd /etc/php/7.0/fpm
 ```
 
-**Import database**
+#### Import database
 
 Included in this repo is the file `helphub.wordpress.2017-06-15.xml`. Import this using the WordPress Importer from within the `/wp-admin` of your local site.
 
@@ -62,9 +62,9 @@ Included in this repo is the file `helphub.wordpress.2017-06-15.xml`. Import thi
 
 Once you have a local install of HelpHub up and running, you can contribute with pull requests either from your own fork or after you've added as a contributor directly in this repository. We are using [Travis CI](https://travis-ci.org/) for tests on every pull request. You can, also, run these tests locally before pushing your code (more on this later). Development covers work on both, theme and plugins and requires following [best practices](https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/) and [WordPress Coding Standards](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards).
 
-#### HelpHub
+### HelpHub
 
-**Requirements:**
+#### Requirements:
 
 - [npm](https://www.npmjs.com/get-npm)
 - [Grunt](https://gruntjs.com/)
@@ -101,7 +101,7 @@ This task tells compiler to watch all changes created in `.scss` files and rebui
 
 While you can use regular CSS syntax in `.scss` files (as long as Travis tests are passed), we would like to encourage you to [learn](http://sass-lang.com/guide) and use Sass as much as possible. It's good for you and for project.
 
-### Propose design suggestions and improvements
+## Propose design suggestions and improvements
 
 Join our discussions in the [#docs](https://wordpress.slack.com/messages/docs/) [slack](https://make.wordpress.org/chat/) channel on:
 
