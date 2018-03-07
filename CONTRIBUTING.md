@@ -30,7 +30,7 @@ Take a look at the HelpHub site located at [wp-helphub.com](https://wp-helphub.c
 $ git clone https://github.com/Kenshino/HelpHub.git wp-content
 ```
 4. Copy back your current Theme files from renamed folder in above Step 2.
-5. Compile theme's `.scss` files into `style.css` [see below](#helphub)
+5. Run `npm install` to compile theme's `.scss` files into `style.css` ([see below for more details](#helphub))
 6. Activate the **WordPress.org Support** theme from within `/wp-admin`.
 7. Activate the **Support HelpHub** plugin from within `/wp-admin`.
 8. Install and activate the bbPress plugin.
