@@ -31,9 +31,9 @@ $ git clone https://github.com/Kenshino/HelpHub.git wp-content
 ```
 4. Copy back your current Theme files from renamed folder in above Step 2.
 5. Run `npm install` to compile theme's `.scss` files into `style.css` ([see below for more details](#helphub))
-6. Activate the **WordPress.org Support** theme from within `/wp-admin`.
-7. Activate the **Support HelpHub** plugin from within `/wp-admin`.
-8. Install and activate the bbPress plugin.
+6. Install and activate the bbPress plugin.
+7. Activate the **WordPress.org Support** theme from within `/wp-admin`.
+8. Activate the **Support HelpHub** plugin from within `/wp-admin`.
 9. Under `Settings -> Permalinks` in the `/wp-admin`, change to "Post Name" option, and save changes.
 10. Add this line `define( 'WPORGPATH', 'https://wordpress.org/' ); ` to your site's `wp-config.php` file.
 11. Make sure your `php.ini` file includes these lines below as `On`.
