@@ -30,12 +30,13 @@ Take a look at the HelpHub site located at [wp-helphub.com](https://wp-helphub.c
 $ git clone https://github.com/Kenshino/HelpHub.git wp-content
 ```
 4. Copy back your current Theme files from renamed folder in above Step 2.
-5. Compile theme's `.scss` files into `style.css` [see below](#helphub-theme)
+5. Compile theme's `.scss` files into `style.css` [see below](#HelpHub)
 6. Activate the **WordPress.org Support** theme from within `/wp-admin`.
 7. Activate the **Support HelpHub** plugin from within `/wp-admin`.
-8. Under `Settings -> Permalinks` in the `/wp-admin`, change to "Post Name" option, and save changes.
-9. Add this line `define( 'WPORGPATH', 'https://wordpress.org/' ); ` to your site's `wp-config.php` file.
-10. Make sure your `php.ini` file includes these lines below as `On`.
+8. Install bbPress plugin
+9. Under `Settings -> Permalinks` in the `/wp-admin`, change to "Post Name" option, and save changes.
+10. Add this line `define( 'WPORGPATH', 'https://wordpress.org/' ); ` to your site's `wp-config.php` file.
+11. Make sure your `php.ini` file includes these lines below as `On`.
 
 ```
 allow_url_fopen = On
@@ -60,7 +61,7 @@ Included in this repo is the file `helphub.wordpress.2017-06-15.xml`. Import thi
 6. Click the button to begin. It may take a while to complete. If there are some failed imports, it should still be okay.
 7. Your local install of HelpHub should now be ready to view in your browser.
 
-Once you have a local install of HelpHub up and running, you can contribute with pull requests either from your own fork or after you've added as a contributor directly in this repository. We are using [Travis CL](https://travis-ci.org/) for tests on every pull request. You can, also, run these tests locally before pushing your code (more on this later). Development covers work on both, theme and plugins and requires following [best practices](https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/) and [WordPress Coding Standards](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards).
+Once you have a local install of HelpHub up and running, you can contribute with pull requests either from your own fork or after you've added as a contributor directly in this repository. We are using [Travis CI](https://travis-ci.org/) for tests on every pull request. You can, also, run these tests locally before pushing your code (more on this later). Development covers work on both, theme and plugins and requires following [best practices](https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/) and [WordPress Coding Standards](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards).
 
 #### HelpHub
 
