@@ -37,7 +37,7 @@ if ( stristr( WPORGPATH, 'http' ) ) {
 					<p class="site-description">
 						<?php
 						/* Translators: subhead */
-						_e( 'We\'ve got a variety of resources to help you get the most out of WordPress.', 'wporg-forums' );
+						_e( 'Explore a variety of resources to help you gain the most out of WordPress.', 'wporg-forums' );
 						?>
 					</p>
 					<?php get_search_form(); ?>
