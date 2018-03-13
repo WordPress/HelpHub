@@ -1,0 +1,32 @@
+# Copyright (C) 2014 Custom Post Type Extended Widget
+# This file is distributed under the same license as the Custom Post Type Extended Widget package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Custom Post Type Extended Widget 1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/\n"
+"POT-Creation-Date: 2017-01-15 11:28:06+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-01-15 22:00+08:00\n"
+"Last-Translator: Carl Alberto <carl@alber2.com>\n"
+
+#: includes/class-custom-post-type-extended-widget.php:207
+#: includes/class-custom-post-type-extended-widget.php:216
+msgid "Cheatin&#8217; huh?"
+msgstr ""
+#. Plugin Name of the plugin/theme
+msgid "Custom Post Type Extended Widget"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://carl.alber2.com/"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Carl Alberto"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://carl.alber2.com/"
+msgstr ""
