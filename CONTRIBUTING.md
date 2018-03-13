@@ -50,7 +50,11 @@ $ cd /etc/php/7.0/fpm
 
 #### Import database
 
-Included in this repo is the file `helphub.wordpress.2017-10-30.xml`. Import this using the WordPress Importer from within the `/wp-admin` of your local site.
+For now we have two ways for importing database from staging site - via [Importer](#importer) and via [Duplicator](#duplicator)
+
+##### Importer
+
+Database from staging site is located in `wp-content/staging-database` folder. There you can find `helphub.WordPress.2018-03-13.xml` file. Import this using the WordPress Importer from within the `/wp-admin` of your local site.
 
 1. Go to: `Tools -> Import` and click "Install Now" under WordPress at the bottom. This will install the WordPress Importer.
 2. Click "Run Importer"
@@ -58,7 +62,12 @@ Included in this repo is the file `helphub.wordpress.2017-10-30.xml`. Import thi
 4. Set all the authors to a user account on your local site.
 5. Check the box to "Download and import file attachments".
 6. Click the button to begin. It may take a while to complete. If there are some failed imports, it should still be okay.
-7. Your local install of HelpHub should now be ready to view in your browser.
+
+This file won't import widgets from staging site. For that you can use `2018-03-13.wp-helphub.com-widgets.wie` file, located in `wp-content/staging-database/Widget Importer & Exporter` folder. This file is exported with [Widget Importer & Exporter](https://wordpress.org/plugins/widget-importer-exporter/) plugin and you need this plugin in your local installation in order to import widgets from `.wie` file.
+
+##### Duplicator
+
+In `wp-content/staging-database` you'll find `Duplicator` folder containing `.zip` archive. This archive holds `installer-backup.php` and `database.sql` files, created on 13th March 2018. You can use it instead of [Importer](#importer) workflow for importing database. Here is a [guide](https://snapcreek.com/duplicator/docs/quick-start/) for Duplicator.
 
 Once you have a local install of HelpHub up and running, you can contribute with pull requests either from your own fork or after you've added as a contributor directly in this repository. We are using [Travis CI](https://travis-ci.org/) for tests on every pull request. You can, also, run these tests locally before pushing your code (more on this later). Development covers work on both, theme and plugins and requires following [best practices](https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/) and [WordPress Coding Standards](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards).
 
@@ -103,9 +112,4 @@ While you can use regular CSS syntax in `.scss` files (as long as Travis tests a
 
 ## Propose design suggestions and improvements
 
-Join our discussions in the [#docs](https://wordpress.slack.com/messages/docs/) [slack](https://make.wordpress.org/chat/) channel on:
-
-- **Tuesdays from 15:00 - 16:00 UTC** - content, design and development discussion,
-- **Thursdays from 17:00 - 17:30 UTC** - bug scrubs,
-
-or submit your ideas on our GitHub repo [here](https://github.com/Kenshino/HelpHub/issues).
+Join our discussions in the [#docs](https://wordpress.slack.com/messages/docs/) [slack](https://make.wordpress.org/chat/) channel on **Tuesdays from 15:00 - 16:00 UTC** - content, design and development discussion. Or submit your ideas on our GitHub repo [here](https://github.com/Kenshino/HelpHub/issues).
