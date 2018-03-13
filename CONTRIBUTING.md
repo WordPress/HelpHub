@@ -50,7 +50,7 @@ $ cd /etc/php/7.0/fpm
 
 #### Import database
 
-Included in this repo is the file `helphub.wordpress.2017-06-15.xml`. Import this using the WordPress Importer from within the `/wp-admin` of your local site.
+Included in this repo is the file `helphub.wordpress.2017-10-30.xml`. Import this using the WordPress Importer from within the `/wp-admin` of your local site.
 
 1. Go to: `Tools -> Import` and click "Install Now" under WordPress at the bottom. This will install the WordPress Importer.
 2. Click "Run Importer"
