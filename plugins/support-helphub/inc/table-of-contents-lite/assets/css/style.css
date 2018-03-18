@@ -24,42 +24,81 @@ h4.toc-heading {
 	clear: left;
 }
 .table-of-contents {
-	padding: 0;
-	max-width: 250px;
+	float: right;
+	width: 250px;
+	background-color: #fff;
+	box-shadow: 0 0 8px rgba(0,0,0,0.1);
+	border: 1px solid #eee;
+	border-radius: 3px;
+	margin: 0 0 15px 15px;
+	z-index: 1;
+	position: relative;
+	color: #555d66;
 }
-.post-type-archive-handbook div.table-of-contents h2,
-.single-handbook div.table-of-contents h2,
-.post-type-archive-handbook div.table-of-contents h3,
-.single-handbook div.table-of-contents h3 {
-	font-weight:400;
+@media (min-width: 971px) {
+	div.table-of-contents 	{
+		margin: -15px -30px 15px 15px;
+	}
+}
+@media (max-width: 480px) {
+	div.table-of-contents {
+		display: none;
+	}
+}
+div.table-of-contents h2,
+div.table-of-contents h3 {
 	/**
 	 * originally font-size is 1.3em defined in wporg-breathe theme,
 	 * which is correctly 17px but in HelpHub style this inheritance is wrong
 	 * and 1.3em becomes 21px so we'll define font-size and line-height here
 	 * until issue is fixed in theme itself.
+	 *
+	 * Recently edited to use rem values instead of pixels.
 	 */
-	font-size: 17px;
-	line-height:25px;
+
+	margin: 0;
+	padding: 7px 12px;
+	font-size: 1rem;
+	font-weight: 400;
+	color: #32373c;
+	text-transform: uppercase;
+	border-bottom: 1px solid #eee;
 }
 /**
  * Same thing with font-size and line-height as above
  */
 .table-of-contents .items {
-	font-size: 14px;
-	line-height: 22px;
+	font-size: 0.8rem;
+	margin: 0;
+	list-style-type: none;
+	padding: 1rem;
 }
 
 .table-of-contents .items li {
-	font-size: inherit;
-	line-height: inherit;
+	padding: 4px;
+}
+.table-of-contents .items li ul li,
+.table-of-contents .items li ul li ul li {
+	padding-bottom: 0;
+}
+/**
+ * Hiding second level table of contents links.
+ * With the second level, things looks too messy and 
+ * information in the small area is too overwhelming.
+ */
+.table-of-contents .items li ul {
+	display: none;
 }
 /**
  * This should be inherited from p2-breathe
  */
 .table-of-contents .items li a,
-.table-of-contents .items li a:hover,
 .table-of-contents .items li a:visited {
-	color: #3498db;
+	text-decoration: none;
+}
+.table-of-contents .items li a:hover {
+	color: #0073aa;
+	text-decoration: underline;
 }
 /**
  * This should be inherited from p2-breathe
@@ -73,24 +112,9 @@ h4.toc-heading {
 }
 /* Highlight current heading and adjust scroll position for fixed toolbar */
 .toc-heading:target {
-	position: relative;
-	padding-top: 50px;
-	margin-top: -50px;
-}
-/* Remove negative margin because there is no jump link before these headlines */
-.entry-content h2.toc-heading:first-of-type:target,
-.entry-content h3.toc-heading:first-of-type:target,
-h2.toc-heading + h3.toc-heading:target {
-	margin-top: 0;
-}
-.toc-heading:target:before {
-	content: '';
-	position: absolute;
-	left: -10px;
-	top: 50px;
 	border-left: 5px solid #0073aa;
-	height: 50%;
-	height: calc(100% - 50px);
+	padding-left: 5px;
+	margin-left: -10px;
 }
 p.toc-jump {
 	position: relative;
