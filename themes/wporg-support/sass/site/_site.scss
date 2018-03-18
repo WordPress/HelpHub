@@ -436,8 +436,10 @@ body, #pagebody {
 
 
 /*--------------------------------------------------------------
+# .single
 # .page
 --------------------------------------------------------------*/
+.single,
 .page {
 	.entry-header {
 		margin-top: 2rem;
@@ -523,6 +525,7 @@ body, #pagebody {
 	}
 }
 
+.single,
 .page-template-page-full-width {
 	.entry-header .entry-title,
 	.entry-content section .container {
