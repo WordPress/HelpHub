@@ -2,7 +2,6 @@
 /**
  * Class file of HelpHub custom roles.
  *
- * @var [type]
  * @package HelpHub
  */
 
@@ -115,8 +114,27 @@ class HelpHub_Custom_Roles {
 		$this->add_helphub_customrole();
 
 		$this->load_plugin_textdomain();
+
+		add_action( 'admin_init', array( $this, 'hh_restrict_admin_pages' ), 0 );
+
 		add_action( 'init', array( $this, 'load_localisation' ), 0 );
 	} // End __construct ()
+
+	/**
+	 * This will add restriction to the custom rule.
+	 */
+	public function hh_restrict_admin_pages() {
+		if ( current_user_can( 'helphub_editor' ) ) {
+			global $pagenow;
+			$restricted_pages = array(
+				'themes.php',
+			);
+			if ( in_array( $pagenow, $restricted_pages, true ) ) {
+				wp_safe_redirect( admin_url( '/' ) );
+				exit;
+			}
+		}
+	}
 
 	/**
 	 * Load plugin localisation

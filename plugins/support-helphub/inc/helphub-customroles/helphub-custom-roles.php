@@ -9,7 +9,7 @@
  * Requires at least: 4.0
  * Tested up to: 4.0
  *
- * Text Domain: helphub-custom-roles
+ * Text Domain: wporg-forums
  * Domain Path: /lang/
  *
  * @package HelpHub
