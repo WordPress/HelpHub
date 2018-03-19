@@ -170,7 +170,7 @@ class HelpHub_Custom_Roles {
 	 * @since 1.0.0
 	 */
 	public function __clone() {
-		_doing_it_wrong( __FUNCTION__, esc_html( __( 'Cheatin&#8217; huh?' ) ), esc_html( $this->_version ) );
+		_doing_it_wrong( __FUNCTION__, esc_html( __( 'Cheatin&#8217; huh?', 'wporg-forums' ) ), esc_html( $this->_version ) );
 	} // End __clone ()
 
 	/**
@@ -179,7 +179,7 @@ class HelpHub_Custom_Roles {
 	 * @since 1.0.0
 	 */
 	public function __wakeup() {
-		_doing_it_wrong( __FUNCTION__, esc_html( __( 'Cheatin&#8217; huh?' ) ), esc_html( $this->_version ) );
+		_doing_it_wrong( __FUNCTION__, esc_html( __( 'Cheatin&#8217; huh?', 'wporg-forums' ) ), esc_html( $this->_version ) );
 	} // End __wakeup ()
 
 	/**
