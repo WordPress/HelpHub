@@ -170,7 +170,7 @@ class HelpHub_Custom_Roles {
 	 * @since 1.0.0
 	 */
 	public function __clone() {
-		_doing_it_wrong( __FUNCTION__, esc_html( __( 'Cheatin&#8217; huh?', 'wporg-forums' ) ), esc_html( $this->_version ) );
+		_doing_it_wrong( __FUNCTION__, esc_html( __( 'Sorry, this is not allowed.', 'wporg-forums' ) ), esc_html( $this->_version ) );
 	} // End __clone ()
 
 	/**
@@ -179,7 +179,7 @@ class HelpHub_Custom_Roles {
 	 * @since 1.0.0
 	 */
 	public function __wakeup() {
-		_doing_it_wrong( __FUNCTION__, esc_html( __( 'Cheatin&#8217; huh?', 'wporg-forums' ) ), esc_html( $this->_version ) );
+		_doing_it_wrong( __FUNCTION__, esc_html( __( 'Sorry, this is not allowed.', 'wporg-forums' ) ), esc_html( $this->_version ) );
 	} // End __wakeup ()
 
 	/**
@@ -213,8 +213,8 @@ class HelpHub_Custom_Roles {
 		if ( ! function_exists( 'get_editable_roles' ) ) {
 			require_once ABSPATH . 'wp-admin/includes/user.php';
 		}
-		$roles = get_editable_roles();
-		$role  = 'helphub_editor';
+		get_editable_roles();
+		$role = 'helphub_editor';
 
 		// Check if the custom role is already added.
 		global $wp_roles;
