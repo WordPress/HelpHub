@@ -438,6 +438,7 @@ body, #pagebody {
 /*--------------------------------------------------------------
 # .page
 --------------------------------------------------------------*/
+.single,
 .page {
 	.entry-header {
 		margin-top: 2rem;
@@ -450,6 +451,8 @@ body, #pagebody {
 
 			@media screen and ( min-width: $ms-breakpoint ) {
 				padding: 0 2rem;
+				margin: 0;
+				width: 65%;
 			}
 		}
 	}
@@ -480,6 +483,8 @@ body, #pagebody {
 
 				@media screen and ( min-width: $ms-breakpoint ) {
 					padding: 0 2rem;
+					margin: 0;
+					width: 65%;
 				}
 			}
 
@@ -523,6 +528,7 @@ body, #pagebody {
 	}
 }
 
+.single,
 .page-template-page-full-width {
 	.entry-header .entry-title,
 	.entry-content section .container {
