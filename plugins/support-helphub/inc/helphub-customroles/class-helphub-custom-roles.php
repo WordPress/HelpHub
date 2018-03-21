@@ -112,20 +112,18 @@ class HelpHub_Custom_Roles {
 
 		$this->add_helphub_customrole();
 
-		$this->load_plugin_textdomain();
-
 		add_action( 'admin_init', array( $this, 'hh_restrict_admin_pages' ), 0 );
 
-		add_action( 'init', array( $this, 'load_localisation' ), 0 );
+		add_action( 'admin_menu', array( $this, 'hh_hide_thememenu' ), 0 );
+
 	} // End __construct ()
 
 	/**
 	 * This will add restriction to the custom rule.
 	 */
 	public function hh_restrict_admin_pages() {
-		$user_roles = wp_get_current_user()->roles;
 
-		if ( in_array( 'helphub_editor', $user_roles, true ) ) {
+		if ( $this->check_ifhelphub_editor() ) {
 			global $pagenow;
 			$restricted_pages = array(
 				'themes.php',
@@ -134,6 +132,15 @@ class HelpHub_Custom_Roles {
 				wp_safe_redirect( admin_url( '/' ) );
 				exit;
 			}
+		}
+	}
+
+	/**
+	 * This will hide the themes.php under Appearances if using a custom HelpHub Editor.
+	 */
+	public function hh_hide_thememenu() {
+		if ( $this->check_ifhelphub_editor() ) {
+			remove_submenu_page( 'themes.php', 'themes.php' );
 		}
 	}
 
