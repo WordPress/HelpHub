@@ -1,20 +1,9 @@
 <?php
 /**
- * Plugin Name: HelpHub Custom Roles
- * Version: 1.0
- * Plugin URI: https://carl.alber2.com/
- * Description: This adds HelpHub custom roles.
- * Author: Carl Alberto
- * Author URI: https://carl.alber2.com/
- * Requires at least: 4.0
- * Tested up to: 4.0
- *
- * Text Domain: wporg-forums
- * Domain Path: /lang/
+ * This adds custom roles for the HelpHub project.
+ * Author: carl-alberto
  *
  * @package HelpHub
- * @author Carl Alberto
- * @since 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -121,8 +110,6 @@ class HelpHub_Custom_Roles {
 		$this->file = $file;
 		$this->dir  = dirname( $this->file );
 
-		register_activation_hook( $this->file, array( $this, 'install' ) );
-
 		$this->add_helphub_customrole();
 
 		$this->load_plugin_textdomain();
@@ -213,17 +200,6 @@ class HelpHub_Custom_Roles {
 	} // End __wakeup ()
 
 	/**
-	 * Installation. Runs on activation.
-	 *
-	 * @access  public
-	 * @since   1.0.0
-	 * @return  void
-	 */
-	public function install() {
-		$this->_log_version_number();
-	} // End install ()
-
-	/**
 	 * Log the plugin version number.
 	 *
 	 * @access  public
@@ -256,7 +232,6 @@ class HelpHub_Custom_Roles {
 		}
 	}
 }
-
 
 /**
  * Returns the main instance of HelpHub_Custom_Roles to prevent the need to use globals.
