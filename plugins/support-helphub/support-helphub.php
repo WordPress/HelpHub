@@ -22,11 +22,4 @@ require_once( dirname( __FILE__ ) . '/inc/helphub-read-time/helphub-read-time.ph
 require_once( dirname( __FILE__ ) . '/inc/syntaxhighlighter/syntaxhighlighter.php' );
 require_once( dirname( __FILE__ ) . '/inc/table-of-contents-lite/table-of-contents-lite.php' );
 require_once( dirname( __FILE__ ) . '/inc/helphub-front-page-blocks/helphub-front-page-blocks.php' );
-require_once( dirname( __FILE__ ) . '/inc/helphub-customroles/helphub-custom-roles.php' );
-
-// remove_role( 'helphub_editor' );
-// remove_role( 'HelpHub Editor' );
-//
-// remove_role( 'custom_role' );
-// remove_role( 'Custom Subscriber' );
-//
+require_once( dirname( __FILE__ ) . '/inc/helphub-customroles/class-helphub-custom-roles.php' );
