@@ -138,31 +138,17 @@ class HelpHub_Custom_Roles {
 	}
 
 	/**
-	 * Load plugin localisation
+	 * Check if a current user's assigned role is a HelpHub Editor.
 	 *
-	 * @access  public
-	 * @since   1.0.0
-	 * @return  void
+	 * @return boolean returns true if a current user's assigned role is a HelpHub Editor.
 	 */
-	public function load_localisation() {
-		load_plugin_textdomain( 'helphub-custom-roles', false, dirname( plugin_basename( $this->file ) ) . '/lang/' );
-	} // End load_localisation ()
-
-	/**
-	 * Load plugin textdomain
-	 *
-	 * @access  public
-	 * @since   1.0.0
-	 * @return  void
-	 */
-	public function load_plugin_textdomain() {
-		$domain = 'helphub-custom-roles';
-
-		$locale = apply_filters( 'plugin_locale', get_locale(), $domain );
-
-		load_textdomain( $domain, WP_LANG_DIR . '/' . $domain . '/' . $domain . '-' . $locale . '.mo' );
-		load_plugin_textdomain( $domain, false, dirname( plugin_basename( $this->file ) ) . '/lang/' );
-	} // End load_plugin_textdomain ()
+	public function check_ifhelphub_editor() {
+		$user_roles = wp_get_current_user()->roles;
+		if ( in_array( 'helphub_editor', $user_roles, true ) ) {
+			return true;
+		}
+		return false;
+	}
 
 	/**
 	 * Main HelpHub_Custom_Roles Instance
