@@ -123,7 +123,9 @@ class HelpHub_Custom_Roles {
 	 * This will add restriction to the custom rule.
 	 */
 	public function hh_restrict_admin_pages() {
-		if ( current_user_can( 'helphub_editor' ) ) {
+		$user_roles = wp_get_current_user()->roles;
+
+		if ( in_array( 'helphub_editor', $user_roles, true ) ) {
 			global $pagenow;
 			$restricted_pages = array(
 				'themes.php',
