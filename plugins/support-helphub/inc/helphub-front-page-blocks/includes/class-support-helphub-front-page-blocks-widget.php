@@ -1,9 +1,8 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Marius
- * Date: 21.02.2018
- * Time: 23:40
+ * Introduce the controller for our widget blocks.
+ *
+ * @package HelpHub
  */
 
 /**
