@@ -36,7 +36,7 @@ function wporg_support_scripts() {
 	wp_enqueue_style( 'wp4', '//s.w.org/style/wp4.css?73' );
 	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600&subset=latin,cyrillic-ext,greek-ext,greek,vietnamese,latin-ext,cyrillic' );
 
-	wp_enqueue_style( 'forum-wp4-style', get_stylesheet_uri(), [], '20180220' );
+	wp_enqueue_style( 'forum-wp4-style', get_stylesheet_uri(), [], '20180310' );
 	wp_style_add_data( 'forum-wp4-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'wporg-support-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151217', true );
