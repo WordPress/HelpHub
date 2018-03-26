@@ -9,7 +9,7 @@
 
 <p>
 	<label for="<?php echo esc_attr( $this->get_field_id( 'icon' ) ); ?>">
-		<?php esc_html_e( 'icon (dashicon name)', 'wporg-forums' ); ?>
+		<?php esc_html_e( 'Icon (dashicon name or image URL)', 'wporg-forums' ); ?>
 	</label>
 	<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'icon' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'icon' ) ); ?>" type="text" value="<?php echo ( isset( $instance['icon'] ) && ! empty( $instance['icon'] ) ? esc_attr( $instance['icon'] ) : '' ); ?>">
 </p>

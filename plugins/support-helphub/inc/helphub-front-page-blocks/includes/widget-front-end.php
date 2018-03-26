@@ -11,9 +11,13 @@ echo $args['before_widget']; // WPCS: XSS OK.
 ?>
 
 <div class="info-box">
-	<span class="dashicons
-	<?php echo esc_attr( $instance['icon'] ); ?>
-	"></span>
+	<?php if ( stristr( $instance['icon'], '.' ) ) : ?>
+		<img src="<?php echo esc_url( $instance['icon'] ); ?>" width="108" alt="">
+	<?php else : ?>
+		<span class="dashicons
+		<?php echo esc_attr( $instance['icon'] ); ?>
+		"></span>
+	<?php endif; ?>
 	<h3><?php echo esc_html( $instance['title'] ); ?></h3>
 	<p><?php echo esc_html( $instance['description'] ); ?></p>
 
