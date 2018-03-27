@@ -5,6 +5,7 @@
   },
   "description": "The WordPress user documentation portal.",
   "devDependencies": {
+    "@wordpress/browserslist-config": "^2.1.2",
     "autoprefixer": "^8.2.0",
     "grunt": "~1.0.1",
     "grunt-check-dependencies": "~1.0.0",
@@ -39,5 +40,8 @@
     "type": "git",
     "url": "https://github.com/Kenshino/HelpHub"
   },
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "browserslist": [
+    "extends @wordpress/browserslist-config"
+  ]
 }
