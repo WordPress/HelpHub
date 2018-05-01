@@ -3159,6 +3159,7 @@ body, #pagebody {
 }
 
 /*--------------------------------------------------------------
+# .single
 # .page
 --------------------------------------------------------------*/
 .single .entry-header,
@@ -3969,6 +3970,13 @@ select {
 	margin-top: 1rem;
 }
 
+.forum-archive.wporg-support .info-box .icon-wrapper,
+.home.wporg-support .info-box .icon-wrapper {
+	display: inline-block;
+	width: 100%;
+	height: 108px;
+}
+
 .forum-archive.wporg-support .info-box .dashicons,
 .home.wporg-support .info-box .dashicons {
 	font-size: 5.9604644775rem;
@@ -4224,6 +4232,17 @@ div.bbp-breadcrumb p {
 
 .sidebar .topic-info li.topic-favorite:before {
 	content: "\f487";
+}
+
+.sidebar .plugin-meta-icon {
+	border-top: 0;
+}
+
+.sidebar .plugin-icon {
+	margin: 0;
+	height: 128px;
+	width: 128px;
+	background-size: contain;
 }
 
 /*--------------------------------------------------------------
