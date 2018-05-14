@@ -16,6 +16,22 @@ get_header(); ?>
 			<div class="three-up helphub-front-page">
 				<?php dynamic_sidebar( 'front-page-blocks' ); ?>
 			</div>
+
+			<hr>
+
+			<div id="helphub-forum-link" class="text-center">
+				<h3><?php esc_html_e( 'Support Forums', 'wporg-forums' ); ?></h3>
+
+				<p>
+					<span>
+						<?php esc_html_e( 'Can\'t find what you\'re looking for? Find out if others share your experience.', 'wporg-forums' ); ?>
+					</span>
+
+					<br>
+
+					<a href="<?php echo esc_url( site_url( '/forums/' ) ); ?>">Check out our support forums</a>
+				</p>
+			</div>
 		<?php endif; ?>
 
 	</main>
