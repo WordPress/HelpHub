@@ -8,22 +8,30 @@
 	padding: 0;
 }
 
-h2.toc-heading {
-	font-size: 26px;
-	line-height:39px;
-}
-
-h3.toc-heading {
-	font-size: 21px;
-	line-height: 31px;
-}
-
-h4.toc-heading {
-	font-size: 1.2em;
-}
-
-.toc-heading {
+.entry-content .toc-heading,
+.entry-content h2.toc-heading,
+.entry-content h3.toc-heading,
+.entry-content h4.toc-heading,
+.entry-content h5.toc-heading,
+.entry-content h6.toc-heading {
 	clear: left;
+	float: none !important;
+	text-transform: none;
+	font-weight: 400;
+}
+
+.entry-content h2.toc-heading {
+	font-size: 1.45rem; /* 26px */
+	line-height: 1.5em; /* 39px */
+}
+
+.entry-content h3.toc-heading {
+	font-size: 1.15rem; /* 21px */
+	line-height: 1.475em; /* 31px */
+}
+
+.entry-content h4.toc-heading {
+	font-size: 1rem; /* 18px */
 }
 
 .table-of-contents {
