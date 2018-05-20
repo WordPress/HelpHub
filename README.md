@@ -7,7 +7,7 @@ HelpHub is going to be the new portal for all WordPress user documentation that 
 
 ## Get Involved
 
-You can get involved in development (or any other aspect of the project) by attending our weekly meetings in the #docs channel of [the Making WordPress Slack](https://make.wordpress.org/chat/) every Tuesday at 14:00 UTC.
+You can get involved in development (or any other aspect of the project) by attending our weekly meetings in the #docs channel of [the Making WordPress Slack](https://make.wordpress.org/chat/) every Monday at 15:00 UTC.
 
 ## How to use this repo
 
