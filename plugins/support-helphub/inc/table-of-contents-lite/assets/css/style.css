@@ -7,6 +7,7 @@
 	border-bottom: 0 none;
 	padding: 0;
 }
+
 h2.toc-heading {
 	font-size: 26px;
 	line-height:39px;
@@ -20,9 +21,11 @@ h3.toc-heading {
 h4.toc-heading {
 	font-size: 1.2em;
 }
+
 .toc-heading {
 	clear: left;
 }
+
 .table-of-contents {
 	float: right;
 	width: 250px;
@@ -35,18 +38,22 @@ h4.toc-heading {
 	position: relative;
 	color: #555d66;
 }
+
 @media (min-width: 971px) {
+
 	div.table-of-contents 	{
 		margin: -15px -30px 15px 15px;
 	}
 }
+
 @media (max-width: 480px) {
+
 	div.table-of-contents {
 		display: none;
 	}
 }
-div.table-of-contents h2,
-div.table-of-contents h3 {
+
+.table-of-contents h2.toc-title {
 	/**
 	 * originally font-size is 1.3em defined in wporg-breathe theme,
 	 * which is correctly 17px but in HelpHub style this inheritance is wrong
@@ -55,15 +62,15 @@ div.table-of-contents h3 {
 	 *
 	 * Recently edited to use rem values instead of pixels.
 	 */
-
 	margin: 0;
 	padding: 7px 12px;
-	font-size: 1rem;
+	font-size: 0.95rem;
 	font-weight: 400;
 	color: #32373c;
 	text-transform: uppercase;
 	border-bottom: 1px solid #eee;
 }
+
 /**
  * Same thing with font-size and line-height as above
  */
@@ -77,18 +84,21 @@ div.table-of-contents h3 {
 .table-of-contents .items li {
 	padding: 4px;
 }
+
 .table-of-contents .items li ul li,
 .table-of-contents .items li ul li ul li {
 	padding-bottom: 0;
 }
+
 /**
  * Hiding second level table of contents links.
- * With the second level, things looks too messy and 
+ * With the second level, things looks too messy and
  * information in the small area is too overwhelming.
  */
 .table-of-contents .items li ul {
 	display: none;
 }
+
 /**
  * This should be inherited from p2-breathe
  */
@@ -96,10 +106,12 @@ div.table-of-contents h3 {
 .table-of-contents .items li a:visited {
 	text-decoration: none;
 }
+
 .table-of-contents .items li a:hover {
 	color: #0073aa;
 	text-decoration: underline;
 }
+
 /**
  * This should be inherited from p2-breathe
  */
@@ -107,26 +119,31 @@ div.table-of-contents h3 {
 	list-style: disc;
     margin-left: 16px;
 }
+
 .table-of-contents .items li ul li {
 	list-style: disc;
 }
+
 /* Highlight current heading and adjust scroll position for fixed toolbar */
 .toc-heading:target {
 	border-left: 5px solid #0073aa;
 	padding-left: 5px;
 	margin-left: -10px;
 }
+
 p.toc-jump {
 	position: relative;
 	height: 50px;
 	text-align:right;
 	font-size: 12px;
 }
+
 p.toc-jump:after {
 	content: '';
 	display: table;
 	clear: both;
 }
+
 p.toc-jump {
 	z-index: 1;
 }

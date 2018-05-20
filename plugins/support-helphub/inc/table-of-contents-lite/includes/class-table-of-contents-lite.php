@@ -236,7 +236,7 @@ class Table_Of_Contents_Lite {
 		if ( $items ) {
 			$contents_header = sprintf( 'h%s', $items[0][2] );
 			$toc .= '<div class="table-of-contents">';
-			$toc .= '<h2>' . __( 'Topics', 'wporg-forums' ) . '</h2>';
+			$toc .= '<h2 class="toc-title">' . __( 'Topics', 'wporg-forums' ) . '</h2>';
 			$toc .= '<ul class="items">';
 			$last_item = false;
 			foreach ( $items as $item ) {
