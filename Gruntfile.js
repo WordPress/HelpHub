@@ -8,12 +8,12 @@ module.exports = function( grunt ) {
 
 		HH_SCSS = [
 			'plugins/**/*.scss',
-			'themes/helphub/**/*.scss'
+			'themes/wporg-support/**/*.scss'
 		],
 
 		HH_JS = [
 			'plugins/helphub-*/**/*.js',
-			'themes/helphub/js/*.js'
+			'themes/wporg-support/js/*.js'
 		],
 
 		autoprefixer = require('autoprefixer'),
@@ -54,7 +54,7 @@ module.exports = function( grunt ) {
 				src: [
 					'plugins/support-helphub/**/*.php',
 					'!plugins/support-helphub/inc/syntaxhighlighter/**/*.php',
-					'themes/helphub/**/*.php'
+					'themes/wporg-support/**/*.php'
 				],
 				expand: true
 			}
