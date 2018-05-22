@@ -13,19 +13,22 @@ get_header(); ?>
 
 
 	<main id="main" class="site-main" role="main">
-		<?php
-		while ( have_posts() ) :
-			the_post();
-		?>
+		<?php get_sidebar( 'helphub' ); ?>
 
-		<?php get_template_part( 'template-parts/content', 'archive' ); ?>
+		<div id="main-content">
+			<?php
+			while ( have_posts() ) :
+				the_post();
+				?>
 
-		<?php endwhile; ?>
+				<?php get_template_part( 'template-parts/content', 'archive' ); ?>
 
-		<div class="archive-pagination">
-			<?php posts_nav_link(); ?>
+			<?php endwhile; ?>
+
+			<div class="archive-pagination">
+				<?php posts_nav_link(); ?>
+			</div>
 		</div>
-
 	</main>
 
 

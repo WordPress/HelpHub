@@ -56,6 +56,13 @@ function wporg_support_register_widget_areas() {
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
 	) );
+	register_sidebar( array(
+		'name'          => __( 'HelpHub Sidebar', 'wporg-forums' ),
+		'id'            => 'helphub-sidebar',
+		'description'   => __( 'Contains blocks to display on HelpHub articles', 'wporg-forums' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+	) );
 }
 add_action( 'widgets_init', 'wporg_support_register_widget_areas' );
 
@@ -158,6 +165,17 @@ function wporg_support_get_views() {
 function wporg_support_body_class( $classes ) {
 	$classes[] = 'wporg-responsive';
 	$classes[] = 'wporg-support';
+
+	// Add specific classes to HelpHub pages.
+	$helphub_post_types = array( 'helphub_article', 'helphub_version' );
+	if ( is_singular( $helphub_post_types ) ||
+		is_post_type_archive( $helphub_post_types ) ) {
+		$classes[] = 'helphub-page';
+
+		if ( is_active_sidebar( 'helphub-sidebar' ) ) {
+			$classes[] = 'helphub-with-sidebar';
+		}
+	}
 	return $classes;
 }
 add_filter( 'body_class', 'wporg_support_body_class' );
@@ -819,4 +837,3 @@ function bb_base_single_forum_description() {
 function bb_is_intl_forum() {
 	return get_locale() != 'en_US';
 }
-
