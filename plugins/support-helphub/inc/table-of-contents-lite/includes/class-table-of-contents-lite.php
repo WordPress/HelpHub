@@ -231,7 +231,7 @@ class Table_Of_Contents_Lite {
 			$content = $this->add_ids_and_jumpto_links( "h$i", $content );
 		}
 
-		$toc = $this->generate_TOC( $items );
+		$toc = $this->generate_toc( $items );
 
 		return $toc . $content;
 	}
@@ -244,7 +244,7 @@ class Table_Of_Contents_Lite {
 	 *
 	 * @return    string $toc the generated TOC.
 	 */
-	public function generate_TOC( $items, $link = true ) {
+	public function generate_toc( $items, $link = true ) {
 		$toc = '';
 		if ( $items ) {
 			$contents_header = sprintf( 'h%s', $items[0][2] );
@@ -265,7 +265,7 @@ class Table_Of_Contents_Lite {
 				$last_item = $item[2];
 				if ( $link ) {
 					$toc .= sprintf( '<li><a href="#%1s">%2s</a>', sanitize_title_with_dashes( $item[3] ), $item[3] );
-				}
+				} 
 				else {
 					$toc .= '<li>' . $item[3] . '</li>';
 				}
