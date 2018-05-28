@@ -86,16 +86,11 @@
 	font-size: 0.8rem;
 	margin: 0;
 	list-style-type: none;
-	padding: 1rem;
+	padding: 12px;
 }
 
 .table-of-contents .items li {
 	padding: 4px;
-}
-
-.table-of-contents .items li ul li,
-.table-of-contents .items li ul li ul li {
-	padding-bottom: 0;
 }
 
 /**
@@ -104,7 +99,14 @@
  * information in the small area is too overwhelming.
  */
 .table-of-contents .items li ul {
-	display: none;
+	margin-left: 21px;
+	list-style-position: outside;
+	list-style-type: circle;
+}
+
+.table-of-contents .items li ul li,
+.table-of-contents .items li ul li ul li {
+	padding-bottom: 0;
 }
 
 /**
@@ -118,18 +120,6 @@
 .table-of-contents .items li a:hover {
 	color: #0073aa;
 	text-decoration: underline;
-}
-
-/**
- * This should be inherited from p2-breathe
- */
-.table-of-contents .items li ul {
-	list-style: disc;
-    margin-left: 16px;
-}
-
-.table-of-contents .items li ul li {
-	list-style: disc;
 }
 
 /* Highlight current heading and adjust scroll position for fixed toolbar */
