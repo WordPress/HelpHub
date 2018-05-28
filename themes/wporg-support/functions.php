@@ -171,10 +171,9 @@ function wporg_support_body_class( $classes ) {
 	if ( is_singular( $helphub_post_types ) ||
 		is_post_type_archive( $helphub_post_types ) ) {
 		$classes[] = 'helphub-page';
-
-		if ( is_active_sidebar( 'helphub-sidebar' ) ) {
-			$classes[] = 'helphub-with-sidebar';
-		}
+	}
+	if ( is_active_sidebar( 'helphub-sidebar' ) ) {
+		$classes[] = 'helphub-with-sidebar';
 	}
 	return $classes;
 }
