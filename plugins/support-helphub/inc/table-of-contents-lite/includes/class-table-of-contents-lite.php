@@ -222,8 +222,6 @@ class Table_Of_Contents_Lite {
 	 */
 	public function add_toc( $content ) {
 
-		$toc = '';
-
 		$items = $this->get_tags_in_content( 'h([1-4])', $content ); // returns the h1-h4 tags inside the_content.
 		if ( count( $items ) < 2 ) {
 			return $content;
@@ -233,6 +231,21 @@ class Table_Of_Contents_Lite {
 			$content = $this->add_ids_and_jumpto_links( "h$i", $content );
 		}
 
+		$toc = $this->generate_TOC( $items );
+
+		return $toc . $content;
+	}
+
+	/**
+	 * Builds the TOC from header tags in the current content.
+	 *
+	 * @param    array $items header tags returned from get_tags_in_content().
+	 * @param    boolean $link indicator for whether to link the topics.
+	 *
+	 * @return    string $toc the generated TOC.
+	 */
+	public function generate_TOC( $items, $link = true ) {
+		$toc = '';
 		if ( $items ) {
 			$contents_header = sprintf( 'h%s', $items[0][2] );
 			$toc .= '<div class="table-of-contents">';
@@ -250,12 +263,17 @@ class Table_Of_Contents_Lite {
 					}
 				}
 				$last_item = $item[2];
-				$toc       .= sprintf( '<li><a href="#%1s">%2s</a>', sanitize_title_with_dashes( $item[3] ), $item[3] );
+				if ( $link ) {
+					$toc .= sprintf( '<li><a href="#%1s">%2s</a>', sanitize_title_with_dashes( $item[3] ), $item[3] );
+				}
+				else {
+					$toc .= '<li>' . $item[3] . '</li>';
+				}
 			}
 			$toc .= '</ul></div>';
 		}
 
-		return $toc . $content;
+		return $toc;
 	}
 
 	/**
