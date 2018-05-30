@@ -17,8 +17,8 @@ get_header(); ?>
 
 		<div class="three-up helphub-front-page">
 			<?php
-				while ( have_posts() ) :
-					the_post();
+			while ( have_posts() ) :
+				the_post();
 			?>
 
 				<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="archive-block">
