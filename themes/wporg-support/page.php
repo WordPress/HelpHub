@@ -13,14 +13,17 @@
 get_header(); ?>
 
 	<main id="main" class="site-main" role="main">
+		<?php get_sidebar( 'helphub' ); ?>
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+		<div id="main-content">
+			<?php
+			while ( have_posts() ) :
+				the_post();
 
-			get_template_part( 'template-parts/content', 'page' );
-		endwhile; // End of the loop.
-		?>
+				get_template_part( 'template-parts/content', 'page' );
+			endwhile; // End of the loop.
+			?>
+		</div>
 
 	</main><!-- #main -->
 
