@@ -3338,7 +3338,7 @@ body.archive #main a:hover, body.archive #main a:focus, body.archive #main a:act
 }
 
 body.archive #main article h2 {
-	font-size: 1.5rem;
+	font-size: 1.3rem;
 }
 
 body.archive #main .archive-pagination {
@@ -4518,3 +4518,5 @@ object {
 .gallery-caption {
 	display: block;
 }
+
+/*# sourceMappingURL=style.css.map */
