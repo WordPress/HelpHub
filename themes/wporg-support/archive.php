@@ -36,7 +36,6 @@ get_header(); ?>
 				<?php posts_nav_link(); ?>
 			</div>
 		</div>
-
 	</main>
 
 <?php
