@@ -11,17 +11,24 @@
 
 get_header(); ?>
 
-
 	<main id="main" class="site-main" role="main">
-		<?php get_sidebar( 'helphub' ); ?>
 
-		<div id="main-content">
+		<h1><?php single_cat_title(); ?></h1>
+
+		<div class="three-up helphub-front-page">
 			<?php
 			while ( have_posts() ) :
 				the_post();
-				?>
+			?>
 
-				<?php get_template_part( 'template-parts/content', 'archive' ); ?>
+				<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="archive-block">
+					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+						<?php the_title( '<h2>', '</h2>' ); ?>
+
+						<?php the_excerpt(); ?>
+					</article>
+				</a>
+
 
 			<?php endwhile; ?>
 
@@ -31,6 +38,6 @@ get_header(); ?>
 		</div>
 	</main>
 
-
 <?php
 get_footer();
+

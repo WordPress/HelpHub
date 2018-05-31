@@ -767,7 +767,6 @@ div.bbp-template-notice,
 div.indicator-hint {
 	background: #fff8e5;
 	border: 1px solid #ffb900;
-	-webkit-border-radius: 0;
 	border-radius: 0;
 }
 
@@ -792,7 +791,6 @@ div.bbp-template-notice.updated {
 #bbpress-forums fieldset.bbp-form textarea:focus,
 #bbpress-forums fieldset.bbp-form select:focus,
 #bbpress-forums fieldset.bbp-form input:focus {
-	-webkit-box-shadow: 0 0 0 1px #5b9dd9, 0 0 2px 1px rgba(30, 140, 190, 0.8);
 	box-shadow: 0 0 0 1px #5b9dd9, 0 0 2px 1px rgba(30, 140, 190, 0.8);
 }
 
@@ -3325,26 +3323,29 @@ body, #pagebody {
 /*--------------------------------------------------------------
 # Archives
 --------------------------------------------------------------*/
-body.archive #main article:before {
-	display: block;
-	width: 100%;
-	height: 1px;
-	background-color: #e2dddd;
-	content: '';
-	margin-top: 20px;
+body.archive #main h1 {
+	font-size: 2.2rem;
+	text-align: center;
 }
 
-body.archive #main article:first-of-type:before {
-	display: none;
+body.archive #main a {
+	color: inherit;
 }
 
-body.archive #main article .entry-title {
-	margin-top: 20px;
+body.archive #main a:hover, body.archive #main a:focus, body.archive #main a:active {
+	text-decoration: none;
+	color: #0073aa;
+}
+
+body.archive #main article h2 {
+	font-size: 1.5rem;
 }
 
 body.archive #main .archive-pagination {
+	display: block;
 	margin-top: 20px;
 	text-align: center;
+	width: 100%;
 }
 
 /*--------------------------------------------------------------
@@ -3362,6 +3363,7 @@ section {
 }
 
 @media (min-width: 48em) {
+	.three-up .archive-block,
 	.three-up > div {
 		display: inline-block;
 		vertical-align: top;
@@ -3369,6 +3371,7 @@ section {
 		margin-right: 4.5%;
 		font-size: 0.8rem;
 	}
+	.three-up .archive-block:nth-child(3n),
 	.three-up > div:nth-child(3n) {
 		margin-right: 0;
 	}
@@ -4515,5 +4518,3 @@ object {
 .gallery-caption {
 	display: block;
 }
-
-/*# sourceMappingURL=style.css.map */

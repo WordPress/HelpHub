@@ -180,6 +180,22 @@ function wporg_support_body_class( $classes ) {
 add_filter( 'body_class', 'wporg_support_body_class' );
 
 /**
+ * Change the amount of words allowed in excerpts on archive listings.
+ *
+ * @param int $length
+ *
+ * @return int
+ */
+function wporg_support_excerpt_length( $length ) {
+	if ( is_archive() ) {
+		return 25;
+	}
+
+	return $length;
+}
+add_filter( 'excerpt_length', 'wporg_support_excerpt_length' );
+
+/**
  * The Header for our theme.
  *
  * @package WPBBP

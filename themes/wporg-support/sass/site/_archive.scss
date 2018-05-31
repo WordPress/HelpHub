@@ -2,36 +2,39 @@ body.archive {
 
 	#main {
 
+		h1 {
+
+			font-size: 2.2rem;
+			text-align: center;
+		}
+
+		a {
+
+			color: inherit;
+
+			&:hover,
+			&:focus,
+			&:active {
+
+				text-decoration: none;
+				color: $color__link;
+			}
+		}
+
 		article {
 
-			&:before {
+			h2 {
 
-				display: block;
-				width: 100%;
-				height: 1px;
-				background-color: #e2dddd;
-				content: '';
-				margin-top: 20px;
-			}
-
-			&:first-of-type {
-
-				&:before {
-
-					display: none;
-				}
-			}
-
-			.entry-title {
-
-				margin-top: 20px;
+				font-size: 1.3rem;
 			}
 		}
 
 		.archive-pagination {
 
+			display: block;
 			margin-top: 20px;
 			text-align: center;
+			width: 100%;
 		}
 	}
 }

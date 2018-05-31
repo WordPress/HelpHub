@@ -15,6 +15,7 @@ section {
 	@extend .clear;
 
 	@media (min-width: $ms-breakpoint) {
+		.archive-block,
 		> div {
 			display: inline-block;
 			vertical-align: top;
