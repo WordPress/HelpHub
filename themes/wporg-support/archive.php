@@ -13,7 +13,7 @@ get_header(); ?>
 
 	<main id="main" class="site-main" role="main">
 
-		<?php the_archive_title( '<h1>', '</h1>' ); ?>
+		<h1><?php single_cat_title(); ?></h1>
 
 		<div class="three-up helphub-front-page">
 			<?php
