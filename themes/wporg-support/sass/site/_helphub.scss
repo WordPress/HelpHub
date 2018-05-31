@@ -32,18 +32,24 @@
 }
 
 body.helphub-with-sidebar {
+
 	.left-sidebar {
+
 		font-size: 0.9rem;
+
 		h2 {
 			font-size: 1.1rem;
 			font-weight: 600;
 			color: $color__text-main;
 		}
+
 		ul {
 			list-style: none;
 			margin: 0;
+
 			li {
 				margin-bottom: 0.8rem;
+
 				ul {
 					margin-left: 1rem;
 				}
