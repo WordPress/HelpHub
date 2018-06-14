@@ -29,25 +29,25 @@
 </p>
 
 <p>
-    <label for="<?php echo esc_attr( $this->get_field_id( 'categoryid' ) ); ?>">
-        <?php esc_html_e( 'Category link', 'wporg-forums' ); ?>
-    </label>
-    <select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'categoryid' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'categoryid' ) ); ?>">
-        <?php
-        $categories = get_categories( array(
-            'hide_empty' => 0,
-        ) );
+	<label for="<?php echo esc_attr( $this->get_field_id( 'categoryid' ) ); ?>">
+		<?php esc_html_e( 'Category link', 'wporg-forums' ); ?>
+	</label>
+	<select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'categoryid' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'categoryid' ) ); ?>">
+	<?php
+	$categories = get_categories( array(
+		'hide_empty' => 0,
+	) );
 
-        foreach ( $categories as $category ) {
-            printf(
-                '<option value="%s" %s>%s</option>',
-                esc_attr( $category->term_id ),
-                selected( $instance['categoryid'], $category->term_id ),
-                esc_html( $category->name )
-            );
-        }
+	foreach ( $categories as $category ) {
+		printf(
+			'<option value="%s" %s>%s</option>',
+			esc_attr( $category->term_id ),
+			selected( $instance['categoryid'], $category->term_id ),
+			esc_html( $category->name )
+		);
+	}
         ?>
-    </select>
+	</select>
 </p>
 
 <p>
@@ -62,7 +62,7 @@
 			printf(
 				'<option value="%s" %s>%s</option>',
 				esc_attr( $nav_menu->term_id ),
-                selected( $instance['menu'], $nav_menu->term_id ),
+				selected( $instance['menu'], $nav_menu->term_id ),
 				esc_html( $nav_menu->name )
 			);
 		}
