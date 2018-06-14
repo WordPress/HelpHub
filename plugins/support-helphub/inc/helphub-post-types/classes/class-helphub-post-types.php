@@ -180,19 +180,19 @@ final class HelpHub_Post_Types {
 		load_plugin_textdomain( 'wporg-forums', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 	} // End load_plugin_textdomain()
 
-    /**
-     * Make sure category archive actually loads
-     *
-     * @access  public
-     * @since   1.1.0
-     */
-    public function fix_archive_category( WP_Query $query ) {
-        if ( ! is_admin() && is_category() && $query->is_main_query() ) {
-            $query->set( 'post_type', 'helphub_article' );
-        }
-    } // End fix_archive_category()
+	/**
+	* Make sure category archive actually loads
+	*
+	* @access  public
+	* @since   1.1.0
+	*/
+	public function fix_archive_category( WP_Query $query ) {
+	if ( ! is_admin() && is_category() && $query->is_main_query() ) {
+	    $query->set( 'post_type', 'helphub_article' );
+	}
+	} // End fix_archive_category()
 
-    /**
+    	/**
 	 * Enqueue post type admin Styles.
 	 *
 	 * @access public
