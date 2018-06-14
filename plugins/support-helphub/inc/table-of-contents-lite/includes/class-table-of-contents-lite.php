@@ -32,7 +32,7 @@ class Table_Of_Contents_Lite {
 	 */
 	private static $_instance = null;
 
-	/**
+	/**zx
 	 * Settings class object
 	 *
 	 * @var     object
@@ -221,6 +221,10 @@ class Table_Of_Contents_Lite {
 	 * @return    longtext generatod TOC based from the h tags in the $content plus the $content at the end.
 	 */
 	public function add_toc( $content ) {
+
+        if ( ! is_singular()  ) {
+            return $content;
+        }
 
 		$toc = '';
 
