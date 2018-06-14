@@ -19,7 +19,6 @@ require_once( dirname( __FILE__ ) . '/inc/helphub-codex-languages/class-helphub-
 require_once( dirname( __FILE__ ) . '/inc/helphub-contributors/helphub-contributors.php' );
 require_once( dirname( __FILE__ ) . '/inc/helphub-post-types/helphub-post-types.php' );
 require_once( dirname( __FILE__ ) . '/inc/helphub-read-time/helphub-read-time.php' );
-require_once( dirname( __FILE__ ) . '/inc/syntaxhighlighter/syntaxhighlighter.php' );
 require_once( dirname( __FILE__ ) . '/inc/table-of-contents-lite/table-of-contents-lite.php' );
 require_once( dirname( __FILE__ ) . '/inc/helphub-front-page-blocks/helphub-front-page-blocks.php' );
 require_once( dirname( __FILE__ ) . '/inc/helphub-customroles/class-helphub-custom-roles.php' );
