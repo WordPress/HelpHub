@@ -222,6 +222,10 @@ class Table_Of_Contents_Lite {
 	 */
 	public function add_toc( $content ) {
 
+		if ( ! is_singular() ) {
+			return $content;
+		}
+
 		$toc = '';
 
 		$items = $this->get_tags_in_content( 'h([1-4])', $content ); // returns the h1-h4 tags inside the_content.

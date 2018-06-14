@@ -181,11 +181,11 @@ final class HelpHub_Post_Types {
 	} // End load_plugin_textdomain()
 
 	/**
-	* Make sure category archive actually loads
-	*
-	* @access  public
-	* @since   1.1.0
-	*/
+	 * Make sure category archive actually loads
+	 *
+	 * @access  public
+	 * @since   1.1.0
+	 */
 	public function fix_archive_category( WP_Query $query ) {
 		if ( ! is_admin() && is_category() && $query->is_main_query() ) {
 			$query->set( 'post_type', 'helphub_article' );
