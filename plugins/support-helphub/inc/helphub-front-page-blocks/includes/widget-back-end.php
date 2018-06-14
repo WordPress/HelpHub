@@ -46,7 +46,7 @@
 			esc_html( $category->name )
 		);
 	}
-        ?>
+	?>
 	</select>
 </p>
 
