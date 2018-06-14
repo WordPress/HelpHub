@@ -147,6 +147,7 @@ final class HelpHub_Post_Types {
 		register_activation_hook( __FILE__, array( $this, 'install' ) );
 
 		add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
+		add_action( 'pre_get_posts', array( $this, 'fix_archive_category') );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
 	} // End __construct()
 
@@ -179,7 +180,19 @@ final class HelpHub_Post_Types {
 		load_plugin_textdomain( 'wporg-forums', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 	} // End load_plugin_textdomain()
 
-	/**
+    /**
+     * Make sure category archive actually loads
+     *
+     * @access  public
+     * @since   1.1.0
+     */
+    public function fix_archive_category( WP_Query $query ) {
+        if ( ! is_admin() && is_category() && $query->is_main_query() ) {
+            $query->set( 'post_type', 'helphub_article' );
+        }
+    } // End fix_archive_category()
+
+    /**
 	 * Enqueue post type admin Styles.
 	 *
 	 * @access public
