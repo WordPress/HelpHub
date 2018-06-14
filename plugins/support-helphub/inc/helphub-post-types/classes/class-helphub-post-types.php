@@ -188,11 +188,11 @@ final class HelpHub_Post_Types {
 	*/
 	public function fix_archive_category( WP_Query $query ) {
 		if ( ! is_admin() && is_category() && $query->is_main_query() ) {
-		    $query->set( 'post_type', 'helphub_article' );
+			$query->set( 'post_type', 'helphub_article' );
 		}
 	} // End fix_archive_category()
 
-    	/**
+	/**
 	 * Enqueue post type admin Styles.
 	 *
 	 * @access public
