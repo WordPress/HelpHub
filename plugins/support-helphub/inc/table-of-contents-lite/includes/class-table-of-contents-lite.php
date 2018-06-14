@@ -222,9 +222,9 @@ class Table_Of_Contents_Lite {
 	 */
 	public function add_toc( $content ) {
 
-        if ( ! is_singular()  ) {
-            return $content;
-        }
+		if ( ! is_singular()  ) {
+			return $content;
+		}
 
 		$toc = '';
 
