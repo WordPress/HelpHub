@@ -32,7 +32,7 @@ class Table_Of_Contents_Lite {
 	 */
 	private static $_instance = null;
 
-	/**zx
+	/**
 	 * Settings class object
 	 *
 	 * @var     object
