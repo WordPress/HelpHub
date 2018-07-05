@@ -1,6 +1,6 @@
 # HelpHub
 
-[![Build Status](https://travis-ci.org/Kenshino/HelpHub.svg?branch=master)](https://travis-ci.org/Kenshino/HelpHub) 
+[![Build Status](https://travis-ci.org/Kenshino/HelpHub.svg?branch=master)](https://travis-ci.org/Kenshino/HelpHub)
 
 
 HelpHub is going to be the new portal for all WordPress user documentation that currently resides on the [WordPress Codex](https://codex.wordpress.org/). This repo is where we will be managing development of this new portal.
@@ -16,10 +16,10 @@ To use this repo, simply create a new WordPress site on your local machine (usin
 You can get more information about running the HelpHub code base locally via reading the [contributing document](https://github.com/Kenshino/HelpHub/blob/master/CONTRIBUTING.md)
 ## Workflow
 
-Anyone is welcome to fork the repo and send pull requests, but the project collaborators (listed below) have push access directly to the repo. **All pull requests will be be reviewed by at least one collaborator with commit access and the PR must pass tests. Collaborators will be responsible for merging their own pull requests once the reviews has been approved. Major feature development will require a review from the project lead, minor ones do not.**
+Anyone is welcome to fork the repo and send pull requests, but the project collaborators (listed below) have push access directly to the repo. **All pull requests will be reviewed by at least one collaborator with commit access and the PR must pass tests. Collaborators will be responsible for merging their own pull requests once the reviews has been approved. Major feature development will require a review from the project lead, minor ones do not.**
 
 We use ZenHub for project management, see https://github.com/Kenshino/HelpHub/issues/79 for help on using it
- 
+
 ### Feature development
 
 All features are to be built in individual branches named `feature-abc` (where `abc` is a brief descriptor of the feature) and submitted via pull request to the `master` branch. For best results, features should be separated into their own plugins, but the project lead will evaluate this for each pull request depending on the requirements and scope of the feature.
@@ -30,7 +30,7 @@ Any fixes that do not qualify as new features are to done in individual branches
 
 ### Development guidelines
 
-As this is a WordPress community project, all development must have a strong committment to accessibility and responsive design. We will also be following the [WordPress coding standards](https://codex.wordpress.org/WordPress_Coding_Standards) throughout the project.
+As this is a WordPress community project, all development must have a strong commitment to accessibility and responsive design. We will also be following the [WordPress coding standards](https://codex.wordpress.org/WordPress_Coding_Standards) throughout the project.
 
 Given that we will ultimately need to localise the whole site for different languages, please use `wporg-forums` as the text domain for all text strings.
 
