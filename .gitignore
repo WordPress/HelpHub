@@ -15,4 +15,3 @@ plugins/wordpress-importer/
 # Contibutors plugin
 plugins/support-helphub/inc/helphub-contributors/admin/assets/
 plugins/support-helphub/inc/helphub-contributors/public/css/
-package-lock.json
