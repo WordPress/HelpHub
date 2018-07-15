@@ -36,7 +36,7 @@ function wporg_support_scripts() {
 	wp_enqueue_style( 'wp4', '//s.w.org/style/wp4.css?73' );
 	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600&subset=latin,cyrillic-ext,greek-ext,greek,vietnamese,latin-ext,cyrillic' );
 
-	wp_enqueue_style( 'forum-wp4-style', get_stylesheet_uri(), [], '20180310' );
+	wp_enqueue_style( 'forum-wp4-style', get_stylesheet_uri(), [], '20180713' );
 	wp_style_add_data( 'forum-wp4-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'wporg-support-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151217', true );
@@ -201,7 +201,7 @@ add_filter( 'excerpt_length', 'wporg_support_excerpt_length' );
  * @package WPBBP
  */
 function wporg_get_global_header() {
-	$GLOBALS['pagetitle'] = wp_title( '&laquo;', false, 'right' ) . ' ' . get_bloginfo( 'name' );
+	$GLOBALS['pagetitle'] = wp_title( '&#124;', false, 'right' ) . ' ' . __( 'WordPress.org', 'wporg-forums' );
 	require WPORGPATH . 'header.php';
 }
 
@@ -213,6 +213,21 @@ function wporg_get_global_header() {
 function wporg_get_global_footer() {
 	require WPORGPATH . 'footer.php';
 }
+
+/**
+ * Append an optimized site name.
+ *
+ * @param array $title Parts of the page title.
+ * @return array Filtered title parts.
+ */
+function wporg_support_document_title( $title ) {
+	if ( is_front_page() ) {
+		$title[1] = _x( 'Support', 'Site title', 'wporg-forums' );
+	}
+
+	return $title;
+}
+add_filter( 'wp_title_parts', 'wporg_support_document_title' );
 
 /**
  * Link user profiles to their global profiles.
