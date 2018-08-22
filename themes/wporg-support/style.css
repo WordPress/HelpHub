@@ -12,7 +12,8 @@
  */
 /**
  * This theme, like WordPress, is licensed under the GPL.
- * Use it to make something cool, have fun, and share what you've learned with others.
+ * Use it to make something cool, have fun,
+ * and share what you've learned with others.
  */
 /* Sass is good */
 /*--------------------------------------------------------------
@@ -3349,7 +3350,7 @@ body.archive #main .archive-pagination {
 }
 
 /*--------------------------------------------------------------
-# bbPress Specific 
+# bbPress Specific
 --------------------------------------------------------------*/
 /* bbPress specific styles */
 /* Many of these override the styles from the plugin */
@@ -3395,7 +3396,7 @@ section {
 }
 
 .three-up.bbp-forums > div p {
-	color: #666666;
+	color: #666;
 }
 
 .three-up.bbp-forums > div a:hover {
@@ -3480,7 +3481,7 @@ section {
 }
 
 .bbpress #bbpress-forums div.bbp-template-notice {
-	padding: .5rem;
+	padding: 0.5rem;
 	border: none;
 	border-radius: 3px;
 }
@@ -3636,7 +3637,7 @@ section {
 .bbpress #bbpress-forums .wporg-bbp-user-notes-toggle,
 .bbpress #bbpress-forums .wporg-bbp-user-flag {
 	font-size: 0.8rem;
-	font-weight: normal;
+	font-weight: 285;
 	margin: 0;
 	margin-right: 10px;
 	display: inline-block;
@@ -3676,7 +3677,7 @@ section {
 .bbpress #bbpress-forums div.bbp-reply-content a.mention,
 .bbpress #bbpress-forums div.bbp-topic-content a.mention {
 	text-decoration: none;
-	font-weight: bold;
+	font-weight: 700;
 }
 
 .bbpress #bbpress-forums div.bbp-reply-content .bbp-reply-revision-log-item a,
@@ -3742,11 +3743,11 @@ section {
 	padding-top: 0.5rem;
 }
 
-.bbpress #bbpress-forums p.wporg-bbp-topic-site-url:before {
+.bbpress #bbpress-forums p.wporg-bbp-topic-site-url::before {
 	content: "\f103";
 	color: #000;
 	font-family: dashicons;
-	font: normal 16px/1 'dashicons';
+	font: 400 16px/1 dashicons;
 	margin-right: 5px;
 	float: left;
 	padding-top: 3px;
@@ -3769,8 +3770,7 @@ section {
 
 .bbpress #bbpress-forums .bbp-pagination .page-numbers {
 	background: #fff;
-	border: 1px solid #B4B9BE;
-	margin-left: 0;
+	border: 1px solid #b4b9be;
 	color: #757575;
 	padding: 2px 8px;
 	margin-left: -1px;
@@ -3850,25 +3850,25 @@ section {
 	overflow: hidden;
 }
 
-.bbpress .forum-titles .bbp-topic-voice-count:before,
-.bbpress .forum-titles .bbp-topic-reply-count:before {
-	font: normal 16px/1 'dashicons';
+.bbpress .forum-titles .bbp-topic-voice-count::before,
+.bbpress .forum-titles .bbp-topic-reply-count::before {
+	font: 400 16px/1 dashicons;
 	margin-right: 100px;
 }
 
 @media (min-width: 321px) {
-	.bbpress .forum-titles .bbp-topic-voice-count:before,
-	.bbpress .forum-titles .bbp-topic-reply-count:before {
-		font: normal 21px/1 'dashicons';
+	.bbpress .forum-titles .bbp-topic-voice-count::before,
+	.bbpress .forum-titles .bbp-topic-reply-count::before {
+		font: 400 21px/1 dashicons;
 		margin-left: 20px;
 	}
 }
 
-.bbpress .forum-titles .bbp-topic-voice-count:before {
+.bbpress .forum-titles .bbp-topic-voice-count::before {
 	content: "\f307";
 }
 
-.bbpress .forum-titles .bbp-topic-reply-count:before {
+.bbpress .forum-titles .bbp-topic-reply-count::before {
 	content: "\f125";
 }
 
@@ -3914,7 +3914,7 @@ section {
 	text-decoration: underline !important;
 }
 
-.viewmore:after {
+.viewmore::after {
 	content: "\f345";
 	font-family: dashicons;
 	position: absolute;
@@ -3922,7 +3922,7 @@ section {
 	right: 0;
 }
 
-.rtl .viewmore:after {
+.rtl .viewmore::after {
 	content: "\f341";
 }
 
@@ -3935,7 +3935,7 @@ section {
 }
 
 #bbpress-forums fieldset.bbp-form legend {
-	font-weight: normal;
+	font-weight: 400;
 	font-size: 1.25rem;
 }
 
@@ -4085,7 +4085,7 @@ select {
 .forum-archive.wporg-support .themes-plugins p,
 .home.wporg-support .themes-plugins p {
 	font-size: 1rem;
-	color: #666666;
+	color: #666;
 }
 
 .forum-archive.wporg-support .themes-plugins p a:hover > .dashicons,
@@ -4116,9 +4116,9 @@ select {
 /*--------------------------------------------------------------
 # Single Forum
 --------------------------------------------------------------*/
-.sidebar .forum-info li:before,
-.sidebar .topic-info li:before,
-.sidebar div ul li a:before {
+.sidebar .forum-info li::before,
+.sidebar .topic-info li::before,
+.sidebar div ul li a::before {
 	float: left;
 	margin-right: 5px;
 }
@@ -4135,22 +4135,22 @@ select {
 	display: inline-block;
 }
 
-.sidebar .forum-info li.topic-count:before {
+.sidebar .forum-info li.topic-count::before {
 	content: "\f105";
 }
 
-.sidebar .forum-info li.reply-count:before,
-.sidebar .topic-info li.reply-count:before {
+.sidebar .forum-info li.reply-count::before,
+.sidebar .topic-info li.reply-count::before {
 	content: "\f125";
 }
 
-.sidebar .forum-info li.create-topic a:before,
-.sidebar .topic-info li.create-reply a:before {
+.sidebar .forum-info li.create-topic a::before,
+.sidebar .topic-info li.create-reply a::before {
 	content: "\f132";
 }
 
-.sidebar .forum-info li.forum-subscribe:before,
-.sidebar .topic-info li.topic-subscribe:before {
+.sidebar .forum-info li.forum-subscribe::before,
+.sidebar .topic-info li.topic-subscribe::before {
 	content: "\f465";
 }
 
@@ -4226,7 +4226,7 @@ select {
 	display: block;
 	float: left;
 	color: #fff;
-	background: gold;
+	background: #ffd700;
 	padding-top: 3px;
 	width: 30px;
 	height: 25px;
@@ -4260,19 +4260,19 @@ div.bbp-breadcrumb p {
 	margin: 0 !important;
 }
 
-.sidebar .topic-info li.topic-forum:before {
+.sidebar .topic-info li.topic-forum::before {
 	content: "\f230";
 }
 
-.sidebar .topic-info li.wp-version:before {
+.sidebar .topic-info li.wp-version::before {
 	content: "\f120";
 }
 
-.sidebar .topic-info li.topic-resolved:before {
+.sidebar .topic-info li.topic-resolved::before {
 	content: "\f546";
 }
 
-.sidebar .topic-info li.topic-favorite:before {
+.sidebar .topic-info li.topic-favorite::before {
 	content: "\f487";
 }
 
@@ -4314,7 +4314,7 @@ div.bbp-breadcrumb p {
 }
 
 .bbp-view .review-ratings .col-3 .reviews-total-count {
-	font-weight: bold;
+	font-weight: 700;
 	padding-bottom: 5px;
 	padding-top: 5px;
 }
@@ -4360,7 +4360,13 @@ div.bbp-breadcrumb p {
 	margin-bottom: 5rem;
 }
 
+.three-up.helphub-front-page .icon-wrapper a {
+	color: inherit;
+	text-decoration: none;
+}
+
 #helphub-forum-link {
+	font-size: 0.8rem;
 	margin-top: 5rem;
 }
 
