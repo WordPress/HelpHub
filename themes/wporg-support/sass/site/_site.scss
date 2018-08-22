@@ -6,7 +6,7 @@ body, #pagebody {
 }
 
 /*--------------------------------------------------------------
-# .site-header 
+# .site-header
 --------------------------------------------------------------*/
 .site-header {
 	background: $color__wp-blue;
@@ -25,8 +25,13 @@ body, #pagebody {
 	}
 
 	&.home {
-		padding: ms(4) ms(1);
+		margin-bottom: 5rem;
+		padding: ms(4) ms(1) 5rem;
 		text-align: center;
+
+		& + #main {
+			margin-top: 0;
+		}
 	}
 }
 
@@ -299,7 +304,7 @@ body, #pagebody {
 		ul {
 			margin-bottom:0;
 		}
-		
+
 		ul > li {
 			font-size: ms(-2);
 			border-top: 1px solid #eee;
@@ -350,8 +355,9 @@ body, #pagebody {
 		}
 	}
 
-	.site-header & {
+	.site-header &:last-child {
 		display: inline-block;
+		margin-bottom: 0;
 	}
 
 	.site-header.home &,
