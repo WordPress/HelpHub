@@ -35,7 +35,6 @@ cache:
 before_install:
   - npm prune
   - npm update
-  - composer install
 
 # Use this to prepare your build for testing.
 # e.g. copy database configurations, environment variables, etc.
@@ -48,10 +47,25 @@ before_script:
     else
       echo "xdebug.ini does not exist"
     fi
+  - export PATH="$HOME/.composer/vendor/bin:$PATH"
+  - composer global require --dev phpunit/phpunit ^6
   - which phpunit
   - phpunit --version
   # Install phpunuit test suite
   - bash bin/install-wp-tests.sh wordpress_test root '' localhost $WP_VERSION
+  # Install CodeSniffer for WordPress Coding Standards checks.
+  - mkdir php-codesniffer && curl -L https://github.com/squizlabs/PHP_CodeSniffer/archive/2.9.1.tar.gz  | tar xz --strip-components=1 -C php-codesniffer
+  # Install WordPress Coding Standards.
+  - mkdir wordpress-coding-standards && curl -L https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/archive/develop.tar.gz | tar xz --strip-components=1 -C wordpress-coding-standards
+  # Hop into CodeSniffer directory.
+  - cd php-codesniffer
+  # Set install path for WordPress Coding Standards
+  # @link https://github.com/squizlabs/PHP_CodeSniffer/blob/4237c2fc98cc838730b76ee9cee316f99286a2a7/CodeSniffer.php#L1941
+  - scripts/phpcs --config-set installed_paths ../wordpress-coding-standards
+  # After CodeSniffer install you should refresh your path.
+  - phpenv rehash
+  # Back to the top-level directory
+  - cd ..
 
 # Run test script commands.
 # Default is specific to project language.
@@ -62,13 +76,13 @@ script:
   # Search theme for PHP syntax errors.
   - find . \( -name '*.php' \) -exec php -lf {} \;
   # PHPCS WordPress Coding Standards
-  - ../vendor/bin/phpcs -p -s -v -n . --standard=../phpcs.ruleset.xml
+  - ../php-codesniffer/scripts/phpcs -p -s -v -n . --standard=../phpcs.ruleset.xml
   # Change to the plugins folder
   - cd .. && cd plugins
   # Search theme for PHP syntax errors.
   - find . \( -name '*.php' \) -exec php -lf {} \;
   # PHPCS WordPress Coding Standards
-  - ../vendor/bin/phpcs -p -s -v -n . --standard=../phpcs.ruleset.xml
+  - ../php-codesniffer/scripts/phpcs -p -s -v -n . --standard=../phpcs.ruleset.xml
   # Setup NodeJS version using NVM
   - node --version
   - npm --version
@@ -81,4 +95,4 @@ script:
   # Run CSS, JS, & PHP Grunt tasks (Temporarily using --force so all tasks run)
   - grunt travis
   # PHPUnit
-  - cd .. && vendor/bin/phpunit
+  - cd .. && phpunit
