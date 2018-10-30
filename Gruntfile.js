@@ -20,6 +20,8 @@ module.exports = function( grunt ) {
 
 		matchdep = require('matchdep'),
 
+		nodeSass =  require('node-sass'),
+
 		stylelintConfig = require('stylelint-config-wordpress/index.js'),
 		scssStylelintConfig = require('stylelint-config-wordpress/scss.js');
 
@@ -120,6 +122,7 @@ module.exports = function( grunt ) {
 				dest: 'themes/wporg-support/',
 				src: [ 'style.scss' ],
 				options: {
+					implementation: nodeSass,
 					indentType: 'tab',
 					indentWidth: 1,
 					outputStyle: 'expanded'
@@ -132,6 +135,7 @@ module.exports = function( grunt ) {
 				dest: 'plugins/support-helphub/inc/helphub-contributors/public/css/',
 				src: [ 'helphub-contributors-public.scss' ],
 				options: {
+					implementation: nodeSass,
 					indentType: 'tab',
 					indentWidth: 1,
 					outputStyle: 'expanded'
