@@ -7,6 +7,7 @@
 /themes/twentysixteen/
 /upgrade/
 /uploads/
+/vendor/
 node_modules/
 wordpress-coding-standards
 php-codesniffer

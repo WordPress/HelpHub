@@ -1,0 +1,21 @@
+{
+	"name": "wordpress/helphub",
+	"license": "GPL-2.0-or-later",
+	"description": "The WordPress user documentation portal.",
+	"homepage": "https://wordpress.org",
+	"keywords": [
+		"helphub", "wordpress", "wp"
+	],
+	"support": {
+		"issues": "https://github.com/Kenshino/HelpHub"
+	},
+	"require-dev": {
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.4",
+		"wp-coding-standards/wpcs": "^1.1",
+		"phpunit/phpunit": "^6"
+	},
+	"scripts": {
+		"format": "phpcbf --standard=phpcs.ruleset.xml --report-summary --report-source",
+		"lint": "phpcs --standard=phpcs.ruleset.xml --report-summary --report-source"
+	}
+}
