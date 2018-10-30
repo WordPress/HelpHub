@@ -9,6 +9,8 @@ language: php
 
 # Declare versions of PHP to use, w.org currently uses 5.6.18, soon to be 7.x
 php:
+  - 7.3
+  - 7.2
   - 7.1
   - 7.0
 
