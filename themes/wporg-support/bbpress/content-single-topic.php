@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Single Topic Content Part
  *
