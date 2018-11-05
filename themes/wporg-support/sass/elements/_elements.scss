@@ -5,8 +5,10 @@ html {
 }
 
 *,
-*:before,
-*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+*::before,
+*::after {
+
+	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 	box-sizing: inherit;
 }
 
@@ -17,8 +19,8 @@ body {
 blockquote, q {
 	quotes: "" "";
 
-	&:before,
-	&:after {
+	&::before,
+	&::after {
 		content: "";
 		margin: 0;
 	}
@@ -30,11 +32,10 @@ blockquote {
 	border: none;
 	padding: 0;
 
-	border-left: 2px solid $color__border;
-	color: #82878c;
-	font-style: italic;
+	border-left: 2px solid $color__blockquote;
+	color: $color__blockquote;
 	margin: 1rem 0;
-	padding-left: 1rem;
+	padding-left: 0.8rem;
 
 	cite {
 		font-size: ms( -2 );
@@ -64,4 +65,3 @@ img {
 @import "notices";
 @import "banners";
 @import "badges";
-
