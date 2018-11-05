@@ -16,6 +16,9 @@ plugins/wordpress-importer/
 # Query Monitor's symlink db.php
 db.php
 
+# Chassis requires a custom.ini file, this should be ignored
+custom.ini
+
 # Contibutors plugin
 plugins/support-helphub/inc/helphub-contributors/admin/assets/
 plugins/support-helphub/inc/helphub-contributors/public/css/
