@@ -158,17 +158,6 @@ module.exports = function( grunt ) {
 				src: HH_SCSS
 			}
 		},
-		copy: {
-			main: {
-				files: [
-					{
-						expand: true,
-						src: ['node_modules/select2/dist/**'],
-						dest: 'plugins/support-helphub/inc/helphub-contributors/admin/assets/'
-					}
-				]
-			}
-		},
 		watch: {
 			config: {
 				files: 'Gruntfile.js'
@@ -195,7 +184,6 @@ module.exports = function( grunt ) {
 	// Default task.
 	grunt.registerTask( 'default', [
 		'checkDependencies',
-		'copy',
 		'csstest',
 		'jstest',
 		'phptest',
