@@ -26,7 +26,6 @@ section {
 			font-size: ms( -2 );
 
 			&:nth-child(3n) {
-
 				margin-right: 0;
 			}
 		}
@@ -295,7 +294,7 @@ section {
 		.wporg-bbp-user-notes-toggle,
 		.wporg-bbp-user-flag {
 			font-size: ms(-2);
-			font-weight: 285;
+			font-weight: 400;
 			margin: 0;
 			margin-right: 10px;
 			display: inline-block;
@@ -343,8 +342,10 @@ section {
 			text-decoration: none;
 		}
 
-		li.bbp-body div.type-topic:hover span.bbp-admin-links,
-		li.bbp-body div.type-reply:hover span.bbp-admin-links {
+		li.bbp-body div.type-topic span.bbp-admin-links,
+		li.bbp-body div.type-reply span.bbp-admin-links {
+			display: none;
+			position: absolute;
 			bottom: 0;
 			right: 0;
 			background: #fbfbfb;
@@ -359,6 +360,19 @@ section {
 					text-decoration: underline;
 				}
 			}
+		}
+
+		li.bbp-body div.type-topic:hover span.bbp-admin-links,
+		li.bbp-body div.type-reply:hover span.bbp-admin-links {
+			display: block;
+		}
+
+		li.bbp-body div.type-topic:focus-within span.bbp-admin-links,
+		li.bbp-body div.type-reply:focus-within span.bbp-admin-links {
+
+			/* Separated from the block above due to browsers that
+			 * don't support :focus-within */
+			display: block;
 		}
 
 		ul.status-closed,
@@ -422,11 +436,16 @@ section {
 			color: #f00;
 		}
 
+		p.wporg-bbp-user-is-blocked {
+			display: inline-block;
+			color: #f00;
+		}
+
 		.create-topic {
 			font-size: 0.8rem;
 			float: left;
 
-			&:before {
+			&::before {
 				color: #000;
 				content: "\f132";
 				font: 400 16px/1 dashicons;
@@ -995,6 +1014,21 @@ div.bbp-breadcrumb {
 
 	.topic-info li.topic-favorite::before {
 		content: "\f487";
+	}
+
+	.topic-info li.topic-report::before {
+		content: "\f227";
+	}
+
+	.topic-info li.topic-previous-reports {
+
+		.previous-reports {
+			padding-left: 0;
+
+			li {
+				list-style: inside;
+			}
+		}
 	}
 
 	.plugin-meta-icon {
