@@ -2,7 +2,8 @@
 /* global module */
 module.exports = function( grunt ) {
 	var HH_CSS = [
-			'plugins/helphub-*/assets/css/*.css',
+			'plugins/support-helphub/inc/helphub-*/assets/css/*.css',
+			'plugins/support-helphub/inc/table-of-contents-lite/assets/css/*.css',
 			'plugins/helphub-contributors/public/css/helphub-contributors-public.css'
 		],
 
@@ -148,9 +149,6 @@ module.exports = function( grunt ) {
 		},
 		stylelint: {
 			css: {
-				options: {
-					config: stylelintConfig
-				},
 				expand: true,
 				src: HH_CSS
 			},
