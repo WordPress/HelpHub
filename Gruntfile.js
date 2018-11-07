@@ -8,7 +8,11 @@ module.exports = function( grunt ) {
 
 		HH_SCSS = [
 			'plugins/**/*.scss',
-			'themes/helphub/**/*.scss'
+			'themes/wporg-support/**/*.scss',
+			'!themes/wporg-support/node_modules/**/*.scss',
+			'!themes/wporg-support/sass/_normalize.scss',
+			'!themes/wporg-support/sass/mixins/_breakpoint.scss',
+			'!themes/wporg-support/sass/mixins/_modular-scale.scss',
 		],
 
 		HH_JS = [
@@ -153,7 +157,6 @@ module.exports = function( grunt ) {
 
 			scss: {
 				options: {
-					config: scssStylelintConfig,
 					syntax: 'scss'
 				},
 				expand: true,
