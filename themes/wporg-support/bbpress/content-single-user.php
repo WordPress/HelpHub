@@ -24,57 +24,57 @@
 
 		<div id="bbp-user-body">
 			<?php
-			if ( bbp_is_favorites() ) {
+			if ( bbp_is_favorites() ) :
 				bbp_get_template_part( 'user', 'favorites' );
-			}
+			endif;
 			?>
 
 			<?php
-			if ( bbp_is_subscriptions() ) {
+			if ( bbp_is_subscriptions() ) :
 				bbp_get_template_part( 'user', 'subscriptions' );
-			}
+			endif;
 			?>
 
 			<?php
-			if ( function_exists( 'bbp_is_single_user_engagements' ) && bbp_is_single_user_engagements() ) {
+			if ( function_exists( 'bbp_is_single_user_engagements' ) && bbp_is_single_user_engagements() ) :
 				bbp_get_template_part( 'user', 'engagements' );
-			}
+			endif;
 			?>
 
 			<?php
-			if ( bbp_is_single_user_topics() ) {
+			if ( bbp_is_single_user_topics() ) :
 				bbp_get_template_part( 'user', 'topics-created' );
-			}
+			endif;
 			?>
 
 			<?php
-			if ( bbp_is_single_user_replies() ) {
+			if ( bbp_is_single_user_replies() ) :
 				bbp_get_template_part( 'user', 'replies-created' );
-			}
+			endif;
 			?>
 
 			<?php
-			if ( wporg_support_is_single_user_reviews() ) {
+			if ( wporg_support_is_single_user_reviews() ) :
 				bbp_get_template_part( 'user', 'reviews-written' );
-			}
+			endif;
 			?>
 
 			<?php
-			if ( wporg_support_is_single_user_topics_replied_to() ) {
+			if ( wporg_support_is_single_user_topics_replied_to() ) :
 				bbp_get_template_part( 'user', 'topics-replied-to' );
-			}
+			endif;
 			?>
 
 			<?php
-			if ( bbp_is_single_user_edit() ) {
+			if ( bbp_is_single_user_edit() ) :
 				bbp_get_template_part( 'form', 'user-edit' );
-			}
+			endif;
 			?>
 
 			<?php
-			if ( bbp_is_single_user_profile() ) {
+			if ( bbp_is_single_user_profile() ) :
 				bbp_get_template_part( 'user', 'profile' );
-			}
+			endif;
 			?>
 		</div>
 	</div>

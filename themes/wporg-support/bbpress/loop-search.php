@@ -1,15 +1,4 @@
-<?php
-/**
- * Search Loop
- *
- * @package bbPress
- * @subpackage Theme
- */
-
-// Exit if accessed directly
-defined( 'ABSPATH' ) || exit;
-
-do_action( 'bbp_template_before_search_results_loop' ); ?>
+<?php do_action( 'bbp_template_before_search_results_loop' ); ?>
 
 <ul id="bbp-search-results" class="forums bbp-search-results">
 
@@ -18,7 +7,7 @@ do_action( 'bbp_template_before_search_results_loop' ); ?>
 		<?php
 		while ( bbp_search_results() ) :
 			bbp_the_search_result();
-			?>
+		?>
 
 			<?php if ( 'topic' === get_post_type() ) : ?>
 

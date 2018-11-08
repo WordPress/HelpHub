@@ -1,4 +1,5 @@
 <?php
+
 /**
  * New/Edit Reply
  *
@@ -227,7 +228,7 @@ if ( bbp_is_reply_edit() ) : ?>
 					<?php if ( is_user_logged_in() ) : ?>
 						<li><?php esc_html_e( 'You cannot reply to this review.', 'wporg-forums' ); ?></li>
 					<?php else : ?>
-						<li><?php printf( esc_html__( 'You must be <a href="%s">logged in</a> to reply to this review.', 'wporg-forums' ), wp_login_url() ); ?></li>
+						<li><?php printf( __( 'You must be <a href="%s">logged in</a> to reply to this review.', 'wporg-forums' ), wp_login_url() ); ?></li>
 					<?php endif; ?>
 
 				<?php else : ?>
@@ -235,7 +236,7 @@ if ( bbp_is_reply_edit() ) : ?>
 					<?php if ( is_user_logged_in() ) : ?>
 						<li><?php esc_html_e( 'You cannot reply to this topic.', 'wporg-forums' ); ?></li>
 					<?php else : ?>
-						<li><?php printf( esc_html__( 'You must be <a href="%s">logged in</a> to reply to this topic.', 'wporg-forums' ), wp_login_url() ); ?></li>
+						<li><?php printf( __( 'You must be <a href="%s">logged in</a> to reply to this topic.', 'wporg-forums' ), wp_login_url() ); ?></li>
 					<?php endif; ?>
 
 				<?php endif; ?>

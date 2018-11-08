@@ -1,15 +1,4 @@
-<?php
-/**
- * Reply Topics Loop
- *
- * @package bbPress
- * @subpackage Theme
- */
-
-// Exit if accessed directly
-defined( 'ABSPATH' ) || exit;
-
-do_action( 'bbp_template_before_topics_loop' ); ?>
+<?php do_action( 'bbp_template_before_topics_loop' ); ?>
 
 <ul id="bbp-forum-<?php bbp_forum_id(); ?>" class="bbp-topics">
 	<li class="bbp-header">
@@ -32,7 +21,7 @@ do_action( 'bbp_template_before_topics_loop' ); ?>
 		<?php
 		while ( bbp_replies() ) :
 			bbp_the_reply();
-			?>
+		?>
 
 			<?php bbp_get_template_part( 'loop', 'single-reply-topic' ); ?>
 

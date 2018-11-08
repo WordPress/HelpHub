@@ -14,17 +14,17 @@
 		<?php
 		while ( bbp_topics() ) :
 			bbp_the_topic();
-			?>
+		?>
 
-			<?php if ( 'topic' === get_post_type() ) : ?>
+			<?php if ( 'topic' == get_post_type() ) : ?>
 
 				<?php bbp_get_template_part( 'content', 'single-topic-lead' ); ?>
 
-				<?php // This actually works. ?>
-				<?php
+			<?php
+			// This actually works.
 			else :
 				bbpress()->reply_query = bbpress()->topic_query;
-				?>
+			?>
 
 				<?php bbp_get_template_part( 'loop', 'single-reply' ); ?>
 

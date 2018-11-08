@@ -1,15 +1,4 @@
-<?php
-/**
- * Archive Forum Content Part
- *
- * @package bbPress
- * @subpackage Theme
- */
-
-// Exit if accessed directly
-defined( 'ABSPATH' ) || exit;
-
-if ( ! is_front_page() && ! is_archive( 'forum' ) ) : ?>
+<?php if ( ! is_front_page() && ! is_archive( 'forum' ) ) : ?>
 
 	<?php bbp_breadcrumb(); ?>
 

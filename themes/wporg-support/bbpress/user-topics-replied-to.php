@@ -1,4 +1,5 @@
 <?php
+
 /**
  * User Topics Replied To
  *
