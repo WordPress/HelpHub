@@ -6,11 +6,7 @@
  */
 ?>
 
-</div><!-- #content -->
+	</div><!-- #content -->
+</div><!-- #page -->
 
-<?php
-if ( stristr( WPORGPATH, 'http' ) ) {
-	do_action( 'wp_footer' );
-}
-
-require WPORGPATH . 'footer.php';
+<?php require WPORGPATH . 'footer.php';

@@ -24,12 +24,10 @@
 				<?php
 				the_content();
 
-				wp_link_pages(
-					array(
-						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'wporg-forums' ),
-						'after'  => '</div>',
-					)
-				);
+				wp_link_pages( array(
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'wporg-forums' ),
+					'after'  => '</div>',
+				) );
 				?>
 			</div>
 		</section>
@@ -39,7 +37,7 @@
 		<?php
 		edit_post_link(
 			sprintf(
-				/* translators: %s: Name of current post */
+			/* translators: %s: Name of current post */
 				esc_html__( 'Edit %s', 'wporg-forums' ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			),

@@ -14,15 +14,11 @@
 
 	<li class="bbp-body">
 
-		<?php
-		while ( bbp_forums() ) :
-			bbp_the_forum();
-		?>
+		<?php while ( bbp_forums() ) : bbp_the_forum(); ?>
 
 			<?php bbp_get_template_part( 'loop', 'single-forum' ); ?>
 
-			<?php
-			bbp_list_forums( array(
+			<?php bbp_list_forums( array(
 				'before'           => '',
 				'after'            => '',
 				'link_before'      => '<ul class="forum"><li class="bbp-forum-info">&mdash; <span class="bbp-forum-title">',
@@ -32,8 +28,7 @@
 				'separator'        => '',
 				'show_topic_count' => false,
 				'show_reply_count' => true,
-			) );
-			?>
+			) ); ?>
 
 		<?php endwhile; ?>
 

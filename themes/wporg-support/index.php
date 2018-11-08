@@ -5,12 +5,12 @@
  * @package WPBBP
  */
 
-get_header();
+get_header(); ?>
 
-while ( have_posts() ) :
-	the_post();
+<?php while( have_posts() ): the_post(); ?>
 
-	the_content();
-endwhile;
+	<?php the_content(); ?>
 
-get_footer();
+<?php endwhile; ?>
+
+<?php get_footer(); ?>

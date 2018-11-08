@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * The template for displaying 404 pages (not found).
  *
@@ -9,8 +9,7 @@
 
 namespace WordPressdotorg\Forums;
 
-get_header();
-?>
+get_header(); ?>
 
 <main id="main" class="site-main" role="main">
 
@@ -25,5 +24,4 @@ get_header();
 	</section>
 </main>
 
-<?php
-get_footer();
+<?php get_footer(); ?>

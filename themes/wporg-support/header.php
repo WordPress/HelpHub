@@ -19,10 +19,6 @@ $menu_items = array(
 );
 
 wporg_get_global_header();
-
-if ( stristr( WPORGPATH, 'http' ) ) {
-	do_action( 'wp_head' );
-}
 ?>
 
 <div id="page" class="site">
@@ -37,7 +33,7 @@ if ( stristr( WPORGPATH, 'http' ) ) {
 					<p class="site-description">
 						<?php
 						/* Translators: subhead */
-						_e( 'We&#8217;ve got a variety of resources to help you gain the most out of WordPress.', 'wporg-forums' );
+						_e( 'We&#8217;ve got a variety of resources to help you get the most out of WordPress.', 'wporg-forums' );
 						?>
 					</p>
 					<?php get_search_form(); ?>
@@ -52,7 +48,7 @@ if ( stristr( WPORGPATH, 'http' ) ) {
 								foreach ( $menu_items as $path => $text ) :
 									$class = '';
 									$url = parse_url( $path );
-									if ( ! empty( $url['host'] ) ) {
+									if ( ! empty( $url['host' ] ) ) {
 										$url = esc_url( $path );
 									} else {
 										$class = false !== strpos( $_SERVER['REQUEST_URI'], $url['path'] ) ? 'class="active" ' : '';
