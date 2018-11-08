@@ -69,6 +69,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks( 'grunt-sass' );
 	grunt.loadNpmTasks( 'grunt-stylelint' );
 
-	grunt.registerTask( 'build', [ 'stylelint', 'postcss', 'sass', 'rtlcss' ]);
+	grunt.registerTask( 'build', [ 'postcss', 'sass', 'rtlcss' ]);
 	grunt.registerTask( 'default', [ 'build' ]);
 };
