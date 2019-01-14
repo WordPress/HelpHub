@@ -36,7 +36,6 @@ Given that we will ultimately need to localise the whole site for different lang
 
 Database from staging site is located in `wp-content/staging-database` folder. There you can find database files for WordPress Importer, Widget Importer & Exporter, Duplicator and UpdraftPlus.
 
-
 ### Design guidelines
 
 See the [HelpHub wireframes](https://wp-commhub.mybalsamiq.com/projects/helphub/grid) for a guide on the design and layout of the project and note that all design must be consistent with the rest of [WordPress.org](https://wordpress.org/).
@@ -47,13 +46,13 @@ Project Lead: [Jon Ang](https://profiles.wordpress.org/kenshino)
 
 The following people are active developers on the project and are all listed as collaborators on this repo:
 
-| Name               	| GitHub username   	| Slack username 	|
-|--------------------	|-------------------	|----------------	|
-| Jon Ang           				| @kenshino          	| kenshino       	|
+| Name                  | GitHub username       | Slack username    |
+|-----------------------|-----------------------|-------------------|
+| Jon Ang               | @kenshino             | kenshino          |
 | Carl Alberto          | @carl-alberto         | carlalberto       |
 | Marius Jensen         | @clorith              | clorith           |
 | Jude Rosario          | @JudeRosario          | lumberhack        |
 | Milana Cap            | @zzap                 | zzap              |
 | Akira Tachibana       | @atachibana           | atachibana        |
 | Stephen Edgar         | @ntwb                 | netweb            |
-| Mark Uraine         		| @mapk                 | mapk            |
+| Mark Uraine           | @mapk                 | mapk              |
