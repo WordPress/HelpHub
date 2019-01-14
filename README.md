@@ -34,7 +34,7 @@ As this is a WordPress community project, all development must have a strong com
 
 Given that we will ultimately need to localise the whole site for different languages, please use `wporg-forums` as the text domain for all text strings.
 
-A database export is available here - https://github.com/Kenshino/HelpHub/blob/master/helphub.wordpress.2017-06-15.xml
+Database from staging site is located in `wp-content/staging-database` folder. There you can find database files for WordPress Importer, Widget Importer & Exporter, Duplicator and UpdraftPlus.
 
 ### Design guidelines
 
@@ -46,13 +46,13 @@ Project Lead: [Jon Ang](https://profiles.wordpress.org/kenshino)
 
 The following people are active developers on the project and are all listed as collaborators on this repo:
 
-| Name               	| GitHub username   	| Slack username 	|
-|--------------------	|-------------------	|----------------	|
-| Jon Ang           				| @kenshino          	| kenshino       	|
+| Name                  | GitHub username       | Slack username    |
+|-----------------------|-----------------------|-------------------|
+| Jon Ang               | @kenshino             | kenshino          |
 | Carl Alberto          | @carl-alberto         | carlalberto       |
 | Marius Jensen         | @clorith              | clorith           |
 | Jude Rosario          | @JudeRosario          | lumberhack        |
 | Milana Cap            | @zzap                 | zzap              |
 | Akira Tachibana       | @atachibana           | atachibana        |
 | Stephen Edgar         | @ntwb                 | netweb            |
-| Mark Uraine         		| @mapk                 | mapk            |
+| Mark Uraine           | @mapk                 | mapk              |

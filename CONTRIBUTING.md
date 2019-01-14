@@ -54,7 +54,9 @@ For now we have two ways for importing database from staging site - via [Importe
 
 ##### Importer
 
-Database from staging site is located in `wp-content/staging-database` folder. There you can find `helphub.WordPress.2018-03-13.xml` file. Import this using the WordPress Importer from within the `/wp-admin` of your local site.
+Database from staging site is located in `wp-content/staging-database` folder. There you can find database files for WordPress Importer, Widget Importer & Exporter, Duplicator and UpdraftPlus.
+
+To import database using the WordPress Importer from within the `/wp-admin` of your local site, follow these steps:
 
 1. Go to: `Tools -> Import` and click "Install Now" under WordPress at the bottom. This will install the WordPress Importer.
 2. Click "Run Importer"
@@ -63,7 +65,7 @@ Database from staging site is located in `wp-content/staging-database` folder. T
 5. Check the box to "Download and import file attachments".
 6. Click the button to begin. It may take a while to complete. If there are some failed imports, it should still be okay.
 
-This file won't import widgets from staging site. For that you can use `2018-03-13.wp-helphub.com-widgets.wie` file, located in `wp-content/staging-database/Widget Importer & Exporter` folder. This file is exported with [Widget Importer & Exporter](https://wordpress.org/plugins/widget-importer-exporter/) plugin and you need this plugin in your local installation in order to import widgets from `.wie` file.
+This file won't import widgets from staging site. For that you can use `.wie` file, located in `wp-content/staging-database/Widget Importer & Exporter` folder. This file is exported with [Widget Importer & Exporter](https://wordpress.org/plugins/widget-importer-exporter/) plugin and you need this plugin in your local installation in order to import widgets from `.wie` file.
 
 ##### Duplicator
 
