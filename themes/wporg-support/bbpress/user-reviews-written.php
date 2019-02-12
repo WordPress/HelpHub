@@ -33,4 +33,5 @@ do_action( 'bbp_template_before_user_reviews_written' ); ?>
 	</div>
 </div><!-- #bbp-user-reviews-written -->
 
-<?php do_action( 'bbp_template_after_user_reviews_written' );
+<?php
+do_action( 'bbp_template_after_user_reviews_written' );

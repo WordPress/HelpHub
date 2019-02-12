@@ -47,23 +47,27 @@
 			</div>
 
 			<div>
-				<?php bbp_topic_tag_list( 0, array(
+				<?php
+				bbp_topic_tag_list( 0, array(
 					'before' => '<h4>' . __( 'Topic Tags', 'wporg-forums' ) . '</h4><ul class="topic-tags"><li>',
 					'after'  => '</li></ul>',
 					'sep'    => '</li><li>',
-				) ); ?>
+				) );
+				?>
 			</div>
 
 			<?php if ( current_user_can( 'moderate', bbp_get_topic_id() ) || wporg_support_current_user_can_stick( bbp_get_topic_id() ) ) : ?>
 
 				<div>
-					<?php bbp_topic_admin_links( array(
+					<?php
+					bbp_topic_admin_links( array(
 						'id'     => bbp_get_topic_id(),
 						'before' => '<h4>' . __( 'Topic Admin', 'wporg-forums' ) . '</h4><ul class="topic-admin-links"><li>',
 						'after'  => '</li></ul>',
 						'sep'    => '</li><li>',
 						'links'  => array(),
-					) ); ?>
+					) );
+					?>
 				</div>
 
 			<?php endif; ?>
@@ -88,7 +92,8 @@
 				<h4><?php _e( 'Views', 'wporg-forums' ); ?></h4>
 				<ul class="topic-views">
 
-					<?php foreach ( bbp_get_views() as $view => $args ) :
+					<?php
+					foreach ( bbp_get_views() as $view => $args ) :
 						if ( in_array( $view, wporg_support_get_compat_views() ) ) {
 							continue;
 						}
@@ -112,14 +117,16 @@
 					<li><a class="feed" href="<?php bbp_topics_url(); ?>feed/"><?php _e( 'All Recent Topics', 'wporg-forums' ); ?></a></li>
 				</ul>
 			</div>
-<?php /* Temporarily disable this until https://core.trac.wordpress.org/ticket/41796#comment:8 can be fixed
+<?php
+/* Temporarily disable this until https://core.trac.wordpress.org/ticket/41796#comment:8 can be fixed
 
 			<div>
 				<h4><?php _e( 'Tags', 'wporg-forums' ); ?></h4>
 				<?php wp_tag_cloud( array( 'smallest' => 14, 'largest' => 24, 'number' => 22, 'taxonomy' => bbp_get_topic_tag_tax_id() ) ); ?>
 			</div>
 
- */ ?>
+ */
+?>
 		<?php endif; ?>
 
 	<?php endif; ?>

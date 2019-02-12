@@ -248,4 +248,5 @@ if ( bbp_is_reply_edit() ) : ?>
 
 </div>
 
-<?php endif;
+<?php
+endif;

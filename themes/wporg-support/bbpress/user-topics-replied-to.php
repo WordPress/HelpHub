@@ -33,4 +33,5 @@ do_action( 'bbp_template_before_user_topics_replied_to' ); ?>
 	</div>
 </div><!-- #bbp-user-topics-replied-to -->
 
-<?php do_action( 'bbp_template_after_user_topics_replied_to' );
+<?php
+do_action( 'bbp_template_after_user_topics_replied_to' );

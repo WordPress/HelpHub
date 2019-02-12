@@ -138,4 +138,5 @@ do_action( 'bbp_template_before_user_profile' ); ?>
 	</div>
 </div><!-- #bbp-author-topics-started -->
 
-<?php do_action( 'bbp_template_after_user_profile' );
+<?php
+do_action( 'bbp_template_after_user_profile' );
