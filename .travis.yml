@@ -7,22 +7,26 @@
 # @link http://about.travis-ci.org/docs/user/languages/php/
 language: php
 
-# Declare versions of PHP to use, w.org currently uses 5.6.18, soon to be 7.x
-php:
-  - 7.3
-  - 7.2
-
 # Ditch sudo and use containers.
 # @link https://docs.travis-ci.com/user/ci-environment/
 sudo: false
 
 # Tell Travis CI which distro to use
 dist: trusty
+
 # Travis CI environment matrix
-env:
-  matrix:
-    - WP_VERSION=latest WP_MULTISITE=0
-    - WP_VERSION=nightly WP_MULTISITE=0
+matrix:
+  fast_finish: true
+  include:
+    # Declare versions of PHP to use, w.org currently uses 5.6.18, soon to be 7.x
+    - php: 7.3
+      env: WP_VERSION=latest WP_MULTISITE=0 SNIFF=1
+    - php: 7.3
+      env: WP_VERSION=nightly WP_MULTISITE=0
+    - php: 7.2
+      env: WP_VERSION=latest WP_MULTISITE=0
+    - php: 7.2
+      env: WP_VERSION=nightly WP_MULTISITE=0
 
 # Setup NPM modules for Travis CI cache maintanence.
 cache:
@@ -48,19 +52,28 @@ before_script:
       echo "xdebug.ini does not exist"
     fi
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
-  - composer global require --dev phpunit/phpunit ^6
+  - |
+    if [[ "$SNIFF" == "1" ]]; then
+      composer install --no-suggest --no-interaction
+    else
+      composer global require --dev phpunit/phpunit ^6
+    fi
   - which phpunit
-  - phpunit --version
+  - |
+    if [[ "$SNIFF" == "1" ]]; then
+      vendor/bin/phpunit --version
+    else
+      phpunit --version
+    fi
   # Install phpunuit test suite
   - bash bin/install-wp-tests.sh wordpress_test root '' localhost $WP_VERSION
-  - composer install
 
 # Run test script commands.
 # Default is specific to project language.
 # All commands must exit with code 0 on success. Anything else is considered failure.
 script:
   # PHPCS WordPress Coding Standards
-  - vendor/bin/phpcs -p -s -v -n
+  - if [[ "$SNIFF" == "1" ]]; then vendor/bin/phpcs -p -s -v -n;fi
   # Change to the themes folder
   - cd themes
   # Search theme for PHP syntax errors.
@@ -81,4 +94,5 @@ script:
   # Run CSS, JS, & PHP Grunt tasks (Temporarily using --force so all tasks run)
   - grunt travis
   # PHPUnit
-  - cd .. && phpunit
+  - cd ..
+  - if [[ "$SNIFF" == "1" ]]; then vendor/bin/phpunit; else phpunit;fi
