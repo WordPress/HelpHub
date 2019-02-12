@@ -4,6 +4,9 @@
 
 	<rule ref="WordPress-Core"/>
 
+	<config name="testVersion" value="7.2-"/>
+	<rule ref="PHPCompatibilityWP"/>
+
 	<arg name="extensions" value="php"/>
 
 	<!-- Show sniff codes in all reports -->
