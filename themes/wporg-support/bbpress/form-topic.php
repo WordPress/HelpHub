@@ -18,17 +18,17 @@
 				<legend>
 
 					<?php
-						if ( bbp_is_topic_edit() ) {
-							printf( __( 'Now Editing &ldquo;%s&rdquo;', 'wporg-forums' ), bbp_get_topic_title() );
+					if ( bbp_is_topic_edit() ) {
+						printf( __( 'Now Editing &ldquo;%s&rdquo;', 'wporg-forums' ), bbp_get_topic_title() );
+					} else {
+						if ( bbp_is_single_forum() ) {
+							printf( __( 'Create a new topic in &ldquo;%s Forum&rdquo;', 'wporg-forums' ), bbp_get_forum_title() );
+						} elseif ( bbp_is_single_view() && 'reviews' === bbp_get_view_id() ) {
+							_e( 'Create a new review', 'wporg-forums' );
 						} else {
-							if ( bbp_is_single_forum() ) {
-								printf( __( 'Create a new topic in &ldquo;%s Forum&rdquo;', 'wporg-forums' ), bbp_get_forum_title() );
-							} elseif ( bbp_is_single_view() && 'reviews' === bbp_get_view_id() ) {
-								_e( 'Create a new review', 'wporg-forums' );
-							} else {
-								_e( 'Create a new topic', 'wporg-forums' );
-							}
+							_e( 'Create a new topic', 'wporg-forums' );
 						}
+					}
 					?>
 
 				</legend>
@@ -60,8 +60,9 @@
 								<li><?php _e( '<strong>Provide any information</strong> you might think is useful. If your issue is visual, note your browser and operating system. If your issue is technical, note your server environment.', 'wporg-forums' ); ?></li>
 								<?php if ( ! bbp_is_single_view() || ! in_array( bbp_get_view_id(), array( 'theme', 'plugin' ) ) ) : ?>
 								<li><?php
-									/* translators: 1: Theme Directory URL, 2: Appearance icon, 3: Plugin Directory URL, 4: Plugins icon */
-									printf( __( '<strong>Looking for help with a specific <a href="%1$s">%2$s theme</a> or <a href="%3$s">%4$s plugin</a>?</strong> Don\'t post here &#8211; instead, head to the theme or plugin\'s page and find the "View support forum" link to visit the theme or plugin\'s individual forum.', 'wporg-forums' ),
+									printf(
+										/* translators: 1: Theme Directory URL, 2: Appearance icon, 3: Plugin Directory URL, 4: Plugins icon */
+										__( '<strong>Looking for help with a specific <a href="%1$s">%2$s theme</a> or <a href="%3$s">%4$s plugin</a>?</strong> Don\'t post here &#8211; instead, head to the theme or plugin\'s page and find the "View support forum" link to visit the theme or plugin\'s individual forum.', 'wporg-forums' ),
 										esc_url( __( 'https://wordpress.org/themes/', 'wporg-forums' ) ),
 										'<span class="dashicons dashicons-admin-appearance"></span>',
 										esc_url( __( 'https://wordpress.org/plugins/', 'wporg-forums' ) ),
@@ -77,7 +78,7 @@
 
 				<?php endif; ?>
 
-				<?php if ( !bbp_is_topic_edit() && bbp_is_forum_closed() ) : ?>
+				<?php if ( ! bbp_is_topic_edit() && bbp_is_forum_closed() ) : ?>
 
 					<div class="bbp-template-notice">
 						<p><?php _e( 'This forum is marked as closed to new topics, however your posting capabilities still allow you to create a topic.', 'wporg-forums' ); ?></p>
@@ -149,7 +150,7 @@
 
 					<?php endif; ?>
 
-					<?php if ( bbp_is_subscriptions_active() && !bbp_is_anonymous() && ( !bbp_is_topic_edit() || ( bbp_is_topic_edit() && !bbp_is_topic_anonymous() ) ) ) : ?>
+					<?php if ( bbp_is_subscriptions_active() && ! bbp_is_anonymous() && ( ! bbp_is_topic_edit() || ( bbp_is_topic_edit() && ! bbp_is_topic_anonymous() ) ) ) : ?>
 
 						<?php do_action( 'bbp_theme_before_topic_form_subscriptions' ); ?>
 

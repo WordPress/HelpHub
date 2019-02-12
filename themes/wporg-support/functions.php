@@ -59,21 +59,21 @@ add_action( 'widgets_init', 'wporg_support_register_widget_areas' );
  */
 function wporg_support_breadcrumb() {
 	// Separator
-	$args['sep']             = is_rtl() ? __( '&laquo;', 'wporg-forums' ) : __( '&raquo;', 'wporg-forums' );
-	$args['pad_sep']         = 1;
-	$args['sep_before']      = '<span class="bbp-breadcrumb-sep">' ;
-	$args['sep_after']       = '</span>';
+	$args['sep']        = is_rtl() ? __( '&laquo;', 'wporg-forums' ) : __( '&raquo;', 'wporg-forums' );
+	$args['pad_sep']    = 1;
+	$args['sep_before'] = '<span class="bbp-breadcrumb-sep">';
+	$args['sep_after']  = '</span>';
 
 	// Crumbs
-	$args['crumb_before']    = '';
-	$args['crumb_after']     = '';
+	$args['crumb_before'] = '';
+	$args['crumb_after']  = '';
 
 	// Home
-	$args['include_home']    = true;
-	$args['home_text']       = __( 'Support', 'wporg-forums' );
+	$args['include_home'] = true;
+	$args['home_text']    = __( 'Support', 'wporg-forums' );
 
 	// Forum root
-	$args['include_root']    = false;
+	$args['include_root'] = false;
 
 	// Current
 	$args['include_current'] = true;
@@ -132,7 +132,8 @@ function wporg_support_get_views() {
 			continue;
 		}
 
-		$output[] = sprintf( '<li class="view"><a href="%s">%s</a></li>',
+		$output[] = sprintf(
+			'<li class="view"><a href="%s">%s</a></li>',
 			esc_url( bbp_get_view_url( $view ) ),
 			bbp_get_view_title( $view )
 		);
@@ -146,7 +147,7 @@ function wporg_support_get_views() {
  *
  * @uses get_body_class() To add the `wporg-support` class
  */
-function wporg_support_body_class($classes) {
+function wporg_support_body_class( $classes ) {
 	$classes[] = 'wporg-responsive';
 	$classes[] = 'wporg-support';
 
@@ -235,7 +236,8 @@ function wporg_support_profile_url( $user_id ) {
 function wporg_support_get_wporg_profile_link( $user_id = 0 ) {
 	$user_nicename = bbp_get_user_nicename( $user_id );
 
-	return sprintf( '<a href="%s">@%s</a>',
+	return sprintf(
+		'<a href="%s">@%s</a>',
 		esc_url( 'https://profiles.wordpress.org/' . $user_nicename ),
 		$user_nicename
 	);
@@ -250,10 +252,10 @@ function wporg_support_get_wporg_profile_link( $user_id = 0 ) {
 function wporg_support_get_slack_username( $user_id = 0 ) {
 	global $wpdb;
 
-	$user_id = bbp_get_user_id( $user_id );
+	$user_id        = bbp_get_user_id( $user_id );
 	$slack_username = '';
 
-	$data = $wpdb->get_var( $wpdb->prepare( "SELECT profiledata FROM slack_users WHERE user_id = %d", $user_id ) );
+	$data = $wpdb->get_var( $wpdb->prepare( 'SELECT profiledata FROM slack_users WHERE user_id = %d', $user_id ) );
 	if ( $data && ( $data = json_decode( $data, true ) ) ) {
 		if ( isset( $data['profile']['display_name'] ) ) {
 			$slack_username = $data['profile']['display_name'];
@@ -398,15 +400,15 @@ function wporg_support_get_compat_object() {
  * Display a notice for messages caught in the moderation queue.
  */
 function wporg_support_add_moderation_notice() {
-	$post            = get_post();
-	$post_time       = mysql2date( 'U', $post->post_date );
+	$post      = get_post();
+	$post_time = mysql2date( 'U', $post->post_date );
 
 	$hours_passed    = (int) ( ( current_time( 'timestamp' ) - $post_time ) / HOUR_IN_SECONDS );
 	$is_moderator    = current_user_can( 'moderate', $post->ID );
 	$is_user_blocked = ! current_user_can( 'spectate' );
 
-	$notice_class    = '';
-	$notices         = array();
+	$notice_class = '';
+	$notices      = array();
 
 	if ( $is_moderator && in_array( $post->post_status, array( 'archived', 'pending', 'spam' ) ) ) :
 
@@ -596,7 +598,7 @@ add_filter( 'bbp_after_theme_compat_reset_post_parse_args', 'wporg_support_set_i
 /** bb Base *******************************************************************/
 
 function bb_base_search_form() {
-?>
+	?>
 
 	<form role="search" method="get" id="searchform" action="https://wordpress.org/search/do-search.php">
 		<div>
@@ -608,11 +610,11 @@ function bb_base_search_form() {
 		</div>
 	</form>
 
-<?php
+	<?php
 }
 
 function bb_base_topic_search_form() {
-?>
+	?>
 
 	<form role="search" method="get" id="searchform" action="">
 		<div>
@@ -623,11 +625,11 @@ function bb_base_topic_search_form() {
 		</div>
 	</form>
 
-<?php
+	<?php
 }
 
 function bb_base_reply_search_form() {
-?>
+	?>
 
 	<form role="search" method="get" id="searchform" action="">
 		<div>
@@ -638,11 +640,11 @@ function bb_base_reply_search_form() {
 		</div>
 	</form>
 
-<?php
+	<?php
 }
 
 function bb_base_plugin_search_form() {
-?>
+	?>
 
 	<form role="search" method="get" id="searchform" action="">
 		<div>
@@ -653,7 +655,7 @@ function bb_base_plugin_search_form() {
 		</div>
 	</form>
 
-<?php
+	<?php
 }
 
 function bb_base_topic_search_query( $escaped = true ) {
@@ -707,8 +709,8 @@ function bb_base_single_topic_description() {
 	remove_filter( 'bbp_get_topic_permalink', 'bbp_add_view_all' );
 
 	// Build the topic description
-	$voice_count = bbp_get_topic_voice_count   ( $topic_id, true );
-	$reply_count = bbp_get_topic_replies_link  ( $topic_id );
+	$voice_count = bbp_get_topic_voice_count( $topic_id, true );
+	$reply_count = bbp_get_topic_replies_link( $topic_id );
 	$time_since  = bbp_get_topic_freshness_link( $topic_id );
 
 	// Singular/Plural
@@ -724,29 +726,32 @@ function bb_base_single_topic_description() {
 	?>
 
 	<li class="topic-forum"><?php
-		/* translators: %s: forum title */
-		printf( __( 'In: %s', 'wporg-forums' ),
-			sprintf( '<a href="%s">%s</a>',
+		printf(
+			/* translators: %s: forum title */
+			__( 'In: %s', 'wporg-forums' ),
+			sprintf(
+				'<a href="%s">%s</a>',
 				esc_url( bbp_get_forum_permalink( bbp_get_topic_forum_id() ) ),
 				bbp_get_topic_forum_title()
 			)
 		);
 	?></li>
-	<?php if ( !empty( $reply_count ) ) : ?>
+	<?php if ( ! empty( $reply_count ) ) : ?>
 		<li class="reply-count"><?php echo $reply_count; ?></li>
 	<?php endif; ?>
-	<?php if ( !empty( $voice_count ) ) : ?>
+	<?php if ( ! empty( $voice_count ) ) : ?>
 		<li class="voice-count"><?php echo $voice_count; ?></li>
 	<?php endif; ?>
-	<?php if ( !empty( $last_reply  ) ) : ?>
+	<?php if ( ! empty( $last_reply ) ) : ?>
 		<li class="topic-freshness-author"><?php
-			/* translators: %s: reply author link */
-			printf( __( 'Last reply from: %s', 'wporg-forums' ),
+			printf(
+				/* translators: %s: reply author link */
+				__( 'Last reply from: %s', 'wporg-forums' ),
 				bbp_get_author_link( array( 'type' => 'name', 'post_id' => $last_reply, 'size' => '15' ) )
 			);
 		?></li>
 	<?php endif; ?>
-	<?php if ( !empty( $time_since  ) ) : ?>
+	<?php if ( ! empty( $time_since ) ) : ?>
 		<li class="topic-freshness-time"><?php
 			/* translators: %s: date/time link to the latest post */
 			printf( __( 'Last activity: %s', 'wporg-forums' ), $time_since );
@@ -793,28 +798,30 @@ function bb_base_single_forum_description() {
 	$last_active = bbp_get_forum_last_active_id( $forum_id );
 
 	// Has replies
-	if ( !empty( $reply_count ) ) {
+	if ( ! empty( $reply_count ) ) {
 		$reply_text = sprintf( _n( '%s reply', '%s replies', $reply_count, 'wporg-forums' ), bbp_number_format( $reply_count ) );
 	} else {
 		$reply_text = '';
 	}
 
 	// Forum has active data
-	if ( !empty( $last_active ) ) {
-		$topic_text      = bbp_get_forum_topics_link( $forum_id );
-		$time_since      = bbp_get_forum_freshness_link( $forum_id );
+	if ( ! empty( $last_active ) ) {
+		$topic_text = bbp_get_forum_topics_link( $forum_id );
+		$time_since = bbp_get_forum_freshness_link( $forum_id );
 
-	// Forum has no last active data
 	} else {
-		$topic_text      = sprintf( _n( '%s topic', '%s topics', $topic_count, 'wporg-forums' ), bbp_number_format( $topic_count ) );
+		// Forum has no last active data
+		$topic_text = sprintf( _n( '%s topic', '%s topics', $topic_count, 'wporg-forums' ), bbp_number_format( $topic_count ) );
 	}
 	?>
 
 	<?php if ( bbp_get_forum_parent_id() ) : ?>
 		<li class="topic-parent"><?php
-			/* translators: %s: forum title */
-			printf( __( 'In: %s', 'wporg-forums' ),
-				sprintf( '<a href="%s">%s</a>',
+			printf(
+				/* translators: %s: forum title */
+				__( 'In: %s', 'wporg-forums' ),
+				sprintf(
+					'<a href="%s">%s</a>',
 					esc_url( bbp_get_forum_permalink( bbp_get_forum_parent_id() ) ),
 					bbp_get_forum_title( bbp_get_forum_parent_id() )
 				)
@@ -835,7 +842,7 @@ function bb_base_single_forum_description() {
 			//);
 		?><!-- </li> -->
 	<?php //endif; ?>
-	<?php if ( !empty( $time_since  ) ) : ?>
+	<?php if ( ! empty( $time_since ) ) : ?>
 		<li class="forum-freshness-time"><?php
 			/* translators: %s: date/time link to the latest post */
 			printf( __( 'Last activity: %s', 'wporg-forums' ), $time_since );

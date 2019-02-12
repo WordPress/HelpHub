@@ -4,12 +4,16 @@
 
 	<rule ref="WordPress-Core"/>
 
+	<config name="testVersion" value="7.2-"/>
+	<rule ref="PHPCompatibilityWP"/>
+
 	<arg name="extensions" value="php"/>
 
 	<!-- Show sniff codes in all reports -->
 	<arg value="ps"/>
 
-	<file>.</file>
+	<file>./themes/</file>
+	<file>./plugins/</file>
 
 	<!-- Strip the filepaths down to the relevant bit. -->
 	<arg name="basepath" value="./"/>
