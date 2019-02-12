@@ -76,13 +76,13 @@ script:
   # Search theme for PHP syntax errors.
   - find . \( -name '*.php' \) -exec php -lf {} \;
   # PHPCS WordPress Coding Standards
-  - ../php-codesniffer/scripts/phpcs -p -s -v -n . --standard=../phpcs.ruleset.xml
+  - ../php-codesniffer/scripts/phpcs -p -s -v -n .
   # Change to the plugins folder
   - cd .. && cd plugins
   # Search theme for PHP syntax errors.
   - find . \( -name '*.php' \) -exec php -lf {} \;
   # PHPCS WordPress Coding Standards
-  - ../php-codesniffer/scripts/phpcs -p -s -v -n . --standard=../phpcs.ruleset.xml
+  - ../php-codesniffer/scripts/phpcs -p -s -v -n .
   # Setup NodeJS version using NVM
   - node --version
   - npm --version
