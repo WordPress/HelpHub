@@ -54,7 +54,7 @@ wporg_get_global_header();
 										$class = false !== strpos( $_SERVER['REQUEST_URI'], $url['path'] ) ? 'class="active" ' : '';
 										$url   = esc_url( home_url( $path ) );
 									}
-								?>
+									?>
 								<li class="page_item"><a <?php echo $class; ?>href="<?php echo $url; ?>"><?php echo esc_html( $text ); ?></a></li>
 								<?php endforeach; ?>
 								<li><?php get_search_form(); ?></li>

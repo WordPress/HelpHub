@@ -598,7 +598,7 @@ add_filter( 'bbp_after_theme_compat_reset_post_parse_args', 'wporg_support_set_i
 /** bb Base *******************************************************************/
 
 function bb_base_search_form() {
-?>
+	?>
 
 	<form role="search" method="get" id="searchform" action="https://wordpress.org/search/do-search.php">
 		<div>
@@ -610,11 +610,11 @@ function bb_base_search_form() {
 		</div>
 	</form>
 
-<?php
+	<?php
 }
 
 function bb_base_topic_search_form() {
-?>
+	?>
 
 	<form role="search" method="get" id="searchform" action="">
 		<div>
@@ -625,11 +625,11 @@ function bb_base_topic_search_form() {
 		</div>
 	</form>
 
-<?php
+	<?php
 }
 
 function bb_base_reply_search_form() {
-?>
+	?>
 
 	<form role="search" method="get" id="searchform" action="">
 		<div>
@@ -640,11 +640,11 @@ function bb_base_reply_search_form() {
 		</div>
 	</form>
 
-<?php
+	<?php
 }
 
 function bb_base_plugin_search_form() {
-?>
+	?>
 
 	<form role="search" method="get" id="searchform" action="">
 		<div>
@@ -655,7 +655,7 @@ function bb_base_plugin_search_form() {
 		</div>
 	</form>
 
-<?php
+	<?php
 }
 
 function bb_base_topic_search_query( $escaped = true ) {
@@ -809,8 +809,8 @@ function bb_base_single_forum_description() {
 		$topic_text = bbp_get_forum_topics_link( $forum_id );
 		$time_since = bbp_get_forum_freshness_link( $forum_id );
 
-	// Forum has no last active data
 	} else {
+		// Forum has no last active data
 		$topic_text = sprintf( _n( '%s topic', '%s topics', $topic_count, 'wporg-forums' ), bbp_number_format( $topic_count ) );
 	}
 	?>

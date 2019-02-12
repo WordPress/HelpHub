@@ -75,13 +75,13 @@
 		<?php elseif ( is_tax( 'topic-tag' ) ) : ?>
 
 			<?php
-				$term_subscription = '';
-				if ( function_exists( 'WordPressdotorg\Forums\Term_Subscription\get_subscription_link' ) ) {
-					$term_subscription = WordPressdotorg\Forums\Term_Subscription\get_subscription_link( get_queried_object()->term_id );
-				}
-				if ( $term_subscription ) {
-					echo '<div>' . $term_subscription . "</div>\n";
-				}
+			$term_subscription = '';
+			if ( function_exists( 'WordPressdotorg\Forums\Term_Subscription\get_subscription_link' ) ) {
+				$term_subscription = WordPressdotorg\Forums\Term_Subscription\get_subscription_link( get_queried_object()->term_id );
+			}
+			if ( $term_subscription ) {
+				echo '<div>' . $term_subscription . "</div>\n";
+			}
 			?>
 
 		<?php endif; ?>
@@ -117,16 +117,16 @@
 					<li><a class="feed" href="<?php bbp_topics_url(); ?>feed/"><?php _e( 'All Recent Topics', 'wporg-forums' ); ?></a></li>
 				</ul>
 			</div>
-<?php
-/* Temporarily disable this until https://core.trac.wordpress.org/ticket/41796#comment:8 can be fixed
+			<?php
+			/* Temporarily disable this until https://core.trac.wordpress.org/ticket/41796#comment:8 can be fixed
 
 			<div>
 				<h4><?php _e( 'Tags', 'wporg-forums' ); ?></h4>
 				<?php wp_tag_cloud( array( 'smallest' => 14, 'largest' => 24, 'number' => 22, 'taxonomy' => bbp_get_topic_tag_tax_id() ) ); ?>
 			</div>
 
- */
-?>
+			 */
+			?>
 		<?php endif; ?>
 
 	<?php endif; ?>

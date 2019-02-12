@@ -16,13 +16,13 @@ namespace WordPressdotorg\Forums;
 <form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 	<label for="s" class="screen-reader-text"><?php _ex( 'Search for:', 'label', 'wporg-forums' ); ?></label>
 	<?php
-		if ( 'wporg_compat_before_single_view' === current_action() ) {
-			$placeholder = _x( 'Search this forum', 'placeholder', 'wporg-forums' );
-			$project     = wporg_support_get_compat_object();
-		} else {
-			$placeholder = _x( 'Search forums', 'placeholder', 'wporg-forums' );
-			$project     = null;
-		}
+	if ( 'wporg_compat_before_single_view' === current_action() ) {
+		$placeholder = _x( 'Search this forum', 'placeholder', 'wporg-forums' );
+		$project     = wporg_support_get_compat_object();
+	} else {
+		$placeholder = _x( 'Search forums', 'placeholder', 'wporg-forums' );
+		$project     = null;
+	}
 	?>
 	<input type="search" id="s" class="search-field" placeholder="<?php echo esc_attr( $placeholder ); ?>" value="<?php the_search_query(); ?>" name="s" />
 	<?php if ( $project ) : ?>
