@@ -726,8 +726,8 @@ function bb_base_single_topic_description() {
 	?>
 
 	<li class="topic-forum"><?php
-		/* translators: %s: forum title */
 		printf(
+			/* translators: %s: forum title */
 			__( 'In: %s', 'wporg-forums' ),
 			sprintf(
 				'<a href="%s">%s</a>',
@@ -744,8 +744,8 @@ function bb_base_single_topic_description() {
 	<?php endif; ?>
 	<?php if ( ! empty( $last_reply ) ) : ?>
 		<li class="topic-freshness-author"><?php
-			/* translators: %s: reply author link */
 			printf(
+				/* translators: %s: reply author link */
 				__( 'Last reply from: %s', 'wporg-forums' ),
 				bbp_get_author_link( array( 'type' => 'name', 'post_id' => $last_reply, 'size' => '15' ) )
 			);
@@ -817,8 +817,8 @@ function bb_base_single_forum_description() {
 
 	<?php if ( bbp_get_forum_parent_id() ) : ?>
 		<li class="topic-parent"><?php
-			/* translators: %s: forum title */
 			printf(
+				/* translators: %s: forum title */
 				__( 'In: %s', 'wporg-forums' ),
 				sprintf(
 					'<a href="%s">%s</a>',
