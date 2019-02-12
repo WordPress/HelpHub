@@ -9,7 +9,8 @@
 	<!-- Show sniff codes in all reports -->
 	<arg value="ps"/>
 
-	<file>.</file>
+	<file>./themes/</file>
+	<file>./plugins/</file>
 
 	<!-- Strip the filepaths down to the relevant bit. -->
 	<arg name="basepath" value="./"/>

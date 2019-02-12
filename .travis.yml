@@ -71,18 +71,16 @@ before_script:
 # Default is specific to project language.
 # All commands must exit with code 0 on success. Anything else is considered failure.
 script:
+  # PHPCS WordPress Coding Standards
+  - php-codesniffer/scripts/phpcs -p -s -v -n
   # Change to the themes folder
   - cd themes
   # Search theme for PHP syntax errors.
   - find . \( -name '*.php' \) -exec php -lf {} \;
-  # PHPCS WordPress Coding Standards
-  - ../php-codesniffer/scripts/phpcs -p -s -v -n .
   # Change to the plugins folder
   - cd .. && cd plugins
   # Search theme for PHP syntax errors.
   - find . \( -name '*.php' \) -exec php -lf {} \;
-  # PHPCS WordPress Coding Standards
-  - ../php-codesniffer/scripts/phpcs -p -s -v -n .
   # Setup NodeJS version using NVM
   - node --version
   - npm --version
