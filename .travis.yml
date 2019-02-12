@@ -73,7 +73,7 @@ before_script:
 # All commands must exit with code 0 on success. Anything else is considered failure.
 script:
   # PHPCS WordPress Coding Standards
-  - if [[ "$SNIFF" == "1" ]]; then vendor/bin/phpcs -p -s -v --runtime-set ignore_warnings_on_exit 1;fi
+  - if [[ "$SNIFF" == "1" ]]; then vendor/bin/phpcs -v --runtime-set ignore_warnings_on_exit 1;fi
   # Change to the themes folder
   - cd themes
   # Search theme for PHP syntax errors.
