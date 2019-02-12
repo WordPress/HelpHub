@@ -30,21 +30,21 @@
 
 		<?php endif; ?>
 
-		<?php if ( !bbp_is_forum_category() && bbp_has_topics() ) : ?>
+		<?php if ( ! bbp_is_forum_category() && bbp_has_topics() ) : ?>
 
-			<?php bbp_get_template_part( 'pagination', 'topics'    ); ?>
+			<?php bbp_get_template_part( 'pagination', 'topics' ); ?>
 
-			<?php bbp_get_template_part( 'loop',       'topics'    ); ?>
+			<?php bbp_get_template_part( 'loop', 'topics' ); ?>
 
-			<?php bbp_get_template_part( 'pagination', 'topics'    ); ?>
+			<?php bbp_get_template_part( 'pagination', 'topics' ); ?>
 
-			<?php if ( ! bb_base_topic_search_query( false ) ) bbp_get_template_part( 'form',       'topic'     ); ?>
+			<?php if ( ! bb_base_topic_search_query( false ) ) bbp_get_template_part( 'form', 'topic' ); ?>
 
-		<?php elseif( !bbp_is_forum_category() ) : ?>
+		<?php elseif ( ! bbp_is_forum_category() ) : ?>
 
-			<?php bbp_get_template_part( 'feedback',   'no-topics' ); ?>
+			<?php bbp_get_template_part( 'feedback', 'no-topics' ); ?>
 
-			<?php if ( ! bb_base_topic_search_query( false ) ) bbp_get_template_part( 'form',       'topic'     ); ?>
+			<?php if ( ! bb_base_topic_search_query( false ) ) bbp_get_template_part( 'form', 'topic' ); ?>
 
 		<?php endif; ?>
 

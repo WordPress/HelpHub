@@ -1,4 +1,3 @@
-
 <?php bbp_breadcrumb(); ?>
 
 <?php if ( bbp_is_forum_archive() || bbp_is_topic_archive() || bbp_is_search() ) : ?>
@@ -19,19 +18,19 @@
 
 	<?php if ( bbp_has_search_results() ) : ?>
 
-		 <?php bbp_get_template_part( 'pagination', 'search' ); ?>
+		<?php bbp_get_template_part( 'pagination', 'search' ); ?>
 
-		 <?php bbp_get_template_part( 'loop',       'search' ); ?>
+		<?php bbp_get_template_part( 'loop', 'search' ); ?>
 
-		 <?php bbp_get_template_part( 'pagination', 'search' ); ?>
+		<?php bbp_get_template_part( 'pagination', 'search' ); ?>
 
 	<?php elseif ( bbp_get_search_terms() ) : ?>
 
-		 <?php bbp_get_template_part( 'feedback',   'no-search' ); ?>
+		<?php bbp_get_template_part( 'feedback', 'no-search' ); ?>
 
 	<?php else : ?>
 
-		<?php bbp_get_template_part( 'feedback',   'search' ); ?>
+		<?php bbp_get_template_part( 'feedback', 'search' ); ?>
 
 	<?php endif; ?>
 

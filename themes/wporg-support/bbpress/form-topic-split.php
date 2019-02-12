@@ -57,7 +57,7 @@
 											'numberposts' => 100,
 											'orderby'     => 'date',
 											'exclude'     => bbp_get_topic_id(),
-											'select_id'   => 'bbp_destination_topic'
+											'select_id'   => 'bbp_destination_topic',
 										) );
 									?>
 

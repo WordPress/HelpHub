@@ -6,7 +6,8 @@
 			<ul>
 				<li><?php
 					/* translators: %s: user's display name */
-					printf( __( 'Howdy, %s', 'wporg-forums' ),
+					printf(
+						__( 'Howdy, %s', 'wporg-forums' ),
 						'<a href="' . esc_url( bbp_get_user_profile_url( bbp_get_current_user_id() ) ) . '">' . bbp_get_current_user_name() . '</a>'
 					);
 				?></li>
@@ -56,12 +57,12 @@
 			<?php if ( current_user_can( 'moderate', bbp_get_topic_id() ) || wporg_support_current_user_can_stick( bbp_get_topic_id() ) ) : ?>
 
 				<div>
-					<?php bbp_topic_admin_links( array (
+					<?php bbp_topic_admin_links( array(
 						'id'     => bbp_get_topic_id(),
 						'before' => '<h4>' . __( 'Topic Admin', 'wporg-forums' ) . '</h4><ul class="topic-admin-links"><li>',
 						'after'  => '</li></ul>',
 						'sep'    => '</li><li>',
-						'links'  => array()
+						'links'  => array(),
 					) ); ?>
 				</div>
 
