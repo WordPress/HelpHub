@@ -10,7 +10,7 @@
 		"issues": "https://github.com/Kenshino/HelpHub"
 	},
 	"require-dev": {
-		"dealerdirect/phpcodesniffer-composer-installer": "^0.4",
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.5",
 		"wp-coding-standards/wpcs": "^1.1",
 		"phpunit/phpunit": "^6"
 	},
