@@ -19,7 +19,7 @@ get_header(); ?>
 			<?php
 			while ( have_posts() ) :
 				the_post();
-			?>
+				?>
 
 				<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="archive-block">
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

@@ -47,14 +47,14 @@ wporg_get_global_header();
 								<?php
 								foreach ( $menu_items as $path => $text ) :
 									$class = '';
-									$url = parse_url( $path );
-									if ( ! empty( $url['host' ] ) ) {
+									$url   = parse_url( $path );
+									if ( ! empty( $url['host'] ) ) {
 										$url = esc_url( $path );
 									} else {
 										$class = false !== strpos( $_SERVER['REQUEST_URI'], $url['path'] ) ? 'class="active" ' : '';
-										$url = esc_url( home_url( $path ) );
+										$url   = esc_url( home_url( $path ) );
 									}
-								?>
+									?>
 								<li class="page_item"><a <?php echo $class; ?>href="<?php echo $url; ?>"><?php echo esc_html( $text ); ?></a></li>
 								<?php endforeach; ?>
 								<li><?php get_search_form(); ?></li>
