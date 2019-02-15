@@ -11,6 +11,9 @@
 /node_modules/
 /themes/wporg-support/node_modules/
 plugins/wordpress-importer/
+**/package-lock.json
+**/style.css.map
+**/debug.log
 .phpcs.xml
 phpcs.xml
 .phpcs.xml.dist
