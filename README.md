@@ -16,7 +16,7 @@ To use this repo, simply create a new WordPress site on your local machine (usin
 You can get more information about running the HelpHub code base locally via reading the [contributing document](https://github.com/Kenshino/HelpHub/blob/master/CONTRIBUTING.md)
 ## Workflow
 
-Anyone is welcome to fork the repo and send pull requests, but the project collaborators (listed below) have push access directly to the repo. **All pull requests will be reviewed by at least one collaborator with commit access and the PR must pass tests. Collaborators will be responsible for merging their own pull requests once the reviews has been approved. Major feature development will require a review from the project lead, minor ones do not.**
+Anyone is welcome to fork the repo and send pull requests, but the project collaborators (listed below) have push access directly to the repo. **All pull requests will be reviewed by at least one collaborator with commit access and the PR must pass tests. Collaborators will be responsible for merging their own pull requests once the reviews have been approved. Major feature development will require a review from the project lead, minor ones do not.**
 
 We use ZenHub for project management, see https://github.com/Kenshino/HelpHub/issues/79 for help on using it
 
