@@ -10,7 +10,13 @@
 
 					<?php do_action( 'bbp_theme_before_topic_favorites_action' ); ?>
 
-					<?php bbp_user_favorites_link( array( 'before' => '', 'favorite' => '+', 'favorited' => '&times;' ) ); ?>
+					<?php
+						bbp_user_favorites_link( array(
+							'before'    => '',
+							'favorite'  => '+',
+							'favorited' => '&times;'
+						) );
+					?>
 
 					<?php do_action( 'bbp_theme_after_topic_favorites_action' ); ?>
 
@@ -22,7 +28,13 @@
 
 					<?php do_action( 'bbp_theme_before_topic_subscription_action' ); ?>
 
-					<?php bbp_user_subscribe_link( array( 'before' => '', 'subscribe' => '+', 'unsubscribe' => '&times;' ) ); ?>
+					<?php
+						bbp_user_subscribe_link( array(
+							'before'      => '',
+							'subscribe'   => '+',
+							'unsubscribe' => '&times;'
+						) );
+					?>
 
 					<?php do_action( 'bbp_theme_after_topic_subscription_action' ); ?>
 
@@ -46,7 +58,14 @@
 
 			<?php do_action( 'bbp_theme_before_topic_started_by' ); ?>
 
-			<span class="bbp-topic-started-by"><?php printf( __( 'Started by: %1$s', 'wporg-forums' ), bbp_get_topic_author_link( array( 'size' => '14' ) ) ); ?></span>
+			<span class="bbp-topic-started-by">
+				<?php
+					// Translators: topic author link
+					printf( __( 'Started by: %1$s', 'wporg-forums' ),
+						bbp_get_topic_author_link( array( 'size' => '14' ) )
+					);
+				?>
+			</span>
 
 			<?php do_action( 'bbp_theme_after_topic_started_by' ); ?>
 
@@ -62,7 +81,15 @@
 
 				<?php do_action( 'bbp_theme_before_topic_started_in' ); ?>
 
-				<span class="bbp-topic-started-in"><?php printf( __( 'in: <a href="%1$s">%2$s</a>', 'wporg-forums' ), bbp_get_forum_permalink( bbp_get_topic_forum_id() ), bbp_get_forum_title( bbp_get_topic_forum_id() ) ); ?></span>
+				<span class="bbp-topic-started-in">
+					<?php
+						// Translators: 1. forum permalink, 2. forum title
+						printf( __( 'in: <a href="%1$s">%2$s</a>', 'wporg-forums' ),
+							bbp_get_forum_permalink( bbp_get_topic_forum_id() ),
+							bbp_get_forum_title( bbp_get_topic_forum_id() )
+						);
+					?>
+				</span>
 
 				<?php do_action( 'bbp_theme_after_topic_started_in' ); ?>
 
@@ -92,7 +119,14 @@
 
 			<?php do_action( 'bbp_theme_before_topic_freshness_author' ); ?>
 
-			<span class="bbp-topic-freshness-author"><?php bbp_author_link( array( 'post_id' => bbp_get_topic_last_active_id(), 'size' => 14 ) ); ?></span>
+			<span class="bbp-topic-freshness-author">
+				<?php
+					bbp_author_link( array(
+						'post_id' => bbp_get_topic_last_active_id(),
+						'size' => 14
+					) );
+				?>
+			</span>
 
 			<?php do_action( 'bbp_theme_after_topic_freshness_author' ); ?>
 

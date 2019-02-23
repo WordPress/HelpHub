@@ -19,7 +19,12 @@ get_header(); ?>
 		</header><!-- .page-header -->
 
 		<div class="page-content">
-			<p><?php printf( __( 'Try searching from the field above, or go to the <a href="%s">home page</a>.', 'wporg-forums' ), get_home_url() ); ?></p>
+			<p>
+			<?php
+				// Translators: home URL
+				printf( __( 'Try searching from the field above, or go to the <a href="%s">home page</a>.', 'wporg-forums' ), get_home_url() );
+			?>
+			</p>
 		</div>
 	</section>
 </main>

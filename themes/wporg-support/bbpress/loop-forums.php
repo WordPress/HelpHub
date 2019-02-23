@@ -14,11 +14,14 @@
 
 	<li class="bbp-body">
 
-		<?php while ( bbp_forums() ) : bbp_the_forum(); ?>
+		<?php
+			while ( bbp_forums() ) : bbp_the_forum();
 
-			<?php bbp_get_template_part( 'loop', 'single-forum' ); ?>
+			bbp_get_template_part(
+				'loop',
+				'single-forum'
+			);
 
-			<?php
 			bbp_list_forums( array(
 				'before'           => '',
 				'after'            => '',
@@ -30,9 +33,9 @@
 				'show_topic_count' => false,
 				'show_reply_count' => true,
 			) );
-			?>
 
-		<?php endwhile; ?>
+			endwhile;
+		?>
 
 	</li><!-- .bbp-body -->
 
@@ -46,4 +49,4 @@
 
 </ul><!-- .forums-directory -->
 
-<?php do_action( 'bbp_template_after_forums_loop' ); ?>
+<?php do_action( 'bbp_template_after_forums_loop' );

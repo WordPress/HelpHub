@@ -4,22 +4,24 @@
 
 	<li class="bbp-body">
 
-		<?php while ( bbp_search_results() ) : bbp_the_search_result(); ?>
+		<?php
+			while ( bbp_search_results() ) : bbp_the_search_result();
 
-			<?php if ( 'topic' === get_post_type() ) : ?>
+				if ( 'topic' === get_post_type() ) :
 
-				<?php bbp_get_template_part( 'content', 'single-topic-lead' ); ?>
+					bbp_get_template_part( 'content', 'single-topic-lead' );
 
-			<?php else : ?>
+				else :
 
-				<?php bbp_get_template_part( 'loop', 'single-reply' ); ?>
+					bbp_get_template_part( 'loop', 'single-reply' );
 
-			<?php endif; ?>
+				endif;
 
-		<?php endwhile; ?>
+			endwhile;
+		?>
 
 	</li><!-- .bbp-body -->
 
 </ul><!-- #bbp-search-results -->
 
-<?php do_action( 'bbp_template_after_search_results_loop' ); ?>
+<?php do_action( 'bbp_template_after_search_results_loop' );
