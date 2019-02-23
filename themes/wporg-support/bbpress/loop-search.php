@@ -5,19 +5,20 @@
 	<li class="bbp-body">
 
 		<?php
-			while ( bbp_search_results() ) : bbp_the_search_result();
+		while ( bbp_search_results() ) :
+			bbp_the_search_result();
 
-				if ( 'topic' === get_post_type() ) :
+			if ( 'topic' === get_post_type() ) :
 
-					bbp_get_template_part( 'content', 'single-topic-lead' );
+				bbp_get_template_part( 'content', 'single-topic-lead' );
 
-				else :
+			else :
 
-					bbp_get_template_part( 'loop', 'single-reply' );
+				bbp_get_template_part( 'loop', 'single-reply' );
 
-				endif;
+			endif;
 
-			endwhile;
+		endwhile;
 		?>
 
 	</li><!-- .bbp-body -->

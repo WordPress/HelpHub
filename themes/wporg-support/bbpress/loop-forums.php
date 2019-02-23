@@ -15,26 +15,29 @@
 	<li class="bbp-body">
 
 		<?php
-			while ( bbp_forums() ) : bbp_the_forum();
+		while ( bbp_forums() ) :
+			bbp_the_forum();
 
 			bbp_get_template_part(
 				'loop',
 				'single-forum'
 			);
 
-			bbp_list_forums( array(
-				'before'           => '',
-				'after'            => '',
-				'link_before'      => '<ul class="forum"><li class="bbp-forum-info">&mdash; <span class="bbp-forum-title">',
-				'link_after'       => '',
-				'count_before'     => '</span></li><li class="bbp-forum-reply-count">',
-				'count_after'      => '</li></ul>',
-				'separator'        => '',
-				'show_topic_count' => false,
-				'show_reply_count' => true,
-			) );
+			bbp_list_forums(
+				array(
+					'before'           => '',
+					'after'            => '',
+					'link_before'      => '<ul class="forum"><li class="bbp-forum-info">&mdash; <span class="bbp-forum-title">',
+					'link_after'       => '',
+					'count_before'     => '</span></li><li class="bbp-forum-reply-count">',
+					'count_after'      => '</li></ul>',
+					'separator'        => '',
+					'show_topic_count' => false,
+					'show_reply_count' => true,
+				)
+			);
 
-			endwhile;
+		endwhile;
 		?>
 
 	</li><!-- .bbp-body -->
@@ -49,4 +52,4 @@
 
 </ul><!-- .forums-directory -->
 
-<?php do_action( 'bbp_template_after_forums_loop' );
+<?php do_action( 'bbp_template_after_forums_loop' ); ?>

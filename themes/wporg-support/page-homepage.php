@@ -9,9 +9,14 @@
 /**
  * Adds a custom description meta tag.
  */
-add_action( 'wp_head', function() {
-	printf( '<meta name="description" content="%s" />' . "\n", esc_attr__( 'Our community support articles are the best place to get the most out of WordPress. Learn how to set up your website, troubleshoot problems, customize your site, and more.', 'wporg-forums' ) );
-} );
+add_action(
+	'wp_head',
+	function() {
+		printf( '<meta name="description" content="%s" />' . "\n",
+			esc_attr__( 'Our community support articles are the best place to get the most out of WordPress. Learn how to set up your website, troubleshoot problems, customize your site, and more.', 'wporg-forums' )
+		);
+	}
+);
 
 get_header(); ?>
 
@@ -25,7 +30,7 @@ get_header(); ?>
 		<section class="three-up" id="forum-welcome">
 			<div>
 				<div class="info-box">
-					<span class="dashicons <?php
+					<span class="dashicons <?php // PHPCS: XSS ok.
 						/* translators: dashicon class name for 'Welcome to Support' section. Do not translate into your own language. */
 						esc_attr_e( 'dashicons-sos', 'wporg-forums' );
 					?>"></span>
@@ -36,7 +41,7 @@ get_header(); ?>
 			</div>
 			<div>
 				<div class="info-box">
-					<span class="dashicons <?php
+					<span class="dashicons <?php // PHPCS: XSS ok.
 						/* translators: dashicon class name for 'Documentation' section. Do not translate into your own language. */
 						esc_attr_e( 'dashicons-portfolio', 'wporg-forums' );
 					?>"></span>
@@ -47,7 +52,7 @@ get_header(); ?>
 			</div>
 			<div>
 				<div class="info-box">
-					<span class="dashicons <?php
+					<span class="dashicons <?php // PHPCS: XSS ok.
 						/* translators: dashicon class name for 'Get Involved' section. Do not translate into your own language. */
 						esc_attr_e( 'dashicons-hammer', 'wporg-forums' );
 					?>"></span>
