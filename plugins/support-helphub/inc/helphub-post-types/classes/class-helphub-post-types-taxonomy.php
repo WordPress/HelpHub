@@ -105,16 +105,16 @@ class HelpHub_Post_Types_Taxonomy {
 	 */
 	private function _get_default_args() {
 		return array(
-			'labels'            => $this->_get_default_labels(),
-			'public'            => true,
-			'hierarchical'      => true,
-			'show_ui'           => true,
+			'labels'            	=> $this->_get_default_labels(),
+			'public'            	=> true,
+			'hierarchical'      	=> true,
+			'show_ui'           	=> true,
 			'show_in_rest'		=> true,
-			'show_admin_column' => true,
-			'query_var'         => true,
-			'show_in_nav_menus' => false,
-			'show_tagcloud'     => false,
-			'rewrite'           => array(
+			'show_admin_column' 	=> true,
+			'query_var'         	=> true,
+			'show_in_nav_menus' 	=> false,
+			'show_tagcloud'     	=> false,
+			'rewrite'           	=> array(
 				'slug' => str_replace( 'helphub_', '', esc_attr( $this->token ) ),
 			),
 		);
