@@ -1,6 +1,6 @@
 # HelpHub
 
-[![Build Status](https://travis-ci.org/Kenshino/HelpHub.svg?branch=master)](https://travis-ci.org/Kenshino/HelpHub)
+[![Build Status](https://travis-ci.com/WordPress/HelpHub.svg?branch=master)](https://travis-ci.com/WordPress/HelpHub)
 
 
 HelpHub is going to be the new portal for all WordPress user documentation that currently resides on the [WordPress Codex](https://codex.wordpress.org/). This repo is where we will be managing development of this new portal.
