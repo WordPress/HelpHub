@@ -76,5 +76,5 @@ People who have helped the project but are not active contributors (any more):
 | Gary Pendergast       | @pento                | pento             |
 | Toshihiro Kanai       | @mirucon              | mirucon           |
 | Hidetaka Okamoto      | @hideokamoto          | motchi0214        |
-| Hidetaka Okamoto      | @bravokeyl            | bravokeyl         |
+|                       | @bravokeyl            | bravokeyl         |
 
