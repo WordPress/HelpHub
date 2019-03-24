@@ -44,15 +44,37 @@ See the [HelpHub wireframes](https://wp-commhub.mybalsamiq.com/projects/helphub/
 
 Project Lead: [Jon Ang](https://profiles.wordpress.org/kenshino)
 
-The following people are active developers on the project and are all listed as collaborators on this repo:
+The following people are active developers on the project in last year and are all listed as collaborators on this repo:
 
 | Name                  | GitHub username       | Slack username    |
 |-----------------------|-----------------------|-------------------|
 | Jon Ang               | @kenshino             | kenshino          |
-| Carl Alberto          | @carl-alberto         | carlalberto       |
+| Stephen Edgar         | @ntwb                 | netweb            |
 | Marius Jensen         | @clorith              | clorith           |
-| Jude Rosario          | @JudeRosario          | lumberhack        |
 | Milana Cap            | @zzap                 | zzap              |
 | Akira Tachibana       | @atachibana           | atachibana        |
-| Stephen Edgar         | @ntwb                 | netweb            |
+| Carl Alberto          | @carl-alberto         | carlalberto       |
+| Felipe Elia           | @felipeelia           | felipeelia        |
+| Joy Reynolds          | @joyously             | joyously          |
+| Mukesh Panchal        | @mukeshpanchal27      | mukesh27          |
+| Subrata Sarkar        | @emfluenceindia       | subratasarkar     |
+| Burhan Nasir          | @burhandodhy          | burhandodhy       |
+
+
+People who have helped the project but are not active contributors (any more):
+
+| Name                  | GitHub username       | Slack username    |
+|-----------------------|-----------------------|-------------------|
 | Mark Uraine           | @mapk                 | mapk              |
+| Justin Greer          | @justingreerbbi       | justingreerbbi    |
+| Takayuki Miyauchi     | @miya0001             | miyauchi          |
+| Hugh Lashbrooke       | @hlashbrooke          | hlashbrooke       |
+| Hiroshi Urabe         | @torounit             | toro_unit         |
+| Mário Valney          | @mariovalney          | mariovalney       |
+| Matt Cromwell         | @mathetos             | webdevmattcrom    |
+| Juliette              | @jrfnl                | jrf               |
+| Gary Pendergast       | @pento                | pento             |
+| Toshihiro Kanai       | @mirucon              | mirucon           |
+| Hidetaka Okamoto      | @hideokamoto          | motchi0214        |
+| Hidetaka Okamoto      | @bravokeyl            | bravokeyl         |
+
