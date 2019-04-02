@@ -11,7 +11,7 @@ You can get involved in development (or any other aspect of the project) by atte
 
 ## How to use this repo
 
-To use this repo, simply create a new WordPress site on your local machine (using whatever development environment suits you), then empty out the `wp-content` folder and clone this repo into it. After logging in to the admin area activate `wprog-suppoprt` theme for the site to work.
+To use this repo, simply create a new WordPress site on your local machine (using whatever development environment suits you), then empty out the `wp-content` folder and clone this repo into it. After logging in to the admin area activate `wporg-suppoprt` theme for the site to work.
 
 You can get more information about running the HelpHub code base locally via reading the [contributing document](https://github.com/Kenshino/HelpHub/blob/master/CONTRIBUTING.md)
 ## Workflow
