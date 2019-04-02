@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.com/WordPress/HelpHub.svg?branch=master)](https://travis-ci.com/WordPress/HelpHub)
 
 
-HelpHub is going to be the new portal for all WordPress user documentation that currently resides on the [WordPress Codex](https://codex.wordpress.org/). This repo is where we will be managing development of this new portal.
+HelpHub is going to be the new portal for all WordPress user documentation that currently resides on the [WordPress Codex](https://codex.wordpress.org/). This repo is where we will be managing the development of this new portal.
 
 ## Get Involved
 
@@ -11,14 +11,14 @@ You can get involved in development (or any other aspect of the project) by atte
 
 ## How to use this repo
 
-To use this repo, simply create a new WordPress site on your local machine (using whatever development environment suits you), then empty out the `wp-content` folder and clone this repo into it. After logging in to the admin area activate `wprog-suppoprt` theme for the site to work.
+To use this repo, simply create a new WordPress site on your local machine (using whatever development environment suits you), then empty out the `wp-content` folder and clone this repo into it. After logging in to the admin area activate `wprog-support` theme for the site to work.
 
 You can get more information about running the HelpHub code base locally via reading the [contributing document](https://github.com/Kenshino/HelpHub/blob/master/CONTRIBUTING.md)
 ## Workflow
 
 Anyone is welcome to fork the repo and send pull requests, but the project collaborators (listed below) have push access directly to the repo. **All pull requests will be reviewed by at least one collaborator with commit access and the PR must pass tests. Collaborators will be responsible for merging their own pull requests once the reviews has been approved. Major feature development will require a review from the project lead, minor ones do not.**
 
-We use ZenHub for project management, see https://github.com/Kenshino/HelpHub/issues/79 for help on using it
+We use ZenHub for project management, see https://github.com/WordPress/HelpHub/issues/79 for help on using it
 
 ### Feature development
 
@@ -32,7 +32,7 @@ Any fixes that do not qualify as new features are to done in individual branches
 
 As this is a WordPress community project, all development must have a strong commitment to accessibility and responsive design. We will also be following the [WordPress coding standards](https://codex.wordpress.org/WordPress_Coding_Standards) throughout the project.
 
-Given that we will ultimately need to localise the whole site for different languages, please use `wporg-forums` as the text domain for all text strings.
+Given that we will ultimately need to localize the whole site for different languages, please use `wporg-forums` as the text domain for all text strings.
 
 Database from staging site is located in `wp-content/staging-database` folder. There you can find database files for WordPress Importer, Widget Importer & Exporter, Duplicator and UpdraftPlus.
 
