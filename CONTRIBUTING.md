@@ -29,7 +29,7 @@ Take a look at the HelpHub site located at [wp-helphub.com](https://wp-helphub.c
 ```
 $ git clone https://github.com/Kenshino/HelpHub.git wp-content
 ```
-4. Copy back your current Theme files from renamed folder in above Step 2.
+4. Copy back your current Theme files from the renamed folder in above Step 2.
 5. Run `npm install` to compile theme's `.scss` files into `style.css` ([see below for more details](#helphub))
 6. Install and activate the bbPress plugin.
 7. Activate the **WordPress.org Support** theme from within `/wp-admin`.
@@ -50,13 +50,13 @@ $ cd /etc/php/7.0/fpm
 
 #### Import database
 
-For now we have two ways for importing database from staging site - via [Importer](#importer) and via [Duplicator](#duplicator)
+For now, we have two ways for importing database from staging site - via [Importer](#importer) and via [Duplicator](#duplicator)
 
 ##### Importer
 
 Database from staging site is located in `wp-content/staging-database` folder. There you can find database files for WordPress Importer, Widget Importer & Exporter, Duplicator and UpdraftPlus.
 
-To import database using the WordPress Importer from within the `/wp-admin` of your local site, follow these steps:
+To import the database using the WordPress Importer from within the `/wp-admin` of your local site, follow these steps:
 
 1. Go to: `Tools -> Import` and click "Install Now" under WordPress at the bottom. This will install the WordPress Importer.
 2. Click "Run Importer"
@@ -65,7 +65,7 @@ To import database using the WordPress Importer from within the `/wp-admin` of y
 5. Check the box to "Download and import file attachments".
 6. Click the button to begin. It may take a while to complete. If there are some failed imports, it should still be okay.
 
-This file won't import widgets from staging site. For that you can use `.wie` file, located in `wp-content/staging-database/Widget Importer & Exporter` folder. This file is exported with [Widget Importer & Exporter](https://wordpress.org/plugins/widget-importer-exporter/) plugin and you need this plugin in your local installation in order to import widgets from `.wie` file.
+This file won't import widgets from staging site. For that, you can use `.wie` file, located in `wp-content/staging-database/Widget Importer & Exporter` folder. This file is exported with [Widget Importer & Exporter](https://wordpress.org/plugins/widget-importer-exporter/) plugin and you need this plugin in your local installation in order to import widgets from `.wie` file.
 
 ##### Duplicator
 
@@ -86,7 +86,7 @@ HelpHub uses a task runner called [Grunt](https://gruntjs.com/). Grunt contains 
 To be able to run Grunt you need [npm](https://www.npmjs.com/get-npm). We will assume that you already have npm.
 
 
-First we need to install dependencies from `package.json` file:
+First, we need to install dependencies from `package.json` file:
 ```
 npm install
 ```
@@ -110,7 +110,7 @@ grunt watch
 
 This task tells compiler to watch all changes created in `.scss` files and rebuild a new `style.css` every time you save the file.
 
-While you can use regular CSS syntax in `.scss` files (as long as Travis tests are passed), we would like to encourage you to [learn](http://sass-lang.com/guide) and use Sass as much as possible. It's good for you and for project.
+While you can use regular CSS syntax in `.scss` files (as long as Travis tests are passed), we would like to encourage you to [learn](http://sass-lang.com/guide) and use Sass as much as possible. It's good for you and for the project.
 
 ## Propose design suggestions and improvements
 
