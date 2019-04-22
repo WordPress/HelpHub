@@ -52,15 +52,15 @@
 									<?php
 										bbp_dropdown(
 											array(
-												'post_type'   => bbp_get_topic_post_type(),
+												'post_type' => bbp_get_topic_post_type(),
 												'post_parent' => bbp_get_topic_forum_id( bbp_get_topic_id() ),
 												'post_status' => array( bbp_get_public_status_id(), bbp_get_closed_status_id() ),
-												'selected'    => -1,
+												'selected' => -1,
 												'numberposts' => 100,
-												'orderby'     => 'date',
-												'order'       => 'DESC',
-												'exclude'     => bbp_get_topic_id(),
-												'select_id'   => 'bbp_destination_topic',
+												'orderby'  => 'date',
+												'order'    => 'DESC',
+												'exclude'  => bbp_get_topic_id(),
+												'select_id' => 'bbp_destination_topic',
 											)
 										);
 									?>

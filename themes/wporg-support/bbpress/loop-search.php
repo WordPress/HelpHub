@@ -25,4 +25,5 @@
 
 </ul><!-- #bbp-search-results -->
 
-<?php do_action( 'bbp_template_after_search_results_loop' );
+<?php
+do_action( 'bbp_template_after_search_results_loop' );
