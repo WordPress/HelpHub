@@ -5,17 +5,21 @@
 		<ul class="forum-titles">
 			<li class="bbp-topic-title"><?php esc_html_e( 'Topic', 'wporg-forums' ); ?></li>
 			<li class="bbp-topic-voice-count"><?php esc_html_e( 'Voices', 'wporg-forums' ); ?></li>
-			<li class="bbp-topic-reply-count"><?php bbp_show_lead_topic()
-				? esc_html_e( 'Replies', 'wporg-forums' )
-				: esc_html_e( 'Posts', 'wporg-forums' );
-			?></li>
+			<li class="bbp-topic-reply-count">
+				<?php
+				bbp_show_lead_topic() ? esc_html_e( 'Replies', 'wporg-forums' ) : esc_html_e( 'Posts', 'wporg-forums' );
+				?>
+			</li>
 			<li class="bbp-topic-freshness"><?php esc_html_e( 'Last Post', 'wporg-forums' ); ?></li>
 		</ul>
 	</li>
 
 	<li class="bbp-body">
 
-		<?php while ( bbp_replies() ) : bbp_the_reply(); ?>
+		<?php
+		while ( bbp_replies() ) :
+			bbp_the_reply();
+			?>
 
 			<?php bbp_get_template_part( 'loop', 'single-reply-topic' ); ?>
 

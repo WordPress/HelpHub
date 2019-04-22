@@ -20,7 +20,7 @@
 			<form id="split_topic" name="split_topic" method="post" action="<?php the_permalink(); ?>">
 
 				<fieldset class="bbp-form">
-
+					<?php // Translators: Topic title ?>
 					<legend><?php printf( __( 'Split topic "%s"', 'wporg-forums' ), bbp_get_topic_title() ); ?></legend>
 
 					<div>
@@ -38,27 +38,39 @@
 
 							<div>
 								<input name="bbp_topic_split_option" id="bbp_topic_split_option_reply" type="radio" checked="checked" value="reply" />
+								<?php // Translators: Forum name ?>
 								<label for="bbp_topic_split_option_reply"><?php printf( __( 'New topic in <strong>%s</strong> titled:', 'wporg-forums' ), bbp_get_forum_title( bbp_get_topic_forum_id( bbp_get_topic_id() ) ) ); ?></label>
+								<?php // Translators: Topic title ?>
 								<input type="text" id="bbp_topic_split_destination_title" value="<?php echo esc_attr( sprintf( __( 'Split: %s', 'wporg-forums' ), bbp_get_topic_title() ) ); ?>" size="35" name="bbp_topic_split_destination_title" />
 							</div>
 
-							<?php if ( bbp_has_topics( array( 'show_stickies' => false, 'post_parent' => bbp_get_topic_forum_id( bbp_get_topic_id() ), 'post__not_in' => array( bbp_get_topic_id() ) ) ) ) : ?>
+							<?php
+							if ( bbp_has_topics(
+								array(
+									'show_stickies' => false,
+									'post_parent'   => bbp_get_topic_forum_id( bbp_get_topic_id() ),
+									'post__not_in'  => array( bbp_get_topic_id() ),
+								)
+							) ) :
+								?>
 
 								<div>
 									<input name="bbp_topic_split_option" id="bbp_topic_split_option_existing" type="radio" value="existing" />
 									<label for="bbp_topic_split_option_existing"><?php _e( 'Use an existing topic in this forum:', 'wporg-forums' ); ?></label>
 
 									<?php
-										bbp_dropdown( array(
-											'post_type'   => bbp_get_topic_post_type(),
-											'post_parent' => bbp_get_topic_forum_id( bbp_get_topic_id() ),
-											'post_status' => array( bbp_get_public_status_id(), bbp_get_closed_status_id() ),
-											'selected'    => -1,
-											'numberposts' => 100,
-											'orderby'     => 'date',
-											'exclude'     => bbp_get_topic_id(),
-											'select_id'   => 'bbp_destination_topic',
-										) );
+										bbp_dropdown(
+											array(
+												'post_type'   => bbp_get_topic_post_type(),
+												'post_parent' => bbp_get_topic_forum_id( bbp_get_topic_id() ),
+												'post_status' => array( bbp_get_public_status_id(), bbp_get_closed_status_id() ),
+												'selected'    => -1,
+												'numberposts' => 100,
+												'orderby'     => 'date',
+												'exclude'     => bbp_get_topic_id(),
+												'select_id'   => 'bbp_destination_topic',
+											)
+										);
 									?>
 
 								</div>
