@@ -7,10 +7,6 @@
 # @link http://about.travis-ci.org/docs/user/languages/php/
 language: php
 
-# Ditch sudo and use containers.
-# @link https://docs.travis-ci.com/user/ci-environment/
-sudo: false
-
 # Tell Travis CI which distro to use
 dist: trusty
 
@@ -18,7 +14,7 @@ dist: trusty
 matrix:
   fast_finish: true
   include:
-    # Declare versions of PHP to use, w.org currently uses 5.6.18, soon to be 7.x
+    # Declare versions of PHP to use, w.org currently uses 7.2, soon to be 7.3
     - php: 7.3
       env: WP_VERSION=latest WP_MULTISITE=0 SNIFF=1
     - php: 7.3
