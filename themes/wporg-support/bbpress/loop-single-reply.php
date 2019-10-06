@@ -7,47 +7,43 @@
  * @subpackage Theme
  */
 
-if ( bbp_is_single_view() || bbp_is_search_results() || bbp_is_single_user_replies() ) : ?>
+// Exit if accessed directly
+defined( 'ABSPATH' ) || exit;
+
+?>
 
 <div id="post-<?php bbp_reply_id(); ?>" class="bbp-reply-header">
 	<div class="bbp-meta">
-			<span class="bbp-header">
-				<?php esc_html_e( 'Forum:', 'wporg-forums' ); ?>
-				<a class="bbp-forum-permalink" href="<?php bbp_forum_permalink( bbp_get_reply_forum_id() ); ?>"><?php bbp_forum_title( bbp_get_reply_forum_id() ); ?></a><br />
+		<span class="bbp-reply-post-date"><?php bbp_reply_post_date(); ?></span>
 
-				<?php esc_html_e( 'In reply to: ', 'wporg-forums' ); ?>
+		<?php if ( bbp_is_single_user_replies() ) : ?>
+
+			<span class="bbp-header">
+				<?php esc_html_e( 'in reply to: ', 'bbpress' ); ?>
 				<a class="bbp-topic-permalink" href="<?php bbp_topic_permalink( bbp_get_reply_topic_id() ); ?>"><?php bbp_topic_title( bbp_get_reply_topic_id() ); ?></a>
 			</span>
+
+		<?php endif; ?>
+
+		<a href="<?php bbp_reply_url(); ?>" class="bbp-reply-permalink">#<?php bbp_reply_id(); ?></a>
+
+		<?php do_action( 'bbp_theme_before_reply_admin_links' ); ?>
+
+		<?php bbp_reply_admin_links(); ?>
+
+		<?php do_action( 'bbp_theme_after_reply_admin_links' ); ?>
+
 	</div><!-- .bbp-meta -->
 </div><!-- #post-<?php bbp_reply_id(); ?> -->
 
-<?php endif; ?>
-
-<div id="post-<?php bbp_reply_id(); ?>" <?php bbp_reply_class(); ?>>
-
+<div <?php bbp_reply_class(); ?>>
 	<div class="bbp-reply-author">
 
 		<?php do_action( 'bbp_theme_before_reply_author_details' ); ?>
 
-		<?php bbp_reply_author_link( array( 'sep' => '', 'show_role' => false, 'size' => 100 ) ); ?>
+		<?php bbp_reply_author_link( array( 'show_role' => true ) ); ?>
 
-		<?php bbp_user_nicename( bbp_get_reply_author_id(), array( 'before' => '<p class="bbp-user-nicename">(@', 'after' => ')</p>' ) ); ?>
-
-		<?php if ( current_user_can( 'moderate', bbp_get_reply_topic_id() ) && 'bbp_blocked' === bbp_get_user_role( bbp_get_reply_author_id() ) ) : ?>
-			<p class="wporg-bbp-user-is-blocked">[<?php esc_html_e( 'This user is blocked', 'wporg-support' ); ?>]</p>
-		<?php endif; ?>
-
-		<?php if ( $title = get_user_option( 'title', bbp_get_reply_author_id() ) ) : ?>
-
-			<p class="bbp-author-title"><?php echo esc_html( $title ); ?></p>
-
-		<?php endif; ?>
-
-		<div class="bbp-reply-meta">
-
-		<p class="bbp-reply-post-date"><a href="<?php bbp_reply_url(); ?>" title="#<?php bbp_reply_id(); ?>" class="bbp-reply-permalink"><?php bbp_reply_post_date( bbp_get_reply_id(), true ); ?></a></p>
-
-		<?php if ( current_user_can( 'moderate', bbp_get_reply_topic_id() ) ) : ?>
+		<?php if ( current_user_can( 'moderate', bbp_get_reply_id() ) ) : ?>
 
 			<?php do_action( 'bbp_theme_before_reply_author_admin_details' ); ?>
 
@@ -58,8 +54,6 @@ if ( bbp_is_single_view() || bbp_is_search_results() || bbp_is_single_user_repli
 		<?php endif; ?>
 
 		<?php do_action( 'bbp_theme_after_reply_author_details' ); ?>
-
-		</div>
 
 	</div><!-- .bbp-reply-author -->
 
@@ -72,11 +66,4 @@ if ( bbp_is_single_view() || bbp_is_search_results() || bbp_is_single_user_repli
 		<?php do_action( 'bbp_theme_after_reply_content' ); ?>
 
 	</div><!-- .bbp-reply-content -->
-
-	<?php do_action( 'bbp_theme_before_reply_admin_links' ); ?>
-
-	<?php bbp_reply_admin_links(); ?>
-
-	<?php do_action( 'bbp_theme_after_reply_admin_links' ); ?>
-
-</div><!-- #post-<?php bbp_reply_id(); ?> -->
+</div><!-- .reply -->

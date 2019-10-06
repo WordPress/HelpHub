@@ -1,3 +1,19 @@
+<?php
+
+/**
+ * No Topics Feedback Part
+ *
+ * @package bbPress
+ * @subpackage Theme
+ */
+
+// Exit if accessed directly
+defined( 'ABSPATH' ) || exit;
+
+?>
+
 <div class="bbp-template-notice">
-	<p><?php _e( 'No topics found. Select another view or start a new post.', 'wporg-forums' ); ?></p>
+	<ul>
+		<li><?php esc_html_e( 'Oh, bother! No topics were found here.', 'bbpress' ); ?></li>
+	</ul>
 </div>

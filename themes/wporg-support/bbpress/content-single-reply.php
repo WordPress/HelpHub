@@ -7,11 +7,14 @@
  * @subpackage Theme
  */
 
+// Exit if accessed directly
+defined( 'ABSPATH' ) || exit;
+
 ?>
 
-<?php bbp_breadcrumb(); ?>
+<div id="bbpress-forums" class="bbpress-wrapper">
 
-<div id="bbpress-forums">
+	<?php bbp_breadcrumb(); ?>
 
 	<?php do_action( 'bbp_template_before_single_reply' ); ?>
 
@@ -21,15 +24,7 @@
 
 	<?php else : ?>
 
-		<ul id="topic-<?php bbp_topic_id(); ?>-replies" class="forums bbp-replies">
-
-			<li class="bbp-body">
-
-				<?php bbp_get_template_part( 'loop', 'single-reply' ); ?>
-
-			</li><!-- .bbp-body -->
-
-		</ul><!-- #topic-<?php bbp_topic_id(); ?>-replies -->
+		<?php bbp_get_template_part( 'loop', 'single-reply' ); ?>
 
 	<?php endif; ?>
 

@@ -1,39 +1,54 @@
-<?php bbp_breadcrumb(); ?>
+<?php
 
-<?php if ( bbp_is_forum_archive() || bbp_is_topic_archive() || bbp_is_search() ) : ?>
+/**
+ * Archive Topic Content Part
+ *
+ * @package bbPress
+ * @subpackage Theme
+ */
 
-	<div class="bbp-search-form">
+// Exit if accessed directly
+defined( 'ABSPATH' ) || exit;
 
-		<?php bbp_get_template_part( 'form', 'search' ); ?>
+?>
 
-	</div>
+<div id="bbpress-forums" class="bbpress-wrapper">
 
-<?php endif; ?>
+	<?php if ( bbp_allow_search() ) : ?>
 
-<?php if ( bbp_is_topic_tag() ) : ?>
+		<div class="bbp-search-form">
 
-	<header id="topic-tag" class="page-header bbp-topic-tag">
-		<h1 class="page-title"><?php printf( esc_html__( 'Topic Tag: %s', 'wporg-forums' ), '<span>' . bbp_get_topic_tag_name() . '</span>' ); ?></h1>
-		<?php bbp_topic_tag_description(); ?>
-	</header>
+			<?php bbp_get_template_part( 'form', 'search' ); ?>
 
-<?php endif; ?>
+		</div>
 
-<div id="bbpress-forums">
+	<?php endif; ?>
+
+	<?php bbp_breadcrumb(); ?>
+
+	<?php do_action( 'bbp_template_before_topic_tag_description' ); ?>
+
+	<?php if ( bbp_is_topic_tag() ) : ?>
+
+		<?php bbp_topic_tag_description( array( 'before' => '<div class="bbp-template-notice info"><ul><li>', 'after' => '</li></ul></div>' ) ); ?>
+
+	<?php endif; ?>
+
+	<?php do_action( 'bbp_template_after_topic_tag_description' ); ?>
 
 	<?php do_action( 'bbp_template_before_topics_index' ); ?>
 
 	<?php if ( bbp_has_topics() ) : ?>
 
-		<?php bbp_get_template_part( 'pagination', 'topics' ); ?>
+		<?php bbp_get_template_part( 'pagination', 'topics'    ); ?>
 
-		<?php bbp_get_template_part( 'loop', 'topics' ); ?>
+		<?php bbp_get_template_part( 'loop',       'topics'    ); ?>
 
-		<?php bbp_get_template_part( 'pagination', 'topics' ); ?>
+		<?php bbp_get_template_part( 'pagination', 'topics'    ); ?>
 
 	<?php else : ?>
 
-		<?php bbp_get_template_part( 'feedback', 'no-topics' ); ?>
+		<?php bbp_get_template_part( 'feedback',   'no-topics' ); ?>
 
 	<?php endif; ?>
 

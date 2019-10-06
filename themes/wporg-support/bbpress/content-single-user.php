@@ -7,11 +7,10 @@
  * @subpackage Theme
  */
 
-?>
+// Exit if accessed directly
+defined( 'ABSPATH' ) || exit;
 
-<header class="page-header">
-	<h1 class="page-title"><?php bbp_displayed_user_field( 'display_name' ); ?></h1>
-</header>
+?>
 
 <div id="bbpress-forums" class="bbpress-wrapper">
 
@@ -24,43 +23,13 @@
 		<?php bbp_get_template_part( 'user', 'details' ); ?>
 
 		<div id="bbp-user-body">
-			<?php
-			if ( bbp_is_favorites() ) {
-				bbp_get_template_part( 'user', 'favorites' );
-			}
-
-			if ( bbp_is_subscriptions() ) {
-				bbp_get_template_part( 'user', 'subscriptions' );
-			}
-
-			if ( function_exists( 'bbp_is_single_user_engagements' ) && bbp_is_single_user_engagements() ) {
-				bbp_get_template_part( 'user', 'engagements' );
-			}
-
-			if ( bbp_is_single_user_topics() ) {
-				bbp_get_template_part( 'user', 'topics-created' );
-			}
-
-			if ( bbp_is_single_user_replies() ) {
-				bbp_get_template_part( 'user', 'replies-created' );
-			}
-
-			if ( wporg_support_is_single_user_reviews() ) {
-				bbp_get_template_part( 'user', 'reviews-written' );
-			}
-
-			if ( wporg_support_is_single_user_topics_replied_to() ) {
-				bbp_get_template_part( 'user', 'topics-replied-to' );
-			}
-
-			if ( bbp_is_single_user_edit() ) {
-				bbp_get_template_part( 'form', 'user-edit' );
-			}
-
-			if ( bbp_is_single_user_profile() ) {
-				bbp_get_template_part( 'user', 'profile' );
-			}
-			?>
+			<?php if ( bbp_is_favorites()               ) bbp_get_template_part( 'user', 'favorites'       ); ?>
+			<?php if ( bbp_is_subscriptions()           ) bbp_get_template_part( 'user', 'subscriptions'   ); ?>
+			<?php if ( bbp_is_single_user_engagements() ) bbp_get_template_part( 'user', 'engagements'     ); ?>
+			<?php if ( bbp_is_single_user_topics()      ) bbp_get_template_part( 'user', 'topics-created'  ); ?>
+			<?php if ( bbp_is_single_user_replies()     ) bbp_get_template_part( 'user', 'replies-created' ); ?>
+			<?php if ( bbp_is_single_user_edit()        ) bbp_get_template_part( 'form', 'user-edit'       ); ?>
+			<?php if ( bbp_is_single_user_profile()     ) bbp_get_template_part( 'user', 'profile'         ); ?>
 		</div>
 	</div>
 
