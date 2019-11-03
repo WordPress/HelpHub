@@ -114,4 +114,4 @@ While you can use regular CSS syntax in `.scss` files (as long as Travis tests a
 
 ## Propose design suggestions and improvements
 
-Join our discussions in the [#docs](https://wordpress.slack.com/messages/docs/) [slack](https://make.wordpress.org/chat/) channel on **Tuesdays from 15:00 - 16:00 UTC** - content, design and development discussion. Or submit your ideas on our GitHub repo [here](https://github.com/Kenshino/HelpHub/issues).
+Join our discussions in the [#docs](https://wordpress.slack.com/messages/docs/) [slack](https://make.wordpress.org/chat/) channel on **Mondays from 15:00 - 16:00 UTC** - content, design and development discussion. Or submit your ideas on our GitHub repo [here](https://github.com/WordPress/HelpHub/issues).
