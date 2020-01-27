@@ -49,7 +49,6 @@ NOTE: pt-br, zh-cn and zh-cw are ptbr_codex, zhcn_codex and zhcw_codex by shortc
 * Myanmar / mya_codex / www.myanmarwp.com/<article>
 * Dutch / nl_codex / codex.wordpress.org/nl:<article>
 * Persian / fa_codex / codex.wp-persian.com/<article>
-* Farsi / fax_codex / www.isawpi.ir/wiki/<article>
 * Polish / pl_codex / codex.wordpress.org/pl:<article>
 * Portuguese_Português / Português / codex.wordpress.org/pt:<article>
 * Brazilian Portuguese / Português do Brasil / ptbr_codex / codex.wordpress.org/pt-br:<article>
