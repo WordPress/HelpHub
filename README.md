@@ -1,6 +1,6 @@
 # HelpHub
 
-[![Build Status](https://travis-ci.com/WordPress/HelpHub.svg?branch=master)](https://travis-ci.com/WordPress/HelpHub)
+<!-- Removed outdated Travis CI badge -->
 
 
 HelpHub is the central portal for all WordPress user documentation, replacing much of the content that previously lived in the WordPress Codex.
