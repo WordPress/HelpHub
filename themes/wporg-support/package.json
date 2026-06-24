@@ -19,7 +19,7 @@
 		"grunt-stylelint": "~0.10.1",
 		"node-sass": "~4.9.4",
 		"postcss-scss": "~2.0.0",
-		"stylelint": "~9.7.0",
+		"stylelint": "~9.10.1",
 		"stylelint-config-wordpress": "~13.1.0"
 	},
 	"engines": {
