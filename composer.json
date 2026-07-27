@@ -10,13 +10,18 @@
 		"issues": "https://github.com/Kenshino/HelpHub"
 	},
 	"require-dev": {
-		"dealerdirect/phpcodesniffer-composer-installer": "^0.5",
-		"wp-coding-standards/wpcs": "^2.0",
+		"dealerdirect/phpcodesniffer-composer-installer": "^1.1",
+		"wp-coding-standards/wpcs": "^3.4.1",
 		"phpcompatibility/phpcompatibility-wp": "^2.0",
 		"phpunit/phpunit": "^6"
 	},
 	"scripts": {
 		"format": "phpcbf --report-summary --report-source",
 		"lint": "phpcs --report-summary --report-source"
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
 	}
 }
