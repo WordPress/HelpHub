@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> **This repository is archived.** The code behind [wordpress.org/documentation](https://wordpress.org/documentation/) is maintained in [WordPress/wporg-documentation-2022](https://github.com/WordPress/wporg-documentation-2022), which holds the `wporg-documentation-2022` theme and the Support HelpHub plugin. The plugin is synced into the WordPress.org Meta repository, at [`wordpress.org/public_html/wp-content/plugins/support-helphub`](https://github.com/WordPress/wordpress.org/tree/trunk/wordpress.org/public_html/wp-content/plugins/support-helphub). File bugs on [Meta Trac](https://meta.trac.wordpress.org/newticket?component=HelpHub+%28wordpress.org%2Fdocumentation%29) under *HelpHub (wordpress.org/documentation)*, and report documentation content problems in the [Documentation Issue Tracker](https://github.com/WordPress/Documentation-Issue-Tracker). Issues and pull requests opened here are no longer monitored.
+
 # HelpHub
 
 [![Build Status](https://travis-ci.com/WordPress/HelpHub.svg?branch=master)](https://travis-ci.com/WordPress/HelpHub)
