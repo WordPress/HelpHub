@@ -48,29 +48,6 @@ $ vagrant ssh
 $ cd /etc/php/7.0/fpm
 ```
 
-#### Import database
-
-For now, we have two ways for importing database from staging site - via [Importer](#importer) and via [Duplicator](#duplicator)
-
-##### Importer
-
-Database from staging site is located in `wp-content/staging-database` folder. There you can find database files for WordPress Importer, Widget Importer & Exporter, Duplicator and UpdraftPlus.
-
-To import the database using the WordPress Importer from within the `/wp-admin` of your local site, follow these steps:
-
-1. Go to: `Tools -> Import` and click "Install Now" under WordPress at the bottom. This will install the WordPress Importer.
-2. Click "Run Importer"
-3. Choose the file mentioned above and click the button, "Upload file and import"
-4. Set all the authors to a user account on your local site.
-5. Check the box to "Download and import file attachments".
-6. Click the button to begin. It may take a while to complete. If there are some failed imports, it should still be okay.
-
-This file won't import widgets from staging site. For that, you can use `.wie` file, located in `wp-content/staging-database/Widget Importer & Exporter` folder. This file is exported with [Widget Importer & Exporter](https://wordpress.org/plugins/widget-importer-exporter/) plugin and you need this plugin in your local installation in order to import widgets from `.wie` file.
-
-##### Duplicator
-
-In `wp-content/staging-database` you'll find `Duplicator` folder containing `.zip` archive. This archive holds `installer-backup.php` and `database.sql` files, created on 13th March 2018. You can use it instead of [Importer](#importer) workflow for importing database. Here is a [guide](https://snapcreek.com/duplicator/docs/quick-start/) for Duplicator.
-
 Once you have a local install of HelpHub up and running, you can contribute with pull requests either from your own fork or after you've added as a contributor directly in this repository. We are using [Travis CI](https://travis-ci.org/) for tests on every pull request. You can, also, run these tests locally before pushing your code (more on this later). Development covers work on both, theme and plugins and requires following [best practices](https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/) and [WordPress Coding Standards](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards).
 
 ### HelpHub
